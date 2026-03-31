@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSTO Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DAFI 91-202 Paragraph 14.1</p>
+        <h1>Job Safety Training Outline Builder</h1>
+        <p class="hero-text">Build a work-center-specific JSTO with required DAFI topics.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="print-pdf" class="button primary" type="button">Export PDF</button>
+        <button id="save-browser" class="button" type="button">Save in Browser</button>
+        <button id="download-json" class="button" type="button">Download JSON</button>
+        <label class="button file-button" for="upload-json">Load JSON</label>
+        <input id="upload-json" type="file" accept="application/json">
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel">
+        <div class="section-heading">
+          <h2>Outline Setup</h2>
+          <p>Required DAFI items are always included. Use the dropdown to add job-specific training modules.</p>
+        </div>
+
+        <form id="jsto-form">
+          <div class="form-grid">
+            <label>
+              Unit
+              <input name="unit" type="text" placeholder="e.g. 123d Maintenance Squadron">
+            </label>
+            <label>
+              Work Center
+              <input name="workCenter" type="text" placeholder="e.g. AGE Shop">
+            </label>
+            <label>
+              Work Area / Office Symbol
+              <input name="officeSymbol" type="text" placeholder="e.g. Wing Staff/Admin">
+            </label>
+            <label>
+              Shop Supervisor
+              <input name="supervisor" type="text" placeholder="Name / rank / title">
+            </label>
+            <label>
+              Contact Phone
+              <input name="phone" type="text" placeholder="DSN or commercial">
+            </label>
+            <label>
+              Reviewer
+              <input name="reviewer" type="text" placeholder="Annual reviewer">
+            </label>
+            <label>
+              Review Date
+              <input name="reviewDate" type="date">
+            </label>
+            <label>
+              Effective Date
+              <input name="effectiveDate" type="date">
+            </label>
+          </div>
+
+          <label>
+            Work Center Description
+            <textarea name="workDescription" rows="3" placeholder="Describe the mission, location, and typical duties for this work center."></textarea>
+          </label>
+
+          <label>
+            Reference Documents
+            <textarea name="references" rows="3" placeholder="List TOs, JHAs, operating instructions, DAFIs, DAFMANs, local supplements, manufacturer guidance, etc."></textarea>
+          </label>
+
+          <label>
+            Work Area Hazard Analysis / JHA Notes
+            <textarea name="hazardAnalysis" rows="4" placeholder="Summarize work area hazards, BE survey findings, JHAs, JSAs, manufacturer instructions, and hierarchy of controls used for this shop."></textarea>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Emergency Numbers
+              <input name="emergencyNumbers" type="text" placeholder="911, on-base dispatch, fire desk, etc.">
+            </label>
+            <label>
+              Medical Facility
+              <input name="medicalFacility" type="text" placeholder="Clinic / hospital / after-hours process">
+            </label>
+            <label>
+              Evacuation Route / Muster Point
+              <input name="evacuation" type="text" placeholder="Route and meetup location">
+            </label>
+            <label>
+              Shelter in Place
+              <input name="shelter" type="text" placeholder="Protected room / shelter location">
+            </label>
+            <label>
+              Active Shooter Response Methods
+              <input name="activeShooter" type="text" placeholder="Run, hide, fight; lockdown steps; local reporting actions">
+            </label>
+            <label>
+              Adverse Weather Shelter
+              <input name="weatherShelter" type="text" placeholder="Tornado / severe weather shelter location">
+            </label>
+            <label>
+              Safety Bulletin Board Location
+              <input name="bulletinBoard" type="text" placeholder="Hallway, break room, shop entry, etc.">
+            </label>
+          </div>
+
+          <label>
+            Emergency Evacuation Route Image
+            <input id="evacuation-image" type="file" accept="image/*">
+          </label>
+          <div id="evacuation-image-status" class="file-status muted">No evacuation route image uploaded yet.</div>
+          <button id="remove-evacuation-image" class="button" type="button">Remove Evacuation Image</button>
+
+          <label>
+            Emergency Equipment / Fire Protection Notes
+            <textarea name="emergencyEquipment" rows="4" placeholder="List fire extinguishers, pull stations, power cutoffs, eyewash, showers, foam systems, alarms, AEDs, and local response instructions."></textarea>
+          </label>
+
+          <div class="catalog">
+            <div class="catalog-header">
+              <div>
+                <h3>Job-Specific Module Catalog</h3>
+                <p>Select from DAFI 91-202 paragraph 14.1.3 and add only what applies to the work center.</p>
+              </div>
+              <div class="catalog-controls">
+                <select id="module-select" aria-label="Job-specific training module">
+                  <option value="">Choose a module to add</option>
+                </select>
+                <button id="add-module" class="button secondary" type="button">Add Module</button>
+              </div>
+            </div>
+            <div id="selected-modules" class="selected-modules"></div>
+          </div>
+
+          <label>
+            Training Documentation Notes
+            <textarea name="documentationNotes" rows="3" placeholder="Explain how training will be documented, where records will be maintained, and how transfer/disposition will be handled."></textarea>
+          </label>
+
+          <label>
+            Bioenvironmental Workplace Survey
+            <input id="bio-survey-file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png">
+          </label>
+          <div id="bio-survey-status" class="file-status muted">No Bioenvironmental Workplace Survey uploaded yet.</div>
+          <button id="remove-bio-survey" class="button" type="button">Remove Bioenvironmental Survey</button>
+
+          <label>
+            Annual Review Log
+            <textarea name="annualReviewLog" rows="4" placeholder="Enter annual review history, for example: 22 Nov 2025 - Supervisor review completed - reference updates."></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="section-heading">
+          <h2>Print Preview</h2>
+          <p>This page is formatted to print cleanly as a PDF from the browser.</p>
+        </div>
+        <article id="preview" class="preview"></article>
+      </section>
+    </main>
+  </div>
+
+  <template id="module-card-template">
+    <article class="module-card">
+      <div class="module-card-header">
+        <div>
+          <p class="module-code"></p>
+          <h4 class="module-title"></h4>
+        </div>
+        <button class="icon-button remove-module" type="button" aria-label="Remove module">Remove</button>
+      </div>
+      <p class="module-reference"></p>
+      <p class="module-training-source muted"></p>
+      <p class="module-training-requirement"></p>
+      <p class="module-af-source muted"></p>
+      <p class="module-af-requirement"></p>
+      <label>
+        Work Center Notes
+        <textarea class="module-notes" rows="5" placeholder="Enter local hazards, procedures, equipment, and training intervals for this module. Identify where the training is located and how it is documented. Example: DAF E-Learning is where the training is located and the training records are located in Percipio."></textarea>
+      </label>
+      <label>
+        <strong>Link to training</strong>
+        <input class="module-link" type="url" placeholder="Paste the training hyperlink here">
+      </label>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
