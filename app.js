@@ -33,17 +33,17 @@ const REQUIRED_MODULES = [
   },
   {
     id: "14.1.2.7",
-    title: "Air Force Traffic Safety Program",
+    title: "DAF Traffic Safety Program",
     reference: "Cover seat belts, helmets, speed limits, local traffic hazards, spotters, electronic device restrictions, and motorcycle training."
   },
   {
     id: "14.1.2.8",
     title: "DAFVA 91-209",
-    reference: "Identify the location and content of Air Force Occupational Safety and Health Program visual aid."
+    reference: "Identify the location and content of DAF Occupational Safety and Health Program visual aid."
   },
   {
     id: "14.1.2.9",
-    title: "AFSMS Responsibilities",
+    title: "DAFSMS Responsibilities",
     reference: "Explain how leaders, supervisors, and airmen participate in the unit safety management system and continual improvement."
   }
 ];
@@ -240,7 +240,7 @@ const OPTIONAL_MODULES = [
     title: "Risk Management Fundamentals",
     reference: "Local mishap prevention and RM awareness training",
     trainingRequirement: "Tie this to the unit safety management system, hazard identification, control selection, and local reporting/escalation expectations.",
-    trainingSource: "AFSMS / local RM program"
+    trainingSource: "DAFSMS / local RM program"
   },
   {
     id: "local-5",
@@ -648,7 +648,7 @@ function renderPreview() {
         <li><strong>PPE:</strong> Cover required protective equipment, wear/use procedures, cleaning, maintenance, storage, disposal, and supervisor notification concerns.</li>
         <li><strong>Emergency response:</strong> Cover emergency action, fire prevention, alarms, AEDs, extinguishers, evacuation, shelter, active shooter response, and emergency contact procedures.</li>
         <li><strong>Reporting:</strong> Explain unsafe condition reporting, injury/illness reporting, DAF Form 457, SAFEREP access, and anti-retaliation protections.</li>
-        <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, DAFVA 91-209 location, and AFSMS responsibilities.</li>
+        <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, DAFVA 91-209 location, and DAFSMS responsibilities.</li>
       </ul>
       ${renderHierarchyOfControls()}
     </section>
@@ -666,7 +666,7 @@ function renderPreview() {
 
     <section class="preview-section">
       <h3>References</h3>
-      <p>${formatText(meta.references, "Enter TOs, JHAs, AFIs, AFMANs, local guidance, and manufacturer instructions used by this work center.")}</p>
+      <p>${formatText(meta.references, "Enter TOs, JHAs, DAFIs, DAFMANs, local guidance, and manufacturer instructions used by this work center.")}</p>
     </section>
 
     <section class="preview-section">
