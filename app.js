@@ -266,6 +266,13 @@ const OPTIONAL_MODULES = [
     reference: "Workplace-specific limits on rings, necklaces, watches, and loose items",
     trainingRequirement: "Use local shop rules and hazard analysis to define where jewelry, loose clothing, or unsecured items are prohibited around moving parts, climbing, electrical work, or snag hazards.",
     trainingSource: "No direct OSHA 2254 training excerpt; local procedures"
+  },
+  {
+    id: "custom-other",
+    title: "Other",
+    reference: "Create a custom job-specific module for hazards or tasks not listed above.",
+    trainingRequirement: "Use this option for shop-specific tasks, hazards, or local training subjects not covered by the standard module catalog.",
+    trainingSource: "Custom module"
   }
 ];
 
@@ -293,6 +300,10 @@ const defaultState = {
     documentationNotes: "",
     annualReviewLog: ""
   },
+  unitImage: {
+    name: "",
+    dataUrl: ""
+  },
   evacuationImage: {
     name: "",
     dataUrl: ""
@@ -310,21 +321,40 @@ const preview = document.getElementById("preview");
 const moduleSelect = document.getElementById("module-select");
 const selectedModulesContainer = document.getElementById("selected-modules");
 const moduleTemplate = document.getElementById("module-card-template");
+const customModuleBuilder = document.getElementById("custom-module-builder");
+const customModuleTitle = document.getElementById("custom-module-title");
+const customModuleReference = document.getElementById("custom-module-reference");
+const addCustomModuleButton = document.getElementById("add-custom-module");
+const unitImageInput = document.getElementById("unit-image");
+const unitImageStatus = document.getElementById("unit-image-status");
+const removeUnitImageButton = document.getElementById("remove-unit-image");
+const unitImageStage = document.getElementById("unit-image-stage");
 const evacuationImageInput = document.getElementById("evacuation-image");
 const evacuationImageStatus = document.getElementById("evacuation-image-status");
 const removeEvacuationImageButton = document.getElementById("remove-evacuation-image");
 const bioSurveyInput = document.getElementById("bio-survey-file");
 const bioSurveyStatus = document.getElementById("bio-survey-status");
 const removeBioSurveyButton = document.getElementById("remove-bio-survey");
+const expandableFields = Array.from(document.querySelectorAll(".expandable-field"));
+const fieldEditorModal = document.getElementById("field-editor-modal");
+const fieldEditorTitle = document.getElementById("field-editor-title");
+const fieldEditorText = document.getElementById("field-editor-text");
+const fieldEditorCloseButton = document.getElementById("field-editor-close");
+const fieldEditorCancelButton = document.getElementById("field-editor-cancel");
+const fieldEditorSaveButton = document.getElementById("field-editor-save");
 
 let state = loadState();
+let activeExpandedField = null;
 
 populateModuleSelect();
 hydrateForm();
 renderSelectedModules();
 renderPreview();
+renderUnitImageStatus();
+renderUnitImagePreview();
 renderEvacuationImageStatus();
 renderBioSurveyStatus();
+toggleCustomModuleBuilder();
 
 form.addEventListener("input", handleFormChange);
 document.getElementById("add-module").addEventListener("click", addSelectedModule);
@@ -335,16 +365,42 @@ document.getElementById("save-browser").addEventListener("click", () => {
 document.getElementById("download-json").addEventListener("click", downloadState);
 document.getElementById("upload-json").addEventListener("change", uploadState);
 document.getElementById("print-pdf").addEventListener("click", () => window.print());
+moduleSelect.addEventListener("change", handleModuleSelection);
+addCustomModuleButton.addEventListener("click", addCustomModule);
+unitImageInput.addEventListener("change", uploadUnitImage);
+removeUnitImageButton.addEventListener("click", removeUnitImage);
 evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
 bioSurveyInput.addEventListener("change", uploadBioSurvey);
 removeBioSurveyButton.addEventListener("click", removeBioSurvey);
+expandableFields.forEach((field) => {
+  field.addEventListener("click", () => openFieldEditor(field));
+});
+fieldEditorCloseButton.addEventListener("click", closeFieldEditor);
+fieldEditorCancelButton.addEventListener("click", closeFieldEditor);
+fieldEditorSaveButton.addEventListener("click", saveExpandedField);
+fieldEditorModal.addEventListener("click", (event) => {
+  if (event.target === fieldEditorModal) {
+    closeFieldEditor();
+  }
+});
+fieldEditorText.addEventListener("keydown", (event) => {
+  if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+    event.preventDefault();
+    saveExpandedField();
+  }
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeFieldEditor();
+  }
+});
 
 function populateModuleSelect() {
   OPTIONAL_MODULES.forEach((module) => {
     const option = document.createElement("option");
     option.value = module.id;
-    option.textContent = `${module.id} - ${module.title}`;
+    option.textContent = module.title;
     moduleSelect.appendChild(option);
   });
 }
@@ -359,6 +415,10 @@ function loadState() {
     const parsed = JSON.parse(raw);
     return {
       meta: { ...defaultState.meta, ...parsed.meta },
+      unitImage: {
+        ...defaultState.unitImage,
+        ...(parsed.unitImage || {})
+      },
       evacuationImage: {
         ...defaultState.evacuationImage,
         ...(parsed.evacuationImage || {})
@@ -398,9 +458,47 @@ function handleFormChange(event) {
   renderPreview();
 }
 
+function openFieldEditor(field) {
+  activeExpandedField = field;
+  fieldEditorTitle.textContent = field.dataset.editorLabel || "Edit Field";
+  fieldEditorText.value = field.value || "";
+  fieldEditorModal.hidden = false;
+  document.body.classList.add("modal-open");
+  requestAnimationFrame(() => fieldEditorText.focus());
+}
+
+function closeFieldEditor() {
+  fieldEditorModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  activeExpandedField = null;
+}
+
+function saveExpandedField() {
+  if (!activeExpandedField) {
+    return;
+  }
+
+  const value = fieldEditorText.value;
+  activeExpandedField.value = value;
+  state.meta[activeExpandedField.name] = value;
+  saveState();
+  renderPreview();
+  closeFieldEditor();
+}
+
 function addSelectedModule() {
   const moduleId = moduleSelect.value;
-  if (!moduleId || state.selectedModules.some((module) => module.id === moduleId)) {
+  if (!moduleId) {
+    return;
+  }
+
+  if (moduleId === "custom-other") {
+    customModuleBuilder.hidden = false;
+    customModuleTitle.focus();
+    return;
+  }
+
+  if (state.selectedModules.some((module) => module.id === moduleId)) {
     return;
   }
 
@@ -421,6 +519,43 @@ function addSelectedModule() {
   renderPreview();
 }
 
+function handleModuleSelection() {
+  toggleCustomModuleBuilder();
+  if (moduleSelect.value === "custom-other") {
+    customModuleTitle.focus();
+  }
+}
+
+function toggleCustomModuleBuilder() {
+  customModuleBuilder.hidden = moduleSelect.value !== "custom-other";
+}
+
+function addCustomModule() {
+  const title = customModuleTitle.value.trim();
+  const reference = customModuleReference.value.trim();
+  if (!title) {
+    return;
+  }
+
+  state.selectedModules.push({
+    id: `custom-${Date.now()}`,
+    title,
+    reference: reference || "Local guidance",
+    trainingRequirement: "Document the local task or hazard, identify where the training is located, and explain how completion is documented.",
+    trainingSource: "Custom module",
+    notes: "",
+    link: ""
+  });
+
+  customModuleTitle.value = "";
+  customModuleReference.value = "";
+  moduleSelect.value = "";
+  customModuleBuilder.hidden = true;
+  saveState();
+  renderSelectedModules();
+  renderPreview();
+}
+
 function renderSelectedModules() {
   selectedModulesContainer.innerHTML = "";
 
@@ -436,7 +571,7 @@ function renderSelectedModules() {
     const fragment = moduleTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".module-card");
 
-    fragment.querySelector(".module-code").textContent = module.id;
+    fragment.querySelector(".module-code").textContent = "";
     fragment.querySelector(".module-title").textContent = module.title;
     fragment.querySelector(".module-reference").textContent = module.reference;
     fragment.querySelector(".module-training-source").textContent = `Training basis: ${module.trainingSource || "Local guidance"}`;
@@ -473,13 +608,14 @@ function renderSelectedModules() {
 
 function renderPreview() {
   const meta = state.meta;
-  const requiredTags = REQUIRED_MODULES.map((module) => `<span class="tag">${escapeHtml(module.id)} ${escapeHtml(module.title)}</span>`).join("");
+  const requiredTags = REQUIRED_MODULES.map((module) => `<span class="tag">${escapeHtml(module.title)}</span>`).join("");
   const optionalTags = state.selectedModules.length
-    ? state.selectedModules.map((module) => `<span class="tag">${escapeHtml(module.id)} ${escapeHtml(module.title)}</span>`).join("")
+    ? state.selectedModules.map((module) => `<span class="tag">${escapeHtml(module.title)}</span>`).join("")
     : `<p class="muted">No job-specific modules selected yet.</p>`;
 
   preview.innerHTML = `
     <header class="preview-header">
+      ${renderUnitImageForPreview()}
       <div class="preview-title">Job Safety Training Outline</div>
       <div class="preview-subtitle">Built to align with DAFI 91-202 paragraph 14.1 requirements.</div>
       <div class="preview-grid">
@@ -509,6 +645,7 @@ function renderPreview() {
         <li><strong>Reporting:</strong> Explain unsafe condition reporting, injury/illness reporting, AF Form 457, ASAP access, and anti-retaliation protections.</li>
         <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, AFVA 91-209 location, and AFSMS responsibilities.</li>
       </ul>
+      ${renderHierarchyOfControls()}
     </section>
 
     <section class="preview-section">
@@ -530,12 +667,12 @@ function renderPreview() {
     <section class="preview-section">
       <h3>Emergency Information</h3>
       <ul>
-        <li><strong>Emergency Numbers:</strong> ${escapeHtml(meta.emergencyNumbers || "Not entered")}</li>
-        <li><strong>Medical Facility / Treatment:</strong> ${escapeHtml(meta.medicalFacility || "Not entered")}</li>
-        <li><strong>Evacuation / Muster Point:</strong> ${escapeHtml(meta.evacuation || "Not entered")}</li>
-        <li><strong>Shelter in Place:</strong> ${escapeHtml(meta.shelter || "Not entered")}</li>
-        <li><strong>Active Shooter Response Methods:</strong> ${escapeHtml(meta.activeShooter || "Not entered")}</li>
-        <li><strong>Adverse Weather Shelter:</strong> ${escapeHtml(meta.weatherShelter || "Not entered")}</li>
+        <li><strong>Emergency Numbers:</strong><br>${formatText(meta.emergencyNumbers, "Not entered")}</li>
+        <li><strong>Medical Facility / Treatment:</strong><br>${formatText(meta.medicalFacility, "Not entered")}</li>
+        <li><strong>Evacuation / Muster Point:</strong><br>${formatText(meta.evacuation, "Not entered")}</li>
+        <li><strong>Shelter in Place:</strong><br>${formatText(meta.shelter, "Not entered")}</li>
+        <li><strong>Active Shooter Response Methods:</strong><br>${formatText(meta.activeShooter, "Not entered")}</li>
+        <li><strong>Adverse Weather Shelter:</strong><br>${formatText(meta.weatherShelter, "Not entered")}</li>
       </ul>
       ${renderEvacuationImage()}
     </section>
@@ -577,6 +714,34 @@ function renderPreview() {
   `;
 }
 
+function renderHierarchyOfControls() {
+  return `
+    <div class="hoc-block">
+      <div class="hoc-header">
+        <h4>Hierarchy of Controls</h4>
+        <p>Apply these controls from most effective to least effective when reducing workplace hazards under DAFI 91-202 paragraph 14.1.2.1.4.</p>
+      </div>
+      <div class="hoc-visual">
+        <div class="hoc-scale">
+          <span>Most effective</span>
+          <div class="hoc-scale-bar"></div>
+          <span>Least effective</span>
+        </div>
+        <div class="hoc-pyramid" aria-label="Hierarchy of Controls">
+          <div class="hoc-level hoc-elimination">Elimination<span>Physically remove the hazard</span></div>
+          <div class="hoc-level hoc-substitution">Substitution<span>Replace the hazard</span></div>
+          <div class="hoc-level hoc-engineering">Engineering Controls<span>Isolate people from the hazard</span></div>
+          <div class="hoc-level hoc-administrative">Administrative Controls<span>Change the way people work</span></div>
+          <div class="hoc-level hoc-ppe">PPE<span>Protect the worker with personal protective equipment</span></div>
+        </div>
+      </div>
+      <div class="hoc-notes compact">
+        <p><strong>Use the highest level of control feasible first.</strong> PPE should protect workers only after elimination, substitution, engineering, and administrative controls have been considered.</p>
+      </div>
+    </div>
+  `;
+}
+
 function renderOptionalModuleDetails() {
   if (!state.selectedModules.length) {
     return "";
@@ -584,7 +749,7 @@ function renderOptionalModuleDetails() {
 
   const items = state.selectedModules.map((module) => `
     <li>
-      <strong>${escapeHtml(module.id)} ${escapeHtml(module.title)}:</strong>
+      <strong>${escapeHtml(module.title)}:</strong>
       ${escapeHtml(module.notes || buildModuleSummary(module))}
       ${renderModuleLink(module)}
     </li>
@@ -610,6 +775,68 @@ function buildModuleSummary(module) {
   ].filter(Boolean);
 
   return parts.join(" ");
+}
+
+function uploadUnitImage(event) {
+  const [file] = event.target.files || [];
+  if (!file) {
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    state.unitImage = {
+      name: file.name,
+      dataUrl: String(reader.result || "")
+    };
+    saveState();
+    renderUnitImageStatus();
+    renderUnitImagePreview();
+    renderPreview();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeUnitImage() {
+  state.unitImage = { ...defaultState.unitImage };
+  unitImageInput.value = "";
+  saveState();
+  renderUnitImageStatus();
+  renderUnitImagePreview();
+  renderPreview();
+}
+
+function renderUnitImageStatus() {
+  if (!state.unitImage.dataUrl) {
+    unitImageStatus.textContent = "No unit image uploaded yet.";
+    return;
+  }
+
+  unitImageStatus.textContent = `Loaded unit image: ${state.unitImage.name || "uploaded image"}`;
+}
+
+function renderUnitImagePreview() {
+  if (!state.unitImage.dataUrl) {
+    unitImageStage.innerHTML = "Unit image will appear here.";
+    unitImageStage.classList.add("muted");
+    return;
+  }
+
+  const markup = `<img src="${state.unitImage.dataUrl}" alt="Unit image preview">`;
+  unitImageStage.classList.remove("muted");
+  unitImageStage.innerHTML = markup;
+}
+
+function renderUnitImageForPreview() {
+  if (!state.unitImage.dataUrl) {
+    return "";
+  }
+
+  return `
+    <div class="preview-unit-image-wrap">
+      <img class="preview-unit-image" src="${state.unitImage.dataUrl}" alt="Unit emblem or image">
+    </div>
+  `;
 }
 
 function renderEvacuationImage() {

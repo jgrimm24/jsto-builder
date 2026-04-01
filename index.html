@@ -13,16 +13,24 @@
   <div class="page-shell">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">DAFI 91-202 Paragraph 14.1</p>
         <h1>Job Safety Training Outline Builder</h1>
-        <p class="hero-text">Build a work-center-specific JSTO with required DAFI topics.</p>
+        <p class="hero-text">Build a work-center-specific JSTO with IAW DAFI 91-202.</p>
       </div>
-      <div class="hero-actions">
-        <button id="print-pdf" class="button primary" type="button">Export PDF</button>
-        <button id="save-browser" class="button" type="button">Save in Browser</button>
-        <button id="download-json" class="button" type="button">Download JSON</button>
-        <label class="button file-button" for="upload-json">Load JSON</label>
-        <input id="upload-json" type="file" accept="application/json">
+      <div id="unit-image-stage" class="unit-image-stage muted">Unit image will appear here.</div>
+      <div class="hero-side">
+        <div class="hero-branding">
+          <label class="unit-image-upload">
+            <span>Unit Image</span>
+            <input id="unit-image" type="file" accept="image/*">
+          </label>
+          <div id="unit-image-status" class="file-status muted">No unit image uploaded yet.</div>
+          <button id="remove-unit-image" class="button" type="button">Remove Unit Image</button>
+        </div>
+        <div class="hero-actions">
+          <button id="print-pdf" class="button primary" type="button">Export PDF</button>
+          <button id="save-browser" class="button" type="button">Save in Browser</button>
+          <input id="upload-json" type="file" accept="application/json">
+        </div>
       </div>
     </header>
 
@@ -87,31 +95,45 @@
           <div class="form-grid">
             <label>
               Emergency Numbers
-              <input name="emergencyNumbers" type="text" placeholder="911, on-base dispatch, fire desk, etc.">
+              <textarea class="expandable-field" name="emergencyNumbers" rows="2" data-editor-label="Emergency Numbers" placeholder="911
+On-base dispatch
+Fire desk
+Supervisor cell"></textarea>
             </label>
             <label>
               Medical Facility
-              <input name="medicalFacility" type="text" placeholder="Clinic / hospital / after-hours process">
+              <textarea class="expandable-field" name="medicalFacility" rows="2" data-editor-label="Medical Facility" placeholder="Clinic name
+After-hours hospital
+Treatment process"></textarea>
             </label>
             <label>
               Evacuation Route / Muster Point
-              <input name="evacuation" type="text" placeholder="Route and meetup location">
+              <textarea class="expandable-field" name="evacuation" rows="2" data-editor-label="Evacuation Route / Muster Point" placeholder="Primary route
+Alternate route
+Meetup location"></textarea>
             </label>
             <label>
               Shelter in Place
-              <input name="shelter" type="text" placeholder="Protected room / shelter location">
+              <textarea class="expandable-field" name="shelter" rows="2" data-editor-label="Shelter in Place" placeholder="Protected room
+Door / room number"></textarea>
             </label>
             <label>
               Active Shooter Response Methods
-              <input name="activeShooter" type="text" placeholder="Run, hide, fight; lockdown steps; local reporting actions">
+              <textarea class="expandable-field" name="activeShooter" rows="2" data-editor-label="Active Shooter Response Methods" placeholder="Run
+Hide
+Fight
+Local reporting actions"></textarea>
             </label>
             <label>
               Adverse Weather Shelter
-              <input name="weatherShelter" type="text" placeholder="Tornado / severe weather shelter location">
+              <textarea class="expandable-field" name="weatherShelter" rows="2" data-editor-label="Adverse Weather Shelter" placeholder="Tornado shelter
+Severe weather shelter"></textarea>
             </label>
             <label>
               Safety Bulletin Board Location
-              <input name="bulletinBoard" type="text" placeholder="Hallway, break room, shop entry, etc.">
+              <textarea class="expandable-field" name="bulletinBoard" rows="2" data-editor-label="Safety Bulletin Board Location" placeholder="Hallway
+Break room
+Shop entry"></textarea>
             </label>
           </div>
 
@@ -139,6 +161,17 @@
                 </select>
                 <button id="add-module" class="button secondary" type="button">Add Module</button>
               </div>
+            </div>
+            <div id="custom-module-builder" class="custom-module-builder" hidden>
+              <label>
+                Custom Module Title
+                <input id="custom-module-title" type="text" placeholder="e.g. Shop-specific hazard or task">
+              </label>
+              <label>
+                Custom Module Reference
+                <input id="custom-module-reference" type="text" placeholder="e.g. Local OI, TO, JHA, manufacturer guidance">
+              </label>
+              <button id="add-custom-module" class="button secondary" type="button">Add Custom Module</button>
             </div>
             <div id="selected-modules" class="selected-modules"></div>
           </div>
@@ -175,10 +208,7 @@
   <template id="module-card-template">
     <article class="module-card">
       <div class="module-card-header">
-        <div>
-          <p class="module-code"></p>
-          <h4 class="module-title"></h4>
-        </div>
+        <h4 class="module-title"></h4>
         <button class="icon-button remove-module" type="button" aria-label="Remove module">Remove</button>
       </div>
       <p class="module-reference"></p>
@@ -196,6 +226,20 @@
       </label>
     </article>
   </template>
+
+  <div id="field-editor-modal" class="field-editor-modal" hidden>
+    <div class="field-editor-panel" role="dialog" aria-modal="true" aria-labelledby="field-editor-title">
+      <div class="field-editor-header">
+        <h3 id="field-editor-title">Edit Field</h3>
+        <button id="field-editor-close" class="icon-button" type="button" aria-label="Close editor">Close</button>
+      </div>
+      <textarea id="field-editor-text" rows="12" placeholder="Enter one item per line."></textarea>
+      <div class="field-editor-actions">
+        <button id="field-editor-cancel" class="button" type="button">Cancel</button>
+        <button id="field-editor-save" class="button secondary" type="button">Save</button>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
