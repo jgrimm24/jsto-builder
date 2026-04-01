@@ -577,7 +577,6 @@ function renderSelectedModules() {
     const fragment = moduleTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".module-card");
 
-    fragment.querySelector(".module-code").textContent = "";
     fragment.querySelector(".module-title").textContent = module.title;
     fragment.querySelector(".module-reference").textContent = module.reference;
     fragment.querySelector(".module-training-source").textContent = `Training basis: ${module.trainingSource || "Local guidance"}`;
