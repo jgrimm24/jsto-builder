@@ -19,7 +19,7 @@ const REQUIRED_MODULES = [
   {
     id: "14.1.2.4",
     title: "Reporting Unsafe Conditions",
-    reference: "Explain immediate reporting expectations, anti-retaliation protections, AF Form 457, and ASAP access."
+    reference: "Explain immediate reporting expectations, anti-retaliation protections, DAF Form 457, and SAFEREP access."
   },
   {
     id: "14.1.2.5",
@@ -38,7 +38,7 @@ const REQUIRED_MODULES = [
   },
   {
     id: "14.1.2.8",
-    title: "AFVA 91-209",
+    title: "DAFVA 91-209",
     reference: "Identify the location and content of Air Force Occupational Safety and Health Program visual aid."
   },
   {
@@ -647,8 +647,8 @@ function renderPreview() {
         <li><strong>Hazards and controls:</strong> Address task hazards, environmental hazards, governing instructions, and hierarchy of controls including elimination, engineering, substitution, and administrative controls.</li>
         <li><strong>PPE:</strong> Cover required protective equipment, wear/use procedures, cleaning, maintenance, storage, disposal, and supervisor notification concerns.</li>
         <li><strong>Emergency response:</strong> Cover emergency action, fire prevention, alarms, AEDs, extinguishers, evacuation, shelter, active shooter response, and emergency contact procedures.</li>
-        <li><strong>Reporting:</strong> Explain unsafe condition reporting, injury/illness reporting, AF Form 457, ASAP access, and anti-retaliation protections.</li>
-        <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, AFVA 91-209 location, and AFSMS responsibilities.</li>
+        <li><strong>Reporting:</strong> Explain unsafe condition reporting, injury/illness reporting, DAF Form 457, SAFEREP access, and anti-retaliation protections.</li>
+        <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, DAFVA 91-209 location, and AFSMS responsibilities.</li>
       </ul>
       ${renderHierarchyOfControls()}
     </section>
