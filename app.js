@@ -362,8 +362,14 @@ document.getElementById("save-browser").addEventListener("click", () => {
   saveState();
   window.alert("JSTO saved in this browser.");
 });
-document.getElementById("download-json").addEventListener("click", downloadState);
-document.getElementById("upload-json").addEventListener("change", uploadState);
+const downloadJsonButton = document.getElementById("download-json");
+if (downloadJsonButton) {
+  downloadJsonButton.addEventListener("click", downloadState);
+}
+const uploadJsonInput = document.getElementById("upload-json");
+if (uploadJsonInput) {
+  uploadJsonInput.addEventListener("change", uploadState);
+}
 document.getElementById("print-pdf").addEventListener("click", () => window.print());
 moduleSelect.addEventListener("change", handleModuleSelection);
 addCustomModuleButton.addEventListener("click", addCustomModule);
