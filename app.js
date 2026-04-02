@@ -837,7 +837,8 @@ function renderRequiredDocuments() {
     {
       label: "DAFVA 91-209",
       href: "https://static.e-publishing.af.mil/production/1/af_se/publication/dafva91-209/dafva91-209.pdf",
-      description: "Department of the Air Force Occupational Safety and Health Program visual aid. Keep this available so personnel know the core safety rights, responsibilities, and reporting expectations."
+      description: "Department of the Air Force Occupational Safety and Health Program visual aid. Keep this available so personnel know the core safety rights, responsibilities, and reporting expectations.",
+      note: "Units must fill in their own DAFVA 91-209 posting/location information."
     },
     {
       label: "LS-201",
@@ -849,7 +850,7 @@ function renderRequiredDocuments() {
   const items = docs.map((doc) => `
     <li>
       <a href="${doc.href}" target="_blank" rel="noreferrer">${doc.label}</a><br>
-      <span class="muted">${doc.description}</span>
+      <span class="muted">${doc.description}</span>${doc.note ? `<br><span class="muted"><strong>Unit note:</strong> ${doc.note}</span>` : ""}
     </li>
   `).join("");
 
