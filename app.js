@@ -754,14 +754,33 @@ function renderHierarchyOfControls() {
 
 function renderRequiredDocuments() {
   const docs = [
-    { label: "CA-10", href: "required-docs/CA-10.pdf" },
-    { label: "DAF Form 457", href: "required-docs/daf457.pdf" },
-    { label: "DAFVA 91-209", href: "required-docs/DAFVA91-209_17%20Sep%2024.pdf" },
-    { label: "LS-201", href: "required-docs/ls-201.pdf" }
+    {
+      label: "CA-10",
+      href: "required-docs/CA-10.pdf",
+      description: "What a Federal Employee Should Do When Injured at Work. Use this as the workplace reference for employee injury reporting and follow-up actions."
+    },
+    {
+      label: "DAF Form 457",
+      href: "required-docs/daf457.pdf",
+      description: "Hazard Report. Use this form to identify, document, and elevate unsafe conditions, equipment, or procedures in the workplace."
+    },
+    {
+      label: "DAFVA 91-209",
+      href: "required-docs/DAFVA91-209_17%20Sep%2024.pdf",
+      description: "Department of the Air Force Occupational Safety and Health Program visual aid. Keep this available so personnel know the core safety rights, responsibilities, and reporting expectations."
+    },
+    {
+      label: "LS-201",
+      href: "required-docs/ls-201.pdf",
+      description: "Notice of Employee’s Injury or Death (Non-Appropriated Funds). Use this when applicable for NAF employee injury or death reporting."
+    }
   ];
 
   const items = docs.map((doc) => `
-    <li><a href="${doc.href}" target="_blank" rel="noreferrer">${doc.label}</a></li>
+    <li>
+      <a href="${doc.href}" target="_blank" rel="noreferrer">${doc.label}</a><br>
+      <span class="muted">${doc.description}</span>
+    </li>
   `).join("");
 
   return `<ul>${items}</ul>`;
