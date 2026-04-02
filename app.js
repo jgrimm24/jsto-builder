@@ -654,6 +654,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>DAFSMS Framework</h3>
+      ${renderDafsmsSection()}
+    </section>
+
+    <section class="preview-section">
       <h3>Work Area Hazard Analysis</h3>
       <p>${formatText(meta.hazardAnalysis, "Summarize work area hazards, BE survey items, JHAs, JSAs, and other written guidance that support this JSTO.")}</p>
     </section>
@@ -747,6 +752,74 @@ function renderHierarchyOfControls() {
       </div>
       <div class="hoc-notes compact">
         <p><strong>Use the highest level of control feasible first.</strong> PPE should protect workers only after elimination, substitution, engineering, and administrative controls have been considered.</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderDafsmsSection() {
+  return `
+    <div class="dafsms-block">
+      <div class="dafsms-intro">
+        <p><strong>DAFSMS</strong> uses four pillars and the DAFSMS framework to structure the mishap prevention program through continuous improvement and the Plan-Do-Check-Act model.</p>
+      </div>
+
+      <div class="dafsms-pillars-card">
+        <div class="dafsms-roof">Safeguard Airmen and Guardians<br>Protect Resources<br>Preserve Combat Capability</div>
+        <div class="dafsms-columns" aria-label="DAFSMS pillars">
+          <div class="dafsms-column">Policy and Leadership</div>
+          <div class="dafsms-column">Risk Management</div>
+          <div class="dafsms-column">Assurance</div>
+          <div class="dafsms-column">Promotion, Education, and Training</div>
+        </div>
+        <div class="dafsms-base">Department of the Air Force Safety Management System</div>
+      </div>
+
+      <div class="dafsms-framework-grid" aria-label="Department of the Air Force SMS Framework">
+        <article class="dafsms-panel-card">
+          <h4>Policy and Leadership</h4>
+          <ul>
+            <li>Leadership engagement and direction</li>
+            <li>Roles, responsibilities, and relationships</li>
+            <li>Procedures, controls, and documentation</li>
+            <li>Safety and quality goals and objectives</li>
+          </ul>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Risk Management</h4>
+          <ul>
+            <li>Hazard identification and task analysis</li>
+            <li>Hazard assessment and risk levels</li>
+            <li>Controls, decisions, and prioritization</li>
+            <li>Implementation, supervision, and feedback</li>
+          </ul>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Assurance</h4>
+          <ul>
+            <li>Performance and control effectiveness</li>
+            <li>Data acquisition and inspections</li>
+            <li>Reports, metrics, and improvement opportunities</li>
+            <li>Change management and continuous improvement</li>
+          </ul>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Promotion, Education, and Training</h4>
+          <ul>
+            <li>Safety culture and reporting</li>
+            <li>Training, education, and competency</li>
+            <li>Internal and external communication</li>
+            <li>Information access and awareness</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="dafsms-notes">
+        <p><strong>1. Purpose.</strong> DAFSMS utilizes the four pillars and the DAFSMS framework to structure the mishap prevention program, identify and mitigate hazards and risk, and reduce injuries, illnesses, fatalities, and property damage through PDCA continuous improvement.</p>
+        <p><strong>2. Policy and Leadership.</strong> Safety policy provides the structure for a proactive mishap prevention program, and active leadership involvement is critical at all levels of command.</p>
+        <p><strong>3. Risk Management.</strong> Integrate RM into all safety-related activities to enhance mishap prevention and sustain a proactive safety culture. Refer to DAFI 90-802 and DAFPAM 90-803 for additional detail.</p>
+        <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented, monitored, reviewed, and continuously improved.</p>
+        <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians receive safety awareness information, ongoing training, effective risk controls, and active engagement in the mishap prevention program.</p>
       </div>
     </div>
   `;
