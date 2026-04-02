@@ -836,7 +836,7 @@ function renderRequiredDocuments() {
     },
     {
       label: "DAFVA 91-209",
-      href: "required-docs/DAFVA91-209_17%20Sep%2024.pdf",
+      href: "https://static.e-publishing.af.mil/production/1/af_se/publication/dafva91-209/dafva91-209.pdf",
       description: "Department of the Air Force Occupational Safety and Health Program visual aid. Keep this available so personnel know the core safety rights, responsibilities, and reporting expectations."
     },
     {
