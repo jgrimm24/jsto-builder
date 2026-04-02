@@ -670,6 +670,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>Required Documents</h3>
+      ${renderRequiredDocuments()}
+    </section>
+
+    <section class="preview-section">
       <h3>Emergency Information</h3>
       <ul>
         <li><strong>Emergency Numbers:</strong><br>${formatText(meta.emergencyNumbers, "Not entered")}</li>
@@ -745,6 +750,21 @@ function renderHierarchyOfControls() {
       </div>
     </div>
   `;
+}
+
+function renderRequiredDocuments() {
+  const docs = [
+    { label: "CA-10", href: "required-docs/CA-10.pdf" },
+    { label: "DAF Form 457", href: "required-docs/daf457.pdf" },
+    { label: "DAFVA 91-209", href: "required-docs/DAFVA91-209_17%20Sep%2024.pdf" },
+    { label: "LS-201", href: "required-docs/ls-201.pdf" }
+  ];
+
+  const items = docs.map((doc) => `
+    <li><a href="${doc.href}" target="_blank" rel="noreferrer">${doc.label}</a></li>
+  `).join("");
+
+  return `<ul>${items}</ul>`;
 }
 
 function renderOptionalModuleDetails() {
