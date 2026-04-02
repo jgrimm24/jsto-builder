@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260401-3">
+  <link rel="stylesheet" href="styles.css?v=20260401-4">
 </head>
 <body>
   <div class="page-shell">
@@ -91,6 +91,13 @@
             Work Area Hazard Analysis / JHA Notes
             <textarea name="hazardAnalysis" rows="4" placeholder="Summarize work area hazards, BE survey findings, JHAs, JSAs, manufacturer instructions, and hierarchy of controls used for this shop."></textarea>
           </label>
+
+          <label>
+            Optional DAFSMS Reference Image
+            <input id="dafsms-image" type="file" accept="image/*">
+          </label>
+          <div id="dafsms-image-status" class="file-status muted">No DAFSMS reference image uploaded yet.</div>
+          <button id="remove-dafsms-image" class="button" type="button">Remove DAFSMS Image</button>
 
           <div class="form-grid">
             <label>
@@ -241,6 +248,6 @@ Shop entry"></textarea>
     </div>
   </div>
 
-  <script src="app.js?v=20260401-3"></script>
+  <script src="app.js?v=20260401-4"></script>
 </body>
 </html>

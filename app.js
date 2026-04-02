@@ -304,6 +304,10 @@ const defaultState = {
     name: "",
     dataUrl: ""
   },
+  dafsmsImage: {
+    name: "",
+    dataUrl: ""
+  },
   evacuationImage: {
     name: "",
     dataUrl: ""
@@ -329,6 +333,9 @@ const unitImageInput = document.getElementById("unit-image");
 const unitImageStatus = document.getElementById("unit-image-status");
 const removeUnitImageButton = document.getElementById("remove-unit-image");
 const unitImageStage = document.getElementById("unit-image-stage");
+const dafsmsImageInput = document.getElementById("dafsms-image");
+const dafsmsImageStatus = document.getElementById("dafsms-image-status");
+const removeDafsmsImageButton = document.getElementById("remove-dafsms-image");
 const evacuationImageInput = document.getElementById("evacuation-image");
 const evacuationImageStatus = document.getElementById("evacuation-image-status");
 const removeEvacuationImageButton = document.getElementById("remove-evacuation-image");
@@ -352,6 +359,7 @@ renderSelectedModules();
 renderPreview();
 renderUnitImageStatus();
 renderUnitImagePreview();
+renderDafsmsImageStatus();
 renderEvacuationImageStatus();
 renderBioSurveyStatus();
 toggleCustomModuleBuilder();
@@ -375,6 +383,8 @@ moduleSelect.addEventListener("change", handleModuleSelection);
 addCustomModuleButton.addEventListener("click", addCustomModule);
 unitImageInput.addEventListener("change", uploadUnitImage);
 removeUnitImageButton.addEventListener("click", removeUnitImage);
+dafsmsImageInput.addEventListener("change", uploadDafsmsImage);
+removeDafsmsImageButton.addEventListener("click", removeDafsmsImage);
 evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
 bioSurveyInput.addEventListener("change", uploadBioSurvey);
@@ -424,6 +434,10 @@ function loadState() {
       unitImage: {
         ...defaultState.unitImage,
         ...(parsed.unitImage || {})
+      },
+      dafsmsImage: {
+        ...defaultState.dafsmsImage,
+        ...(parsed.dafsmsImage || {})
       },
       evacuationImage: {
         ...defaultState.evacuationImage,
@@ -763,65 +777,47 @@ function renderDafsmsSection() {
       <div class="dafsms-intro">
         <p><strong>DAFSMS</strong> uses four pillars and the DAFSMS framework to structure the mishap prevention program through continuous improvement and the Plan-Do-Check-Act model.</p>
       </div>
-
-      <div class="dafsms-pillars-card">
-        <div class="dafsms-roof">Safeguard Airmen and Guardians<br>Protect Resources<br>Preserve Combat Capability</div>
-        <div class="dafsms-columns" aria-label="DAFSMS pillars">
-          <div class="dafsms-column">Policy and Leadership</div>
-          <div class="dafsms-column">Risk Management</div>
-          <div class="dafsms-column">Assurance</div>
-          <div class="dafsms-column">Promotion, Education, and Training</div>
-        </div>
-        <div class="dafsms-base">Department of the Air Force Safety Management System</div>
-      </div>
-
+      ${renderDafsmsImage()}
       <div class="dafsms-framework-grid" aria-label="Department of the Air Force SMS Framework">
         <article class="dafsms-panel-card">
           <h4>Policy and Leadership</h4>
-          <ul>
-            <li>Leadership engagement and direction</li>
-            <li>Roles, responsibilities, and relationships</li>
-            <li>Procedures, controls, and documentation</li>
-            <li>Safety and quality goals and objectives</li>
-          </ul>
+          <p>Provides the structure for a proactive mishap prevention program through policy, active leadership engagement, and clearly defined responsibilities at every level.</p>
         </article>
         <article class="dafsms-panel-card">
           <h4>Risk Management</h4>
-          <ul>
-            <li>Hazard identification and task analysis</li>
-            <li>Hazard assessment and risk levels</li>
-            <li>Controls, decisions, and prioritization</li>
-            <li>Implementation, supervision, and feedback</li>
-          </ul>
+          <p>Integrates hazard identification, assessment, and control decisions into daily operations to reduce mishaps and strengthen safety culture.</p>
         </article>
         <article class="dafsms-panel-card">
           <h4>Assurance</h4>
-          <ul>
-            <li>Performance and control effectiveness</li>
-            <li>Data acquisition and inspections</li>
-            <li>Reports, metrics, and improvement opportunities</li>
-            <li>Change management and continuous improvement</li>
-          </ul>
+          <p>Uses evaluations, monitoring, reviews, and data to confirm the mishap prevention program is implemented and improving over time.</p>
         </article>
         <article class="dafsms-panel-card">
           <h4>Promotion, Education, and Training</h4>
-          <ul>
-            <li>Safety culture and reporting</li>
-            <li>Training, education, and competency</li>
-            <li>Internal and external communication</li>
-            <li>Information access and awareness</li>
-          </ul>
+          <p>Ensures Airmen and Guardians receive safety awareness information, embedded training, effective risk controls, and active engagement in mishap prevention.</p>
         </article>
       </div>
 
       <div class="dafsms-notes">
-        <p><strong>1. Purpose.</strong> DAFSMS utilizes the four pillars and the DAFSMS framework to structure the mishap prevention program, identify and mitigate hazards and risk, and reduce injuries, illnesses, fatalities, and property damage through PDCA continuous improvement.</p>
-        <p><strong>2. Policy and Leadership.</strong> Safety policy provides the structure for a proactive mishap prevention program, and active leadership involvement is critical at all levels of command.</p>
-        <p><strong>3. Risk Management.</strong> Integrate RM into all safety-related activities to enhance mishap prevention and sustain a proactive safety culture. Refer to DAFI 90-802 and DAFPAM 90-803 for additional detail.</p>
-        <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented, monitored, reviewed, and continuously improved.</p>
-        <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians receive safety awareness information, ongoing training, effective risk controls, and active engagement in the mishap prevention program.</p>
+        <p><strong>1. Purpose.</strong> DAFSMS utilizes the four pillars and the DAFSMS framework to structure the mishap prevention program. Activities associated with each pillar set policy, identify and mitigate hazards and risk, and reduce the occurrence and cost of injuries, illnesses, fatalities, and property damage through continuous improvement and the PDCA model.</p>
+        <p><strong>2. Policy and Leadership.</strong> Safety policy provides the structure for a sound and proactive mishap prevention program. Active leadership involvement in implementation and execution is critical at all levels of command.</p>
+        <p><strong>3. Risk Management.</strong> Ensure the RM process is fully integrated into all safety-related activities to enhance mishap prevention and sustain a proactive safety culture. Refer to DAFI 90-802 and DAFPAM 90-803 for additional detail.</p>
+        <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented and guides continuous improvement through evaluation, monitoring, and review.</p>
+        <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians are provided safety awareness information, organizations have embedded ongoing training into the mishap prevention program, effective risk controls are implemented, and personnel remain actively engaged.</p>
       </div>
     </div>
+  `;
+}
+
+function renderDafsmsImage() {
+  if (!state.dafsmsImage.dataUrl) {
+    return '';
+  }
+
+  return `
+    <figure class="dafsms-image-wrap">
+      <img class="dafsms-image" src="${state.dafsmsImage.dataUrl}" alt="Optional DAFSMS reference image">
+      <figcaption class="muted">Optional local DAFSMS reference image.</figcaption>
+    </figure>
   `;
 }
 
@@ -954,6 +950,42 @@ function renderUnitImageForPreview() {
       <img class="preview-unit-image" src="${state.unitImage.dataUrl}" alt="Unit emblem or image">
     </div>
   `;
+}
+
+function uploadDafsmsImage(event) {
+  const [file] = event.target.files || [];
+  if (!file) {
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    state.dafsmsImage = {
+      name: file.name,
+      dataUrl: String(reader.result || "")
+    };
+    saveState();
+    renderDafsmsImageStatus();
+    renderPreview();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeDafsmsImage() {
+  state.dafsmsImage = { ...defaultState.dafsmsImage };
+  dafsmsImageInput.value = "";
+  saveState();
+  renderDafsmsImageStatus();
+  renderPreview();
+}
+
+function renderDafsmsImageStatus() {
+  if (!state.dafsmsImage.dataUrl) {
+    dafsmsImageStatus.textContent = "No DAFSMS reference image uploaded yet.";
+    return;
+  }
+
+  dafsmsImageStatus.textContent = `Loaded DAFSMS image: ${state.dafsmsImage.name || "uploaded image"}`;
 }
 
 function renderEvacuationImage() {
@@ -1095,6 +1127,14 @@ function uploadState(event) {
       const parsed = JSON.parse(reader.result);
       state = {
         meta: { ...defaultState.meta, ...parsed.meta },
+        unitImage: {
+          ...defaultState.unitImage,
+          ...(parsed.unitImage || {})
+        },
+        dafsmsImage: {
+          ...defaultState.dafsmsImage,
+          ...(parsed.dafsmsImage || {})
+        },
         evacuationImage: {
           ...defaultState.evacuationImage,
           ...(parsed.evacuationImage || {})
@@ -1107,6 +1147,9 @@ function uploadState(event) {
       };
       hydrateForm();
       renderSelectedModules();
+      renderUnitImageStatus();
+      renderUnitImagePreview();
+      renderDafsmsImageStatus();
       renderEvacuationImageStatus();
       renderBioSurveyStatus();
       renderPreview();
