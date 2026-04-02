@@ -150,6 +150,13 @@ Shop entry"></textarea>
             <textarea name="emergencyEquipment" rows="4" placeholder="List fire extinguishers, pull stations, power cutoffs, eyewash, showers, foam systems, alarms, AEDs, and local response instructions."></textarea>
           </label>
 
+          <label>
+            Emergency Equipment / AED Maps or Photos
+            <input id="emergency-equipment-files" type="file" accept="image/*,.pdf" multiple>
+          </label>
+          <div id="emergency-equipment-files-status" class="file-status muted">No emergency equipment maps or photos uploaded yet.</div>
+          <button id="remove-emergency-equipment-files" class="button" type="button">Remove Emergency Equipment Files</button>
+
           <div class="catalog">
             <div class="catalog-header">
               <div>

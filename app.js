@@ -312,6 +312,7 @@ const defaultState = {
     name: "",
     dataUrl: ""
   },
+  emergencyEquipmentFiles: [],
   bioSurvey: {
     name: "",
     dataUrl: "",
@@ -339,6 +340,9 @@ const removeDafsmsImageButton = document.getElementById("remove-dafsms-image");
 const evacuationImageInput = document.getElementById("evacuation-image");
 const evacuationImageStatus = document.getElementById("evacuation-image-status");
 const removeEvacuationImageButton = document.getElementById("remove-evacuation-image");
+const emergencyEquipmentFilesInput = document.getElementById("emergency-equipment-files");
+const emergencyEquipmentFilesStatus = document.getElementById("emergency-equipment-files-status");
+const removeEmergencyEquipmentFilesButton = document.getElementById("remove-emergency-equipment-files");
 const bioSurveyInput = document.getElementById("bio-survey-file");
 const bioSurveyStatus = document.getElementById("bio-survey-status");
 const removeBioSurveyButton = document.getElementById("remove-bio-survey");
@@ -361,6 +365,7 @@ renderUnitImageStatus();
 renderUnitImagePreview();
 renderDafsmsImageStatus();
 renderEvacuationImageStatus();
+renderEmergencyEquipmentFilesStatus();
 renderBioSurveyStatus();
 toggleCustomModuleBuilder();
 
@@ -387,6 +392,8 @@ dafsmsImageInput.addEventListener("change", uploadDafsmsImage);
 removeDafsmsImageButton.addEventListener("click", removeDafsmsImage);
 evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
+emergencyEquipmentFilesInput.addEventListener("change", uploadEmergencyEquipmentFiles);
+removeEmergencyEquipmentFilesButton.addEventListener("click", removeEmergencyEquipmentFiles);
 bioSurveyInput.addEventListener("change", uploadBioSurvey);
 removeBioSurveyButton.addEventListener("click", removeBioSurvey);
 expandableFields.forEach((field) => {
@@ -443,6 +450,7 @@ function loadState() {
         ...defaultState.evacuationImage,
         ...(parsed.evacuationImage || {})
       },
+      emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
       bioSurvey: {
         ...defaultState.bioSurvey,
         ...(parsed.bioSurvey || {})
@@ -710,6 +718,7 @@ function renderPreview() {
       <h3>Emergency Equipment and Safety Board</h3>
       <p><strong>Safety Bulletin Board Location:</strong> ${escapeHtml(meta.bulletinBoard || "Not entered")}</p>
       <p>${formatText(meta.emergencyEquipment, "List fire pull stations, extinguishers, power cutoffs, eyewash stations, AEDs, foam systems, and any local fire/emergency equipment notes.")}</p>
+      ${renderEmergencyEquipmentFiles()}
     </section>
 
     <section class="preview-section">
@@ -1000,6 +1009,41 @@ function renderEvacuationImageStatus() {
   evacuationImageStatus.textContent = `Loaded evacuation route image: ${state.evacuationImage.name || "uploaded image"}`;
 }
 
+function renderEmergencyEquipmentFilesStatus() {
+  const count = state.emergencyEquipmentFiles.length;
+  if (!count) {
+    emergencyEquipmentFilesStatus.textContent = "No emergency equipment maps or photos uploaded yet.";
+    return;
+  }
+
+  emergencyEquipmentFilesStatus.textContent = `${count} emergency equipment file${count === 1 ? "" : "s"} loaded.`;
+}
+
+function renderEmergencyEquipmentFiles() {
+  if (!state.emergencyEquipmentFiles.length) {
+    return `<p class="muted">No emergency equipment maps or photos uploaded.</p>`;
+  }
+
+  const items = state.emergencyEquipmentFiles.map((file, index) => {
+    const safeName = escapeHtml(file.name || `Attachment ${index + 1}`);
+    const safeHref = escapeHtml(file.dataUrl || "");
+    const isImage = (file.type || "").startsWith("image/");
+    return `
+      <li>
+        <a href="${safeHref}" target="_blank" rel="noreferrer">${safeName}</a>
+        ${isImage ? `<img class="route-image emergency-equipment-image" src="${safeHref}" alt="Emergency equipment map or photo: ${safeName}">` : ""}
+      </li>
+    `;
+  }).join("");
+
+  return `
+    <div class="emergency-equipment-files-preview">
+      <strong>Emergency Equipment Maps / Photos:</strong>
+      <ul>${items}</ul>
+    </div>
+  `;
+}
+
 function renderBioSurveyStatus() {
   if (!state.bioSurvey.name) {
     bioSurveyStatus.textContent = "No Bioenvironmental Workplace Survey uploaded yet.";
@@ -1073,6 +1117,39 @@ function removeEvacuationImage() {
   renderPreview();
 }
 
+async function uploadEmergencyEquipmentFiles(event) {
+  const files = Array.from(event.target.files || []);
+  if (!files.length) {
+    return;
+  }
+
+  const loadedFiles = await Promise.all(files.map((file) => new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      resolve({
+        name: file.name,
+        dataUrl: String(reader.result || ""),
+        type: file.type || ""
+      });
+    };
+    reader.readAsDataURL(file);
+  })));
+
+  state.emergencyEquipmentFiles = [...state.emergencyEquipmentFiles, ...loadedFiles];
+  emergencyEquipmentFilesInput.value = "";
+  saveState();
+  renderEmergencyEquipmentFilesStatus();
+  renderPreview();
+}
+
+function removeEmergencyEquipmentFiles() {
+  state.emergencyEquipmentFiles = [];
+  emergencyEquipmentFilesInput.value = "";
+  saveState();
+  renderEmergencyEquipmentFilesStatus();
+  renderPreview();
+}
+
 function uploadBioSurvey(event) {
   const [file] = event.target.files || [];
   if (!file) {
@@ -1125,6 +1202,7 @@ function uploadState(event) {
           ...defaultState.evacuationImage,
           ...(parsed.evacuationImage || {})
         },
+        emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
         bioSurvey: {
           ...defaultState.bioSurvey,
           ...(parsed.bioSurvey || {})
@@ -1137,6 +1215,7 @@ function uploadState(event) {
       renderUnitImagePreview();
       renderDafsmsImageStatus();
       renderEvacuationImageStatus();
+      renderEmergencyEquipmentFilesStatus();
       renderBioSurveyStatus();
       renderPreview();
       saveState();

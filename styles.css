@@ -405,6 +405,23 @@ body.modal-open {
   border: 1px solid rgba(31, 42, 42, 0.12);
 }
 
+.emergency-equipment-files-preview {
+  margin-top: 14px;
+}
+
+.emergency-equipment-files-preview ul {
+  margin-top: 10px;
+}
+
+.emergency-equipment-files-preview li {
+  margin-bottom: 12px;
+}
+
+.emergency-equipment-image {
+  max-width: 560px;
+  display: block;
+}
+
 .tag {
   display: inline-block;
   margin-right: 8px;
