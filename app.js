@@ -750,20 +750,9 @@ function renderHierarchyOfControls() {
         <h4>Hierarchy of Controls</h4>
         <p>Apply these controls from most effective to least effective when reducing workplace hazards under DAFI 91-202 paragraph 14.1.2.1.4.</p>
       </div>
-      <div class="hoc-visual">
-        <div class="hoc-scale">
-          <span>Most effective</span>
-          <div class="hoc-scale-bar"></div>
-          <span>Least effective</span>
-        </div>
-        <div class="hoc-pyramid" aria-label="Hierarchy of Controls">
-          <div class="hoc-level hoc-elimination">Elimination<span>Physically remove the hazard</span></div>
-          <div class="hoc-level hoc-substitution">Substitution<span>Replace the hazard</span></div>
-          <div class="hoc-level hoc-engineering">Engineering Controls<span>Isolate people from the hazard</span></div>
-          <div class="hoc-level hoc-administrative">Administrative Controls<span>Change the way people work</span></div>
-          <div class="hoc-level hoc-ppe">PPE<span>Protect the worker with personal protective equipment</span></div>
-        </div>
-      </div>
+      <figure class="hoc-image-wrap">
+        <img class="hoc-image" src="assets/HOC.png" alt="Hierarchy of Controls reference image">
+      </figure>
       <div class="hoc-notes compact">
         <p><strong>Use the highest level of control feasible first.</strong> PPE should protect workers only after elimination, substitution, engineering, and administrative controls have been considered.</p>
       </div>
