@@ -363,7 +363,9 @@ renderSelectedModules();
 renderPreview();
 renderUnitImageStatus();
 renderUnitImagePreview();
-renderDafsmsImageStatus();
+if (dafsmsImageStatus) {
+  renderDafsmsImageStatus();
+}
 renderEvacuationImageStatus();
 renderEmergencyEquipmentFilesStatus();
 renderBioSurveyStatus();
@@ -388,8 +390,12 @@ moduleSelect.addEventListener("change", handleModuleSelection);
 addCustomModuleButton.addEventListener("click", addCustomModule);
 unitImageInput.addEventListener("change", uploadUnitImage);
 removeUnitImageButton.addEventListener("click", removeUnitImage);
-dafsmsImageInput.addEventListener("change", uploadDafsmsImage);
-removeDafsmsImageButton.addEventListener("click", removeDafsmsImage);
+if (dafsmsImageInput) {
+  dafsmsImageInput.addEventListener("change", uploadDafsmsImage);
+}
+if (removeDafsmsImageButton) {
+  removeDafsmsImageButton.addEventListener("click", removeDafsmsImage);
+}
 evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
 emergencyEquipmentFilesInput.addEventListener("change", uploadEmergencyEquipmentFiles);
@@ -968,13 +974,19 @@ function uploadDafsmsImage(event) {
 
 function removeDafsmsImage() {
   state.dafsmsImage = { ...defaultState.dafsmsImage };
-  dafsmsImageInput.value = "";
+  if (dafsmsImageInput) {
+    dafsmsImageInput.value = "";
+  }
   saveState();
   renderDafsmsImageStatus();
   renderPreview();
 }
 
 function renderDafsmsImageStatus() {
+  if (!dafsmsImageStatus) {
+    return;
+  }
+
   if (!state.dafsmsImage.dataUrl) {
     dafsmsImageStatus.textContent = "No DAFSMS reference image uploaded yet.";
     return;
