@@ -52,7 +52,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.1",
     title: "Hazardous Energy Control",
-    reference: "AFMAN 91-203 Chapter 21; 29 CFR 1910.147",
+    reference: "DAFMAN 91-203 Chapter 21; 29 CFR 1910.147",
     trainingRequirement: "Train authorized employees on hazardous energy sources, magnitude, and isolation methods; affected employees on the purpose and use of procedures; and other nearby employees on restart/reenergization prohibitions. Retrain when assignments, equipment, processes, or procedures change, or when inspections show gaps.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.147",
     afTrainingRequirement: "DAFMAN 91-203 establishes a formal Hazardous Energy Control Program with dedicated training, documented procedures, and periodic self-inspections before servicing or maintenance work is performed.",
@@ -88,7 +88,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.5",
     title: "Confined Space Program",
-    reference: "AFMAN 91-203 Chapter 23; 29 CFR 1910.146",
+    reference: "DAFMAN 91-203 Chapter 23; 29 CFR 1910.146",
     trainingRequirement: "Train affected employees before first assignment, before duty changes, when permit-space operations introduce new hazards, and when deviations or inadequate knowledge are identified. Training must establish proficiency and be documented by employee, trainer, and date.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.146",
     afTrainingRequirement: "Employees entering confined spaces must be trained to safely accomplish assigned duties and rescue procedures for the specific permit-required space entered. Safety observers and attendants must also be trained on rescue procedures for each type of permit-required confined space.",
@@ -97,7 +97,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.6",
     title: "Manual and Powered Hoists",
-    reference: "AFMAN 91-203 Chapter 35",
+    reference: "DAFMAN 91-203 Chapter 35",
     trainingRequirement: "When hoisting operations involve overhead or gantry cranes, instruct personnel involved in multi-crane lifts on positioning, rigging, and movement coordination under a qualified person, and ensure operators are familiar with the operation and care of fire extinguishers provided. For crawler, locomotive, and truck cranes, make operating and maintenance personnel familiar with extinguisher use and local crane procedures.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.179 and 1910.180",
     afTrainingRequirement: "MHE operator qualification and training must be provided by the responsible organization using lesson plans for each equipment type that include formal instruction, hands-on demonstrations, practical exercises, and evaluation. Forklift operators must be evaluated at least once every three years and retrained after unsafe operation, accidents, different equipment assignments, or workplace changes.",
@@ -115,7 +115,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.8",
     title: "Elevated Work Platforms",
-    reference: "AFMAN 91-203 Chapter 16",
+    reference: "DAFMAN 91-203 Chapter 16",
     trainingRequirement: "Only allow operation by personnel proficient in the operation, safe use, and inspection of the specific platform being used. If a personal fall arrest system is part of the setup, train users on safe system use before first use and after system changes.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.66",
     afTrainingRequirement: "All lift training must be performed by a qualified trainer/supervisor and documented by model. Training plans must include classroom and hands-on proficiency training, inspection requirements, hazard recognition, safety devices, workplace/site inspection, spotter duties, written testing, and model-specific authorization.",
@@ -124,7 +124,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.9",
     title: "Fall Arrest Systems",
-    reference: "AFMAN 91-203 Chapter 13; 29 CFR 1910.66; 29 CFR 1926.503",
+    reference: "DAFMAN 91-203 Chapter 13; 29 CFR 1910.66; 29 CFR 1926.503",
     trainingRequirement: "Train personnel in safe personal fall arrest system use before use and after any component or system change. Pair this with the AF and local fall protection requirements for inspection, anchorage, rescue, and user limitations.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.66",
     afTrainingRequirement: "Any work above four feet requires a fall protection program and appropriate safety gear. Use the local fall protection program, rescue procedures, and chapter-specific AF requirements for application-level training.",
@@ -133,7 +133,7 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.10",
     title: "Forklift / Material Handling Equipment",
-    reference: "AFMAN 91-203 Chapter 35; 29 CFR 1910.178",
+    reference: "DAFMAN 91-203 Chapter 35; 29 CFR 1910.178",
     trainingRequirement: "Ensure each operator is trained and evaluated before operating independently. Training must combine formal instruction, practical training, and workplace evaluation, cover truck-specific and site-specific hazards, and include refresher training after unsafe operation, incidents, assignment to a different truck, or workplace changes.",
     trainingSource: "OSHA 2254 / 29 CFR 1910.178",
     afTrainingRequirement: "MHE training must follow equipment-specific lesson plans with formal instruction, hands-on demonstrations, exercises, and evaluation. Around aircraft, only licensed drivers will operate forklifts and hi-lift trucks, special training is required for hi-lift operators, and spotters must be used when maneuvering close to aircraft or raising and lowering cargo beds.",
@@ -149,25 +149,25 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.12",
     title: "Pole / Tower Climbing",
-    reference: "AFMAN 91-203 Chapter 30",
+    reference: "DAFMAN 91-203 Chapter 30",
     trainingRequirement: "Use AF and manufacturer guidance for climbing systems, fall protection, rescue, and communications. The nearest OSHA 2254 crosswalk is telecommunications work under 29 CFR 1910.268, which expects employees to use required protective equipment and follow task-specific safe practices, but it does not provide a complete tower-climbing lesson plan by itself.",
     trainingSource: "Partial OSHA 2254 crosswalk / 29 CFR 1910.268 plus AF guidance"
   },
   {
     id: "14.1.3.13",
     title: "CPR Training",
-    reference: "AFMAN 91-203 Chapter 1",
+    reference: "DAFMAN 91-203 Chapter 1",
     trainingRequirement: "Where work conditions require trained first-aid responders, ensure personnel are adequately trained and available. OSHA 2254 links first-aid and CPR availability to certain work settings, but local mission risk and AF requirements should define who must hold current CPR credentials.",
-    trainingSource: "OSHA 2254 / 29 CFR 1910.151 and 1910.269; AFMAN 91-203",
+    trainingSource: "OSHA 2254 / 29 CFR 1910.151 and 1910.269; DAFMAN 91-203",
     afTrainingRequirement: "Initial first aid and CPR training must be completed before assigning duties that require it, refresher training must occur before certification expires, and CPR training must include PAD instruction. Remote or high-risk work must have an immediate medical response plan.",
     afTrainingSource: "DAFMAN 91-203 para. 1.8"
   },
   {
     id: "14.1.3.14",
     title: "Flight Line Driving",
-    reference: "AFMAN 91-203 Chapter 24",
+    reference: "DAFMAN 91-203 Chapter 24",
     trainingRequirement: "Use flight-line-specific AF lesson plans and local airfield driving rules. OSHA 2254 does not provide a direct flight-line driving training excerpt for this module.",
-    trainingSource: "AFMAN 91-203 / local procedures",
+    trainingSource: "DAFMAN 91-203 / local procedures",
     afTrainingRequirement: "Use Chapter 24 flightline vehicle operations rules and local licensing programs. For specialized equipment like forklifts and hi-lifts around aircraft, only licensed drivers may operate and the owning organization must provide special training with spotter support as required.",
     afTrainingSource: "DAFMAN 91-203 para. 24.13 and para. 24.13.10"
   },
