@@ -809,14 +809,15 @@ function renderDafsmsSection() {
 }
 
 function renderDafsmsImage() {
-  if (!state.dafsmsImage.dataUrl) {
-    return '';
-  }
+  const src = state.dafsmsImage.dataUrl || "assets/dafsms-pillars.png";
+  const caption = state.dafsmsImage.dataUrl
+    ? "Local DAFSMS reference image."
+    : "Standard DAFSMS reference image shown for all JSTOs.";
 
   return `
     <figure class="dafsms-image-wrap">
-      <img class="dafsms-image" src="${state.dafsmsImage.dataUrl}" alt="Optional DAFSMS reference image">
-      <figcaption class="muted">Optional local DAFSMS reference image.</figcaption>
+      <img class="dafsms-image" src="${src}" alt="DAFSMS reference image">
+      <figcaption class="muted">${caption}</figcaption>
     </figure>
   `;
 }
