@@ -626,3 +626,12 @@ body.modal-open {
   }
 
 }
+
+.required-doc-inline-note {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
