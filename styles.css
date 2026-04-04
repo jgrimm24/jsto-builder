@@ -502,6 +502,11 @@ body.modal-open {
   background: white;
 }
 
+.saferep-block {
+  display: grid;
+  gap: 14px;
+}
+
 .saferep-link-card {
   display: block;
   text-decoration: none;
@@ -512,6 +517,16 @@ body.modal-open {
   border-radius: 16px;
   border: 1px solid rgba(31, 42, 42, 0.12);
   background: white;
+}
+
+.saferep-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.saferep-copy p,
+.saferep-copy ul {
+  margin: 0;
 }
 
 .dafsms-framework-grid {

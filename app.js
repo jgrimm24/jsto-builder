@@ -834,9 +834,23 @@ function renderDafsmsImage() {
 
 function renderSaferepLink() {
   return `
-    <a class="saferep-link-card" href="https://saferep.safety.af.mil" target="_blank" rel="noreferrer">
-      <img class="saferep-image" src="assets/SAFEREP.jpg" alt="SAFEREP reporting portal">
-    </a>
+    <div class="saferep-block">
+      <a class="saferep-link-card" href="https://saferep.safety.af.mil" target="_blank" rel="noreferrer">
+        <img class="saferep-image" src="assets/SAFEREP.jpg" alt="SAFEREP reporting portal">
+      </a>
+      <div class="saferep-copy">
+        <p>SAFEREP is the Department of the Air Force's (DAF) premiere digital safety reporting tool and mobile app. It allows Airmen and Guardians to easily report hazardous conditions, near-misses, unintentional errors, or safety concerns across all disciplines, including workplace, traffic, industrial, flight, weapons, and space safety, directly from their devices anytime and anywhere.</p>
+        <p>Fully integrated with the Air Force Safety Automated System (AFSAS), it replaces the earlier Airman Safety App and serves as the DAF's only fully digital safety reporting avenue. Users simply answer a short series of questions to submit reports that reach the appropriate Major Command (MAJCOM) safety office quickly and efficiently.</p>
+        <p><strong>Key Benefits for Job Safety Training:</strong></p>
+        <ul>
+          <li><strong>Empowers everyone:</strong> Turns every Airman or Guardian into a proactive sensor for hazard identification, encouraging a strong safety culture where people feel comfortable speaking up without barriers like paperwork or word-of-mouth delays.</li>
+          <li><strong>Prevents mishaps:</strong> Enables early mitigation of risks before they lead to incidents, capturing minor events and near-misses that offer the greatest prevention potential.</li>
+          <li><strong>Simple and accessible:</strong> Mobile-first design makes reporting fast, more efficient than traditional methods, and available on the spot through the app on Google Play and the Apple App Store.</li>
+          <li><strong>Broad coverage and integration:</strong> Supports multiple safety areas and includes specialized features such as Aviation Safety Action Program reporting, improving visibility, tracking, and overall risk management across the force.</li>
+        </ul>
+        <p>This tool strengthens operational readiness by fostering a proactive, data-driven approach to safety. You can download it from the app stores or access it through the official SAFEREP site for more details. Click the image above to go directly to SAFEREP or <a href="https://www.safety.af.mil/Home/SAFEREP/" target="_blank" rel="noreferrer">click here to learn more</a>.</p>
+      </div>
+    </div>
   `;
 }
 
