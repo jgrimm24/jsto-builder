@@ -775,7 +775,7 @@ function renderHierarchyOfControls() {
         <p>Apply these controls from most effective to least effective when reducing workplace hazards under DAFI 91-202 paragraph 14.1.2.1.4.</p>
       </div>
       <figure class="hoc-image-wrap">
-        <img class="hoc-image" src="assets/HOC.png" alt="Hierarchy of Controls reference image">
+        <img class="hoc-image" src="assets/HOC.png?v=20260404-1" alt="Hierarchy of Controls reference image">
       </figure>
       <div class="hoc-notes compact">
         <p><strong>Use the highest level of control feasible first.</strong> PPE should protect workers only after elimination, substitution, engineering, and administrative controls have been considered.</p>
@@ -823,7 +823,7 @@ function renderDafsmsSection() {
 }
 
 function renderDafsmsImage() {
-  const src = state.dafsmsImage.dataUrl || "assets/dafsms-pillars.png";
+  const src = state.dafsmsImage.dataUrl || "assets/dafsms-pillars.png?v=20260404-1";
 
   return `
     <figure class="dafsms-image-wrap">
@@ -836,7 +836,7 @@ function renderSaferepLink() {
   return `
     <div class="saferep-block">
       <a class="saferep-link-card" href="https://saferep.safety.af.mil" target="_blank" rel="noreferrer">
-        <img class="saferep-image" src="assets/SAFEREP.jpg" alt="SAFEREP reporting portal">
+        <img class="saferep-image" src="assets/SAFEREP.jpg?v=20260404-1" alt="SAFEREP reporting portal">
       </a>
       <div class="saferep-copy">
         <p>SAFEREP is the Department of the Air Force's (DAF) premiere digital safety reporting tool and mobile app. It allows Airmen and Guardians to easily report hazardous conditions, near-misses, unintentional errors, or safety concerns across all disciplines, including workplace, traffic, industrial, flight, weapons, and space safety, directly from their devices anytime and anywhere.</p>
