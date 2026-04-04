@@ -502,9 +502,18 @@ body.modal-open {
   background: white;
 }
 
+.dafsms-section-stack {
+  display: grid;
+  gap: 16px;
+}
+
 .saferep-block {
   display: grid;
   gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .saferep-link-card {
