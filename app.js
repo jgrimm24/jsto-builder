@@ -1091,7 +1091,7 @@ function renderForm1118Preview() {
 
   return `
     <div class="form-1118-files-preview">
-      <strong>AF Form 1118 Files:</strong>
+      <strong> Upload your AF Form 1118's here File:</strong>
       <ul>${items}</ul>
     </div>
   `;
