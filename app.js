@@ -817,6 +817,7 @@ function renderDafsmsSection() {
         <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented and guides continuous improvement through evaluation, monitoring, and review.</p>
         <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians are provided safety awareness information, organizations have embedded ongoing training into the mishap prevention program, effective risk controls are implemented, and personnel remain actively engaged.</p>
       </div>
+      ${renderSaferepLink()}
     </div>
   `;
 }
@@ -828,6 +829,14 @@ function renderDafsmsImage() {
     <figure class="dafsms-image-wrap">
       <img class="dafsms-image" src="${src}" alt="DAFSMS reference image">
     </figure>
+  `;
+}
+
+function renderSaferepLink() {
+  return `
+    <a class="saferep-link-card" href="https://saferep.safety.af.mil" target="_blank" rel="noreferrer">
+      <img class="saferep-image" src="assets/SAFEREP.jpg" alt="SAFEREP reporting portal">
+    </a>
   `;
 }
 
@@ -1091,7 +1100,7 @@ function renderForm1118Preview() {
 
   return `
     <div class="form-1118-files-preview">
-      <strong> Upload your AF Form 1118's here File:</strong>
+      <strong>Upload your AF Form 1118's here:</strong>
       <ul>${items}</ul>
     </div>
   `;
