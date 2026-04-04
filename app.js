@@ -695,6 +695,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>SAFEREP</h3>
+      ${renderSaferepLink()}
+    </section>
+
+    <section class="preview-section">
       <h3>Work Area Hazard Analysis</h3>
       <p>${formatText(meta.hazardAnalysis, "Summarize work area hazards, BE survey items, JHAs, JSAs, and other written guidance that support this JSTO.")}</p>
     </section>
@@ -786,40 +791,37 @@ function renderHierarchyOfControls() {
 
 function renderDafsmsSection() {
   return `
-    <div class="dafsms-section-stack">
-      <div class="dafsms-block">
-        <div class="dafsms-intro">
-          <p><strong>DAFSMS</strong> uses four pillars and the DAFSMS framework to structure the mishap prevention program through continuous improvement and the Plan-Do-Check-Act model.</p>
-        </div>
-        ${renderDafsmsImage()}
-        <div class="dafsms-framework-grid" aria-label="Department of the Air Force SMS Framework">
-          <article class="dafsms-panel-card">
-            <h4>Policy and Leadership</h4>
-            <p>Provides the structure for a proactive mishap prevention program through policy, active leadership engagement, and clearly defined responsibilities at every level.</p>
-          </article>
-          <article class="dafsms-panel-card">
-            <h4>Risk Management</h4>
-            <p>Integrates hazard identification, assessment, and control decisions into daily operations to reduce mishaps and strengthen safety culture.</p>
-          </article>
-          <article class="dafsms-panel-card">
-            <h4>Assurance</h4>
-            <p>Uses evaluations, monitoring, reviews, and data to confirm the mishap prevention program is implemented and improving over time.</p>
-          </article>
-          <article class="dafsms-panel-card">
-            <h4>Promotion, Education, and Training</h4>
-            <p>Ensures Airmen and Guardians receive safety awareness information, embedded training, effective risk controls, and active engagement in mishap prevention.</p>
-          </article>
-        </div>
-
-        <div class="dafsms-notes">
-          <p><strong>1. Purpose.</strong> DAFSMS utilizes the four pillars and the DAFSMS framework to structure the mishap prevention program. Activities associated with each pillar set policy, identify and mitigate hazards and risk, and reduce the occurrence and cost of injuries, illnesses, fatalities, and property damage through continuous improvement and the PDCA model.</p>
-          <p><strong>2. Policy and Leadership.</strong> Safety policy provides the structure for a sound and proactive mishap prevention program. Active leadership involvement in implementation and execution is critical at all levels of command.</p>
-          <p><strong>3. Risk Management.</strong> Ensure the RM process is fully integrated into all safety-related activities to enhance mishap prevention and sustain a proactive safety culture. Refer to DAFI 90-802 and DAFPAM 90-803 for additional detail.</p>
-          <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented and guides continuous improvement through evaluation, monitoring, and review.</p>
-          <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians are provided safety awareness information, organizations have embedded ongoing training into the mishap prevention program, effective risk controls are implemented, and personnel remain actively engaged.</p>
-        </div>
+    <div class="dafsms-block">
+      <div class="dafsms-intro">
+        <p><strong>DAFSMS</strong> uses four pillars and the DAFSMS framework to structure the mishap prevention program through continuous improvement and the Plan-Do-Check-Act model.</p>
       </div>
-      ${renderSaferepLink()}
+      ${renderDafsmsImage()}
+      <div class="dafsms-framework-grid" aria-label="Department of the Air Force SMS Framework">
+        <article class="dafsms-panel-card">
+          <h4>Policy and Leadership</h4>
+          <p>Provides the structure for a proactive mishap prevention program through policy, active leadership engagement, and clearly defined responsibilities at every level.</p>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Risk Management</h4>
+          <p>Integrates hazard identification, assessment, and control decisions into daily operations to reduce mishaps and strengthen safety culture.</p>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Assurance</h4>
+          <p>Uses evaluations, monitoring, reviews, and data to confirm the mishap prevention program is implemented and improving over time.</p>
+        </article>
+        <article class="dafsms-panel-card">
+          <h4>Promotion, Education, and Training</h4>
+          <p>Ensures Airmen and Guardians receive safety awareness information, embedded training, effective risk controls, and active engagement in mishap prevention.</p>
+        </article>
+      </div>
+
+      <div class="dafsms-notes">
+        <p><strong>1. Purpose.</strong> DAFSMS utilizes the four pillars and the DAFSMS framework to structure the mishap prevention program. Activities associated with each pillar set policy, identify and mitigate hazards and risk, and reduce the occurrence and cost of injuries, illnesses, fatalities, and property damage through continuous improvement and the PDCA model.</p>
+        <p><strong>2. Policy and Leadership.</strong> Safety policy provides the structure for a sound and proactive mishap prevention program. Active leadership involvement in implementation and execution is critical at all levels of command.</p>
+        <p><strong>3. Risk Management.</strong> Ensure the RM process is fully integrated into all safety-related activities to enhance mishap prevention and sustain a proactive safety culture. Refer to DAFI 90-802 and DAFPAM 90-803 for additional detail.</p>
+        <p><strong>4. Assurance.</strong> Safety assurance is how commanders determine whether mishap prevention elements are implemented and guides continuous improvement through evaluation, monitoring, and review.</p>
+        <p><strong>5. Promotion, Education, and Training.</strong> Ensure Airmen and Guardians are provided safety awareness information, organizations have embedded ongoing training into the mishap prevention program, effective risk controls are implemented, and personnel remain actively engaged.</p>
+      </div>
     </div>
   `;
 }

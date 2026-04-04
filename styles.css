@@ -502,11 +502,6 @@ body.modal-open {
   background: white;
 }
 
-.dafsms-section-stack {
-  display: grid;
-  gap: 16px;
-}
-
 .saferep-block {
   display: grid;
   gap: 14px;
