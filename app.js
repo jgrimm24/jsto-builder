@@ -313,6 +313,7 @@ const defaultState = {
     dataUrl: ""
   },
   emergencyEquipmentFiles: [],
+  form1118Files: [],
   bioSurvey: {
     name: "",
     dataUrl: "",
@@ -343,6 +344,9 @@ const removeEvacuationImageButton = document.getElementById("remove-evacuation-i
 const emergencyEquipmentFilesInput = document.getElementById("emergency-equipment-files");
 const emergencyEquipmentFilesStatus = document.getElementById("emergency-equipment-files-status");
 const removeEmergencyEquipmentFilesButton = document.getElementById("remove-emergency-equipment-files");
+const form1118FilesInput = document.getElementById("form-1118-files");
+const form1118Status = document.getElementById("form-1118-status");
+const removeForm1118FilesButton = document.getElementById("remove-form-1118-files");
 const bioSurveyInput = document.getElementById("bio-survey-file");
 const bioSurveyStatus = document.getElementById("bio-survey-status");
 const removeBioSurveyButton = document.getElementById("remove-bio-survey");
@@ -368,6 +372,7 @@ if (dafsmsImageStatus) {
 }
 renderEvacuationImageStatus();
 renderEmergencyEquipmentFilesStatus();
+renderForm1118Status();
 renderBioSurveyStatus();
 toggleCustomModuleBuilder();
 
@@ -400,6 +405,8 @@ evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
 emergencyEquipmentFilesInput.addEventListener("change", uploadEmergencyEquipmentFiles);
 removeEmergencyEquipmentFilesButton.addEventListener("click", removeEmergencyEquipmentFiles);
+form1118FilesInput.addEventListener("change", uploadForm1118Files);
+removeForm1118FilesButton.addEventListener("click", removeForm1118Files);
 bioSurveyInput.addEventListener("change", uploadBioSurvey);
 removeBioSurveyButton.addEventListener("click", removeBioSurvey);
 expandableFields.forEach((field) => {
@@ -457,6 +464,7 @@ function loadState() {
         ...(parsed.evacuationImage || {})
       },
       emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+      form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
       bioSurvey: {
         ...defaultState.bioSurvey,
         ...(parsed.bioSurvey || {})
@@ -730,6 +738,7 @@ function renderPreview() {
     <section class="preview-section">
       <h3>Documentation and Review</h3>
       <p>${formatText(meta.documentationNotes, "Document initial, refresher, and task-specific training in the work center record, review annually or when work conditions change, and maintain records per local records management requirements.")}</p>
+      ${renderForm1118Preview()}
       ${renderBioSurveyPreview()}
       <p><strong>Annual Review Log:</strong><br>${formatText(meta.annualReviewLog, "Record the supervisor annual review history here.")}</p>
       <table class="signature-table">
@@ -1057,6 +1066,37 @@ function renderEmergencyEquipmentFiles() {
   `;
 }
 
+function renderForm1118Status() {
+  const count = state.form1118Files.length;
+  if (!count) {
+    form1118Status.textContent = "No AF Form 1118 files uploaded yet.";
+    return;
+  }
+
+  form1118Status.textContent = `${count} AF Form 1118 file${count === 1 ? "" : "s"} loaded.`;
+}
+
+function renderForm1118Preview() {
+  if (!state.form1118Files.length) {
+    return `<p class="muted">No AF Form 1118 files uploaded.</p>`;
+  }
+
+  const items = state.form1118Files.map((file, index) => {
+    const safeName = escapeHtml(file.name || `AF Form 1118 ${index + 1}`);
+    const safeHref = escapeHtml(file.dataUrl || "");
+    return safeHref
+      ? `<li><a href="${safeHref}" download="${safeName}">${safeName}</a></li>`
+      : `<li>${safeName}</li>`;
+  }).join("");
+
+  return `
+    <div class="form-1118-files-preview">
+      <strong>AF Form 1118 Files:</strong>
+      <ul>${items}</ul>
+    </div>
+  `;
+}
+
 function renderBioSurveyStatus() {
   if (!state.bioSurvey.name) {
     bioSurveyStatus.textContent = "No Bioenvironmental Workplace Survey uploaded yet.";
@@ -1163,6 +1203,39 @@ function removeEmergencyEquipmentFiles() {
   renderPreview();
 }
 
+async function uploadForm1118Files(event) {
+  const files = Array.from(event.target.files || []);
+  if (!files.length) {
+    return;
+  }
+
+  const loadedFiles = await Promise.all(files.map((file) => new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      resolve({
+        name: file.name,
+        dataUrl: String(reader.result || ""),
+        type: file.type || ""
+      });
+    };
+    reader.readAsDataURL(file);
+  })));
+
+  state.form1118Files = [...state.form1118Files, ...loadedFiles];
+  form1118FilesInput.value = "";
+  saveState();
+  renderForm1118Status();
+  renderPreview();
+}
+
+function removeForm1118Files() {
+  state.form1118Files = [];
+  form1118FilesInput.value = "";
+  saveState();
+  renderForm1118Status();
+  renderPreview();
+}
+
 function uploadBioSurvey(event) {
   const [file] = event.target.files || [];
   if (!file) {
@@ -1216,6 +1289,7 @@ function uploadState(event) {
           ...(parsed.evacuationImage || {})
         },
         emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+        form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
         bioSurvey: {
           ...defaultState.bioSurvey,
           ...(parsed.bioSurvey || {})
@@ -1229,6 +1303,7 @@ function uploadState(event) {
       renderDafsmsImageStatus();
       renderEvacuationImageStatus();
       renderEmergencyEquipmentFilesStatus();
+      renderForm1118Status();
       renderBioSurveyStatus();
       renderPreview();
       saveState();
