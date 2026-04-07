@@ -533,6 +533,31 @@ body.modal-open {
   margin: 0;
 }
 
+.fire-extinguisher-block {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.fire-extinguisher-image {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  background: white;
+}
+
+.fire-extinguisher-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.fire-extinguisher-copy p {
+  margin: 0;
+}
+
 .dafsms-framework-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

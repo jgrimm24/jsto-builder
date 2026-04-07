@@ -700,6 +700,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>Use of Portable Fire Extinguishers</h3>
+      ${renderFireExtinguisherSection()}
+    </section>
+
+    <section class="preview-section">
       <h3>Work Area Hazard Analysis</h3>
       <p>${formatText(meta.hazardAnalysis, "Summarize work area hazards, BE survey items, JHAs, JSAs, and other written guidance that support this JSTO.")}</p>
     </section>
@@ -853,6 +858,19 @@ function renderSaferepLink() {
           <li><strong>Broad coverage and integration:</strong> Supports multiple safety areas and includes specialized features such as Aviation Safety Action Program reporting, improving visibility, tracking, and overall risk management across the force.</li>
         </ul>
         <p>This tool strengthens operational readiness by fostering a proactive, data-driven approach to safety. You can download it from the app stores or access it through the official SAFEREP site for more details. Click the image above to go directly to SAFEREP or <a href="https://www.safety.af.mil/Home/SAFEREP/" target="_blank" rel="noreferrer">click here to learn more</a>.</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderFireExtinguisherSection() {
+  return `
+    <div class="fire-extinguisher-block">
+      <img class="fire-extinguisher-image" src="assets/fire?v=20260407-1" alt="PASS method for portable fire extinguishers">
+      <div class="fire-extinguisher-copy">
+        <p><strong>Portable fire extinguishers are intended for small, incipient-stage fires only.</strong> Personnel should use an extinguisher only when they have been trained, the fire is small and contained, the correct extinguisher is available, and there is a clear evacuation path behind them.</p>
+        <p>Use the <strong>PASS</strong> method when operating a portable fire extinguisher: <strong>Pull</strong> the pin, <strong>Aim</strong> at the base of the fire, <strong>Squeeze</strong> the handle, and <strong>Sweep</strong> side to side.</p>
+        <p>If the fire grows, smoke conditions worsen, or the extinguisher does not control the fire immediately, evacuate the area, activate the local emergency response process, and report the incident to emergency services and supervision.</p>
       </div>
     </div>
   `;
