@@ -750,23 +750,19 @@ function renderPreview() {
       <p>${formatText(meta.documentationNotes, "Document initial, refresher, and task-specific training in the work center record, review annually or when work conditions change, and maintain records per local records management requirements.")}</p>
       ${renderForm1118Preview()}
       ${renderBioSurveyPreview()}
-      <p><strong>Annual Review Log:</strong><br>${formatText(meta.annualReviewLog, "Record the supervisor annual review history here.")}</p>
+      <p><strong>Annual Review Log:</strong><br>${formatText(meta.annualReviewLog, "Record the supervisor name, review date, and contact information here.")}</p>
       <table class="signature-table">
         <thead>
           <tr>
-            <th>Trainee Name</th>
-            <th>Employee ID / Last 4</th>
-            <th>Date Trained</th>
-            <th>Trainer / Supervisor</th>
-            <th>Signature</th>
+            <th>Supervisor Name</th>
+            <th>Date Reviewed</th>
+            <th>Contact Info</th>
           </tr>
         </thead>
         <tbody>
           ${Array.from({ length: 6 }, () => `
             <tr>
               <td>&nbsp;</td>
-              <td></td>
-              <td></td>
               <td></td>
               <td></td>
             </tr>
@@ -857,7 +853,9 @@ function renderSaferepLink() {
           <li><strong>Simple and accessible:</strong> Mobile-first design makes reporting fast, more efficient than traditional methods, and available on the spot through the app on Google Play and the Apple App Store.</li>
           <li><strong>Broad coverage and integration:</strong> Supports multiple safety areas and includes specialized features such as Aviation Safety Action Program reporting, improving visibility, tracking, and overall risk management across the force.</li>
         </ul>
-        <p>This tool strengthens operational readiness by fostering a proactive, data-driven approach to safety. You can download it from the app stores or access it through the official SAFEREP site for more details. Click the image above to go directly to SAFEREP or <a href="https://www.safety.af.mil/Home/SAFEREP/" target="_blank" rel="noreferrer">click here to learn more</a>.</p>
+        <p>This tool strengthens operational readiness by fostering a proactive, data-driven approach to safety. You can download it from the app stores or access it through the official SAFEREP site for more details.</p>
+        <p><strong>SAFEREP portal:</strong> <a href="https://saferep.safety.af.mil" target="_blank" rel="noreferrer">https://saferep.safety.af.mil</a></p>
+        <p><strong>Learn more:</strong> <a href="https://www.safety.af.mil/Home/SAFEREP/" target="_blank" rel="noreferrer">https://www.safety.af.mil/Home/SAFEREP/</a></p>
       </div>
     </div>
   `;
