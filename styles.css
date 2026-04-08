@@ -638,6 +638,34 @@ body.modal-open {
   padding-left: 18px;
 }
 
+.unsafe-reporting-tag-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.unsafe-reporting-tag-item {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  text-align: center;
+}
+
+.unsafe-reporting-tag-item img {
+  width: 100%;
+  max-width: 140px;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  background: white;
+}
+
+.unsafe-reporting-tag-item figcaption {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .dafsms-framework-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

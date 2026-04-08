@@ -927,6 +927,24 @@ function renderUnsafeReportingSection() {
       </div>
       <div class="unsafe-reporting-tags">
         <p><strong>Tag use examples:</strong> Use the appropriate danger, caution, out-of-order, or do-not-start tag to keep unsafe equipment out of service until the hazard has been corrected and the responsible supervisor authorizes return to use.</p>
+        <div class="unsafe-reporting-tag-gallery" aria-label="Unsafe equipment tag examples">
+          <figure class="unsafe-reporting-tag-item">
+            <img src="assets/AF%20Form%20979.jpg" alt="AF Form 979 danger tag">
+            <figcaption>AF Form 979 - Danger</figcaption>
+          </figure>
+          <figure class="unsafe-reporting-tag-item">
+            <img src="assets/AF%20Form%20980.jpg" alt="AF Form 980 caution tag">
+            <figcaption>AF Form 980 - Caution</figcaption>
+          </figure>
+          <figure class="unsafe-reporting-tag-item">
+            <img src="assets/AF%20Form%20981.jpg" alt="AF Form 981 out of order tag">
+            <figcaption>AF Form 981 - Out of Order</figcaption>
+          </figure>
+          <figure class="unsafe-reporting-tag-item">
+            <img src="assets/AF%20Form%20982.png" alt="AF Form 982 do not start tag">
+            <figcaption>AF Form 982 - Do Not Start</figcaption>
+          </figure>
+        </div>
         <p><strong>Escalation:</strong> If the issue cannot be resolved at the lowest level, elevate it through the unit safety representative, DAF Form 457 process, or SAFEREP as appropriate.</p>
       </div>
     </div>
