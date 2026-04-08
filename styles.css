@@ -558,6 +558,50 @@ body.modal-open {
   margin: 0;
 }
 
+.unsafe-reporting-block {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.unsafe-reporting-copy,
+.unsafe-reporting-tags {
+  display: grid;
+  gap: 10px;
+}
+
+.unsafe-reporting-copy p,
+.unsafe-reporting-tags p,
+.unsafe-reporting-card ul {
+  margin: 0;
+}
+
+.unsafe-reporting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.unsafe-reporting-card {
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(247, 250, 252, 0.92);
+  border: 1px solid rgba(31, 42, 42, 0.1);
+}
+
+.unsafe-reporting-card h4 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.98rem;
+}
+
+.unsafe-reporting-card ul {
+  padding-left: 18px;
+}
+
 .dafsms-framework-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -584,7 +628,8 @@ body.modal-open {
 }
 
 @media (max-width: 720px) {
-  .dafsms-framework-grid {
+  .dafsms-framework-grid,
+  .unsafe-reporting-grid {
     grid-template-columns: 1fr;
   }
 

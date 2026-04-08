@@ -700,6 +700,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>Reporting Unsafe Equipment, Conditions, or Procedures</h3>
+      ${renderUnsafeReportingSection()}
+    </section>
+
+    <section class="preview-section">
       <h3>Use of Portable Fire Extinguishers</h3>
       ${renderFireExtinguisherSection()}
     </section>
@@ -869,6 +874,39 @@ function renderFireExtinguisherSection() {
         <p><strong>Portable fire extinguishers are intended for small, incipient-stage fires only.</strong> Personnel should use an extinguisher only when they have been trained, the fire is small and contained, the correct extinguisher is available, and there is a clear evacuation path behind them.</p>
         <p>Use the <strong>PASS</strong> method when operating a portable fire extinguisher: <strong>Pull</strong> the pin, <strong>Aim</strong> at the base of the fire, <strong>Squeeze</strong> the handle, and <strong>Sweep</strong> side to side.</p>
         <p>If the fire grows, smoke conditions worsen, or the extinguisher does not control the fire immediately, evacuate the area, activate the local emergency response process, and report the incident to emergency services and supervision.</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderUnsafeReportingSection() {
+  return `
+    <div class="unsafe-reporting-block">
+      <div class="unsafe-reporting-copy">
+        <p><strong>Employees must report unsafe equipment, conditions, or procedures to their supervisor immediately.</strong> This includes any hazard that could injure personnel, damage equipment, or create an unsafe work process.</p>
+        <p>Personnel must also be notified that unsafe conditions, work-related injuries, and illnesses may be reported <strong>without fear of retaliation</strong>. Immediate supervisor involvement remains the primary reporting path, with SAFEREP and formal hazard-report channels available when needed.</p>
+      </div>
+      <div class="unsafe-reporting-grid" aria-label="Unsafe reporting requirements">
+        <article class="unsafe-reporting-card">
+          <h4>What To Report</h4>
+          <ul>
+            <li>Unsafe equipment that is broken, damaged, unserviceable, or missing required guards or controls.</li>
+            <li>Unsafe conditions or procedures that create a hazard to personnel, operations, or facilities.</li>
+            <li>Work-related injuries, illnesses, near-misses, and hazards needing immediate attention.</li>
+          </ul>
+        </article>
+        <article class="unsafe-reporting-card">
+          <h4>Immediate Actions</h4>
+          <ul>
+            <li>Notify the supervisor or responsible area lead immediately.</li>
+            <li>If the hazard can be safely controlled, stop use and isolate the equipment or area until corrected.</li>
+            <li>If the danger is imminent to life or health, evacuate the area and activate emergency response procedures.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="unsafe-reporting-tags">
+        <p><strong>Tag use examples:</strong> Use the appropriate danger, caution, out-of-order, or do-not-start tag to keep unsafe equipment out of service until the hazard has been corrected and the responsible supervisor authorizes return to use.</p>
+        <p><strong>Escalation:</strong> If the issue cannot be resolved at the lowest level, elevate it through the unit safety representative, DAF Form 457 process, or SAFEREP as appropriate.</p>
       </div>
     </div>
   `;
