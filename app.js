@@ -289,6 +289,8 @@ const defaultState = {
     workDescription: "",
     references: "",
     hazardAnalysis: "",
+    trafficSafetyNotes: "",
+    motorcycleSafetyReps: "",
     emergencyNumbers: "",
     medicalFacility: "",
     evacuation: "",
@@ -732,6 +734,11 @@ function renderPreview() {
     </section>
 
     <section class="preview-section">
+      <h3>DAF Traffic Safety Program</h3>
+      ${renderTrafficSafetySection()}
+    </section>
+
+    <section class="preview-section">
       <h3>Emergency Information</h3>
       <ul>
         <li><strong>Emergency Numbers:</strong><br>${formatText(meta.emergencyNumbers, "Not entered")}</li>
@@ -942,6 +949,56 @@ function renderUnsafeReportingSection() {
           </figure>
         </div>
         <p><strong>Escalation:</strong> If the issue cannot be resolved at the lowest level, elevate it through the unit safety representative, DAF Form 457 process, or SAFEREP as appropriate.</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderTrafficSafetySection() {
+  const meta = state.meta;
+  return `
+    <div class="traffic-safety-block">
+      <div class="traffic-safety-copy">
+        <p><strong>Reference:</strong> DAFI 91-207. Requirements of the DAF traffic safety program include mandatory use of seat belts and helmets, speed limits, local traffic hazards, spotters while backing, and vehicle training requirements.</p>
+        <p>Additionally, brief prohibition or restrictions on electronic-device use while operating vehicles on- or off-base, and discuss motorcycle safety training requirements before riding a motorcycle.</p>
+      </div>
+      <div class="traffic-safety-grid" aria-label="Traffic safety requirements">
+        <article class="traffic-safety-card">
+          <h4>On-Base / Vehicle Operations</h4>
+          <ul>
+            <li>Obey posted speed limits, traffic control devices, and local roadway rules.</li>
+            <li>Use installed seat belts and occupant restraints as designed by the manufacturer.</li>
+            <li>Use spotters while backing when required by local policy, task conditions, or vehicle type.</li>
+            <li>Complete required GOV, GVO, golf cart, low-speed vehicle, or mission-specific vehicle training before operation.</li>
+          </ul>
+        </article>
+        <article class="traffic-safety-card">
+          <h4>Electronic Devices / Headphones</h4>
+          <ul>
+            <li>Do not use non-hands-free electronic devices while operating a motor vehicle.</li>
+            <li>Stop in a safe location before using a phone if hands-free operation is not available.</li>
+            <li>Do not wear headphones or listening devices in ways that interfere with hearing traffic, alarms, or emergency warnings.</li>
+          </ul>
+        </article>
+        <article class="traffic-safety-card">
+          <h4>Motorcycle / ATV Safety</h4>
+          <ul>
+            <li>Complete required motorcycle rider training before riding on a roadway.</li>
+            <li>Wear required PPE including helmet, eye protection, gloves, protective clothing, and over-the-ankle footwear.</li>
+            <li>Carry proof of required training when applicable and comply with state licensing requirements.</li>
+          </ul>
+        </article>
+        <article class="traffic-safety-card">
+          <h4>Pedestrian / Bicycle Awareness</h4>
+          <ul>
+            <li>Use caution at crossings, follow traffic controls, and wear visibility gear when exposed to roadway hazards.</li>
+            <li>Use required lighting and reflective equipment during darkness, reduced visibility, or inclement weather.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="traffic-safety-notes">
+        <p><strong>Local Traffic Hazards / Vehicle Notes:</strong><br>${formatText(meta.trafficSafetyNotes, "Enter local gate hazards, base-specific traffic concerns, spotter rules, and where vehicle training is documented.")}</p>
+        <p><strong>Motorcycle Safety Representatives / Traffic Contacts:</strong><br>${formatText(meta.motorcycleSafetyReps, "List unit or group motorcycle safety representatives, traffic safety contacts, and local rider briefing requirements.")}</p>
       </div>
     </div>
   `;

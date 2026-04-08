@@ -660,6 +660,50 @@ body.modal-open {
   background: white;
 }
 
+.traffic-safety-block {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.traffic-safety-copy,
+.traffic-safety-notes {
+  display: grid;
+  gap: 10px;
+}
+
+.traffic-safety-copy p,
+.traffic-safety-notes p,
+.traffic-safety-card ul {
+  margin: 0;
+}
+
+.traffic-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.traffic-safety-card {
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(247, 250, 252, 0.92);
+  border: 1px solid rgba(31, 42, 42, 0.1);
+}
+
+.traffic-safety-card h4 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.98rem;
+}
+
+.traffic-safety-card ul {
+  padding-left: 18px;
+}
+
 .dafsms-framework-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
