@@ -687,6 +687,7 @@ function renderPreview() {
         <li><strong>Program awareness:</strong> Include CA-10 / LS-201 location, traffic safety program requirements, DAFVA 91-209 location, and DAFSMS responsibilities.</li>
       </ul>
       ${renderHierarchyOfControls()}
+      ${renderActiveShooterSection()}
     </section>
 
     <section class="preview-section">
@@ -790,6 +791,26 @@ function renderHierarchyOfControls() {
       </figure>
       <div class="hoc-notes compact">
         <p><strong>Use the highest level of control feasible first.</strong> PPE should protect workers only after elimination, substitution, engineering, and administrative controls have been considered.</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderActiveShooterSection() {
+  return `
+    <div class="active-shooter-block">
+      <div class="active-shooter-header">
+        <h4>Active Shooter Response</h4>
+        <p>In the event of an active shooter, individuals should employ the <strong>Avoid, Deny, Defend</strong> response method. This strategy is adaptable to the specific situation and environment.</p>
+      </div>
+      <figure class="active-shooter-image-wrap">
+        <img class="active-shooter-image" src="assets/AS.png?v=20260408-1" alt="Active shooter response reference image">
+      </figure>
+      <div class="active-shooter-notes">
+        <p><strong>Avoid (Run):</strong> The first and preferred course of action is to evacuate the area if a safe route is available. Maintain awareness of your surroundings and have an escape route planned. Leave your belongings, evacuate regardless of whether others follow, and do not attempt to move wounded people. Once you have reached a safe location, call 911 and provide any information you have.</p>
+        <p><strong>Deny (Hide):</strong> If you cannot evacuate, your next priority is to deny the attacker access to your location. This involves more than just hiding; it means securing your position. Lock and blockade doors with heavy furniture, turn off lights, silence your phone, and remain out of the shooter's view. Remember that concealment only hides you, while cover can offer protection from bullets.</p>
+        <p><strong>Defend (Fight):</strong> As a last resort, when your life is in immediate danger, you must be prepared to defend yourself. Act aggressively and take action against the shooter. Improvise weapons from your surroundings and commit to your actions. Taking action may be risky, but it could be your best or only chance for survival.</p>
+        <p><strong>When law enforcement arrives:</strong> Remain calm, follow all instructions, keep your hands visible with fingers spread, and be prepared to provide information about the shooter's location, number, and description.</p>
       </div>
     </div>
   `;
