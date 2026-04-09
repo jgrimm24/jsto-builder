@@ -217,6 +217,25 @@ textarea {
   display: none;
 }
 
+.traffic-editor-block {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.traffic-editor-header {
+  display: grid;
+  gap: 8px;
+}
+
+.traffic-editor-header h3,
+.traffic-editor-header p {
+  margin: 0;
+}
+
 .catalog {
   margin: 20px 0;
   padding: 18px;
@@ -836,4 +855,9 @@ body.modal-open {
   font-size: 0.84rem;
   letter-spacing: 0.04em;
   color: #b42318;
+}
+
+.gvo-risk-files-preview ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
 }

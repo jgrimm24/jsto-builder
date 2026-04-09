@@ -92,15 +92,29 @@
             <textarea name="hazardAnalysis" rows="4" placeholder="Summarize work area hazards, BE survey findings, JHAs, JSAs, manufacturer instructions, and hierarchy of controls used for this shop."></textarea>
           </label>
 
-          <label>
-            Traffic Safety Local Hazards / Vehicle Notes
-            <textarea name="trafficSafetyNotes" rows="4" placeholder="Enter local traffic hazards, gate issues, speed-limit concerns, golf cart / GOV / GVO rules, backing / spotter requirements, and where vehicle training is documented."></textarea>
-          </label>
+          <section class="traffic-editor-block">
+            <div class="traffic-editor-header">
+              <h3>Traffic Safety Program</h3>
+              <p>Fill out these Wing- or installation-specific traffic safety details so the JSTO reflects local hazards, vehicle rules, and motorcycle points of contact.</p>
+            </div>
 
-          <label>
-            Unit Motorcycle Safety Representatives / Traffic Contacts
-            <textarea name="motorcycleSafetyReps" rows="3" placeholder="List the unit or group motorcycle safety representatives, traffic safety POCs, and any local rider briefing requirements."></textarea>
-          </label>
+            <label>
+              Traffic Safety Local Hazards / Vehicle Notes
+              <textarea name="trafficSafetyNotes" rows="4" placeholder="Enter local gate hazards, base-specific traffic concerns, speed limits, golf cart / GOV / GVO rules, backing / spotter requirements, and where vehicle training is documented."></textarea>
+            </label>
+
+            <label>
+              Unit Motorcycle Safety Representatives / Traffic Contacts
+              <textarea name="motorcycleSafetyReps" rows="3" placeholder="List the unit or group motorcycle safety representatives, traffic safety POCs, and local rider briefing requirements."></textarea>
+            </label>
+
+            <label>
+              Risk Assessment for Routine Use of GVOs in Traffic, Industrial, or Pedestrian Environments
+              <input id="gvo-risk-files" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" multiple>
+            </label>
+            <div id="gvo-risk-status" class="file-status muted">No GVO risk assessment files uploaded yet.</div>
+            <button id="remove-gvo-risk-files" class="button" type="button">Remove GVO Risk Assessment Files</button>
+          </section>
 
           <div class="form-grid">
             <label>
