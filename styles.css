@@ -861,3 +861,51 @@ body.modal-open {
   margin: 8px 0 0;
   padding-left: 18px;
 }
+
+.library-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 20px 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 48px rgba(104, 77, 46, 0.12);
+}
+
+.library-banner-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.library-banner-copy h2,
+.library-banner-copy p {
+  margin: 0;
+}
+
+.library-banner-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.library-banner-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .library-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .library-banner-actions {
+    justify-content: flex-start;
+  }
+}
+
