@@ -1004,6 +1004,9 @@ function renderTrafficSafetySection() {
           </ul>
         </article>
       </div>
+      <figure class="traffic-safety-image-wrap">
+        <img class="traffic-safety-image" src="assets/motorcycle.png?v=20260410-1" alt="Motorcycle safety reference image">
+      </figure>
       <div class="traffic-safety-notes">
         <p><strong>Local Traffic Hazards / Vehicle Notes:</strong><br>${formatText(meta.trafficSafetyNotes, "Enter local gate hazards, base-specific traffic concerns, spotter rules, and where vehicle training is documented.")}</p>
         <p><strong>Motorcycle Safety Representatives / Traffic Contacts:</strong><br>${formatText(meta.motorcycleSafetyReps, "List unit or group motorcycle safety representatives, traffic safety contacts, and local rider briefing requirements.")}</p>
