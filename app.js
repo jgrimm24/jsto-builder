@@ -1,5 +1,6 @@
 const STORAGE_KEY = "jsto-builder-state-v1";
 const LIBRARY_URL = "https://github.com/jgrimm24/jsto-builder/tree/main/JSTO-Library";
+const LIBRARY_UPLOAD_URL = String(window.JSTO_LIBRARY_UPLOAD_URL || "").trim().replace(/\/$/, "");
 
 const REQUIRED_MODULES = [
   {
@@ -1363,6 +1364,19 @@ function createStateFilename(suffix = "outline") {
   return `${parts.join("-") || "jsto-outline"}.json`;
 }
 
+function createLibrarySubmissionPayload() {
+  return {
+    submittedAt: new Date().toISOString(),
+    libraryVersion: 1,
+    filename: createStateFilename("library-package"),
+    unit: state.meta.unit || "",
+    workCenter: state.meta.workCenter || "",
+    officeSymbol: state.meta.officeSymbol || "",
+    state,
+    previewHtml: preview.innerHTML
+  };
+}
+
 function downloadState(filename = createStateFilename()) {
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -1373,11 +1387,42 @@ function downloadState(filename = createStateFilename()) {
   URL.revokeObjectURL(url);
 }
 
-function saveToLibrary() {
+async function saveToLibrary() {
   saveState();
-  downloadState(createStateFilename("library-package"));
-  window.open(LIBRARY_URL, "_blank", "noreferrer");
-  window.alert("JSTO package downloaded. Upload the JSON file, and any exported PDF, to the JSTO Library GitHub folder.");
+  if (!LIBRARY_UPLOAD_URL) {
+    window.alert("The JSTO Library upload service is not configured yet. Add your Render service URL in index.html before using this button.");
+    return;
+  }
+
+  const saveLibraryButton = document.getElementById("save-library");
+  const originalLabel = saveLibraryButton.textContent;
+  saveLibraryButton.disabled = true;
+  saveLibraryButton.textContent = "Saving...";
+
+  try {
+    const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/save-library`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(createLibrarySubmissionPayload())
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(result.error || "JSTO Library upload failed.");
+    }
+
+    window.alert("JSTO uploaded to the JSTO Library.");
+    window.open(result.libraryUrl || LIBRARY_URL, "_blank", "noreferrer");
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "JSTO Library upload failed.";
+    window.alert(`${message} You can still use Save in Browser as a backup.`);
+  } finally {
+    saveLibraryButton.disabled = false;
+    saveLibraryButton.textContent = originalLabel;
+  }
 }
 
 function uploadEvacuationImage(event) {
