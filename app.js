@@ -1,4 +1,5 @@
 const STORAGE_KEY = "jsto-builder-state-v1";
+const LIBRARY_URL = "https://github.com/jgrimm24/jsto-builder/tree/main/JSTO-Library";
 
 const REQUIRED_MODULES = [
   {
@@ -182,8 +183,8 @@ const OPTIONAL_MODULES = [
     id: "14.1.3.16",
     title: "Medical Surveillance Examination",
     reference: "AFI 48-145",
-    trainingRequirement: "Tie this module to the specific exposure program and explain when surveillance is required, how scheduling works, and what triggers follow-up. OSHA 2254 crosswalks most directly where laboratory or substance-specific standards require information on exposure limits, signs and symptoms, and protective measures, but the AF medical surveillance program should remain the primary driver.",
-    trainingSource: "Partial OSHA 2254 crosswalk / 29 CFR 1910.1450 and exposure-specific standards",
+    trainingRequirement: "Tie this module to the specific exposure program and explain when surveillance is required, how scheduling works, and what triggers follow-up. OSHA 2254 aligns most directly where laboratory or substance-specific standards require information on exposure limits, signs and symptoms, and protective measures, but the AF medical surveillance program should remain the primary driver.",
+    trainingSource: "Partial OSHA 2254 alignment with 29 CFR 1910.1450 and exposure-specific standards",
     afTrainingRequirement: "Use the occupational health risk assessment and exposure-specific program requirements to decide who needs surveillance, what triggers enrollment, and what training or briefings must accompany the surveillance requirement.",
     afTrainingSource: "DAFMAN 91-203 para. 2.2 and AFI 48-145"
   },
@@ -389,6 +390,7 @@ document.getElementById("save-browser").addEventListener("click", () => {
   saveState();
   window.alert("JSTO saved in this browser.");
 });
+document.getElementById("save-library").addEventListener("click", saveToLibrary);
 const downloadJsonButton = document.getElementById("download-json");
 if (downloadJsonButton) {
   downloadJsonButton.addEventListener("click", downloadState);
@@ -1285,20 +1287,20 @@ function renderGvoRiskPreview() {
 function renderForm1118Status() {
   const count = state.form1118Files.length;
   if (!count) {
-    form1118Status.textContent = "No AF Form 1118 files uploaded yet.";
+    form1118Status.textContent = "No DAF Form 1118 files uploaded yet.";
     return;
   }
 
-  form1118Status.textContent = `${count} AF Form 1118 file${count === 1 ? "" : "s"} loaded.`;
+  form1118Status.textContent = `${count} DAF Form 1118 file${count === 1 ? "" : "s"} loaded.`;
 }
 
 function renderForm1118Preview() {
   if (!state.form1118Files.length) {
-    return `<p class="muted">No AF Form 1118 files uploaded.</p>`;
+    return `<p class="muted">No DAF Form 1118 files uploaded.</p>`;
   }
 
   const items = state.form1118Files.map((file, index) => {
-    const safeName = escapeHtml(file.name || `AF Form 1118 ${index + 1}`);
+    const safeName = escapeHtml(file.name || `DAF Form 1118 ${index + 1}`);
     const safeHref = escapeHtml(file.dataUrl || "");
     return safeHref
       ? `<li><a href="${safeHref}" download="${safeName}">${safeName}</a></li>`
@@ -1307,7 +1309,7 @@ function renderForm1118Preview() {
 
   return `
     <div class="form-1118-files-preview">
-      <strong>Upload your AF Form 1118's here:</strong>
+      <strong>Upload your DAF Form 1118's here:</strong>
       <ul>${items}</ul>
     </div>
   `;
@@ -1349,14 +1351,33 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-function downloadState() {
+function createStateFilename(suffix = "outline") {
+  const parts = [
+    state.meta.unit,
+    state.meta.workCenter,
+    suffix
+  ]
+    .map((value) => String(value || "").trim().toLowerCase().replaceAll(/[^a-z0-9]+/g, "-"))
+    .filter(Boolean);
+
+  return `${parts.join("-") || "jsto-outline"}.json`;
+}
+
+function downloadState(filename = createStateFilename()) {
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${(state.meta.workCenter || "jsto").replaceAll(/\s+/g, "-").toLowerCase()}-outline.json`;
+  link.download = filename;
   link.click();
   URL.revokeObjectURL(url);
+}
+
+function saveToLibrary() {
+  saveState();
+  downloadState(createStateFilename("library-package"));
+  window.open(LIBRARY_URL, "_blank", "noreferrer");
+  window.alert("JSTO package downloaded. Upload the JSON file, and any exported PDF, to the JSTO Library GitHub folder.");
 }
 
 function uploadEvacuationImage(event) {
