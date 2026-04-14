@@ -144,9 +144,9 @@ const OPTIONAL_MODULES = [
   {
     id: "14.1.3.11",
     title: "Explosives Safety Training",
-    reference: "AFMAN 91-201; DAFI 91-202",
+    reference: "DESR6055.09_DAFMAN91-201; DAFI 91-202",
     trainingRequirement: "Use explosives-specific AF lesson plans and local operating instructions. OSHA 2254 includes transportation and explosives references, but the Air Force explosives program should remain the primary training basis for this module.",
-    trainingSource: "AFMAN 91-201 / local procedures"
+    trainingSource: "DESR6055.09_DAFMAN91-201 / local procedures"
   },
   {
     id: "14.1.3.12",
