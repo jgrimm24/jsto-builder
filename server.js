@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const port = process.env.PORT || 4173;
-const host = process.env.HOST || "127.0.0.1";
+const host = process.env.HOST || "0.0.0.0";
 const root = __dirname;
 const githubToken = process.env.GITHUB_TOKEN || "";
 const githubOwner = process.env.GITHUB_OWNER || "jgrimm24";
