@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const puppeteer = require("puppeteer");
 
 const port = process.env.PORT || 4173;
 const host = process.env.HOST || "0.0.0.0";
@@ -11,6 +12,7 @@ const githubRepo = process.env.GITHUB_REPO || "jsto-builder";
 const githubBranch = process.env.GITHUB_BRANCH || "main";
 const libraryPath = process.env.GITHUB_LIBRARY_PATH || "JSTO-Library";
 const maxBodySize = 35 * 1024 * 1024;
+const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -44,19 +46,86 @@ function createLibraryFilename(payload) {
   const workCenter = sanitizeSlug(payload.workCenter, "");
   const submittedAt = sanitizeSlug(payload.submittedAt, "submission").replace(/-+/g, "-");
   const parts = [unit, workCenter, submittedAt].filter(Boolean);
-  return `${parts.join("-") || "jsto-library-submission"}.json`;
+  return `${parts.join("-") || "jsto-library-submission"}.pdf`;
 }
 
-async function saveLibrarySubmission(payload) {
+function buildPdfHtml(payload, serviceBaseUrl) {
+  const title = [payload.unit, payload.workCenter].filter(Boolean).join(" - ") || "Job Safety Training Outline";
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="${serviceBaseUrl}/">
+  <title>${title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <style>${stylesCss}</style>
+  <style>
+    body {
+      padding: 0;
+      background: white;
+    }
+
+    .pdf-shell {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .preview {
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+      min-height: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="pdf-shell">
+    <article class="preview">${payload.previewHtml || ""}</article>
+  </main>
+</body>
+</html>`;
+}
+
+async function renderLibraryPdf(payload, serviceBaseUrl) {
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+  });
+
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 1810, deviceScaleFactor: 1 });
+    await page.setContent(buildPdfHtml(payload, serviceBaseUrl), {
+      waitUntil: "networkidle0"
+    });
+
+    return await page.pdf({
+      format: "Letter",
+      printBackground: true,
+      margin: {
+        top: "0.4in",
+        right: "0.4in",
+        bottom: "0.4in",
+        left: "0.4in"
+      }
+    });
+  } finally {
+    await browser.close();
+  }
+}
+
+async function createGitHubFile(targetPath, content, message) {
   if (!githubToken) {
     throw new Error("The upload service is missing the GITHUB_TOKEN environment variable.");
   }
 
-  const filename = createLibraryFilename(payload);
-  const targetPath = `${libraryPath}/${filename}`;
   const body = {
-    message: `Add JSTO library submission for ${payload.workCenter || payload.unit || "work center"}`,
-    content: Buffer.from(JSON.stringify(payload, null, 2), "utf8").toString("base64"),
+    message,
+    content,
     branch: githubBranch
   };
 
@@ -75,6 +144,19 @@ async function saveLibrarySubmission(payload) {
   if (!response.ok) {
     throw new Error(result.message || "GitHub rejected the JSTO Library upload.");
   }
+
+  return result;
+}
+
+async function saveLibrarySubmission(payload, serviceBaseUrl) {
+  const filename = createLibraryFilename(payload);
+  const targetPath = `${libraryPath}/${filename}`;
+  const pdfBuffer = await renderLibraryPdf(payload, serviceBaseUrl);
+  const result = await createGitHubFile(
+    targetPath,
+    pdfBuffer.toString("base64"),
+    `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"}`
+  );
 
   return {
     filename,
@@ -110,7 +192,10 @@ http.createServer(async (req, res) => {
           throw new Error("Upload payload is missing.");
         }
 
-        const saved = await saveLibrarySubmission(payload);
+        const forwardedProto = req.headers["x-forwarded-proto"] || "http";
+        const hostHeader = req.headers.host || `127.0.0.1:${port}`;
+        const serviceBaseUrl = `${forwardedProto}://${hostHeader}`;
+        const saved = await saveLibrarySubmission(payload, serviceBaseUrl);
         sendJson(res, 200, {
           ok: true,
           filename: saved.filename,

@@ -1368,11 +1368,10 @@ function createLibrarySubmissionPayload() {
   return {
     submittedAt: new Date().toISOString(),
     libraryVersion: 1,
-    filename: createStateFilename("library-package"),
+    filename: createStateFilename("library-package").replace(/\.json$/i, ".pdf"),
     unit: state.meta.unit || "",
     workCenter: state.meta.workCenter || "",
     officeSymbol: state.meta.officeSymbol || "",
-    state,
     previewHtml: preview.innerHTML
   };
 }
@@ -1414,7 +1413,7 @@ async function saveToLibrary() {
       throw new Error(result.error || "JSTO Library upload failed.");
     }
 
-    window.alert("JSTO uploaded to the JSTO Library.");
+    window.alert("JSTO PDF uploaded to the JSTO Library.");
     window.open(result.libraryUrl || LIBRARY_URL, "_blank", "noreferrer");
   } catch (error) {
     const message = error instanceof Error ? error.message : "JSTO Library upload failed.";

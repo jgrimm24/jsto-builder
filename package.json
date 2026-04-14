@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Static Job Safety Training Outline builder aligned to DAFI 91-202 paragraph 14.1",
+  "dependencies": {
+    "puppeteer": "^24.8.2"
+  },
   "scripts": {
     "start": "node server.js"
   }
