@@ -417,11 +417,17 @@ body.modal-open {
   margin-bottom: 8px;
 }
 
+.evacuation-image-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
 .route-image {
   width: 100%;
   margin-top: 12px;
   border-radius: 16px;
   border: 1px solid rgba(31, 42, 42, 0.12);
+  display: block;
 }
 
 .emergency-equipment-files-preview {
@@ -432,13 +438,71 @@ body.modal-open {
   margin-top: 10px;
 }
 
-.emergency-equipment-files-preview li {
+.emergency-equipment-files-preview li,
+.gvo-risk-files-preview li,
+.form-1118-files-preview li {
   margin-bottom: 12px;
+  list-style: none;
 }
 
-.emergency-equipment-image {
+.uploaded-asset {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.uploaded-asset-image {
+  margin: 12px 0 0;
+}
+
+.uploaded-asset-image-file {
+  width: 100%;
   max-width: 560px;
   display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+}
+
+.uploaded-asset-name {
+  margin-top: 8px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.uploaded-asset-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  background: rgba(10, 92, 99, 0.05);
+}
+
+.uploaded-asset-badge {
+  min-width: 48px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.uploaded-asset-copy {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+}
+
+.uploaded-asset-copy span {
+  color: var(--muted);
+}
+
+.uploaded-asset-card a {
+  white-space: nowrap;
 }
 
 .tag {
@@ -821,6 +885,12 @@ body.modal-open {
 }
 
 @media print {
+  img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
   body {
     background: white;
     padding: 0;

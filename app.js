@@ -400,7 +400,7 @@ const uploadJsonInput = document.getElementById("upload-json");
 if (uploadJsonInput) {
   uploadJsonInput.addEventListener("change", uploadState);
 }
-document.getElementById("print-pdf").addEventListener("click", () => window.print());
+document.getElementById("print-pdf").addEventListener("click", printPreview);
 moduleSelect.addEventListener("change", handleModuleSelection);
 addCustomModuleButton.addEventListener("click", addCustomModule);
 unitImageInput.addEventListener("change", uploadUnitImage);
@@ -1199,7 +1199,7 @@ function renderEvacuationImage() {
   }
 
   return `
-    <div>
+    <div class="evacuation-image-block">
       <strong>Emergency Evacuation Route:</strong>
       <img
         class="route-image"
@@ -1229,22 +1229,56 @@ function renderEmergencyEquipmentFilesStatus() {
   emergencyEquipmentFilesStatus.textContent = `${count} emergency equipment file${count === 1 ? "" : "s"} loaded.`;
 }
 
+function renderUploadedAsset(file, fallbackName, imageAltPrefix) {
+  const safeName = escapeHtml(file?.name || fallbackName);
+  const safeHref = escapeHtml(file?.dataUrl || "");
+  const type = String(file?.type || "").toLowerCase();
+  const extension = String(file?.name || "").split(".").pop()?.toLowerCase() || "";
+  const isImage = type.startsWith("image/") || ["png", "jpg", "jpeg", "gif", "webp", "bmp", "svg"].includes(extension);
+  const isPdf = type.includes("pdf") || extension === "pdf";
+
+  if (isImage && safeHref) {
+    return `
+      <figure class="uploaded-asset uploaded-asset-image">
+        <img class="uploaded-asset-image-file" src="${safeHref}" alt="${escapeHtml(imageAltPrefix)}: ${safeName}">
+        <figcaption class="uploaded-asset-name">${safeName}</figcaption>
+      </figure>
+    `;
+  }
+
+  if (isPdf) {
+    return `
+      <div class="uploaded-asset uploaded-asset-card uploaded-asset-pdf">
+        <div class="uploaded-asset-badge">PDF</div>
+        <div class="uploaded-asset-copy">
+          <strong>${safeName}</strong>
+          <span>PDF attachment included. Open separately for the full document.</span>
+        </div>
+        ${safeHref ? `<a href="${safeHref}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="uploaded-asset uploaded-asset-card">
+      <div class="uploaded-asset-badge">FILE</div>
+      <div class="uploaded-asset-copy">
+        <strong>${safeName}</strong>
+        <span>Attachment included with this JSTO export.</span>
+      </div>
+      ${safeHref ? `<a href="${safeHref}" target="_blank" rel="noreferrer">Open file</a>` : ""}
+    </div>
+  `;
+}
+
 function renderEmergencyEquipmentFiles() {
   if (!state.emergencyEquipmentFiles.length) {
     return `<p class="muted">No emergency equipment maps or photos uploaded.</p>`;
   }
 
-  const items = state.emergencyEquipmentFiles.map((file, index) => {
-    const safeName = escapeHtml(file.name || `Attachment ${index + 1}`);
-    const safeHref = escapeHtml(file.dataUrl || "");
-    const isImage = (file.type || "").startsWith("image/");
-    return `
-      <li>
-        <a href="${safeHref}" target="_blank" rel="noreferrer">${safeName}</a>
-        ${isImage ? `<img class="route-image emergency-equipment-image" src="${safeHref}" alt="Emergency equipment map or photo: ${safeName}">` : ""}
-      </li>
-    `;
-  }).join("");
+  const items = state.emergencyEquipmentFiles.map((file, index) => `
+      <li>${renderUploadedAsset(file, `Attachment ${index + 1}`, "Emergency equipment map or photo")}</li>
+    `).join("");
 
   return `
     <div class="emergency-equipment-files-preview">
@@ -1269,13 +1303,9 @@ function renderGvoRiskPreview() {
     return `<p class="muted">No GVO risk assessment files uploaded.</p>`;
   }
 
-  const items = state.gvoRiskFiles.map((file, index) => {
-    const safeName = escapeHtml(file.name || `GVO Risk Assessment ${index + 1}`);
-    const safeHref = escapeHtml(file.dataUrl || "");
-    return safeHref
-      ? `<li><a href="${safeHref}" download="${safeName}">${safeName}</a></li>`
-      : `<li>${safeName}</li>`;
-  }).join("");
+  const items = state.gvoRiskFiles.map((file, index) => `
+      <li>${renderUploadedAsset(file, `GVO Risk Assessment ${index + 1}`, "GVO risk assessment attachment")}</li>
+    `).join("");
 
   return `
     <div class="gvo-risk-files-preview">
@@ -1300,13 +1330,9 @@ function renderForm1118Preview() {
     return `<p class="muted">No DAF Form 1118 files uploaded.</p>`;
   }
 
-  const items = state.form1118Files.map((file, index) => {
-    const safeName = escapeHtml(file.name || `DAF Form 1118 ${index + 1}`);
-    const safeHref = escapeHtml(file.dataUrl || "");
-    return safeHref
-      ? `<li><a href="${safeHref}" download="${safeName}">${safeName}</a></li>`
-      : `<li>${safeName}</li>`;
-  }).join("");
+  const items = state.form1118Files.map((file, index) => `
+      <li>${renderUploadedAsset(file, `DAF Form 1118 ${index + 1}`, "DAF Form 1118 attachment")}</li>
+    `).join("");
 
   return `
     <div class="form-1118-files-preview">
@@ -1330,13 +1356,12 @@ function renderBioSurveyPreview() {
     return `<p class="muted">No Bioenvironmental Workplace Survey uploaded.</p>`;
   }
 
-  const safeName = escapeHtml(state.bioSurvey.name);
-  if (state.bioSurvey.dataUrl) {
-    const safeHref = escapeHtml(state.bioSurvey.dataUrl);
-    return `<p><strong>Bioenvironmental Workplace Survey:</strong> <a href="${safeHref}" download="${safeName}">${safeName}</a></p>`;
-  }
-
-  return `<p><strong>Bioenvironmental Workplace Survey:</strong> ${safeName}</p>`;
+  return `
+    <div class="bio-survey-preview">
+      <strong>Bioenvironmental Workplace Survey:</strong>
+      ${renderUploadedAsset(state.bioSurvey, state.bioSurvey.name || "Bioenvironmental Workplace Survey", "Bioenvironmental workplace survey")}
+    </div>
+  `;
 }
 
 function formatText(value, fallback) {
@@ -1374,6 +1399,76 @@ function createLibrarySubmissionPayload() {
     officeSymbol: state.meta.officeSymbol || "",
     previewHtml: preview.innerHTML
   };
+}
+
+async function printPreview() {
+  const printWindow = window.open("", "_blank", "noopener,noreferrer,width=1000,height=900");
+
+  if (!printWindow) {
+    window.print();
+    return;
+  }
+
+  const stylesheetHref = document.querySelector('link[href*="styles.css"]')?.href || "styles.css";
+  const title = state.meta.workCenter ? `${state.meta.workCenter} JSTO` : "JSTO Preview";
+
+  printWindow.document.open();
+  printWindow.document.write(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>${escapeHtml(title)}</title>
+    <link rel="stylesheet" href="${stylesheetHref}">
+    <style>
+      body {
+        background: white;
+        padding: 24px;
+      }
+
+      .preview {
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: none;
+        border: 0;
+        background: white;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    ${preview.outerHTML}
+  </body>
+</html>`);
+  printWindow.document.close();
+
+  await new Promise((resolve) => {
+    if (printWindow.document.readyState === "complete") {
+      resolve();
+      return;
+    }
+    printWindow.addEventListener("load", () => resolve(), { once: true });
+  });
+
+  const images = Array.from(printWindow.document.images);
+  await Promise.all(images.map((img) => new Promise((resolve) => {
+    if (img.complete && img.naturalWidth > 0) {
+      resolve();
+      return;
+    }
+
+    const done = () => {
+      img.removeEventListener("load", done);
+      img.removeEventListener("error", done);
+      resolve();
+    };
+
+    img.addEventListener("load", done, { once: true });
+    img.addEventListener("error", done, { once: true });
+  })));
+
+  printWindow.focus();
+  printWindow.print();
+  printWindow.addEventListener("afterprint", () => printWindow.close(), { once: true });
 }
 
 function downloadState(filename = createStateFilename()) {
