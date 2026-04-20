@@ -238,13 +238,6 @@ const OPTIONAL_MODULES = [
     trainingSource: "No direct OSHA 2254 training excerpt; local procedures"
   },
   {
-    id: "local-4",
-    title: "Risk Management Fundamentals",
-    reference: "Local mishap prevention and RM awareness training",
-    trainingRequirement: "Tie this to the unit safety management system, hazard identification, control selection, and local reporting/escalation expectations.",
-    trainingSource: "DAFSMS / local RM program"
-  },
-  {
     id: "local-5",
     title: "Manual Lifting and Material Handling",
     reference: "Manual lifting techniques and available lifting devices",
@@ -291,6 +284,7 @@ const defaultState = {
     workDescription: "",
     references: "",
     hazardAnalysis: "",
+    riskManagementNotes: "",
     trafficSafetyNotes: "",
     motorcycleSafetyReps: "",
     emergencyNumbers: "",
@@ -368,6 +362,8 @@ const fieldEditorSaveButton = document.getElementById("field-editor-save");
 
 let state = loadState();
 let activeExpandedField = null;
+let previewRenderTimer = null;
+let persistenceWarningShown = false;
 
 populateModuleSelect();
 hydrateForm();
@@ -461,8 +457,14 @@ function loadState() {
     }
 
     const parsed = JSON.parse(raw);
+    const parsedSelectedModules = Array.isArray(parsed.selectedModules) ? parsed.selectedModules : [];
+    const migratedRiskManagementModule = parsedSelectedModules.find((module) => module?.id === "local-4");
     return {
-      meta: { ...defaultState.meta, ...parsed.meta },
+      meta: {
+        ...defaultState.meta,
+        ...parsed.meta,
+        riskManagementNotes: parsed?.meta?.riskManagementNotes || migratedRiskManagementModule?.notes || defaultState.meta.riskManagementNotes
+      },
       unitImage: {
         ...defaultState.unitImage,
         ...(parsed.unitImage || {})
@@ -482,7 +484,7 @@ function loadState() {
         ...defaultState.bioSurvey,
         ...(parsed.bioSurvey || {})
       },
-      selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
+      selectedModules: parsedSelectedModules.filter((module) => module?.id !== "local-4")
     };
   } catch {
     return structuredClone(defaultState);
@@ -490,7 +492,25 @@ function loadState() {
 }
 
 function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    persistenceWarningShown = false;
+    return true;
+  } catch (error) {
+    if (!persistenceWarningShown) {
+      persistenceWarningShown = true;
+      window.alert("Browser save storage is full. Your changes still appear in this session, but very large uploads may not persist after refresh.");
+    }
+    console.warn("Unable to save JSTO state in browser storage.", error);
+    return false;
+  }
+}
+
+function schedulePreviewRender(delay = 250) {
+  window.clearTimeout(previewRenderTimer);
+  previewRenderTimer = window.setTimeout(() => {
+    renderPreview();
+  }, delay);
 }
 
 function hydrateForm() {
@@ -510,7 +530,7 @@ function handleFormChange(event) {
 
   state.meta[target.name] = target.value;
   saveState();
-  renderPreview();
+  schedulePreviewRender();
 }
 
 function openFieldEditor(field) {
@@ -638,7 +658,7 @@ function renderSelectedModules() {
     notesField.addEventListener("input", (event) => {
       module.notes = event.target.value;
       saveState();
-      renderPreview();
+      schedulePreviewRender();
     });
 
     const linkField = fragment.querySelector(".module-link");
@@ -646,7 +666,7 @@ function renderSelectedModules() {
     linkField.addEventListener("input", (event) => {
       module.link = event.target.value;
       saveState();
-      renderPreview();
+      schedulePreviewRender();
     });
 
     fragment.querySelector(".remove-module").addEventListener("click", () => {
@@ -726,6 +746,13 @@ function renderPreview() {
     <section class="preview-section">
       <h3>Work Area Hazard Analysis</h3>
       <p>${formatText(meta.hazardAnalysis, "Summarize work area hazards, BE survey items, JHAs, JSAs, and other written guidance that support this JSTO.")}</p>
+    </section>
+
+    <section class="preview-section">
+      <h3>Risk Management Fundamentals</h3>
+      <p><strong>Reference:</strong> DAFSMS and local RM program guidance.</p>
+      <p>Address hazard identification, control selection, local escalation expectations, and when RM refresher training must be completed for this work center.</p>
+      <p>${formatText(meta.riskManagementNotes, "Document how the work center covers RM fundamentals, where refresher files or briefing materials are stored, and how personnel access those resources.")}</p>
     </section>
 
     <section class="preview-section">
@@ -1522,6 +1549,12 @@ async function saveToLibrary() {
 function uploadEvacuationImage(event) {
   const [file] = event.target.files || [];
   if (!file) {
+    return;
+  }
+
+  if (!(file.type || "").startsWith("image/")) {
+    window.alert("Please upload an image file for the evacuation route, such as PNG or JPEG.");
+    evacuationImageInput.value = "";
     return;
   }
 
