@@ -59,9 +59,6 @@ function buildPdfHtml(payload, serviceBaseUrl) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="${serviceBaseUrl}/">
   <title>${title}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
   <style>${stylesCss}</style>
   <style>
     body {
@@ -98,9 +95,38 @@ async function renderLibraryPdf(payload, serviceBaseUrl) {
 
   try {
     const page = await browser.newPage();
+    page.setDefaultNavigationTimeout(0);
     await page.setViewport({ width: 1280, height: 1810, deviceScaleFactor: 1 });
     await page.setContent(buildPdfHtml(payload, serviceBaseUrl), {
-      waitUntil: "networkidle0"
+      waitUntil: "domcontentloaded",
+      timeout: 0
+    });
+
+    await page.evaluate(async () => {
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      const imagePromises = Array.from(document.images || []).map((img) => {
+        if (img.complete) {
+          return Promise.resolve();
+        }
+
+        return new Promise((resolve) => {
+          const done = () => resolve();
+          img.addEventListener("load", done, { once: true });
+          img.addEventListener("error", done, { once: true });
+        });
+      });
+
+      await Promise.race([
+        Promise.all(imagePromises),
+        wait(5000)
+      ]);
+
+      if (document.fonts?.ready) {
+        await Promise.race([document.fonts.ready, wait(2000)]);
+      }
+
+      await wait(250);
     });
 
     return await page.pdf({
