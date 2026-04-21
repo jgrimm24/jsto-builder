@@ -41,7 +41,22 @@ function sanitizeSlug(value, fallback = "jsto") {
   return slug || fallback;
 }
 
+function sanitizeLibraryFilename(value) {
+  const stem = String(value || "")
+    .trim()
+    .replace(/\.pdf$/i, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return `${stem || "jsto-library-submission"}.pdf`;
+}
+
 function createLibraryFilename(payload) {
+  if (payload?.filename) {
+    return sanitizeLibraryFilename(payload.filename);
+  }
+
   const unit = sanitizeSlug(payload.unit, "");
   const workCenter = sanitizeSlug(payload.workCenter, "");
   const submittedAt = sanitizeSlug(payload.submittedAt, "submission").replace(/-+/g, "-");
