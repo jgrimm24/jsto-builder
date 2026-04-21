@@ -151,10 +151,11 @@ async function createGitHubFile(targetPath, content, message) {
 async function saveLibrarySubmission(payload, serviceBaseUrl) {
   const filename = createLibraryFilename(payload);
   const targetPath = `${libraryPath}/${filename}`;
-  const pdfBuffer = await renderLibraryPdf(payload, serviceBaseUrl);
+  const pdfBytes = await renderLibraryPdf(payload, serviceBaseUrl);
+  const pdfBase64 = Buffer.from(pdfBytes).toString("base64");
   const result = await createGitHubFile(
     targetPath,
-    pdfBuffer.toString("base64"),
+    pdfBase64,
     `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"}`
   );
 
