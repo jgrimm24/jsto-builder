@@ -21,6 +21,17 @@ const mimeTypes = {
   ".json": "application/json; charset=utf-8"
 };
 
+const assetMimeTypes = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".gif": "image/gif",
+  ".svg": "image/svg+xml",
+  ".bmp": "image/bmp",
+  ".avif": "image/avif"
+};
+
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8",
@@ -88,20 +99,81 @@ function toAbsoluteAssetUrl(value, serviceBaseUrl) {
   return new URL(raw, `${serviceBaseUrl}/`).toString();
 }
 
-function normalizePreviewHtml(previewHtml, serviceBaseUrl) {
-  return extractPreviewMarkup(previewHtml)
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<(img|source)([^>]*?)\ssrc=(['"])([^'"]+)\3([^>]*?)>/gi, (match, tag, before, quote, src, after) => {
-      return `<${tag}${before} src=${quote}${toAbsoluteAssetUrl(src, serviceBaseUrl)}${quote}${after}>`;
-    })
-    .replace(/<a([^>]*?)\shref=(['"])([^'"]+)\2([^>]*?)>/gi, (match, before, quote, href, after) => {
-      return `<a${before} href=${quote}${toAbsoluteAssetUrl(href, serviceBaseUrl)}${quote}${after}>`;
-    });
+function replaceLinksWithAbsoluteUrls(previewMarkup, serviceBaseUrl) {
+  return previewMarkup.replace(/<a([^>]*?)\shref=(['"])([^'"]+)\2([^>]*?)>/gi, (match, before, quote, href, after) => {
+    return `<a${before} href=${quote}${toAbsoluteAssetUrl(href, serviceBaseUrl)}${quote}${after}>`;
+  });
 }
 
-function buildPdfHtml(payload, serviceBaseUrl) {
+function getAssetContentType(assetUrl, response) {
+  const headerType = response.headers.get("content-type");
+  if (headerType) {
+    return headerType.split(";")[0].trim();
+  }
+
+  try {
+    const pathname = new URL(assetUrl).pathname;
+    const ext = path.extname(pathname).toLowerCase();
+    return assetMimeTypes[ext] || "application/octet-stream";
+  } catch {
+    return "application/octet-stream";
+  }
+}
+
+async function fetchAssetAsDataUrl(assetUrl) {
+  const response = await fetch(assetUrl);
+  if (!response.ok) {
+    throw new Error(`Asset request failed with ${response.status} for ${assetUrl}`);
+  }
+
+  const contentType = getAssetContentType(assetUrl, response);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  return `data:${contentType};base64,${bytes.toString("base64")}`;
+}
+
+async function replaceImageSrcWithDataUrls(previewMarkup, serviceBaseUrl) {
+  const assetCache = new Map();
+  const pattern = /<(img|source)([^>]*?)\ssrc=(['"])([^'"]+)\3([^>]*?)>/gi;
+  let output = "";
+  let lastIndex = 0;
+
+  for (const match of previewMarkup.matchAll(pattern)) {
+    const [fullMatch, tag, before, quote, rawSrc, after] = match;
+    const matchIndex = match.index || 0;
+    output += previewMarkup.slice(lastIndex, matchIndex);
+
+    const absoluteSrc = toAbsoluteAssetUrl(rawSrc, serviceBaseUrl);
+    let resolvedSrc = absoluteSrc;
+
+    if (absoluteSrc && !/^(?:data:|blob:|#)/i.test(absoluteSrc)) {
+      if (!assetCache.has(absoluteSrc)) {
+        try {
+          assetCache.set(absoluteSrc, await fetchAssetAsDataUrl(absoluteSrc));
+        } catch {
+          assetCache.set(absoluteSrc, absoluteSrc);
+        }
+      }
+
+      resolvedSrc = assetCache.get(absoluteSrc) || absoluteSrc;
+    }
+
+    output += `<${tag}${before} src=${quote}${resolvedSrc}${quote}${after}>`;
+    lastIndex = matchIndex + fullMatch.length;
+  }
+
+  output += previewMarkup.slice(lastIndex);
+  return output;
+}
+
+async function normalizePreviewHtml(previewHtml, serviceBaseUrl) {
+  const withoutScripts = extractPreviewMarkup(previewHtml).replace(/<script[\s\S]*?<\/script>/gi, "");
+  const withAbsoluteLinks = replaceLinksWithAbsoluteUrls(withoutScripts, serviceBaseUrl);
+  return replaceImageSrcWithDataUrls(withAbsoluteLinks, serviceBaseUrl);
+}
+
+async function buildPdfHtml(payload, serviceBaseUrl) {
   const title = [payload.unit, payload.workCenter].filter(Boolean).join(" - ") || "Job Safety Training Outline";
-  const previewMarkup = normalizePreviewHtml(payload.previewHtml, serviceBaseUrl);
+  const previewMarkup = await normalizePreviewHtml(payload.previewHtml, serviceBaseUrl);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -148,7 +220,7 @@ async function renderLibraryPdf(payload, serviceBaseUrl) {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(0);
     await page.setViewport({ width: 1280, height: 1810, deviceScaleFactor: 1 });
-    await page.setContent(buildPdfHtml(payload, serviceBaseUrl), {
+    await page.setContent(await buildPdfHtml(payload, serviceBaseUrl), {
       waitUntil: "domcontentloaded",
       timeout: 0
     });
