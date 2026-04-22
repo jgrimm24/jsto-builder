@@ -896,9 +896,11 @@ body.modal-open {
     padding: 0;
   }
 
+  .library-banner,
   .hero,
   .form-panel,
-  .hero-actions {
+  .hero-actions,
+  .preview-panel .section-heading {
     display: none;
   }
 
