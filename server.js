@@ -64,8 +64,44 @@ function createLibraryFilename(payload) {
   return `${parts.join("-") || "jsto-library-submission"}.pdf`;
 }
 
+function extractPreviewMarkup(html) {
+  const source = String(html || "");
+  const previewById = source.match(/<article[^>]+id=["']preview["'][^>]*>([\s\S]*?)<\/article>/i);
+  if (previewById) {
+    return previewById[1];
+  }
+
+  const previewByClass = source.match(/<article[^>]+class=["'][^"']*\bpreview\b[^"']*["'][^>]*>([\s\S]*?)<\/article>/i);
+  if (previewByClass) {
+    return previewByClass[1];
+  }
+
+  return source;
+}
+
+function toAbsoluteAssetUrl(value, serviceBaseUrl) {
+  const raw = String(value || "").trim();
+  if (!raw || /^(?:[a-z]+:|\/\/|data:|blob:|#)/i.test(raw)) {
+    return raw;
+  }
+
+  return new URL(raw, `${serviceBaseUrl}/`).toString();
+}
+
+function normalizePreviewHtml(previewHtml, serviceBaseUrl) {
+  return extractPreviewMarkup(previewHtml)
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<(img|source)([^>]*?)\ssrc=(['"])([^'"]+)\3([^>]*?)>/gi, (match, tag, before, quote, src, after) => {
+      return `<${tag}${before} src=${quote}${toAbsoluteAssetUrl(src, serviceBaseUrl)}${quote}${after}>`;
+    })
+    .replace(/<a([^>]*?)\shref=(['"])([^'"]+)\2([^>]*?)>/gi, (match, before, quote, href, after) => {
+      return `<a${before} href=${quote}${toAbsoluteAssetUrl(href, serviceBaseUrl)}${quote}${after}>`;
+    });
+}
+
 function buildPdfHtml(payload, serviceBaseUrl) {
   const title = [payload.unit, payload.workCenter].filter(Boolean).join(" - ") || "Job Safety Training Outline";
+  const previewMarkup = normalizePreviewHtml(payload.previewHtml, serviceBaseUrl);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -96,7 +132,7 @@ function buildPdfHtml(payload, serviceBaseUrl) {
 </head>
 <body>
   <main class="pdf-shell">
-    <article class="preview">${payload.previewHtml || ""}</article>
+    <article class="preview">${previewMarkup}</article>
   </main>
 </body>
 </html>`;
@@ -121,7 +157,7 @@ async function renderLibraryPdf(payload, serviceBaseUrl) {
       const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
       const imagePromises = Array.from(document.images || []).map((img) => {
-        if (img.complete) {
+        if (img.complete && img.naturalWidth > 0) {
           return Promise.resolve();
         }
 
