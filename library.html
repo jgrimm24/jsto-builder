@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSTO Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260422-2">
+  <script>
+    window.JSTO_LIBRARY_UPLOAD_URL = "https://jsto-builder-upload.onrender.com";
+  </script>
+  <style>
+    .library-page {
+      display: grid;
+      gap: 24px;
+    }
+
+    .library-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .library-toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .library-status {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .library-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .library-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(31, 42, 42, 0.12);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .library-item-copy {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .library-item-copy h3 {
+      font-size: 1.02rem;
+      overflow-wrap: anywhere;
+    }
+
+    .library-item-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .library-item-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .library-empty {
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px dashed rgba(31, 42, 42, 0.16);
+      background: rgba(255, 255, 255, 0.5);
+      color: var(--muted);
+    }
+
+    .button.danger {
+      background: linear-gradient(135deg, #aa2d1f, #cb4a2f);
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      .library-item {
+        grid-template-columns: 1fr;
+      }
+
+      .library-item-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell library-page">
+    <section class="library-banner">
+      <div class="library-banner-copy">
+        <p class="library-banner-eyebrow">Completed JSTO Library</p>
+        <h2>Manage Submitted JSTOs</h2>
+        <p>Review completed JSTOs, open them in GitHub, download the PDF, or remove outdated packages from the shared library.</p>
+      </div>
+      <div class="library-banner-actions">
+        <a class="button" href="index.html">Back to JSTO Builder</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>Library Manager</h2>
+        <p>If a delete code is configured for the upload service, you will be prompted for it the first time you remove a file during this browser session.</p>
+      </div>
+
+      <div class="library-toolbar">
+        <p id="library-status" class="library-status">Loading JSTO library files...</p>
+        <div class="library-toolbar-actions">
+          <button id="refresh-library" class="button" type="button">Refresh</button>
+          <a class="button primary" href="https://github.com/jgrimm24/jsto-builder/tree/main/JSTO-Library" target="_blank" rel="noreferrer">Open GitHub Folder</a>
+        </div>
+      </div>
+
+      <div id="library-list" class="library-list"></div>
+    </section>
+  </div>
+
+  <script src="library.js?v=20260422-1"></script>
+</body>
+</html>
