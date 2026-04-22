@@ -11,6 +11,7 @@ const githubOwner = process.env.GITHUB_OWNER || "jgrimm24";
 const githubRepo = process.env.GITHUB_REPO || "jsto-builder";
 const githubBranch = process.env.GITHUB_BRANCH || "main";
 const libraryPath = process.env.GITHUB_LIBRARY_PATH || "JSTO-Library";
+const libraryDeleteToken = process.env.LIBRARY_DELETE_TOKEN || "";
 const maxBodySize = 35 * 1024 * 1024;
 const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
@@ -36,8 +37,8 @@ function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8",
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type"
+    "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
   });
   res.end(JSON.stringify(payload));
 }
@@ -267,6 +268,34 @@ async function renderLibraryPdf(payload, serviceBaseUrl) {
   }
 }
 
+function createGitHubHeaders(extraHeaders = {}) {
+  const headers = {
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "jsto-builder-upload-service",
+    ...extraHeaders
+  };
+
+  if (githubToken) {
+    headers.Authorization = `Bearer ${githubToken}`;
+  }
+
+  return headers;
+}
+
+async function fetchGitHubJson(url, options = {}) {
+  const response = await fetch(url, {
+    ...options,
+    headers: createGitHubHeaders(options.headers || {})
+  });
+
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(result.message || "GitHub request failed.");
+  }
+
+  return result;
+}
+
 async function createGitHubFile(targetPath, content, message) {
   if (!githubToken) {
     throw new Error("The upload service is missing the GITHUB_TOKEN environment variable.");
@@ -278,23 +307,69 @@ async function createGitHubFile(targetPath, content, message) {
     branch: githubBranch
   };
 
-  const response = await fetch(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
+  return fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
     method: "PUT",
     headers: {
-      "Authorization": `Bearer ${githubToken}`,
-      "Accept": "application/vnd.github+json",
-      "Content-Type": "application/json",
-      "User-Agent": "jsto-builder-upload-service"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(body)
   });
+}
 
-  const result = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    throw new Error(result.message || "GitHub rejected the JSTO Library upload.");
+async function listLibraryFiles() {
+  const items = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(libraryPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`);
+  const files = Array.isArray(items) ? items : [];
+
+  return files
+    .filter((item) => item && item.type === "file")
+    .map((item) => ({
+      name: item.name,
+      path: item.path,
+      sha: item.sha,
+      size: item.size,
+      htmlUrl: item.html_url,
+      downloadUrl: item.download_url,
+      gitUrl: item.git_url
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function ensureDeleteAuthorized(deleteToken) {
+  if (!libraryDeleteToken) {
+    return;
   }
 
-  return result;
+  if (String(deleteToken || "") !== libraryDeleteToken) {
+    const error = new Error("A valid JSTO Library delete code is required.");
+    error.statusCode = 401;
+    throw error;
+  }
+}
+
+async function deleteLibraryFile(payload) {
+  if (!githubToken) {
+    throw new Error("The upload service is missing the GITHUB_TOKEN environment variable.");
+  }
+
+  const targetPath = String(payload?.path || "").trim();
+  const sha = String(payload?.sha || "").trim();
+  ensureDeleteAuthorized(payload?.deleteToken);
+
+  if (!targetPath || !sha || !targetPath.startsWith(`${libraryPath}/`)) {
+    throw new Error("The requested JSTO library file could not be validated.");
+  }
+
+  await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: `Delete JSTO library file ${path.basename(targetPath)}`,
+      sha,
+      branch: githubBranch
+    })
+  });
 }
 
 async function saveLibrarySubmission(payload, serviceBaseUrl) {
@@ -302,7 +377,7 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
   const targetPath = `${libraryPath}/${filename}`;
   const pdfBytes = await renderLibraryPdf(payload, serviceBaseUrl);
   const pdfBase64 = Buffer.from(pdfBytes).toString("base64");
-  const result = await createGitHubFile(
+  await createGitHubFile(
     targetPath,
     pdfBase64,
     `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"}`
@@ -310,22 +385,12 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
 
   return {
     filename,
-    htmlUrl: result.content?.html_url || `https://github.com/${githubOwner}/${githubRepo}/tree/${githubBranch}/${libraryPath}`
+    htmlUrl: `${serviceBaseUrl.replace(/\/$/, "")}/library.html`
   };
 }
 
-http.createServer(async (req, res) => {
-  if (req.method === "OPTIONS") {
-    res.writeHead(204, {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
-    });
-    res.end();
-    return;
-  }
-
-  if (req.url === "/api/save-library" && req.method === "POST") {
+function readRequestBody(req) {
+  return new Promise((resolve, reject) => {
     let body = "";
 
     req.on("data", (chunk) => {
@@ -335,37 +400,80 @@ http.createServer(async (req, res) => {
       }
     });
 
-    req.on("end", async () => {
-      try {
-        const payload = JSON.parse(body || "{}");
-        if (!payload || typeof payload !== "object") {
-          throw new Error("Upload payload is missing.");
-        }
+    req.on("end", () => resolve(body));
+    req.on("error", reject);
+  });
+}
 
-        const forwardedProto = req.headers["x-forwarded-proto"] || "http";
-        const hostHeader = req.headers.host || `127.0.0.1:${port}`;
-        const serviceBaseUrl = `${forwardedProto}://${hostHeader}`;
-        const saved = await saveLibrarySubmission(payload, serviceBaseUrl);
-        sendJson(res, 200, {
-          ok: true,
-          filename: saved.filename,
-          libraryUrl: saved.htmlUrl
-        });
-      } catch (error) {
-        sendJson(res, 500, {
-          ok: false,
-          error: error instanceof Error ? error.message : "JSTO Library upload failed."
-        });
-      }
+http.createServer(async (req, res) => {
+  if (req.method === "OPTIONS") {
+    res.writeHead(204, {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
     });
+    res.end();
+    return;
+  }
 
-    req.on("error", () => {
+  if (req.url === "/api/library-files" && req.method === "GET") {
+    try {
+      const files = await listLibraryFiles();
+      sendJson(res, 200, {
+        ok: true,
+        requiresDeleteToken: Boolean(libraryDeleteToken),
+        files
+      });
+    } catch (error) {
       sendJson(res, 500, {
         ok: false,
-        error: "The JSTO upload request was interrupted."
+        error: error instanceof Error ? error.message : "Unable to load JSTO Library files."
       });
-    });
+    }
+    return;
+  }
 
+  if (req.url === "/api/library-files" && req.method === "DELETE") {
+    try {
+      const body = await readRequestBody(req);
+      const payload = JSON.parse(body || "{}");
+      await deleteLibraryFile(payload);
+      sendJson(res, 200, {
+        ok: true
+      });
+    } catch (error) {
+      const statusCode = error instanceof Error && error.statusCode ? error.statusCode : 500;
+      sendJson(res, statusCode, {
+        ok: false,
+        error: error instanceof Error ? error.message : "Unable to delete JSTO Library file."
+      });
+    }
+    return;
+  }
+
+  if (req.url === "/api/save-library" && req.method === "POST") {
+    try {
+      const body = await readRequestBody(req);
+      const payload = JSON.parse(body || "{}");
+      if (!payload || typeof payload !== "object") {
+        throw new Error("Upload payload is missing.");
+      }
+
+      const forwardedProto = req.headers["x-forwarded-proto"] || "http";
+      const hostHeader = req.headers.host || `127.0.0.1:${port}`;
+      const serviceBaseUrl = `${forwardedProto}://${hostHeader}`;
+      const saved = await saveLibrarySubmission(payload, serviceBaseUrl);
+      sendJson(res, 200, {
+        ok: true,
+        filename: saved.filename,
+        libraryUrl: saved.htmlUrl
+      });
+    } catch (error) {
+      sendJson(res, 500, {
+        ok: false,
+        error: error instanceof Error ? error.message : "JSTO Library upload failed."
+      });
+    }
     return;
   }
 
