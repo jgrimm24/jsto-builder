@@ -35,7 +35,7 @@
     label.innerHTML = [
       "Export File Name",
       '<input id="export-basename" name="exportBasename" type="text" placeholder="e.g. 123d MXS - AGE Shop JSTO">',
-      '<span class="muted">Used for JSON downloads and JSTO Library file names. PDF save dialogs usually suggest this title.</span>'
+      '<span class="muted">Used for saved file names and JSTO Library uploads.</span>'
     ].join("");
 
     if (workCenterLabel && formGrid) {
