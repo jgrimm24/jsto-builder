@@ -15,10 +15,44 @@
       return;
     }
 
+    installPrintCleanupStyle();
     const exportInput = ensureExportField(form);
     hydrateExportField(exportInput, form);
     bindExportField(exportInput, form);
     overrideSaveActions(exportInput, form);
+  }
+
+  function installPrintCleanupStyle() {
+    if (document.getElementById("export-print-cleanup-style")) {
+      return;
+    }
+
+    const style = document.createElement("style");
+    style.id = "export-print-cleanup-style";
+    style.textContent = `
+      @media print {
+        .library-banner,
+        .hero,
+        .form-panel,
+        .hero-actions,
+        .preview-panel .section-heading {
+          display: none !important;
+        }
+
+        .layout {
+          display: block !important;
+        }
+
+        .panel,
+        .preview {
+          box-shadow: none !important;
+          border: 0 !important;
+          background: white !important;
+          padding: 0 !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   }
 
   function ensureExportField(form) {
