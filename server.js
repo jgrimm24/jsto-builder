@@ -19,7 +19,16 @@ const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8",
-  ".json": "application/json; charset=utf-8"
+  ".json": "application/json; charset=utf-8",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".gif": "image/gif",
+  ".svg": "image/svg+xml",
+  ".bmp": "image/bmp",
+  ".avif": "image/avif",
+  ".pdf": "application/pdf"
 };
 
 const assetMimeTypes = {
@@ -106,6 +115,11 @@ function replaceLinksWithAbsoluteUrls(previewMarkup, serviceBaseUrl) {
   });
 }
 
+function getContentTypeForPath(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  return assetMimeTypes[ext] || mimeTypes[ext] || "application/octet-stream";
+}
+
 function getAssetContentType(assetUrl, response) {
   const headerType = response.headers.get("content-type");
   if (headerType) {
@@ -114,14 +128,40 @@ function getAssetContentType(assetUrl, response) {
 
   try {
     const pathname = new URL(assetUrl).pathname;
-    const ext = path.extname(pathname).toLowerCase();
-    return assetMimeTypes[ext] || "application/octet-stream";
+    return getContentTypeForPath(pathname);
   } catch {
     return "application/octet-stream";
   }
 }
 
-async function fetchAssetAsDataUrl(assetUrl) {
+function getLocalAssetPath(assetUrl, serviceBaseUrl) {
+  try {
+    const asset = new URL(assetUrl);
+    const serviceBase = new URL(serviceBaseUrl);
+    if (asset.origin !== serviceBase.origin) {
+      return "";
+    }
+
+    const normalizedPath = path.normalize(decodeURIComponent(asset.pathname)).replace(/^(\.\.[/\\])+/, "");
+    const filePath = path.join(root, normalizedPath);
+    const relativePath = path.relative(root, filePath);
+    if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
+      return "";
+    }
+
+    return filePath;
+  } catch {
+    return "";
+  }
+}
+
+async function fetchAssetAsDataUrl(assetUrl, serviceBaseUrl) {
+  const localPath = getLocalAssetPath(assetUrl, serviceBaseUrl);
+  if (localPath && fs.existsSync(localPath) && fs.statSync(localPath).isFile()) {
+    const bytes = fs.readFileSync(localPath);
+    return `data:${getContentTypeForPath(localPath)};base64,${bytes.toString("base64")}`;
+  }
+
   const response = await fetch(assetUrl);
   if (!response.ok) {
     throw new Error(`Asset request failed with ${response.status} for ${assetUrl}`);
@@ -149,7 +189,7 @@ async function replaceImageSrcWithDataUrls(previewMarkup, serviceBaseUrl) {
     if (absoluteSrc && !/^(?:data:|blob:|#)/i.test(absoluteSrc)) {
       if (!assetCache.has(absoluteSrc)) {
         try {
-          assetCache.set(absoluteSrc, await fetchAssetAsDataUrl(absoluteSrc));
+          assetCache.set(absoluteSrc, await fetchAssetAsDataUrl(absoluteSrc, serviceBaseUrl));
         } catch {
           assetCache.set(absoluteSrc, absoluteSrc);
         }
@@ -406,6 +446,8 @@ function readRequestBody(req) {
 }
 
 http.createServer(async (req, res) => {
+  const requestUrl = new URL(req.url || "/", `http://${req.headers.host || `127.0.0.1:${port}`}`);
+
   if (req.method === "OPTIONS") {
     res.writeHead(204, {
       "Access-Control-Allow-Origin": "*",
@@ -416,7 +458,7 @@ http.createServer(async (req, res) => {
     return;
   }
 
-  if (req.url === "/api/library-files" && req.method === "GET") {
+  if (requestUrl.pathname === "/api/library-files" && req.method === "GET") {
     try {
       const files = await listLibraryFiles();
       sendJson(res, 200, {
@@ -433,7 +475,7 @@ http.createServer(async (req, res) => {
     return;
   }
 
-  if (req.url === "/api/library-files" && req.method === "DELETE") {
+  if (requestUrl.pathname === "/api/library-files" && req.method === "DELETE") {
     try {
       const body = await readRequestBody(req);
       const payload = JSON.parse(body || "{}");
@@ -451,7 +493,7 @@ http.createServer(async (req, res) => {
     return;
   }
 
-  if (req.url === "/api/save-library" && req.method === "POST") {
+  if (requestUrl.pathname === "/api/save-library" && req.method === "POST") {
     try {
       const body = await readRequestBody(req);
       const payload = JSON.parse(body || "{}");
@@ -477,8 +519,8 @@ http.createServer(async (req, res) => {
     return;
   }
 
-  const requestPath = req.url === "/" ? "/index.html" : req.url;
-  const safePath = path.normalize(requestPath).replace(/^(\.\.[/\\])+/, "");
+  const requestPath = requestUrl.pathname === "/" ? "/index.html" : requestUrl.pathname;
+  const safePath = path.normalize(decodeURIComponent(requestPath)).replace(/^(\.\.[/\\])+/, "");
   const filePath = path.join(root, safePath);
 
   fs.readFile(filePath, (error, data) => {
@@ -488,7 +530,7 @@ http.createServer(async (req, res) => {
       return;
     }
 
-    const ext = path.extname(filePath);
+    const ext = path.extname(filePath).toLowerCase();
     res.writeHead(200, { "Content-Type": mimeTypes[ext] || "application/octet-stream" });
     res.end(data);
   });
