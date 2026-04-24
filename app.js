@@ -1,5 +1,4 @@
 const STORAGE_KEY = "jsto-builder-state-v1";
-const LIBRARY_URL = "https://github.com/jgrimm24/jsto-builder/tree/main/JSTO-Library";
 const LIBRARY_UPLOAD_URL = String(window.JSTO_LIBRARY_UPLOAD_URL || "").trim().replace(/\/$/, "");
 
 const REQUIRED_MODULES = [
@@ -1535,8 +1534,7 @@ async function saveToLibrary() {
       throw new Error(result.error || "JSTO Library upload failed.");
     }
 
-    window.alert("JSTO PDF uploaded to the JSTO Library.");
-    window.open(result.libraryUrl || LIBRARY_URL, "_blank", "noreferrer");
+    window.alert("JSTO PDF uploaded to the JSTO Library. Use the Library Manager to open or delete it.");
   } catch (error) {
     const message = error instanceof Error ? error.message : "JSTO Library upload failed.";
     window.alert(`${message} You can still use Save in Browser as a backup.`);
