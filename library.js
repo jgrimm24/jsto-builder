@@ -56,7 +56,6 @@ function renderLibraryFiles(files) {
   listElement.innerHTML = files.map((file) => {
     const sizeLabel = formatBytes(file.size || 0);
     const downloadUrl = escapeHtml(file.downloadUrl || file.htmlUrl || "#");
-    const htmlUrl = escapeHtml(file.htmlUrl || downloadUrl);
     const name = escapeHtml(file.name || "JSTO PDF");
     const pathValue = escapeHtml(file.path || "");
     const shaValue = escapeHtml(file.sha || "");
@@ -69,7 +68,6 @@ function renderLibraryFiles(files) {
         </div>
         <div class="library-item-actions">
           <a class="button" href="${downloadUrl}" target="_blank" rel="noreferrer">Open PDF</a>
-          <a class="button" href="${htmlUrl}" target="_blank" rel="noreferrer">GitHub</a>
           <button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-name="${name}">Delete</button>
         </div>
       </article>
