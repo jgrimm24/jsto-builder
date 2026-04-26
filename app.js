@@ -274,6 +274,7 @@ const defaultState = {
   meta: {
     unit: "",
     workCenter: "",
+    exportBasename: "",
     officeSymbol: "",
     supervisor: "",
     phone: "",
@@ -1518,11 +1519,28 @@ function createStateFilename(suffix = "outline") {
   return `${parts.join("-") || "jsto-outline"}.json`;
 }
 
+function createExportPdfFilename() {
+  const exportBasename = String(state.meta.exportBasename || "")
+    .trim()
+    .replace(/\.pdf$/i, "")
+    .replace(/[<>:"/\\|?*\u0000-\u001f]/g, "-")
+    .replace(/\s+/g, " ")
+    .replace(/-+/g, "-")
+    .replace(/[. ]+$/g, "")
+    .trim();
+
+  if (exportBasename) {
+    return `${exportBasename}.pdf`;
+  }
+
+  return createStateFilename("library-package").replace(/\.json$/i, ".pdf");
+}
+
 function createPdfPayload() {
   return {
     submittedAt: new Date().toISOString(),
     libraryVersion: 1,
-    filename: createStateFilename("library-package").replace(/\.json$/i, ".pdf"),
+    filename: createExportPdfFilename(),
     unit: state.meta.unit || "",
     workCenter: state.meta.workCenter || "",
     officeSymbol: state.meta.officeSymbol || "",

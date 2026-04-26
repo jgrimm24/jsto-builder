@@ -19,7 +19,6 @@
     const exportInput = ensureExportField(form);
     hydrateExportField(exportInput, form);
     bindExportField(exportInput, form);
-    overrideSaveActions(exportInput, form);
   }
 
   function installPrintCleanupStyle() {
