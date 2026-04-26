@@ -905,9 +905,45 @@ body.modal-open {
 
 @media print {
   img {
+    display: block;
     break-inside: avoid;
     page-break-inside: avoid;
     max-width: 100% !important;
+  }
+
+  figure,
+  .uploaded-asset,
+  .uploaded-asset-image,
+  .uploaded-asset-pdf,
+  .hoc-image-wrap,
+  .active-shooter-image-wrap,
+  .dafsms-image-wrap,
+  .saferep-link-card,
+  .fire-extinguisher-image,
+  .traffic-safety-image-wrap,
+  .unsafe-reporting-tag-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .hoc-image,
+  .active-shooter-image,
+  .dafsms-image,
+  .saferep-image,
+  .fire-extinguisher-image,
+  .traffic-safety-image,
+  .uploaded-asset-image-file {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .active-shooter-block,
+  .dafsms-block,
+  .saferep-block,
+  .fire-extinguisher-block,
+  .unsafe-reporting-block,
+  .traffic-safety-block {
+    display: block;
   }
 
   body {
