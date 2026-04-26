@@ -937,6 +937,12 @@ body.modal-open {
     page-break-inside: avoid;
   }
 
+  .uploaded-asset-pdf-frame {
+    min-height: 9.4in;
+    height: 9.4in;
+    overflow: hidden;
+  }
+
   .active-shooter-block,
   .dafsms-block,
   .saferep-block,
