@@ -52,6 +52,18 @@ function sendJson(res, statusCode, payload) {
   res.end(JSON.stringify(payload));
 }
 
+function sendPdf(res, filename, pdfBytes) {
+  res.writeHead(200, {
+    "Content-Type": "application/pdf",
+    "Content-Length": Buffer.byteLength(pdfBytes),
+    "Content-Disposition": `attachment; filename="${String(filename || "jsto-export.pdf").replace(/"/g, "")}"`,
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+  });
+  res.end(pdfBytes);
+}
+
 function sanitizeSlug(value, fallback = "jsto") {
   const slug = String(value || "")
     .trim()
@@ -516,6 +528,47 @@ http.createServer(async (req, res) => {
         error: error instanceof Error ? error.message : "JSTO Library upload failed."
       });
     }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/export-pdf" && req.method === "POST") {
+    let body = "";
+
+    req.on("data", (chunk) => {
+      body += chunk;
+      if (body.length > maxBodySize) {
+        req.destroy();
+      }
+    });
+
+    req.on("end", async () => {
+      try {
+        const payload = JSON.parse(body || "{}");
+        if (!payload || typeof payload !== "object") {
+          throw new Error("Export payload is missing.");
+        }
+
+        const forwardedProto = req.headers["x-forwarded-proto"] || "http";
+        const hostHeader = req.headers.host || `127.0.0.1:${port}`;
+        const serviceBaseUrl = `${forwardedProto}://${hostHeader}`;
+        const filename = createLibraryFilename(payload);
+        const pdfBytes = await renderLibraryPdf(payload, serviceBaseUrl);
+        sendPdf(res, filename, pdfBytes);
+      } catch (error) {
+        sendJson(res, 500, {
+          ok: false,
+          error: error instanceof Error ? error.message : "PDF export failed."
+        });
+      }
+    });
+
+    req.on("error", () => {
+      sendJson(res, 500, {
+        ok: false,
+        error: "The PDF export request was interrupted."
+      });
+    });
+
     return;
   }
 

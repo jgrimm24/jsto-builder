@@ -395,7 +395,7 @@ const uploadJsonInput = document.getElementById("upload-json");
 if (uploadJsonInput) {
   uploadJsonInput.addEventListener("change", uploadState);
 }
-document.getElementById("print-pdf").addEventListener("click", printPreview);
+document.getElementById("print-pdf").addEventListener("click", exportPdf);
 moduleSelect.addEventListener("change", handleModuleSelection);
 addCustomModuleButton.addEventListener("click", addCustomModule);
 unitImageInput.addEventListener("change", uploadUnitImage);
@@ -1424,7 +1424,7 @@ function createStateFilename(suffix = "outline") {
   return `${parts.join("-") || "jsto-outline"}.json`;
 }
 
-function createLibrarySubmissionPayload() {
+function createPdfPayload() {
   return {
     submittedAt: new Date().toISOString(),
     libraryVersion: 1,
@@ -1436,74 +1436,46 @@ function createLibrarySubmissionPayload() {
   };
 }
 
-async function printPreview() {
-  const printWindow = window.open("", "_blank", "noopener,noreferrer,width=1000,height=900");
-
-  if (!printWindow) {
-    window.print();
+async function exportPdf() {
+  saveState();
+  if (!LIBRARY_UPLOAD_URL) {
+    window.alert("The PDF export service is not configured yet. Add your Render service URL in index.html before using this button.");
     return;
   }
 
-  const stylesheetHref = document.querySelector('link[href*="styles.css"]')?.href || "styles.css";
-  const title = state.meta.workCenter ? `${state.meta.workCenter} JSTO` : "JSTO Preview";
+  const exportButton = document.getElementById("print-pdf");
+  const originalLabel = exportButton.textContent;
+  exportButton.disabled = true;
+  exportButton.textContent = "Exporting...";
 
-  printWindow.document.open();
-  printWindow.document.write(`<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>${escapeHtml(title)}</title>
-    <link rel="stylesheet" href="${stylesheetHref}">
-    <style>
-      body {
-        background: white;
-        padding: 24px;
-      }
+  try {
+    const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/export-pdf`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(createPdfPayload())
+    });
 
-      .preview {
-        max-width: 900px;
-        margin: 0 auto;
-        box-shadow: none;
-        border: 0;
-        background: white;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    ${preview.outerHTML}
-  </body>
-</html>`);
-  printWindow.document.close();
-
-  await new Promise((resolve) => {
-    if (printWindow.document.readyState === "complete") {
-      resolve();
-      return;
-    }
-    printWindow.addEventListener("load", () => resolve(), { once: true });
-  });
-
-  const images = Array.from(printWindow.document.images);
-  await Promise.all(images.map((img) => new Promise((resolve) => {
-    if (img.complete && img.naturalWidth > 0) {
-      resolve();
-      return;
+    if (!response.ok) {
+      const result = await response.json().catch(() => ({}));
+      throw new Error(result.error || "PDF export failed.");
     }
 
-    const done = () => {
-      img.removeEventListener("load", done);
-      img.removeEventListener("error", done);
-      resolve();
-    };
-
-    img.addEventListener("load", done, { once: true });
-    img.addEventListener("error", done, { once: true });
-  })));
-
-  printWindow.focus();
-  printWindow.print();
-  printWindow.addEventListener("afterprint", () => printWindow.close(), { once: true });
+    const pdfBlob = await response.blob();
+    const downloadUrl = URL.createObjectURL(pdfBlob);
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = createPdfPayload().filename || "jsto-export.pdf";
+    link.click();
+    URL.revokeObjectURL(downloadUrl);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "PDF export failed.";
+    window.alert(`${message} You can still use your browser print dialog as a fallback.`);
+  } finally {
+    exportButton.disabled = false;
+    exportButton.textContent = originalLabel;
+  }
 }
 
 function downloadState(filename = createStateFilename()) {
@@ -1534,7 +1506,7 @@ async function saveToLibrary() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(createLibrarySubmissionPayload())
+      body: JSON.stringify(createPdfPayload())
     });
 
     const result = await response.json().catch(() => ({}));
