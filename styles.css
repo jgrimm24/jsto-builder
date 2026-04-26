@@ -516,9 +516,28 @@ body.modal-open {
   white-space: nowrap;
 }
 
-.uploaded-asset-pdf-frame {
+.uploaded-asset-pdf-pages {
+  display: grid;
+  gap: 18px;
+}
+
+.uploaded-asset-pdf-loading {
+  padding: 20px;
+  border: 1px dashed rgba(31, 42, 42, 0.16);
+  border-radius: 14px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.uploaded-asset-pdf-page {
+  margin: 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.uploaded-asset-pdf-page-image {
   width: 100%;
-  min-height: 520px;
+  display: block;
   border: 1px solid rgba(31, 42, 42, 0.12);
   border-radius: 14px;
   background: white;
@@ -932,15 +951,16 @@ body.modal-open {
   .saferep-image,
   .fire-extinguisher-image,
   .traffic-safety-image,
+  .uploaded-asset-pdf-page-image,
   .uploaded-asset-image-file {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .uploaded-asset-pdf-frame {
-    min-height: 9.4in;
-    height: 9.4in;
-    overflow: hidden;
+  .uploaded-asset-pdf-page-image {
+    width: auto;
+    max-height: 9.2in;
+    margin: 0 auto;
   }
 
   .active-shooter-block,

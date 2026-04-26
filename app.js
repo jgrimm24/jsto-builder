@@ -363,6 +363,7 @@ let state = loadState();
 let activeExpandedField = null;
 let previewRenderTimer = null;
 let persistenceWarningShown = false;
+const renderedPdfPageCache = new Map();
 
 populateModuleSelect();
 hydrateForm();
@@ -821,6 +822,98 @@ function renderPreview() {
       </table>
     </section>
   `;
+
+  renderEmbeddedPdfPages();
+}
+
+async function renderEmbeddedPdfPages() {
+  const containers = Array.from(preview.querySelectorAll(".uploaded-asset-pdf-pages[data-pdf-src]"));
+  if (!containers.length) {
+    return;
+  }
+
+  await Promise.all(containers.map((container) => renderEmbeddedPdfPageContainer(container)));
+}
+
+async function renderEmbeddedPdfPageContainer(container) {
+  const pdfSrc = container.dataset.pdfSrc || "";
+  if (!pdfSrc || container.dataset.rendered === "true") {
+    return;
+  }
+
+  if (!window.pdfjsLib) {
+    container.innerHTML = '<div class="uploaded-asset-pdf-loading">PDF preview renderer is still loading. Try exporting again in a moment.</div>';
+    return;
+  }
+
+  container.dataset.rendered = "pending";
+
+  try {
+    let pages = renderedPdfPageCache.get(pdfSrc);
+    if (!pages) {
+      pages = await renderPdfDataUrlToImages(pdfSrc);
+      renderedPdfPageCache.set(pdfSrc, pages);
+    }
+
+    if (!container.isConnected) {
+      return;
+    }
+
+    const pdfName = container.dataset.pdfName || "PDF attachment";
+    container.innerHTML = pages.map((pageSrc, index) => `
+      <figure class="uploaded-asset-pdf-page">
+        <img
+          class="uploaded-asset-pdf-page-image"
+          src="${pageSrc}"
+          alt="${escapeHtml(pdfName)} page ${index + 1}"
+        >
+        <figcaption class="uploaded-asset-name">Page ${index + 1} of ${pages.length}</figcaption>
+      </figure>
+    `).join("");
+    container.dataset.rendered = "true";
+  } catch (error) {
+    console.warn("Unable to render embedded PDF pages.", error);
+    if (container.isConnected) {
+      container.dataset.rendered = "error";
+      container.innerHTML = '<div class="uploaded-asset-pdf-loading">Unable to render this PDF inline.</div>';
+    }
+  }
+}
+
+async function renderPdfDataUrlToImages(pdfSrc) {
+  const bytes = dataUrlToUint8Array(pdfSrc);
+  const pdfDocument = await window.pdfjsLib.getDocument({ data: bytes }).promise;
+  const pages = [];
+
+  for (let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber += 1) {
+    const page = await pdfDocument.getPage(pageNumber);
+    const viewport = page.getViewport({ scale: 1.7 });
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d", { alpha: false });
+    canvas.width = Math.ceil(viewport.width);
+    canvas.height = Math.ceil(viewport.height);
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    await page.render({
+      canvasContext: context,
+      viewport
+    }).promise;
+
+    pages.push(canvas.toDataURL("image/jpeg", 0.92));
+  }
+
+  return pages;
+}
+
+function dataUrlToUint8Array(dataUrl) {
+  const [, base64 = ""] = String(dataUrl).split(",");
+  const binary = window.atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return bytes;
 }
 
 function renderHierarchyOfControls() {
@@ -1283,11 +1376,13 @@ function renderUploadedAsset(file, fallbackName, imageAltPrefix) {
           </div>
         </div>
         ${safeHref ? `
-          <iframe
-            class="uploaded-asset-pdf-frame"
-            src="${safeHref}#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-            title="${safeName}"
-          ></iframe>
+          <div
+            class="uploaded-asset-pdf-pages"
+            data-pdf-src="${safeHref}"
+            data-pdf-name="${safeName}"
+          >
+            <div class="uploaded-asset-pdf-loading">Rendering PDF pages...</div>
+          </div>
         ` : ""}
       </div>
     `;
@@ -1448,6 +1543,7 @@ async function exportPdf() {
   exportButton.textContent = "Exporting...";
 
   try {
+    await renderEmbeddedPdfPages();
     const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/export-pdf`, {
       method: "POST",
       headers: {
@@ -1500,6 +1596,7 @@ async function saveToLibrary() {
   saveLibraryButton.textContent = "Saving...";
 
   try {
+    await renderEmbeddedPdfPages();
     const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/save-library`, {
       method: "POST",
       headers: {
