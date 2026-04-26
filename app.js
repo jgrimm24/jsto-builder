@@ -1275,12 +1275,21 @@ function renderUploadedAsset(file, fallbackName, imageAltPrefix) {
   if (isPdf) {
     return `
       <div class="uploaded-asset uploaded-asset-card uploaded-asset-pdf">
-        <div class="uploaded-asset-badge">PDF</div>
-        <div class="uploaded-asset-copy">
-          <strong>${safeName}</strong>
-          <span>PDF attachment included. Open separately for the full document.</span>
+        <div class="uploaded-asset-pdf-header">
+          <div class="uploaded-asset-badge">PDF</div>
+          <div class="uploaded-asset-copy">
+            <strong>${safeName}</strong>
+            <span>Embedded PDF preview.</span>
+          </div>
+          ${safeHref ? `<a href="${safeHref}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
         </div>
-        ${safeHref ? `<a href="${safeHref}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
+        ${safeHref ? `
+          <iframe
+            class="uploaded-asset-pdf-frame"
+            src="${safeHref}#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+            title="${safeName}"
+          ></iframe>
+        ` : ""}
       </div>
     `;
   }

@@ -479,6 +479,17 @@ body.modal-open {
   background: rgba(10, 92, 99, 0.05);
 }
 
+.uploaded-asset-pdf {
+  display: grid;
+  gap: 14px;
+}
+
+.uploaded-asset-pdf-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
 .uploaded-asset-badge {
   min-width: 48px;
   padding: 6px 10px;
@@ -503,6 +514,14 @@ body.modal-open {
 
 .uploaded-asset-card a {
   white-space: nowrap;
+}
+
+.uploaded-asset-pdf-frame {
+  width: 100%;
+  min-height: 520px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  border-radius: 14px;
+  background: white;
 }
 
 .tag {
@@ -991,4 +1010,3 @@ body.modal-open {
     justify-content: flex-start;
   }
 }
-
