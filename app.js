@@ -1281,7 +1281,6 @@ function renderUploadedAsset(file, fallbackName, imageAltPrefix) {
             <strong>${safeName}</strong>
             <span>Embedded PDF preview.</span>
           </div>
-          ${safeHref ? `<a href="${safeHref}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
         </div>
         ${safeHref ? `
           <iframe
