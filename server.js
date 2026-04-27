@@ -410,11 +410,24 @@ async function listLibraryFiles() {
 
 async function fetchLibraryPdf(targetPath) {
   const result = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`);
-  if (!result?.content) {
-    throw new Error("The JSTO library PDF could not be loaded.");
+
+  if (result?.content) {
+    return Buffer.from(String(result.content).replace(/\s/g, ""), "base64");
   }
 
-  return Buffer.from(String(result.content).replace(/\s/g, ""), "base64");
+  if (result?.download_url) {
+    const response = await fetch(result.download_url, {
+      headers: createGitHubHeaders()
+    });
+
+    if (!response.ok) {
+      throw new Error(`The JSTO library PDF request failed with ${response.status}.`);
+    }
+
+    return Buffer.from(await response.arrayBuffer());
+  }
+
+  throw new Error("The JSTO library PDF could not be loaded.");
 }
 
 function ensureDeleteAuthorized(deleteToken) {
