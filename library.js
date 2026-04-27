@@ -55,7 +55,7 @@ function renderLibraryFiles(files) {
 
   listElement.innerHTML = files.map((file) => {
     const sizeLabel = formatBytes(file.size || 0);
-    const downloadUrl = escapeHtml(file.downloadUrl || file.htmlUrl || "#");
+    const viewUrl = escapeHtml(createLibraryFileViewUrl(file.viewUrl || file.downloadUrl || file.htmlUrl || "#"));
     const name = escapeHtml(file.name || "JSTO PDF");
     const pathValue = escapeHtml(file.path || "");
     const shaValue = escapeHtml(file.sha || "");
@@ -67,7 +67,7 @@ function renderLibraryFiles(files) {
           <div class="library-item-meta">${sizeLabel}${file.path ? ` • ${pathValue}` : ""}</div>
         </div>
         <div class="library-item-actions">
-          <a class="button" href="${downloadUrl}" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button" href="${viewUrl}" target="_blank" rel="noreferrer">Open PDF</a>
           <button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-name="${name}">Delete</button>
         </div>
       </article>
@@ -79,6 +79,19 @@ function renderLibraryFiles(files) {
       handleDelete(button);
     });
   });
+}
+
+function createLibraryFileViewUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw || raw === "#") {
+    return "#";
+  }
+
+  if (/^https?:\/\//i.test(raw)) {
+    return raw;
+  }
+
+  return `${LIBRARY_API_BASE}${raw.startsWith("/") ? raw : `/${raw}`}`;
 }
 
 async function handleDelete(button) {

@@ -64,6 +64,18 @@ function sendPdf(res, filename, pdfBytes) {
   res.end(pdfBytes);
 }
 
+function sendInlinePdf(res, filename, pdfBytes) {
+  res.writeHead(200, {
+    "Content-Type": "application/pdf",
+    "Content-Length": Buffer.byteLength(pdfBytes),
+    "Content-Disposition": `inline; filename="${String(filename || "jsto-library.pdf").replace(/"/g, "")}"`,
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+  });
+  res.end(pdfBytes);
+}
+
 function sanitizeSlug(value, fallback = "jsto") {
   const slug = String(value || "")
     .trim()
@@ -130,6 +142,15 @@ function replaceLinksWithAbsoluteUrls(previewMarkup, serviceBaseUrl) {
 function getContentTypeForPath(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   return assetMimeTypes[ext] || mimeTypes[ext] || "application/octet-stream";
+}
+
+function validateLibraryPdfPath(value) {
+  const targetPath = String(value || "").trim();
+  if (!targetPath || !targetPath.startsWith(`${libraryPath}/`) || path.extname(targetPath).toLowerCase() !== ".pdf") {
+    throw new Error("The requested JSTO library PDF could not be validated.");
+  }
+
+  return targetPath;
 }
 
 function getAssetContentType(assetUrl, response) {
@@ -381,9 +402,19 @@ async function listLibraryFiles() {
       size: item.size,
       htmlUrl: item.html_url,
       downloadUrl: item.download_url,
+      viewUrl: `/api/library-file?path=${encodeURIComponent(item.path)}`,
       gitUrl: item.git_url
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+async function fetchLibraryPdf(targetPath) {
+  const result = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`);
+  if (!result?.content) {
+    throw new Error("The JSTO library PDF could not be loaded.");
+  }
+
+  return Buffer.from(String(result.content).replace(/\s/g, ""), "base64");
 }
 
 function ensureDeleteAuthorized(deleteToken) {
@@ -484,6 +515,21 @@ http.createServer(async (req, res) => {
         error: error instanceof Error ? error.message : "Unable to load JSTO Library files."
       });
     }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/library-file" && req.method === "GET") {
+    try {
+      const targetPath = validateLibraryPdfPath(requestUrl.searchParams.get("path"));
+      const pdfBytes = await fetchLibraryPdf(targetPath);
+      sendInlinePdf(res, path.basename(targetPath), pdfBytes);
+    } catch (error) {
+      sendJson(res, error.statusCode || 500, {
+        ok: false,
+        error: error instanceof Error ? error.message : "Unable to open JSTO library PDF."
+      });
+    }
+
     return;
   }
 
