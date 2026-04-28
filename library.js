@@ -1,9 +1,11 @@
 const LIBRARY_API_BASE = String(window.JSTO_LIBRARY_UPLOAD_URL || "").trim().replace(/\/$/, "");
 const DELETE_TOKEN_KEY = "jsto-library-delete-token";
+const GITHUB_LIBRARY_API = "https://api.github.com/repos/jgrimm24/jsto-builder/contents/JSTO-Library?ref=main";
 
 const statusElement = document.getElementById("library-status");
 const listElement = document.getElementById("library-list");
 const refreshButton = document.getElementById("refresh-library");
+let libraryDeleteAvailable = Boolean(LIBRARY_API_BASE);
 
 if (refreshButton) {
   refreshButton.addEventListener("click", () => {
@@ -14,28 +16,71 @@ if (refreshButton) {
 loadLibraryFiles();
 
 async function loadLibraryFiles() {
-  if (!LIBRARY_API_BASE) {
-    renderError("The JSTO Library service URL is not configured for this page.");
-    return;
-  }
-
   setStatus("Loading JSTO library files...");
   renderLoading();
 
-  try {
-    const response = await fetch(`${LIBRARY_API_BASE}/api/library-files`);
-    const result = await response.json().catch(() => ({}));
+  if (LIBRARY_API_BASE) {
+    try {
+      const response = await fetch(`${LIBRARY_API_BASE}/api/library-files`);
+      const result = await response.json().catch(() => ({}));
 
-    if (!response.ok) {
-      throw new Error(result.error || "Unable to load JSTO Library files.");
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to load JSTO Library files.");
+      }
+
+      libraryDeleteAvailable = true;
+      renderLibraryFiles(result.files || []);
+      const count = Array.isArray(result.files) ? result.files.length : 0;
+      setStatus(`${count} JSTO file${count === 1 ? "" : "s"} in the library.`);
+      return;
+    } catch (error) {
+      try {
+        await loadLibraryFilesFromGitHub(error);
+        return;
+      } catch (fallbackError) {
+        renderError(fallbackError instanceof Error ? fallbackError.message : "Unable to load JSTO Library files.");
+        return;
+      }
     }
+  }
 
-    renderLibraryFiles(result.files || []);
-    const count = Array.isArray(result.files) ? result.files.length : 0;
-    setStatus(`${count} JSTO file${count === 1 ? "" : "s"} in the library.`);
+  try {
+    await loadLibraryFilesFromGitHub();
   } catch (error) {
     renderError(error instanceof Error ? error.message : "Unable to load JSTO Library files.");
   }
+}
+
+async function loadLibraryFilesFromGitHub(originalError) {
+  const response = await fetch(GITHUB_LIBRARY_API, {
+    headers: {
+      Accept: "application/vnd.github+json"
+    }
+  });
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(result.message || "Unable to load JSTO Library files from GitHub.");
+  }
+
+  const files = Array.isArray(result)
+    ? result
+        .filter((item) => item && item.type === "file")
+        .map((item) => ({
+          name: item.name,
+          path: item.path,
+          sha: item.sha,
+          size: item.size,
+          downloadUrl: item.download_url,
+          htmlUrl: item.html_url
+        }))
+    : [];
+
+  libraryDeleteAvailable = false;
+  renderLibraryFiles(files);
+  const count = files.length;
+  const reason = originalError instanceof Error && originalError.message ? ` The upload service appears blocked on this network (${originalError.message}).` : "";
+  setStatus(`${count} JSTO file${count === 1 ? "" : "s"} loaded from GitHub.${reason} Delete is unavailable from this network view.`);
 }
 
 function renderLoading() {
@@ -59,6 +104,10 @@ function renderLibraryFiles(files) {
     const name = escapeHtml(file.name || "JSTO PDF");
     const pathValue = escapeHtml(file.path || "");
     const shaValue = escapeHtml(file.sha || "");
+    const deleteAttributes = libraryDeleteAvailable
+      ? `class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-name="${name}"`
+      : 'class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network."';
+    const deleteLabel = libraryDeleteAvailable ? "Delete" : "Delete Unavailable";
 
     return `
       <article class="library-item">
@@ -68,11 +117,15 @@ function renderLibraryFiles(files) {
         </div>
         <div class="library-item-actions">
           <a class="button" href="${viewUrl}" target="_blank" rel="noreferrer">Open PDF</a>
-          <button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-name="${name}">Delete</button>
+          <button ${deleteAttributes}>${deleteLabel}</button>
         </div>
       </article>
     `;
   }).join("");
+
+  if (!libraryDeleteAvailable) {
+    return;
+  }
 
   listElement.querySelectorAll(".delete-library-file").forEach((button) => {
     button.addEventListener("click", () => {
