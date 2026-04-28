@@ -100,7 +100,7 @@ function renderLibraryFiles(files) {
 
   listElement.innerHTML = files.map((file) => {
     const sizeLabel = formatBytes(file.size || 0);
-    const viewUrl = escapeHtml(createLibraryFileViewUrl(file.viewUrl || file.downloadUrl || file.htmlUrl || "#"));
+    const downloadUrl = escapeHtml(createLibraryFileDownloadUrl(file.downloadUrl || file.viewUrl || file.htmlUrl || "#"));
     const name = escapeHtml(file.name || "JSTO PDF");
     const pathValue = escapeHtml(file.path || "");
     const shaValue = escapeHtml(file.sha || "");
@@ -116,7 +116,7 @@ function renderLibraryFiles(files) {
           <div class="library-item-meta">${sizeLabel}${file.path ? ` • ${pathValue}` : ""}</div>
         </div>
         <div class="library-item-actions">
-          <a class="button" href="${viewUrl}" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button" href="${downloadUrl}" download>Download PDF</a>
           <button ${deleteAttributes}>${deleteLabel}</button>
         </div>
       </article>
@@ -134,7 +134,7 @@ function renderLibraryFiles(files) {
   });
 }
 
-function createLibraryFileViewUrl(value) {
+function createLibraryFileDownloadUrl(value) {
   const raw = String(value || "").trim();
   if (!raw || raw === "#") {
     return "#";
