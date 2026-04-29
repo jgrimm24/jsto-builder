@@ -12,7 +12,7 @@ const githubRepo = process.env.GITHUB_REPO || "jsto-builder";
 const githubBranch = process.env.GITHUB_BRANCH || "main";
 const libraryPath = process.env.GITHUB_LIBRARY_PATH || "JSTO-Library";
 const libraryDeleteToken = process.env.LIBRARY_DELETE_TOKEN || "";
-const maxBodySize = 35 * 1024 * 1024;
+const maxBodySize = 90 * 1024 * 1024;
 const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
 const mimeTypes = {
@@ -148,6 +148,15 @@ function validateLibraryPdfPath(value) {
   const targetPath = String(value || "").trim();
   if (!targetPath || !targetPath.startsWith(`${libraryPath}/`) || path.extname(targetPath).toLowerCase() !== ".pdf") {
     throw new Error("The requested JSTO library PDF could not be validated.");
+  }
+
+  return targetPath;
+}
+
+function validateLibraryJsonPath(value) {
+  const targetPath = String(value || "").trim();
+  if (!targetPath || !targetPath.startsWith(`${libraryPath}/`) || path.extname(targetPath).toLowerCase() !== ".json") {
+    throw new Error("The requested JSTO editable package could not be validated.");
   }
 
   return targetPath;
@@ -369,16 +378,38 @@ async function fetchGitHubJson(url, options = {}) {
   return result;
 }
 
+async function fetchExistingGitHubFileSha(targetPath) {
+  const response = await fetch(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`, {
+    headers: createGitHubHeaders()
+  });
+
+  if (response.status === 404) {
+    return "";
+  }
+
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(result.message || "GitHub request failed.");
+  }
+
+  return result.sha || "";
+}
+
 async function createGitHubFile(targetPath, content, message) {
   if (!githubToken) {
     throw new Error("The upload service is missing the GITHUB_TOKEN environment variable.");
   }
 
+  const existingSha = await fetchExistingGitHubFileSha(targetPath);
   const body = {
     message,
     content,
     branch: githubBranch
   };
+
+  if (existingSha) {
+    body.sha = existingSha;
+  }
 
   return fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
     method: "PUT",
@@ -430,6 +461,29 @@ async function fetchLibraryPdf(targetPath) {
   throw new Error("The JSTO library PDF could not be loaded.");
 }
 
+async function fetchLibraryJson(targetPath) {
+  const result = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`);
+
+  if (result?.content) {
+    const jsonText = Buffer.from(String(result.content).replace(/\s/g, ""), "base64").toString("utf8");
+    return JSON.parse(jsonText);
+  }
+
+  if (result?.download_url) {
+    const response = await fetch(result.download_url, {
+      headers: createGitHubHeaders()
+    });
+
+    if (!response.ok) {
+      throw new Error(`The JSTO editable package request failed with ${response.status}.`);
+    }
+
+    return response.json();
+  }
+
+  throw new Error("The JSTO editable package could not be loaded.");
+}
+
 function ensureDeleteAuthorized(deleteToken) {
   if (!libraryDeleteToken) {
     return;
@@ -471,6 +525,8 @@ async function deleteLibraryFile(payload) {
 async function saveLibrarySubmission(payload, serviceBaseUrl) {
   const filename = createLibraryFilename(payload);
   const targetPath = `${libraryPath}/${filename}`;
+  const stateFilename = filename.replace(/\.pdf$/i, ".json");
+  const stateTargetPath = `${libraryPath}/${stateFilename}`;
   const pdfBytes = await renderLibraryPdf(payload, serviceBaseUrl);
   const pdfBase64 = Buffer.from(pdfBytes).toString("base64");
   await createGitHubFile(
@@ -479,8 +535,22 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
     `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"}`
   );
 
+  if (payload.state && typeof payload.state === "object") {
+    const statePayload = {
+      ...payload.state,
+      savedLibraryPdf: targetPath,
+      savedAt: new Date().toISOString()
+    };
+    await createGitHubFile(
+      stateTargetPath,
+      Buffer.from(JSON.stringify(statePayload, null, 2), "utf8").toString("base64"),
+      `Add JSTO editable package for ${payload.workCenter || payload.unit || "work center"}`
+    );
+  }
+
   return {
     filename,
+    stateFilename,
     htmlUrl: `${serviceBaseUrl.replace(/\/$/, "")}/library.html`
   };
 }
@@ -540,6 +610,24 @@ http.createServer(async (req, res) => {
       sendJson(res, error.statusCode || 500, {
         ok: false,
         error: error instanceof Error ? error.message : "Unable to open JSTO library PDF."
+      });
+    }
+
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/library-state" && req.method === "GET") {
+    try {
+      const targetPath = validateLibraryJsonPath(requestUrl.searchParams.get("path"));
+      const state = await fetchLibraryJson(targetPath);
+      sendJson(res, 200, {
+        ok: true,
+        state
+      });
+    } catch (error) {
+      sendJson(res, error.statusCode || 500, {
+        ok: false,
+        error: error instanceof Error ? error.message : "Unable to load JSTO editable package."
       });
     }
 

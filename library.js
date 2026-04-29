@@ -29,9 +29,10 @@ async function loadLibraryFiles() {
       }
 
       libraryDeleteAvailable = true;
-      renderLibraryFiles(result.files || []);
-      const count = Array.isArray(result.files) ? result.files.length : 0;
-      setStatus(`${count} JSTO file${count === 1 ? "" : "s"} in the library.`);
+      const packages = groupLibraryPackages(result.files || []);
+      renderLibraryFiles(packages);
+      const count = packages.length;
+      setStatus(`${count} JSTO package${count === 1 ? "" : "s"} in the library.`);
       return;
     } catch (error) {
       try {
@@ -77,10 +78,11 @@ async function loadLibraryFilesFromGitHub(originalError) {
     : [];
 
   libraryDeleteAvailable = false;
-  renderLibraryFiles(files);
-  const count = files.length;
+  const packages = groupLibraryPackages(files);
+  renderLibraryFiles(packages);
+  const count = packages.length;
   const reason = originalError instanceof Error && originalError.message ? ` The upload service appears blocked on this network (${originalError.message}).` : "";
-  setStatus(`${count} JSTO file${count === 1 ? "" : "s"} loaded from GitHub.${reason} Delete is unavailable from this network view.`);
+  setStatus(`${count} JSTO package${count === 1 ? "" : "s"} loaded from GitHub.${reason} Delete and Edit are unavailable from this network view.`);
 }
 
 function renderLoading() {
@@ -92,20 +94,45 @@ function renderError(message) {
   listElement.innerHTML = `<div class="library-empty">${escapeHtml(message)}</div>`;
 }
 
-function renderLibraryFiles(files) {
-  if (!Array.isArray(files) || !files.length) {
+function groupLibraryPackages(files) {
+  const packages = new Map();
+  (Array.isArray(files) ? files : []).forEach((file) => {
+    const pathValue = String(file?.path || "");
+    const extension = pathValue.split(".").pop()?.toLowerCase() || "";
+    if (!["pdf", "json"].includes(extension)) {
+      return;
+    }
+
+    const packageKey = pathValue.replace(/\.(pdf|json)$/i, "");
+    const existing = packages.get(packageKey) || { key: packageKey };
+    existing[extension] = file;
+    packages.set(packageKey, existing);
+  });
+
+  return Array.from(packages.values())
+    .filter((item) => item.pdf)
+    .sort((a, b) => String(a.pdf.name || "").localeCompare(String(b.pdf.name || "")));
+}
+
+function renderLibraryFiles(packages) {
+  if (!Array.isArray(packages) || !packages.length) {
     listElement.innerHTML = '<div class="library-empty">No JSTOs have been saved to the library yet.</div>';
     return;
   }
 
-  listElement.innerHTML = files.map((file) => {
-    const sizeLabel = formatBytes(file.size || 0);
-    const downloadUrl = escapeHtml(createLibraryFileDownloadUrl(file.downloadUrl || file.viewUrl || file.htmlUrl || "#"));
-    const name = escapeHtml(file.name || "JSTO PDF");
-    const pathValue = escapeHtml(file.path || "");
-    const shaValue = escapeHtml(file.sha || "");
+  listElement.innerHTML = packages.map((jstoPackage) => {
+    const pdfFile = jstoPackage.pdf || {};
+    const jsonFile = jstoPackage.json || null;
+    const sizeLabel = formatBytes(pdfFile.size || 0);
+    const downloadUrl = escapeHtml(createLibraryFileDownloadUrl(pdfFile.downloadUrl || pdfFile.viewUrl || pdfFile.htmlUrl || "#"));
+    const editUrl = jsonFile && libraryDeleteAvailable ? escapeHtml(createBuilderEditUrl(jsonFile.path || "")) : "";
+    const name = escapeHtml(pdfFile.name || "JSTO PDF");
+    const pathValue = escapeHtml(pdfFile.path || "");
+    const shaValue = escapeHtml(pdfFile.sha || "");
+    const jsonPathValue = escapeHtml(jsonFile?.path || "");
+    const jsonShaValue = escapeHtml(jsonFile?.sha || "");
     const deleteAttributes = libraryDeleteAvailable
-      ? `class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-name="${name}"`
+      ? `class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}"`
       : 'class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network."';
     const deleteLabel = libraryDeleteAvailable ? "Delete" : "Delete Unavailable";
 
@@ -113,10 +140,11 @@ function renderLibraryFiles(files) {
       <article class="library-item">
         <div class="library-item-copy">
           <h3>${name}</h3>
-          <div class="library-item-meta">${sizeLabel}${file.path ? ` • ${pathValue}` : ""}</div>
+          <div class="library-item-meta">${sizeLabel}${pdfFile.path ? ` • ${pathValue}` : ""}</div>
         </div>
         <div class="library-item-actions">
           <a class="button" href="${downloadUrl}" download>Download PDF</a>
+          ${editUrl ? `<a class="button" href="${editUrl}">Edit</a>` : ""}
           <button ${deleteAttributes}>${deleteLabel}</button>
         </div>
       </article>
@@ -147,10 +175,16 @@ function createLibraryFileDownloadUrl(value) {
   return `${LIBRARY_API_BASE}${raw.startsWith("/") ? raw : `/${raw}`}`;
 }
 
+function createBuilderEditUrl(statePath) {
+  return `index.html?v=20260429-1&libraryState=${encodeURIComponent(statePath)}`;
+}
+
 async function handleDelete(button) {
   const fileName = button.dataset.name || "this JSTO";
   const filePath = button.dataset.path || "";
   const fileSha = button.dataset.sha || "";
+  const jsonPath = button.dataset.jsonPath || "";
+  const jsonSha = button.dataset.jsonSha || "";
 
   if (!filePath || !fileSha) {
     window.alert("That JSTO file is missing the information needed for deletion. Refresh the page and try again.");
@@ -168,6 +202,9 @@ async function handleDelete(button) {
 
   try {
     await deleteLibraryFile({ path: filePath, sha: fileSha });
+    if (jsonPath && jsonSha) {
+      await deleteLibraryFile({ path: jsonPath, sha: jsonSha });
+    }
     setStatus(`${fileName} was removed from the JSTO Library.`);
     await loadLibraryFiles();
   } catch (error) {

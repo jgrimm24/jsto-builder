@@ -381,6 +381,7 @@ renderGvoRiskStatus();
 renderForm1118Status();
 renderBioSurveyStatus();
 toggleCustomModuleBuilder();
+loadLibraryStateFromUrl();
 
 form.addEventListener("input", handleFormChange);
 document.getElementById("add-module").addEventListener("click", addSelectedModule);
@@ -1544,7 +1545,8 @@ function createPdfPayload() {
     unit: state.meta.unit || "",
     workCenter: state.meta.workCenter || "",
     officeSymbol: state.meta.officeSymbol || "",
-    previewHtml: preview.innerHTML
+    previewHtml: preview.innerHTML,
+    state
   };
 }
 
@@ -1799,6 +1801,72 @@ function removeBioSurvey() {
   renderPreview();
 }
 
+function applyImportedState(parsed) {
+  state = {
+    meta: { ...defaultState.meta, ...parsed.meta },
+    unitImage: {
+      ...defaultState.unitImage,
+      ...(parsed.unitImage || {})
+    },
+    dafsmsImage: {
+      ...defaultState.dafsmsImage,
+      ...(parsed.dafsmsImage || {})
+    },
+    evacuationImage: {
+      ...defaultState.evacuationImage,
+      ...(parsed.evacuationImage || {})
+    },
+    emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+    gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
+    form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
+    bioSurvey: {
+      ...defaultState.bioSurvey,
+      ...(parsed.bioSurvey || {})
+    },
+    selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
+  };
+  hydrateForm();
+  renderSelectedModules();
+  renderUnitImageStatus();
+  renderUnitImagePreview();
+  renderDafsmsImageStatus();
+  renderEvacuationImageStatus();
+  renderEmergencyEquipmentFilesStatus();
+  renderGvoRiskStatus();
+  renderForm1118Status();
+  renderBioSurveyStatus();
+  renderPreview();
+  saveState();
+}
+
+async function loadLibraryStateFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const statePath = params.get("libraryState");
+  if (!statePath) {
+    return;
+  }
+
+  if (!LIBRARY_UPLOAD_URL) {
+    window.alert("The JSTO Library service URL is not configured for this page.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/library-state?path=${encodeURIComponent(statePath)}`);
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(result.error || "Unable to load JSTO editable package.");
+    }
+
+    applyImportedState(result.state || {});
+    const cleanUrl = `${window.location.pathname}${window.location.hash || ""}`;
+    window.history.replaceState({}, document.title, cleanUrl);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unable to load JSTO editable package.";
+    window.alert(message);
+  }
+}
+
 function uploadState(event) {
   const [file] = event.target.files || [];
   if (!file) {
@@ -1809,40 +1877,7 @@ function uploadState(event) {
   reader.onload = () => {
     try {
       const parsed = JSON.parse(reader.result);
-      state = {
-        meta: { ...defaultState.meta, ...parsed.meta },
-        unitImage: {
-          ...defaultState.unitImage,
-          ...(parsed.unitImage || {})
-        },
-        dafsmsImage: {
-          ...defaultState.dafsmsImage,
-          ...(parsed.dafsmsImage || {})
-        },
-        evacuationImage: {
-          ...defaultState.evacuationImage,
-          ...(parsed.evacuationImage || {})
-        },
-        emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
-        gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
-        form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
-        bioSurvey: {
-          ...defaultState.bioSurvey,
-          ...(parsed.bioSurvey || {})
-        },
-        selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
-      };
-      hydrateForm();
-      renderSelectedModules();
-      renderUnitImageStatus();
-      renderUnitImagePreview();
-      renderDafsmsImageStatus();
-      renderEvacuationImageStatus();
-      renderEmergencyEquipmentFilesStatus();
-      renderForm1118Status();
-      renderBioSurveyStatus();
-      renderPreview();
-      saveState();
+      applyImportedState(parsed);
     } catch {
       window.alert("That JSON file could not be loaded.");
     }
