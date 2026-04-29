@@ -515,7 +515,7 @@ async function deleteLibraryFile(payload) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      message: `Delete JSTO library file ${path.basename(targetPath)}`,
+      message: `Delete JSTO library file ${path.basename(targetPath)} [skip render]`,
       sha,
       branch: githubBranch
     })
@@ -532,7 +532,7 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
   await createGitHubFile(
     targetPath,
     pdfBase64,
-    `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"}`
+    `Add JSTO library PDF for ${payload.workCenter || payload.unit || "work center"} [skip render]`
   );
 
   if (payload.state && typeof payload.state === "object") {
@@ -544,7 +544,7 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
     await createGitHubFile(
       stateTargetPath,
       Buffer.from(JSON.stringify(statePayload, null, 2), "utf8").toString("base64"),
-      `Add JSTO editable package for ${payload.workCenter || payload.unit || "work center"}`
+      `Add JSTO editable package for ${payload.workCenter || payload.unit || "work center"} [skip render]`
     );
   }
 
