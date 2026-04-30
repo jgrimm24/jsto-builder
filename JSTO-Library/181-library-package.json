@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "unit": "181",
+    "workCenter": "",
+    "exportBasename": "",
+    "officeSymbol": "",
+    "supervisor": "",
+    "phone": "",
+    "reviewer": "",
+    "reviewDate": "",
+    "effectiveDate": "",
+    "workDescription": "",
+    "references": "",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "documentationNotes": "",
+    "annualReviewLog": ""
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/181-library-package.pdf",
+  "savedAt": "2026-04-30T11:11:18.795Z"
+}
