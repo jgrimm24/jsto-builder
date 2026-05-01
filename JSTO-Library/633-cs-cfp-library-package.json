@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "unit": "633 CS",
+    "workCenter": "CFP",
+    "exportBasename": "",
+    "officeSymbol": "SCOS",
+    "supervisor": "SSgt Conrad",
+    "phone": "764 2666 Opt2",
+    "reviewer": "TSgt Pelletier",
+    "reviewDate": "",
+    "effectiveDate": "2026-05-01",
+    "workDescription": "Provides 24/7 IT support for 13K personnel, 201 VIPS & 8 GOs across HQ ACC, 5 wings & 30 tenant units. Monitors enterprise task order assignments, ensuring compliance with AFCYBER's directives for a $192M network. Coordinates remediation of classified message spillages & monitors authorized service interruption assignments, assuring uninterrupted C4ISR capabilities for 2 ISRWs & enabling worldwide combat operations for a $12B F-22 fleet.",
+    "references": "T.0. 00-33A-1001",
+    "hazardAnalysis": "ESD Principles",
+    "riskManagementNotes": "Work Center Safety monitors and supervisors do SPOT inspections along with brief HRA activities.",
+    "trafficSafetyNotes": "Follow the same laws on base that are provided off base. If no speed limit is posted, 25 mph is the suggested speed. Exercise caution as you come on base and as you transit throughout base.",
+    "motorcycleSafetyReps": "SrA Andrew Chamberlain-Green and SrA Hamilton Cooper are the Unit Motorcycle Safety Representatives. Direct all traffic safety questions to them.",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "documentationNotes": "",
+    "annualReviewLog": ""
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/633-cs-cfp-library-package.pdf",
+  "savedAt": "2026-05-01T18:43:09.334Z"
+}
