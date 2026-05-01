@@ -15,8 +15,8 @@
     "riskManagementNotes": "Work Center Safety monitors and supervisors do SPOT inspections along with brief HRA activities.",
     "trafficSafetyNotes": "Follow the same laws on base that are provided off base. If no speed limit is posted, 25 mph is the suggested speed. Exercise caution as you come on base and as you transit throughout base.",
     "motorcycleSafetyReps": "SrA Andrew Chamberlain-Green and SrA Hamilton Cooper are the Unit Motorcycle Safety Representatives. Direct all traffic safety questions to them.",
-    "emergencyNumbers": "",
-    "medicalFacility": "",
+    "emergencyNumbers": "Fire: 764-4222\nSafety: 764-5058\n",
+    "medicalFacility": "633 Medical Facility\n",
     "evacuation": "",
     "shelter": "",
     "activeShooter": "",
@@ -49,5 +49,5 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/633-cs-cfp-library-package.pdf",
-  "savedAt": "2026-05-01T18:43:09.334Z"
+  "savedAt": "2026-05-01T18:54:07.561Z"
 }
