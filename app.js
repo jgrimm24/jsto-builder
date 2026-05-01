@@ -318,6 +318,7 @@ const defaultState = {
     dataUrl: "",
     type: ""
   },
+  moduleReferences: [],
   selectedModules: []
 };
 
@@ -490,6 +491,7 @@ function loadState() {
         ...defaultState.bioSurvey,
         ...(parsed.bioSurvey || {})
       },
+      moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : [],
       selectedModules: parsedSelectedModules.filter((module) => module?.id !== "local-4")
     };
   } catch {
@@ -678,10 +680,36 @@ function appendModuleReferencesToField(module) {
 
   const nextValue = [currentValue.trim(), missingReferences.join("\n")].filter(Boolean).join("\n");
   state.meta.references = nextValue;
+  state.moduleReferences = uniqueReferences([...(state.moduleReferences || []), ...missingReferences]);
 
   const referencesField = form.elements.namedItem("references");
   if (referencesField) {
     referencesField.value = nextValue;
+  }
+}
+
+function syncModuleReferencesWithSelection() {
+  const trackedReferences = uniqueReferences(state.moduleReferences || []);
+  if (!trackedReferences.length) {
+    return;
+  }
+
+  const neededKeys = new Set(state.selectedModules.flatMap(getModuleParentReferences).map(normalizeReferenceKey));
+  const removedKeys = new Set(
+    trackedReferences
+      .map((reference) => normalizeReferenceKey(reference))
+      .filter((key) => !neededKeys.has(key))
+  );
+
+  state.moduleReferences = trackedReferences.filter((reference) => neededKeys.has(normalizeReferenceKey(reference)));
+  if (!removedKeys.size) {
+    return;
+  }
+
+  state.meta.references = removeReferenceEntries(state.meta.references, removedKeys);
+  const referencesField = form.elements.namedItem("references");
+  if (referencesField) {
+    referencesField.value = state.meta.references;
   }
 }
 
@@ -716,6 +744,14 @@ function splitReferenceEntries(value) {
     .split(/[\n;]+/)
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function removeReferenceEntries(value, removedKeys) {
+  return String(value || "")
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter((line) => line && !removedKeys.has(normalizeReferenceKey(line)))
+    .join("\n");
 }
 
 function uniqueReferences(values) {
@@ -784,6 +820,7 @@ function renderSelectedModules() {
 
     fragment.querySelector(".remove-module").addEventListener("click", () => {
       state.selectedModules = state.selectedModules.filter((item) => item.id !== module.id);
+      syncModuleReferencesWithSelection();
       saveState();
       renderSelectedModules();
       renderPreview();
@@ -1934,6 +1971,7 @@ function applyImportedState(parsed) {
       ...defaultState.bioSurvey,
       ...(parsed.bioSurvey || {})
     },
+    moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : [],
     selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
   };
   hydrateForm();
