@@ -590,6 +590,7 @@ function addSelectedModule() {
     link: ""
   });
 
+  appendModuleReferencesToField(module);
   moduleSelect.value = "";
   saveState();
   renderSelectedModules();
@@ -624,6 +625,7 @@ function addCustomModule() {
     link: ""
   });
 
+  appendModuleReferencesToField({ reference });
   customModuleTitle.value = "";
   customModuleReference.value = "";
   moduleSelect.value = "";
@@ -631,6 +633,90 @@ function addCustomModule() {
   saveState();
   renderSelectedModules();
   renderPreview();
+}
+
+function appendModuleReferencesToField(module) {
+  const additions = getModuleParentReferences(module);
+  if (!additions.length) {
+    return;
+  }
+
+  const currentValue = state.meta.references || "";
+  const existingKeys = new Set([
+    ...splitReferenceEntries(currentValue).map(normalizeReferenceKey),
+    ...extractParentReferences(currentValue).map(normalizeReferenceKey)
+  ]);
+  const missingReferences = additions.filter((reference) => !existingKeys.has(normalizeReferenceKey(reference)));
+  if (!missingReferences.length) {
+    return;
+  }
+
+  const nextValue = [currentValue.trim(), missingReferences.join("\n")].filter(Boolean).join("\n");
+  state.meta.references = nextValue;
+
+  const referencesField = form.elements.namedItem("references");
+  if (referencesField) {
+    referencesField.value = nextValue;
+  }
+}
+
+function getModuleParentReferences(module) {
+  const sourceText = [
+    module?.reference,
+    module?.trainingSource,
+    module?.afTrainingSource
+  ].filter(Boolean).join("; ");
+
+  return uniqueReferences(extractParentReferences(sourceText));
+}
+
+function extractParentReferences(value) {
+  const text = String(value || "");
+  const patterns = [
+    /\bDESR\s*\d+(?:\.\d+)*(?:_?\s*DAFMAN\s*\d+(?:[-.]\d+)*)?/gi,
+    /\b(?:DAFMAN|DAFI|AFI|AFMAN|AFRCI)\s*\d+(?:[-.]\d+)*/gi,
+    /\b(?:AF|DAF) Form\s*\d+\b/gi,
+    /\bOSHA\s*\d+\b/gi,
+    /\b29\s*CFR\s*\d+(?:\.\d+)*/gi
+  ];
+
+  return patterns.flatMap((pattern) => {
+    const matches = text.match(pattern) || [];
+    return matches.map(normalizeReferenceLabel);
+  }).filter(Boolean);
+}
+
+function splitReferenceEntries(value) {
+  return String(value || "")
+    .split(/[\n;]+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function uniqueReferences(values) {
+  const seen = new Set();
+  return values.filter((value) => {
+    const key = normalizeReferenceKey(value);
+    if (!key || seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function normalizeReferenceLabel(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/\b(DESR|DAFMAN|DAFI|AFI|AFMAN|AFRCI|OSHA)\s*(\d)/gi, "$1 $2")
+    .replace(/\b(DAF|AF) Form\s*(\d)/gi, "$1 Form $2")
+    .replace(/\b29\s*CFR\s*/gi, "29 CFR ")
+    .replace(/_DAFMAN\s*/gi, "_DAFMAN ");
+}
+
+function normalizeReferenceKey(value) {
+  return normalizeReferenceLabel(value).toLowerCase();
 }
 
 function renderSelectedModules() {
