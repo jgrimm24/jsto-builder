@@ -352,7 +352,6 @@ const removeForm1118FilesButton = document.getElementById("remove-form-1118-file
 const bioSurveyInput = document.getElementById("bio-survey-file");
 const bioSurveyStatus = document.getElementById("bio-survey-status");
 const removeBioSurveyButton = document.getElementById("remove-bio-survey");
-const expandableFields = Array.from(document.querySelectorAll(".expandable-field"));
 const fieldEditorModal = document.getElementById("field-editor-modal");
 const fieldEditorTitle = document.getElementById("field-editor-title");
 const fieldEditorText = document.getElementById("field-editor-text");
@@ -419,8 +418,13 @@ form1118FilesInput.addEventListener("change", uploadForm1118Files);
 removeForm1118FilesButton.addEventListener("click", removeForm1118Files);
 bioSurveyInput.addEventListener("change", uploadBioSurvey);
 removeBioSurveyButton.addEventListener("click", removeBioSurvey);
-expandableFields.forEach((field) => {
-  field.addEventListener("click", () => openFieldEditor(field));
+document.addEventListener("click", (event) => {
+  const field = event.target instanceof HTMLTextAreaElement ? event.target : null;
+  if (!field || field.id === "field-editor-text" || field.closest("#field-editor-modal")) {
+    return;
+  }
+
+  openFieldEditor(field);
 });
 fieldEditorCloseButton.addEventListener("click", closeFieldEditor);
 fieldEditorCancelButton.addEventListener("click", closeFieldEditor);
@@ -530,6 +534,10 @@ function handleFormChange(event) {
     return;
   }
 
+  if (!target.name) {
+    return;
+  }
+
   state.meta[target.name] = target.value;
   saveState();
   schedulePreviewRender();
@@ -537,11 +545,28 @@ function handleFormChange(event) {
 
 function openFieldEditor(field) {
   activeExpandedField = field;
-  fieldEditorTitle.textContent = field.dataset.editorLabel || "Edit Field";
+  fieldEditorTitle.textContent = getFieldEditorTitle(field);
   fieldEditorText.value = field.value || "";
   fieldEditorModal.hidden = false;
   document.body.classList.add("modal-open");
   requestAnimationFrame(() => fieldEditorText.focus());
+}
+
+function getFieldEditorTitle(field) {
+  if (field.dataset.editorLabel) {
+    return field.dataset.editorLabel;
+  }
+
+  const label = field.closest("label");
+  const labelText = label
+    ? Array.from(label.childNodes)
+        .filter((node) => node.nodeType === Node.TEXT_NODE)
+        .map((node) => node.textContent.trim())
+        .filter(Boolean)
+        .join(" ")
+    : "";
+
+  return labelText || label?.querySelector("strong")?.textContent?.trim() || "Edit Field";
 }
 
 function closeFieldEditor() {
@@ -557,7 +582,7 @@ function saveExpandedField() {
 
   const value = fieldEditorText.value;
   activeExpandedField.value = value;
-  state.meta[activeExpandedField.name] = value;
+  activeExpandedField.dispatchEvent(new Event("input", { bubbles: true }));
   saveState();
   renderPreview();
   closeFieldEditor();

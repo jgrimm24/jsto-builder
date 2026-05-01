@@ -307,7 +307,7 @@ textarea {
   color: var(--accent);
 }
 
-.expandable-field {
+textarea:not(#field-editor-text) {
   cursor: pointer;
 }
 
