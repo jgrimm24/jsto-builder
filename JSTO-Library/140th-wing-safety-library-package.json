@@ -18,9 +18,9 @@
     "emergencyNumbers": "All emergencies 911 \nFire Department 847-9117 \nSecurity Forces 847-9252 \nCommand Post 847-9955 \nSafety Office 847-9738 or 9735 \nBioenvironmental Office 847-6274 \nEnvironmental Office 847-9042",
     "medicalFacility": "UCHealth University of Colorado Hospital \n12605 E. 16th Avenue, Aurora, CO 80045 \n(720) 848-0000\nEmergency Room Hours: 24 hours\n(Level 1 Trauma)\n\nUCHealth Urgent Care - Aurora \n15300 E Mississippi, Aurora, CO 80015 \n(303) 671-4140 \nEmergency Room Hours: 24 hour operations (Level II Trauma)",
     "evacuation": "",
-    "shelter": "UNK",
+    "shelter": "1st floor restrooms on the east and west side of bldg 706. ",
     "activeShooter": "If there is an active shooter threat, you may hear shots or an announcement to Lockdown. Evacuate the immediate area, if possible. If evacuation isn’t possible, personnel in the immediate area must find a place to hide where they are less likely to be discovered by the shooter. Move quickly away from the threat and seek shelter inside the nearest room/building which can be locked, remain out of sight. Turn off the lights and be as quiet as possible, turn off cell phone ringer and vibration. When in a safe location call 911 and provide details about the shooter. Once the suspect is neutralized you will receive further guidance from SFS and local PD.\n\nThe three things to keep in mind in an active shooter situation: ESCAPE|BARRICADE|FIGHT\n\nESCAPE\n* Consider all points to safely exit the facility\n* Don’t put yourself in harm’s way\n* Be prepared to fight\nBARRICADE\n* Secure yourself away from the shooter\n* Locks doors, blockade doors and windows, and try not to trap yourself\n* Remain silent and call Emergency Personnel\nFIGHT\n* Fighting the shooter is extremely risky, only fight if you have no other options.\n* Commit to the fight and always assist others in an attempt to overwhelm the shooter\n* Use items in your immediate area as weapons examples are tools, fire extinguisher, chairs and etc.",
-    "weatherShelter": "UNK",
+    "weatherShelter": "1st floor restrooms on the east and west side of bldg 706. \n",
     "bulletinBoard": "Bldg 706 west side 1st Floor located near hallway into FSS.",
     "emergencyEquipment": "Class ABC Fire extinguisher located near 2nd floor west side exit door",
     "documentationNotes": "",
@@ -244,5 +244,5 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/140th-wing-safety-library-package.pdf",
-  "savedAt": "2026-05-02T20:55:06.240Z"
+  "savedAt": "2026-05-02T21:12:32.838Z"
 }
