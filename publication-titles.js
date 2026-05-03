@@ -150,11 +150,12 @@ function patchStateReferences() {
   }
 
   if (Array.isArray(state.moduleReferences)) {
+    let referencesChanged = false;
     const nextReferences = state.moduleReferences.map((entry) => {
       if (typeof entry === "string") {
         const result = patchString(entry);
         if (result.changed) {
-          changed = true;
+          referencesChanged = true;
         }
         return result.value;
       }
@@ -171,7 +172,7 @@ function patchStateReferences() {
         });
 
         if (entryChanged) {
-          changed = true;
+          referencesChanged = true;
         }
         return nextEntry;
       }
@@ -179,8 +180,9 @@ function patchStateReferences() {
       return entry;
     });
 
-    if (changed) {
+    if (referencesChanged) {
       state.moduleReferences = nextReferences;
+      changed = true;
     }
   }
 
@@ -214,26 +216,40 @@ function patchReferenceTextarea() {
   return true;
 }
 
+function patchRenderedModuleCards() {
+  const selectedModules = document.getElementById("selected-modules");
+  if (!selectedModules) {
+    return false;
+  }
+
+  let changed = false;
+  selectedModules.querySelectorAll(".module-reference, .module-training-source, .module-af-source, .module-training-requirement, .module-af-requirement").forEach((element) => {
+    const result = patchString(element.textContent);
+    if (result.changed) {
+      element.textContent = result.value;
+      changed = true;
+    }
+  });
+
+  return changed;
+}
+
 function applyPublicationTitlesPatch() {
-  let moduleDataChanged = false;
   let stateChanged = false;
 
   if (typeof OPTIONAL_MODULES !== "undefined") {
     if (patchModuleCollection(OPTIONAL_MODULES)) {
-      moduleDataChanged = true;
       stateChanged = true;
     }
   }
 
   if (typeof REQUIRED_MODULES !== "undefined") {
     if (patchModuleCollection(REQUIRED_MODULES)) {
-      moduleDataChanged = true;
       stateChanged = true;
     }
   }
 
   if (patchStateReferences()) {
-    moduleDataChanged = true;
     stateChanged = true;
   }
 
@@ -241,9 +257,7 @@ function applyPublicationTitlesPatch() {
     stateChanged = true;
   }
 
-  if (moduleDataChanged && typeof renderSelectedModules === "function") {
-    renderSelectedModules();
-  }
+  patchRenderedModuleCards();
 
   if (stateChanged && typeof renderPreview === "function") {
     renderPreview();
