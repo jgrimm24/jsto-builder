@@ -517,10 +517,10 @@ function getOwnershipFromState(state) {
   const meta = state?.meta || {};
   const uploadedBy = String(libraryMeta.uploadedBy || meta.uploadedBy || "").trim();
   const uploadedById = normalizeIdentity(libraryMeta.uploadedById || meta.uploadedById || uploadedBy);
-  return { uploadedBy, uploadedById };
+  return { uploadedBy, uploadedById, hasOwnership: Boolean(uploadedById) };
 }
 
-function canManageLibraryItem(uploadedById, identity) {
+function canManageOwnedLibraryItem(uploadedById, identity) {
   const normalizedIdentity = normalizeIdentity(identity);
   if (!normalizedIdentity) {
     return false;
@@ -552,6 +552,7 @@ async function getPackageOwnershipForPath(targetPath) {
     return {
       uploadedBy: "",
       uploadedById: "",
+      hasOwnership: false,
       statePath: "",
       state: null
     };
@@ -593,14 +594,16 @@ async function buildLibraryPackages(identity) {
       continue;
     }
 
-    const ownership = item.json ? await getPackageOwnershipForPath(item.json.path) : { uploadedBy: "", uploadedById: "" };
+    const ownership = item.json ? await getPackageOwnershipForPath(item.json.path) : { uploadedBy: "", uploadedById: "", hasOwnership: false };
+    const isLegacy = !ownership.hasOwnership;
     packages.push({
       key: item.key,
       pdf: item.pdf,
       json: item.json || null,
       uploadedBy: ownership.uploadedBy || "",
-      canEdit: Boolean(item.json && canManageLibraryItem(ownership.uploadedById, identity)),
-      canDelete: canManageLibraryItem(ownership.uploadedById, identity)
+      hasOwnership: ownership.hasOwnership,
+      canEdit: Boolean(item.json && (isLegacy || canManageOwnedLibraryItem(ownership.uploadedById, identity))),
+      canDelete: isLegacy || canManageOwnedLibraryItem(ownership.uploadedById, identity)
     });
   }
 
@@ -621,11 +624,11 @@ function ensureDeleteAuthorized(deleteToken) {
 
 async function ensureLibraryStateAuthorized(targetPath, identity) {
   const ownership = await getPackageOwnershipForPath(targetPath);
-  if (canManageLibraryItem(ownership.uploadedById, identity)) {
+  if (!ownership.hasOwnership) {
     return ownership;
   }
 
-  if (!ownership.uploadedById && isAdminIdentity(identity)) {
+  if (canManageOwnedLibraryItem(ownership.uploadedById, identity)) {
     return ownership;
   }
 
@@ -647,10 +650,8 @@ async function deleteLibraryFile(payload) {
   }
 
   const ownership = await getPackageOwnershipForPath(targetPath);
-  if (!canManageLibraryItem(ownership.uploadedById, identity)) {
-    if (!(isAdminIdentity(identity) && !ownership.uploadedById)) {
-      throw createForbiddenError("Only the original uploader or an admin can delete this JSTO.");
-    }
+  if (ownership.hasOwnership && !canManageOwnedLibraryItem(ownership.uploadedById, identity)) {
+    throw createForbiddenError("Only the original uploader or an admin can delete this JSTO.");
   }
 
   await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
