@@ -116,7 +116,7 @@ function groupLibraryPackages(files) {
     }
 
     const packageKey = pathValue.replace(/\.(pdf|json)$/i, "");
-    const existing = packages.get(packageKey) || { key: packageKey, uploadedBy: "", canEdit: false, canDelete: false };
+    const existing = packages.get(packageKey) || { key: packageKey, uploadedBy: "", hasOwnership: false, canEdit: false, canDelete: false };
     existing[extension] = file;
     packages.set(packageKey, existing);
   });
@@ -138,28 +138,26 @@ function renderLibraryFiles(packages) {
     const sizeLabel = formatBytes(pdfFile.size || 0);
     const downloadUrl = escapeHtml(createLibraryFileDownloadUrl(pdfFile.downloadUrl || pdfFile.viewUrl || pdfFile.htmlUrl || "#"));
     const editUrl = jsonFile && libraryDeleteAvailable && jstoPackage.canEdit
-      ? escapeHtml(createBuilderEditUrl(jsonFile.path || ""))
+      ? escapeHtml(createBuilderEditUrl(jsonFile.path || "", jstoPackage.hasOwnership))
       : "";
     const name = escapeHtml(pdfFile.name || "JSTO PDF");
     const pathValue = escapeHtml(pdfFile.path || "");
     const shaValue = escapeHtml(pdfFile.sha || "");
     const jsonPathValue = escapeHtml(jsonFile?.path || "");
     const jsonShaValue = escapeHtml(jsonFile?.sha || "");
-    const ownerLabel = jstoPackage.uploadedBy
+    const ownerLabel = jstoPackage.hasOwnership
       ? ` • Uploaded by ${escapeHtml(jstoPackage.uploadedBy)}`
-      : libraryDeleteAvailable
-        ? " • Ownership metadata unavailable"
-        : "";
+      : " • Legacy JSTO";
 
     const editButton = jsonFile
       ? editUrl
-        ? `<a class="button" href="${editUrl}">Edit</a>`
+        ? `<a class="button" href="${editUrl}">${jstoPackage.hasOwnership ? "Edit" : "Edit (Legacy)"}</a>`
         : `<button class="button" type="button" disabled title="Only the original uploader or an admin can edit this JSTO.">Edit Locked</button>`
       : "";
 
     const deleteButton = libraryDeleteAvailable
       ? jstoPackage.canDelete
-        ? `<button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}">Delete</button>`
+        ? `<button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}" data-ownership-required="${jstoPackage.hasOwnership ? "true" : "false"}">${jstoPackage.hasOwnership ? "Delete" : "Delete (Legacy)"}</button>`
         : `<button class="button danger" type="button" disabled title="Only the original uploader or an admin can delete this JSTO.">Delete Locked</button>`
       : '<button class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network.">Delete Unavailable</button>';
 
@@ -202,19 +200,20 @@ function createLibraryFileDownloadUrl(value) {
   return `${LIBRARY_API_BASE}${raw.startsWith("/") ? raw : `/${raw}`}`;
 }
 
-function createBuilderEditUrl(statePath) {
+function createBuilderEditUrl(statePath, hasOwnership) {
   const params = new URLSearchParams();
   params.set("v", "20260503-1");
   params.set("libraryState", statePath);
-  if (getCurrentIdentity()) {
+  if (hasOwnership && getCurrentIdentity()) {
     params.set("libraryIdentity", getCurrentIdentity());
   }
   return `index.html?${params.toString()}`;
 }
 
 async function handleDelete(button) {
+  const ownershipRequired = button.dataset.ownershipRequired === "true";
   const identity = getCurrentIdentity();
-  if (!identity) {
+  if (ownershipRequired && !identity) {
     window.alert("Enter your name first so the Library Manager can verify upload ownership.");
     identityInput?.focus();
     return;
