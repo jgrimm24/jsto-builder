@@ -12,8 +12,15 @@ const githubRepo = process.env.GITHUB_REPO || "jsto-builder";
 const githubBranch = process.env.GITHUB_BRANCH || "main";
 const libraryPath = process.env.GITHUB_LIBRARY_PATH || "JSTO-Library";
 const libraryDeleteToken = process.env.LIBRARY_DELETE_TOKEN || "";
+const libraryAdminIdentities = process.env.LIBRARY_ADMIN_IDENTITIES || "";
 const maxBodySize = 90 * 1024 * 1024;
 const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const adminIdentitySet = new Set(
+  String(libraryAdminIdentities || "")
+    .split(",")
+    .map((value) => normalizeIdentity(value))
+    .filter(Boolean)
+);
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -41,6 +48,14 @@ const assetMimeTypes = {
   ".bmp": "image/bmp",
   ".avif": "image/avif"
 };
+
+function normalizeIdentity(value) {
+  return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function isAdminIdentity(identity) {
+  return adminIdentitySet.has(normalizeIdentity(identity));
+}
 
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
@@ -372,7 +387,9 @@ async function fetchGitHubJson(url, options = {}) {
 
   const result = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(result.message || "GitHub request failed.");
+    const error = new Error(result.message || "GitHub request failed.");
+    error.statusCode = response.status;
+    throw error;
   }
 
   return result;
@@ -420,7 +437,7 @@ async function createGitHubFile(targetPath, content, message) {
   });
 }
 
-async function listLibraryFiles() {
+async function listLibraryItems() {
   const items = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(libraryPath).replace(/%2F/g, "/")}?ref=${encodeURIComponent(githubBranch)}`);
   const files = Array.isArray(items) ? items : [];
 
@@ -484,6 +501,112 @@ async function fetchLibraryJson(targetPath) {
   throw new Error("The JSTO editable package could not be loaded.");
 }
 
+async function fetchLibraryJsonIfExists(targetPath) {
+  try {
+    return await fetchLibraryJson(targetPath);
+  } catch (error) {
+    if (error?.statusCode === 404 || /could not be loaded/i.test(String(error?.message || ""))) {
+      return null;
+    }
+    throw error;
+  }
+}
+
+function getOwnershipFromState(state) {
+  const libraryMeta = state?.libraryMeta || {};
+  const meta = state?.meta || {};
+  const uploadedBy = String(libraryMeta.uploadedBy || meta.uploadedBy || "").trim();
+  const uploadedById = normalizeIdentity(libraryMeta.uploadedById || meta.uploadedById || uploadedBy);
+  return { uploadedBy, uploadedById };
+}
+
+function canManageLibraryItem(uploadedById, identity) {
+  const normalizedIdentity = normalizeIdentity(identity);
+  if (!normalizedIdentity) {
+    return false;
+  }
+
+  if (isAdminIdentity(normalizedIdentity)) {
+    return true;
+  }
+
+  return Boolean(uploadedById) && normalizedIdentity === uploadedById;
+}
+
+function createForbiddenError(message) {
+  const error = new Error(message);
+  error.statusCode = 403;
+  return error;
+}
+
+async function getPackageOwnershipForPath(targetPath) {
+  const trimmedPath = String(targetPath || "").trim();
+  const extension = path.extname(trimmedPath).toLowerCase();
+  const statePath = extension === ".json"
+    ? trimmedPath
+    : extension === ".pdf"
+      ? trimmedPath.replace(/\.pdf$/i, ".json")
+      : "";
+
+  if (!statePath) {
+    return {
+      uploadedBy: "",
+      uploadedById: "",
+      statePath: "",
+      state: null
+    };
+  }
+
+  const state = await fetchLibraryJsonIfExists(statePath);
+  const ownership = getOwnershipFromState(state || {});
+  return {
+    ...ownership,
+    statePath,
+    state
+  };
+}
+
+async function buildLibraryPackages(identity) {
+  const files = await listLibraryItems();
+  const packageMap = new Map();
+
+  files.forEach((file) => {
+    const extension = path.extname(String(file.path || "")).toLowerCase();
+    if (![".pdf", ".json"].includes(extension)) {
+      return;
+    }
+
+    const key = String(file.path || "").replace(/\.(pdf|json)$/i, "");
+    const existing = packageMap.get(key) || { key };
+    if (extension === ".pdf") {
+      existing.pdf = file;
+    }
+    if (extension === ".json") {
+      existing.json = file;
+    }
+    packageMap.set(key, existing);
+  });
+
+  const packages = [];
+  for (const item of packageMap.values()) {
+    if (!item.pdf) {
+      continue;
+    }
+
+    const ownership = item.json ? await getPackageOwnershipForPath(item.json.path) : { uploadedBy: "", uploadedById: "" };
+    packages.push({
+      key: item.key,
+      pdf: item.pdf,
+      json: item.json || null,
+      uploadedBy: ownership.uploadedBy || "",
+      canEdit: Boolean(item.json && canManageLibraryItem(ownership.uploadedById, identity)),
+      canDelete: canManageLibraryItem(ownership.uploadedById, identity)
+    });
+  }
+
+  return packages.sort((a, b) => String(a.pdf?.name || "").localeCompare(String(b.pdf?.name || "")));
+}
+
 function ensureDeleteAuthorized(deleteToken) {
   if (!libraryDeleteToken) {
     return;
@@ -496,6 +619,19 @@ function ensureDeleteAuthorized(deleteToken) {
   }
 }
 
+async function ensureLibraryStateAuthorized(targetPath, identity) {
+  const ownership = await getPackageOwnershipForPath(targetPath);
+  if (canManageLibraryItem(ownership.uploadedById, identity)) {
+    return ownership;
+  }
+
+  if (!ownership.uploadedById && isAdminIdentity(identity)) {
+    return ownership;
+  }
+
+  throw createForbiddenError("Only the original uploader or an admin can open this editable JSTO package.");
+}
+
 async function deleteLibraryFile(payload) {
   if (!githubToken) {
     throw new Error("The upload service is missing the GITHUB_TOKEN environment variable.");
@@ -503,10 +639,18 @@ async function deleteLibraryFile(payload) {
 
   const targetPath = String(payload?.path || "").trim();
   const sha = String(payload?.sha || "").trim();
+  const identity = String(payload?.identity || "").trim();
   ensureDeleteAuthorized(payload?.deleteToken);
 
   if (!targetPath || !sha || !targetPath.startsWith(`${libraryPath}/`)) {
     throw new Error("The requested JSTO library file could not be validated.");
+  }
+
+  const ownership = await getPackageOwnershipForPath(targetPath);
+  if (!canManageLibraryItem(ownership.uploadedById, identity)) {
+    if (!(isAdminIdentity(identity) && !ownership.uploadedById)) {
+      throw createForbiddenError("Only the original uploader or an admin can delete this JSTO.");
+    }
   }
 
   await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
@@ -523,6 +667,12 @@ async function deleteLibraryFile(payload) {
 }
 
 async function saveLibrarySubmission(payload, serviceBaseUrl) {
+  const uploadedBy = String(payload?.uploadedBy || payload?.state?.meta?.uploadedBy || "").trim();
+  const uploadedById = normalizeIdentity(payload?.uploadedById || payload?.state?.meta?.uploadedById || uploadedBy);
+  if (!uploadedBy || !uploadedById) {
+    throw new Error("Uploader name is required before saving to the JSTO Library.");
+  }
+
   const filename = createLibraryFilename(payload);
   const targetPath = `${libraryPath}/${filename}`;
   const stateFilename = filename.replace(/\.pdf$/i, ".json");
@@ -536,11 +686,24 @@ async function saveLibrarySubmission(payload, serviceBaseUrl) {
   );
 
   if (payload.state && typeof payload.state === "object") {
+    const savedAt = new Date().toISOString();
     const statePayload = {
       ...payload.state,
       savedLibraryPdf: targetPath,
-      savedAt: new Date().toISOString()
+      savedAt,
+      libraryMeta: {
+        uploadedBy,
+        uploadedById,
+        savedLibraryPdf: targetPath,
+        savedAt
+      }
     };
+    statePayload.meta = {
+      ...(statePayload.meta || {}),
+      uploadedBy,
+      uploadedById
+    };
+
     await createGitHubFile(
       stateTargetPath,
       Buffer.from(JSON.stringify(statePayload, null, 2), "utf8").toString("base64"),
@@ -586,11 +749,12 @@ http.createServer(async (req, res) => {
 
   if (requestUrl.pathname === "/api/library-files" && req.method === "GET") {
     try {
-      const files = await listLibraryFiles();
+      const identity = requestUrl.searchParams.get("identity") || "";
+      const packages = await buildLibraryPackages(identity);
       sendJson(res, 200, {
         ok: true,
         requiresDeleteToken: Boolean(libraryDeleteToken),
-        files
+        packages
       });
     } catch (error) {
       sendJson(res, 500, {
@@ -619,6 +783,8 @@ http.createServer(async (req, res) => {
   if (requestUrl.pathname === "/api/library-state" && req.method === "GET") {
     try {
       const targetPath = validateLibraryJsonPath(requestUrl.searchParams.get("path"));
+      const identity = requestUrl.searchParams.get("identity") || "";
+      await ensureLibraryStateAuthorized(targetPath, identity);
       const state = await fetchLibraryJson(targetPath);
       sendJson(res, 200, {
         ok: true,
