@@ -204,6 +204,29 @@ textarea {
   line-height: 1.5;
 }
 
+.library-ownership-callout {
+  display: block;
+  margin: 10px 0 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(197, 106, 45, 0.28);
+  border-left: 6px solid var(--accent-2);
+  background: linear-gradient(135deg, rgba(197, 106, 45, 0.18), rgba(255, 255, 255, 0.94));
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.55;
+  box-shadow: 0 10px 24px rgba(197, 106, 45, 0.1);
+}
+
+.library-ownership-callout strong {
+  display: inline-block;
+  margin-right: 6px;
+  color: #8e4311;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .button,
 .icon-button {
   border: 0;
