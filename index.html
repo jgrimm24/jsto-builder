@@ -78,19 +78,19 @@
               <input name="officeSymbol" type="text" placeholder="e.g. Wing Staff/Admin">
             </label>
             <label>
-              Shop Supervisor
-              <input name="supervisor" type="text" placeholder="Name / rank / title">
+              Current Shop Supervisor
+              <input name="supervisor" type="text" placeholder="Current supervisor name / rank / title">
             </label>
             <label>
-              Contact Phone
-              <input name="phone" type="text" placeholder="DSN or commercial">
+              Current Supervisor Contact Phone
+              <input name="phone" type="text" placeholder="Current DSN or commercial number">
             </label>
             <label>
-              Reviewer
-              <input name="reviewer" type="text" placeholder="Annual reviewer">
+              Current Reviewer
+              <input name="reviewer" type="text" placeholder="Name of the most recent annual reviewer">
             </label>
             <label>
-              Review Date
+              Current Review Date
               <input name="reviewDate" type="date">
             </label>
             <label>
@@ -255,8 +255,9 @@ Shop entry"></textarea>
           <button id="remove-bio-survey" class="button" type="button">Remove Bioenvironmental Survey</button>
 
           <label>
-            Annual Review Log
-            <textarea name="annualReviewLog" rows="4" placeholder="Enter annual review history, for example: 22 Nov 2025 - Supervisor review completed - reference updates."></textarea>
+            Annual Review History
+            <span class="field-callout">Use the fields above for the current supervisor and most recent review. Record each annual JSTO review entry here so the review table in the preview stays current year over year.</span>
+            <textarea name="annualReviewLog" rows="4" placeholder="Enter one review per line, for example: Joe Grimm | 03 May 2026 | DSN 555-1234"></textarea>
           </label>
         </form>
       </section>
