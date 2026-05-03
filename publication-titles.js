@@ -1,157 +1,293 @@
 const PUBLICATION_REFERENCE_MAP = [
   {
     match: /DESR6055\.09_DAFMAN91-201/g,
-    replacement: "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards"
+    canonical: "DESR 6055.09_DAFMAN 91-201",
+    title: "Explosives Safety Standards"
   },
   {
     match: /DAFMAN 91-203/g,
-    replacement: "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards"
+    canonical: "DAFMAN 91-203",
+    title: "Air Force Occupational Safety, Fire and Health Standards"
   },
   {
     match: /DAFI 91-202/g,
-    replacement: "DAFI 91-202 - The Department of the Air Force \(DAF\) Mishap Prevention Program"
+    canonical: "DAFI 91-202",
+    title: "The Department of the Air Force (DAF) Mishap Prevention Program"
   },
   {
     match: /AFI 90-821/g,
-    replacement: "AFI 90-821 - Hazard Communication \(HAZCOM\) Program"
+    canonical: "AFI 90-821",
+    title: "Hazard Communication (HAZCOM) Program"
   },
   {
     match: /AFI 48-109/g,
-    replacement: "AFI 48-109 - Electromagnetic Field Radiation \(EMFR\) Occupational and Environmental Health Program"
+    canonical: "AFI 48-109",
+    title: "Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program"
   },
   {
     match: /AFI 48-127/g,
-    replacement: "AFI 48-127 - Occupational Noise and Hearing Conservation Program"
+    canonical: "AFI 48-127",
+    title: "Occupational Noise and Hearing Conservation Program"
   },
   {
     match: /AFI 48-137/g,
-    replacement: "DAFI 48-137 - Respiratory Protection Program"
+    canonical: "DAFI 48-137",
+    title: "Respiratory Protection Program"
   },
   {
     match: /AFI 48-139/g,
-    replacement: "AFI 48-139 - Laser and Optical Radiation Protection Program"
+    canonical: "AFI 48-139",
+    title: "Laser and Optical Radiation Protection Program"
   },
   {
     match: /AFI 48-145/g,
-    replacement: "DAFI 48-145 - Occupational and Environmental Health Program"
+    canonical: "DAFI 48-145",
+    title: "Occupational and Environmental Health Program"
   },
   {
     match: /AFI 48-148/g,
-    replacement: "AFMAN 48-148 - Ionizing Radiation Protection"
+    canonical: "AFMAN 48-148",
+    title: "Ionizing Radiation Protection"
   },
   {
     match: /AFMAN 48-146/g,
-    replacement: "DAFMAN 48-146 - Occupational Health Program Management"
+    canonical: "DAFMAN 48-146",
+    title: "Occupational Health Program Management"
   },
   {
     match: /AFRCI 41-104/g,
-    replacement: "AFRCI 41-104 - Professional Board and National Certification Examinations"
+    canonical: "AFRCI 41-104",
+    title: "Professional Board and National Certification Examinations"
   },
   {
     match: /AF Form 2767/g,
-    replacement: "AF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing"
+    canonical: "AF Form 2767",
+    title: "Occupational Health Training & Protective Equipment Fit Testing"
   }
 ];
 
 function expandPublicationTitles(value) {
   let nextValue = String(value || "");
-  PUBLICATION_REFERENCE_MAP.forEach(({ match, replacement }) => {
-    nextValue = nextValue.replace(match, replacement);
+
+  PUBLICATION_REFERENCE_MAP.forEach(({ match, canonical, title }) => {
+    const fullText = `${canonical} - ${title}`;
+    nextValue = nextValue.replace(match, (matchedValue, offset, source) => {
+      return source.slice(offset).startsWith(fullText) ? matchedValue : fullText;
+    });
   });
+
   return nextValue;
+}
+
+function patchString(value) {
+  if (typeof value !== "string" || !value) {
+    return { value, changed: false };
+  }
+
+  const nextValue = expandPublicationTitles(value);
+  return {
+    value: nextValue,
+    changed: nextValue !== value
+  };
 }
 
 function patchModuleReferenceFields(module) {
   if (!module || typeof module !== "object") {
-    return;
+    return false;
   }
 
+  let changed = false;
   ["reference", "trainingSource", "afTrainingSource"].forEach((key) => {
-    if (typeof module[key] === "string" && module[key]) {
-      module[key] = expandPublicationTitles(module[key]);
+    const result = patchString(module[key]);
+    if (result.changed) {
+      module[key] = result.value;
+      changed = true;
     }
   });
+
+  return changed;
 }
 
 function patchModuleCollection(collection) {
   if (!Array.isArray(collection)) {
-    return;
+    return false;
   }
 
+  let changed = false;
   collection.forEach((module) => {
-    patchModuleReferenceFields(module);
+    if (patchModuleReferenceFields(module)) {
+      changed = true;
+    }
   });
+
+  return changed;
 }
 
 function patchStateReferences() {
   if (typeof state !== "object" || !state) {
-    return;
+    return false;
   }
 
-  patchModuleCollection(state.selectedModules);
+  let changed = false;
+
+  if (patchModuleCollection(state.selectedModules)) {
+    changed = true;
+  }
 
   if (Array.isArray(state.moduleReferences)) {
-    state.moduleReferences = state.moduleReferences.map((entry) => {
+    const nextReferences = state.moduleReferences.map((entry) => {
       if (typeof entry === "string") {
-        return expandPublicationTitles(entry);
+        const result = patchString(entry);
+        if (result.changed) {
+          changed = true;
+        }
+        return result.value;
       }
 
       if (entry && typeof entry === "object") {
+        let entryChanged = false;
         const nextEntry = { ...entry };
         ["label", "value", "reference", "text", "title"].forEach((key) => {
-          if (typeof nextEntry[key] === "string") {
-            nextEntry[key] = expandPublicationTitles(nextEntry[key]);
+          const result = patchString(nextEntry[key]);
+          if (result.changed) {
+            nextEntry[key] = result.value;
+            entryChanged = true;
           }
         });
+
+        if (entryChanged) {
+          changed = true;
+        }
         return nextEntry;
       }
 
       return entry;
     });
+
+    if (changed) {
+      state.moduleReferences = nextReferences;
+    }
   }
 
-  if (state.meta && typeof state.meta.references === "string") {
-    state.meta.references = expandPublicationTitles(state.meta.references);
+  if (state.meta) {
+    const referencesResult = patchString(state.meta.references);
+    if (referencesResult.changed) {
+      state.meta.references = referencesResult.value;
+      changed = true;
+    }
   }
+
+  return changed;
 }
 
 function patchReferenceTextarea() {
   const form = document.getElementById("jsto-form");
   const referencesField = form?.elements?.namedItem("references");
   if (!referencesField || typeof referencesField.value !== "string") {
-    return;
+    return false;
   }
 
-  referencesField.value = expandPublicationTitles(referencesField.value);
+  const result = patchString(referencesField.value);
+  if (!result.changed) {
+    return false;
+  }
+
+  referencesField.value = result.value;
+  if (typeof state === "object" && state?.meta) {
+    state.meta.references = result.value;
+  }
+  return true;
 }
 
 function applyPublicationTitlesPatch() {
+  let moduleDataChanged = false;
+  let stateChanged = false;
+
   if (typeof OPTIONAL_MODULES !== "undefined") {
-    patchModuleCollection(OPTIONAL_MODULES);
+    if (patchModuleCollection(OPTIONAL_MODULES)) {
+      moduleDataChanged = true;
+      stateChanged = true;
+    }
   }
 
   if (typeof REQUIRED_MODULES !== "undefined") {
-    patchModuleCollection(REQUIRED_MODULES);
+    if (patchModuleCollection(REQUIRED_MODULES)) {
+      moduleDataChanged = true;
+      stateChanged = true;
+    }
   }
 
-  patchStateReferences();
-  patchReferenceTextarea();
+  if (patchStateReferences()) {
+    moduleDataChanged = true;
+    stateChanged = true;
+  }
 
-  if (typeof renderSelectedModules === "function") {
+  if (patchReferenceTextarea()) {
+    stateChanged = true;
+  }
+
+  if (moduleDataChanged && typeof renderSelectedModules === "function") {
     renderSelectedModules();
   }
 
-  if (typeof renderPreview === "function") {
+  if (stateChanged && typeof renderPreview === "function") {
     renderPreview();
   }
 
-  if (typeof saveState === "function") {
+  if (stateChanged && typeof saveState === "function") {
     saveState();
   }
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", applyPublicationTitlesPatch, { once: true });
-} else {
+let publicationTitlesPatchTimer = 0;
+
+function schedulePublicationTitlesPatch(delay = 0) {
+  window.clearTimeout(publicationTitlesPatchTimer);
+  publicationTitlesPatchTimer = window.setTimeout(() => {
+    applyPublicationTitlesPatch();
+  }, delay);
+}
+
+function installPublicationTitlesWatchers() {
+  ["add-module", "add-custom-module", "save-browser", "print-pdf", "save-library"].forEach((id) => {
+    const button = document.getElementById(id);
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      schedulePublicationTitlesPatch(50);
+    });
+  });
+
+  const selectedModules = document.getElementById("selected-modules");
+  if (selectedModules) {
+    selectedModules.addEventListener("click", () => {
+      schedulePublicationTitlesPatch(50);
+    });
+
+    const observer = new MutationObserver(() => {
+      schedulePublicationTitlesPatch(50);
+    });
+    observer.observe(selectedModules, { childList: true, subtree: true });
+  }
+
+  const referencesField = document.getElementById("jsto-form")?.elements?.namedItem("references");
+  if (referencesField) {
+    referencesField.addEventListener("blur", () => {
+      schedulePublicationTitlesPatch(0);
+    });
+  }
+}
+
+function initPublicationTitlesPatch() {
   applyPublicationTitlesPatch();
+  installPublicationTitlesWatchers();
+  schedulePublicationTitlesPatch(100);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPublicationTitlesPatch, { once: true });
+} else {
+  initPublicationTitlesPatch();
 }
