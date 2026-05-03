@@ -63,6 +63,21 @@ const PUBLICATION_REFERENCE_MAP = [
     match: /AF Form 2767/g,
     canonical: "AF Form 2767",
     title: "Occupational Health Training & Protective Equipment Fit Testing"
+  },
+  {
+    match: /OSHA 2254/g,
+    canonical: "OSHA 2254",
+    title: "Training Requirements in OSHA Standards"
+  },
+  {
+    match: /(?:OSHA 1910|29 CFR Part 1910|29 CFR 1910)(?!\.\d)/g,
+    canonical: "29 CFR Part 1910",
+    title: "Occupational Safety and Health Standards (General Industry Standards)"
+  },
+  {
+    match: /(?:OSHA 1926|29 CFR Part 1926|29 CFR 1926)(?!\.\d)/g,
+    canonical: "29 CFR Part 1926",
+    title: "Safety and Health Regulations for Construction"
   }
 ];
 
