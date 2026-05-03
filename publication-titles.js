@@ -70,6 +70,101 @@ const PUBLICATION_REFERENCE_MAP = [
     title: "Training Requirements in OSHA Standards"
   },
   {
+    match: /29 CFR 1910\.39/g,
+    canonical: "29 CFR 1910.39",
+    title: "Fire prevention plans"
+  },
+  {
+    match: /29 CFR 1910\.66/g,
+    canonical: "29 CFR 1910.66",
+    title: "Powered platforms for building maintenance"
+  },
+  {
+    match: /29 CFR 1910\.95/g,
+    canonical: "29 CFR 1910.95",
+    title: "Occupational noise exposure"
+  },
+  {
+    match: /29 CFR 1910\.1030/g,
+    canonical: "29 CFR 1910.1030",
+    title: "Bloodborne Pathogens"
+  },
+  {
+    match: /29 CFR 1910\.1096/g,
+    canonical: "29 CFR 1910.1096",
+    title: "Ionizing radiation"
+  },
+  {
+    match: /29 CFR 1910\.1200/g,
+    canonical: "29 CFR 1910.1200",
+    title: "Hazard Communication"
+  },
+  {
+    match: /29 CFR 1910\.134/g,
+    canonical: "29 CFR 1910.134",
+    title: "Respiratory protection"
+  },
+  {
+    match: /29 CFR 1910\.1450/g,
+    canonical: "29 CFR 1910.1450",
+    title: "Occupational exposure to hazardous chemicals in laboratories"
+  },
+  {
+    match: /29 CFR 1910\.146/g,
+    canonical: "29 CFR 1910.146",
+    title: "Permit-required confined spaces"
+  },
+  {
+    match: /29 CFR 1910\.147/g,
+    canonical: "29 CFR 1910.147",
+    title: "The control of hazardous energy (lockout/tagout)"
+  },
+  {
+    match: /29 CFR 1910\.151/g,
+    canonical: "29 CFR 1910.151",
+    title: "Medical services and first aid"
+  },
+  {
+    match: /29 CFR 1910\.157/g,
+    canonical: "29 CFR 1910.157",
+    title: "Portable fire extinguishers"
+  },
+  {
+    match: /29 CFR 1910\.178/g,
+    canonical: "29 CFR 1910.178",
+    title: "Powered industrial trucks"
+  },
+  {
+    match: /29 CFR 1910\.179/g,
+    canonical: "29 CFR 1910.179",
+    title: "Overhead and gantry cranes"
+  },
+  {
+    match: /29 CFR 1910\.180/g,
+    canonical: "29 CFR 1910.180",
+    title: "Crawler locomotive and truck cranes"
+  },
+  {
+    match: /29 CFR 1910\.268/g,
+    canonical: "29 CFR 1910.268",
+    title: "Telecommunications"
+  },
+  {
+    match: /29 CFR 1910\.269/g,
+    canonical: "29 CFR 1910.269",
+    title: "Electric power generation transmission and distribution"
+  },
+  {
+    match: /29 CFR 1910\.332/g,
+    canonical: "29 CFR 1910.332",
+    title: "Training"
+  },
+  {
+    match: /29 CFR 1926\.503/g,
+    canonical: "29 CFR 1926.503",
+    title: "Training requirements"
+  },
+  {
     match: /(?:OSHA 1910|29 CFR Part 1910|29 CFR 1910)(?!\.\d)/g,
     canonical: "29 CFR Part 1910",
     title: "Occupational Safety and Health Standards (General Industry Standards)"
