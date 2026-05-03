@@ -2,6 +2,8 @@
   const LIBRARY_IDENTITY_KEY = "jsto-library-identity-v1";
   const LIBRARY_UPLOAD_URL = String(window.JSTO_LIBRARY_UPLOAD_URL || "").trim().replace(/\/$/, "");
 
+  patchLibraryStateRequests();
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initLibraryOwnership, { once: true });
   } else {
@@ -18,6 +20,35 @@
     hydrateUploaderField(uploaderInput);
     bindUploaderField(uploaderInput);
     interceptLibrarySave(uploaderInput);
+  }
+
+  function patchLibraryStateRequests() {
+    if (!LIBRARY_UPLOAD_URL || typeof window.fetch !== "function") {
+      return;
+    }
+
+    const originalFetch = window.fetch.bind(window);
+    window.fetch = (input, init) => {
+      const identity = getIdentityFromUrlOrStorage();
+      if (!identity) {
+        return originalFetch(input, init);
+      }
+
+      try {
+        const rawUrl = typeof input === "string" ? input : input instanceof URL ? input.toString() : String(input?.url || "");
+        if (!rawUrl.startsWith(`${LIBRARY_UPLOAD_URL}/api/library-state`)) {
+          return originalFetch(input, init);
+        }
+
+        const url = new URL(rawUrl);
+        if (!url.searchParams.get("identity")) {
+          url.searchParams.set("identity", identity);
+        }
+        return originalFetch(url.toString(), init);
+      } catch {
+        return originalFetch(input, init);
+      }
+    };
   }
 
   function ensureUploaderField(form) {
@@ -50,10 +81,7 @@
   }
 
   function hydrateUploaderField(input) {
-    const params = new URLSearchParams(window.location.search);
-    const queryIdentity = String(params.get("libraryIdentity") || "").trim();
-    const storedIdentity = readStoredIdentity();
-    const value = queryIdentity || storedIdentity;
+    const value = getIdentityFromUrlOrStorage();
     input.value = value;
     if (value) {
       writeStoredIdentity(value);
@@ -162,6 +190,12 @@
       previewHtml: preview?.innerHTML || "",
       state: {}
     };
+  }
+
+  function getIdentityFromUrlOrStorage() {
+    const params = new URLSearchParams(window.location.search);
+    const queryIdentity = String(params.get("libraryIdentity") || "").trim();
+    return queryIdentity || readStoredIdentity();
   }
 
   function normalizeIdentity(value) {
