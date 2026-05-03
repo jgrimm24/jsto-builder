@@ -12,8 +12,18 @@
       return;
     }
 
+    let isSyncing = false;
     const sync = () => {
-      normalizeAnnualReviewPreview(preview, form);
+      if (isSyncing) {
+        return;
+      }
+
+      isSyncing = true;
+      try {
+        normalizeAnnualReviewPreview(preview, form);
+      } finally {
+        isSyncing = false;
+      }
     };
 
     const observer = new MutationObserver(() => {
@@ -120,7 +130,6 @@
       return;
     }
 
-    const headerRow = allRows[0];
     const existingRows = allRows.slice(1);
     const targetCount = Math.max(existingRows.length, entries.length || 1);
 
@@ -140,14 +149,16 @@
       }
 
       const entry = entries[index] || { name: "", date: "", contact: "" };
-      cells[0].textContent = entry.name;
-      cells[1].textContent = entry.date;
-      cells[2].textContent = entry.contact;
+      if (cells[0].textContent !== entry.name) {
+        cells[0].textContent = entry.name;
+      }
+      if (cells[1].textContent !== entry.date) {
+        cells[1].textContent = entry.date;
+      }
+      if (cells[2].textContent !== entry.contact) {
+        cells[2].textContent = entry.contact;
+      }
     });
-
-    if (headerRow.parentElement?.tagName === "TBODY") {
-      return;
-    }
   }
 
   function cleanAnnualReviewIntro(table) {
@@ -156,7 +167,10 @@
       return;
     }
 
-    intro.innerHTML = "<strong>Annual Review History:</strong><br><span class=\"muted\">Each annual review entry is shown in the table below.</span>";
+    const desired = "<strong>Annual Review History:</strong><br><span class=\"muted\">Each annual review entry is shown in the table below.</span>";
+    if (intro.innerHTML !== desired) {
+      intro.innerHTML = desired;
+    }
   }
 
   function formatDateForPreview(value) {
