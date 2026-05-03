@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260422-2">
+  <link rel="stylesheet" href="styles.css?v=20260503-2">
   <script>
     window.JSTO_LIBRARY_UPLOAD_URL = "https://jsto-builder-upload.onrender.com";
   </script>
@@ -32,6 +32,23 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      align-items: flex-end;
+    }
+
+    .library-identity-field {
+      display: grid;
+      gap: 6px;
+      min-width: 220px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .library-identity-field span {
+      font-size: 0.92rem;
+    }
+
+    .library-identity-field input {
+      min-width: 220px;
     }
 
     .library-status {
@@ -111,19 +128,23 @@
         <p>Review completed JSTOs, download the PDF, or remove outdated packages from the shared library.</p>
       </div>
       <div class="library-banner-actions">
-        <a class="button" href="index.html?v=20260424-2">Back to JSTO Builder</a>
+        <a class="button" href="index.html?v=20260503-1">Back to JSTO Builder</a>
       </div>
     </section>
 
     <section class="panel">
       <div class="section-heading">
         <h2>Library Manager</h2>
-        <p>If a delete code is configured for the upload service, you will be prompted for it the first time you remove a file during this browser session.</p>
+        <p>Enter the same name used during upload. Only that uploader, or an admin identity, can edit or delete a JSTO. If a delete code is configured, you will also be prompted for it before removal.</p>
       </div>
 
       <div class="library-toolbar">
         <p id="library-status" class="library-status">Loading JSTO library files...</p>
         <div class="library-toolbar-actions">
+          <label class="library-identity-field">
+            <span>Your Name</span>
+            <input id="library-identity" type="text" placeholder="Enter the uploader name used during save">
+          </label>
           <button id="refresh-library" class="button" type="button">Refresh</button>
         </div>
       </div>
@@ -132,6 +153,6 @@
     </section>
   </div>
 
-  <script src="library.js?v=20260429-1"></script>
+  <script src="library.js?v=20260503-1"></script>
 </body>
 </html>
