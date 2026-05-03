@@ -1,14 +1,25 @@
 const LIBRARY_API_BASE = String(window.JSTO_LIBRARY_UPLOAD_URL || "").trim().replace(/\/$/, "");
 const DELETE_TOKEN_KEY = "jsto-library-delete-token";
+const LIBRARY_IDENTITY_KEY = "jsto-library-identity-v1";
 const GITHUB_LIBRARY_API = "https://api.github.com/repos/jgrimm24/jsto-builder/contents/JSTO-Library?ref=main";
 
 const statusElement = document.getElementById("library-status");
 const listElement = document.getElementById("library-list");
 const refreshButton = document.getElementById("refresh-library");
+const identityInput = document.getElementById("library-identity");
 let libraryDeleteAvailable = Boolean(LIBRARY_API_BASE);
+
+hydrateIdentityField();
 
 if (refreshButton) {
   refreshButton.addEventListener("click", () => {
+    loadLibraryFiles();
+  });
+}
+
+if (identityInput) {
+  identityInput.addEventListener("input", () => {
+    writeStoredIdentity(identityInput.value);
     loadLibraryFiles();
   });
 }
@@ -21,7 +32,8 @@ async function loadLibraryFiles() {
 
   if (LIBRARY_API_BASE) {
     try {
-      const response = await fetch(`${LIBRARY_API_BASE}/api/library-files`);
+      const identityParam = getCurrentIdentity() ? `?identity=${encodeURIComponent(getCurrentIdentity())}` : "";
+      const response = await fetch(`${LIBRARY_API_BASE}/api/library-files${identityParam}`);
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok) {
@@ -29,7 +41,7 @@ async function loadLibraryFiles() {
       }
 
       libraryDeleteAvailable = true;
-      const packages = groupLibraryPackages(result.files || []);
+      const packages = Array.isArray(result.packages) ? result.packages : [];
       renderLibraryFiles(packages);
       const count = packages.length;
       setStatus(`${count} JSTO package${count === 1 ? "" : "s"} in the library.`);
@@ -104,7 +116,7 @@ function groupLibraryPackages(files) {
     }
 
     const packageKey = pathValue.replace(/\.(pdf|json)$/i, "");
-    const existing = packages.get(packageKey) || { key: packageKey };
+    const existing = packages.get(packageKey) || { key: packageKey, uploadedBy: "", canEdit: false, canDelete: false };
     existing[extension] = file;
     packages.set(packageKey, existing);
   });
@@ -125,27 +137,42 @@ function renderLibraryFiles(packages) {
     const jsonFile = jstoPackage.json || null;
     const sizeLabel = formatBytes(pdfFile.size || 0);
     const downloadUrl = escapeHtml(createLibraryFileDownloadUrl(pdfFile.downloadUrl || pdfFile.viewUrl || pdfFile.htmlUrl || "#"));
-    const editUrl = jsonFile && libraryDeleteAvailable ? escapeHtml(createBuilderEditUrl(jsonFile.path || "")) : "";
+    const editUrl = jsonFile && libraryDeleteAvailable && jstoPackage.canEdit
+      ? escapeHtml(createBuilderEditUrl(jsonFile.path || ""))
+      : "";
     const name = escapeHtml(pdfFile.name || "JSTO PDF");
     const pathValue = escapeHtml(pdfFile.path || "");
     const shaValue = escapeHtml(pdfFile.sha || "");
     const jsonPathValue = escapeHtml(jsonFile?.path || "");
     const jsonShaValue = escapeHtml(jsonFile?.sha || "");
-    const deleteAttributes = libraryDeleteAvailable
-      ? `class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}"`
-      : 'class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network."';
-    const deleteLabel = libraryDeleteAvailable ? "Delete" : "Delete Unavailable";
+    const ownerLabel = jstoPackage.uploadedBy
+      ? ` • Uploaded by ${escapeHtml(jstoPackage.uploadedBy)}`
+      : libraryDeleteAvailable
+        ? " • Ownership metadata unavailable"
+        : "";
+
+    const editButton = jsonFile
+      ? editUrl
+        ? `<a class="button" href="${editUrl}">Edit</a>`
+        : `<button class="button" type="button" disabled title="Only the original uploader or an admin can edit this JSTO.">Edit Locked</button>`
+      : "";
+
+    const deleteButton = libraryDeleteAvailable
+      ? jstoPackage.canDelete
+        ? `<button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}">Delete</button>`
+        : `<button class="button danger" type="button" disabled title="Only the original uploader or an admin can delete this JSTO.">Delete Locked</button>`
+      : '<button class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network.">Delete Unavailable</button>';
 
     return `
       <article class="library-item">
         <div class="library-item-copy">
           <h3>${name}</h3>
-          <div class="library-item-meta">${sizeLabel}${pdfFile.path ? ` • ${pathValue}` : ""}</div>
+          <div class="library-item-meta">${sizeLabel}${pdfFile.path ? ` • ${pathValue}` : ""}${ownerLabel}</div>
         </div>
         <div class="library-item-actions">
           <a class="button" href="${downloadUrl}" download>Download PDF</a>
-          ${editUrl ? `<a class="button" href="${editUrl}">Edit</a>` : ""}
-          <button ${deleteAttributes}>${deleteLabel}</button>
+          ${editButton}
+          ${deleteButton}
         </div>
       </article>
     `;
@@ -176,10 +203,23 @@ function createLibraryFileDownloadUrl(value) {
 }
 
 function createBuilderEditUrl(statePath) {
-  return `index.html?v=20260429-1&libraryState=${encodeURIComponent(statePath)}`;
+  const params = new URLSearchParams();
+  params.set("v", "20260503-1");
+  params.set("libraryState", statePath);
+  if (getCurrentIdentity()) {
+    params.set("libraryIdentity", getCurrentIdentity());
+  }
+  return `index.html?${params.toString()}`;
 }
 
 async function handleDelete(button) {
+  const identity = getCurrentIdentity();
+  if (!identity) {
+    window.alert("Enter your name first so the Library Manager can verify upload ownership.");
+    identityInput?.focus();
+    return;
+  }
+
   const fileName = button.dataset.name || "this JSTO";
   const filePath = button.dataset.path || "";
   const fileSha = button.dataset.sha || "";
@@ -201,9 +241,9 @@ async function handleDelete(button) {
   button.textContent = "Deleting...";
 
   try {
-    await deleteLibraryFile({ path: filePath, sha: fileSha });
+    await deleteLibraryFile({ path: filePath, sha: fileSha, identity });
     if (jsonPath && jsonSha) {
-      await deleteLibraryFile({ path: jsonPath, sha: jsonSha });
+      await deleteLibraryFile({ path: jsonPath, sha: jsonSha, identity });
     }
     setStatus(`${fileName} was removed from the JSTO Library.`);
     await loadLibraryFiles();
@@ -252,6 +292,39 @@ async function deleteLibraryFile(payload) {
   const result = await response.json().catch(() => ({}));
   if (!response.ok) {
     throw new Error(result.error || "Unable to delete JSTO file.");
+  }
+}
+
+function hydrateIdentityField() {
+  if (!identityInput) {
+    return;
+  }
+
+  identityInput.value = readStoredIdentity();
+}
+
+function getCurrentIdentity() {
+  return String(identityInput?.value || "").trim();
+}
+
+function readStoredIdentity() {
+  try {
+    return String(window.localStorage.getItem(LIBRARY_IDENTITY_KEY) || "").trim();
+  } catch {
+    return "";
+  }
+}
+
+function writeStoredIdentity(value) {
+  try {
+    const normalized = String(value || "").trim();
+    if (normalized) {
+      window.localStorage.setItem(LIBRARY_IDENTITY_KEY, normalized);
+    } else {
+      window.localStorage.removeItem(LIBRARY_IDENTITY_KEY);
+    }
+  } catch {
+    // Ignore storage failures.
   }
 }
 
