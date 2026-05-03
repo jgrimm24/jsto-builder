@@ -66,8 +66,9 @@
     const label = document.createElement("label");
     label.innerHTML = [
       "Uploaded By",
+      '<span class="library-ownership-callout"><strong>Important:</strong> Enter the name you want tied to this JSTO. Only the original uploader or an admin can edit or delete it later.</span>',
       '<input id="uploaded-by" name="uploadedBy" type="text" placeholder="Your name">',
-      '<span class="muted">Only the original uploader or an admin can edit or delete this JSTO later.</span>'
+      '<span class="muted">Use the same name later in the Library Manager to unlock your own JSTOs.</span>'
     ].join("");
 
     if (exportLabel && formGrid) {
