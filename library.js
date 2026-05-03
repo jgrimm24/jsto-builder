@@ -151,13 +151,13 @@ function renderLibraryFiles(packages) {
 
     const editButton = jsonFile
       ? editUrl
-        ? `<a class="button" href="${editUrl}">${jstoPackage.hasOwnership ? "Edit" : "Edit (Legacy)"}</a>`
+        ? `<a class="button" href="${editUrl}">Edit</a>`
         : `<button class="button" type="button" disabled title="Only the original uploader or an admin can edit this JSTO.">Edit Locked</button>`
       : "";
 
     const deleteButton = libraryDeleteAvailable
       ? jstoPackage.canDelete
-        ? `<button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}" data-ownership-required="${jstoPackage.hasOwnership ? "true" : "false"}">${jstoPackage.hasOwnership ? "Delete" : "Delete (Legacy)"}</button>`
+        ? `<button class="button danger delete-library-file" type="button" data-path="${pathValue}" data-sha="${shaValue}" data-json-path="${jsonPathValue}" data-json-sha="${jsonShaValue}" data-name="${name}" data-ownership-required="${jstoPackage.hasOwnership ? "true" : "false"}">Delete</button>`
         : `<button class="button danger" type="button" disabled title="Only the original uploader or an admin can delete this JSTO.">Delete Locked</button>`
       : '<button class="button danger" type="button" disabled title="Delete is unavailable while the upload service is blocked on this network.">Delete Unavailable</button>';
 
