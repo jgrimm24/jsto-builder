@@ -10,6 +10,9 @@
   "dependencies": {
     "puppeteer": "^24.8.2"
   },
+  "puppeteer": {
+    "skipDownload": true
+  },
   "scripts": {
     "postinstall": "PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer npx puppeteer browsers install chrome",
     "start": "PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer node server.js"
