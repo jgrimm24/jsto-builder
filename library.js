@@ -146,7 +146,7 @@ function renderLibraryFiles(packages) {
     const jsonPathValue = escapeHtml(jsonFile?.path || "");
     const jsonShaValue = escapeHtml(jsonFile?.sha || "");
     const ownerLabel = jstoPackage.hasOwnership
-      ? ` • Uploaded by ${escapeHtml(jstoPackage.uploadedBy)}`
+      ? " • Ownership protected"
       : " • Legacy JSTO";
 
     const editButton = jsonFile
