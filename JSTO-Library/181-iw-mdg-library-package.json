@@ -10,7 +10,7 @@
     "reviewDate": "2026-04-30",
     "effectiveDate": "2026-04-30",
     "workDescription": "To ensure medical fit and deployable forces. To provide expeditionary medics, providers, and medical personnel to serve in deployed environments.  To improve the health of all we serve.",
-    "references": "AFI 48-109 Electromagnetic Field Radiation OEH Program\nAFI 48-137 Respiratory Protection Program\nAFI 48-139 Laser and Optical Radiation Protection Program\nDAFMAN 91-203\nAF Form 2767\nOSHA 2254\n29 CFR 1910.134",
+    "references": "AFI 48-109 - Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program Electromagnetic Field Radiation OEH Program\nDAFI 48-137 - Respiratory Protection Program Respiratory Protection Program\nAFI 48-139 - Laser and Optical Radiation Protection Program Laser and Optical Radiation Protection Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nAF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.134 - Respiratory protection\nAFMAN 48-148\n29 CFR 1910.1096 - Ionizing radiation\nDAFMAN 48-146\nAFRCI 41-104 - Professional Board and National Certification Examinations",
     "hazardAnalysis": "Hazards in the MDG include sharps/needle sticks, biohazard waste, ergonomic lifting, tripping, ladders, electrical shock/fire, outdore exposure to thermal stress, and typical office-related threats to personal health and safety.",
     "riskManagementNotes": "Hazards are identified, risks are assessed, controls are developed and implemented, and supervisors evaluate and validate successful mitigation.  Members are trained to incorporate risk management techniques in all aspects of their on-/off-duty activities.",
     "trafficSafetyNotes": "- Use caution when entering and exiting the main gate barriers\n- Park in approved spots only\n- Follow base speed limits\n- Use caution when walking, jogging, or biking on the roadways\n- When driving, ensure safe distances and clearances from people and other vehicles",
@@ -24,7 +24,9 @@
     "bulletinBoard": "The Safety board is outside the bathroom area by office 16.  The halls and breakroom are decorated with training and safety aids, and should be reviewed when time is available.",
     "emergencyEquipment": "Everyone should familiarize themselves with the following:\n- There are four fire extinguishers in the building\n- There is a building fire alarm by each exit\n- There is a PA system by the exit near the immunization room (Key activated)\n- There are three eyewash stations throughout the building (In the lab areas)",
     "documentationNotes": "",
-    "annualReviewLog": ""
+    "annualReviewLog": "",
+    "uploadedBy": "Morgan",
+    "uploadedById": "morgan"
   },
   "unitImage": {
     "name": "181 IW picture.png",
@@ -47,57 +49,87 @@
     "type": ""
   },
   "moduleReferences": [
-    "DAFMAN 91-203",
-    "AF Form 2767",
-    "OSHA 2254",
-    "29 CFR 1910.134"
+    "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+    "AF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing",
+    "OSHA 2254 - Training Requirements in OSHA Standards",
+    "29 CFR 1910.134 - Respiratory protection",
+    "AFMAN 48-148",
+    "29 CFR 1910.1096 - Ionizing radiation",
+    "DAFMAN 48-146",
+    "AFRCI 41-104 - Professional Board and National Certification Examinations"
   ],
   "selectedModules": [
     {
       "id": "14.1.3.3",
       "title": "Bloodborne Pathogens",
-      "reference": "29 CFR 1910.1030",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
       "trainingRequirement": "Train exposed employees at initial assignment and at least annually, with additional training when tasks or procedures create new exposure. Cover disease signs and transmission, the exposure control plan, task recognition, engineering controls, work practices, PPE use and disposal, and Hepatitis B vaccine information.",
-      "trainingSource": "OSHA 2254 / 29 CFR 1910.1030",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1030 - Bloodborne Pathogens",
       "afTrainingRequirement": "Any person whose duties involve reasonably anticipated exposure to blood or other potentially infectious material must be trained and enrolled in the Bloodborne Pathogen Program. Supervisors of affected workplaces must establish a written exposure control plan and conduct training.",
-      "afTrainingSource": "DAFMAN 91-203 para. 1.9",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.9",
       "notes": "",
       "link": ""
     },
     {
       "id": "14.1.3.13",
       "title": "CPR Training",
-      "reference": "DAFMAN 91-203 Chapter 1",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 1",
       "trainingRequirement": "Where work conditions require trained first-aid responders, ensure personnel are adequately trained and available. OSHA 2254 links first-aid and CPR availability to certain work settings, but local mission risk and AF requirements should define who must hold current CPR credentials.",
-      "trainingSource": "OSHA 2254 / 29 CFR 1910.151 and 1910.269; DAFMAN 91-203",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.151 - Medical services and first aid and 1910.269; DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
       "afTrainingRequirement": "Initial first aid and CPR training must be completed before assigning duties that require it, refresher training must occur before certification expires, and CPR training must include PAD instruction. Remote or high-risk work must have an immediate medical response plan.",
-      "afTrainingSource": "DAFMAN 91-203 para. 1.8",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.8",
       "notes": "",
       "link": ""
     },
     {
       "id": "14.1.3.17",
       "title": "Electromagnetic Field Training",
-      "reference": "AFI 48-109",
+      "reference": "AFI 48-109 - Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program",
       "trainingRequirement": "Use AF EMF program guidance for source identification, posted restrictions, exposure boundaries, and work controls. The closest OSHA 2254 crosswalk is electrical safety training for employees exposed to shock or electrical hazards and the electric power standard’s job-assignment-specific safety practices and emergency procedures.",
-      "trainingSource": "Partial OSHA 2254 crosswalk / 29 CFR 1910.332 and 1910.269",
+      "trainingSource": "Partial OSHA 2254 - Training Requirements in OSHA Standards crosswalk / 29 CFR 1910.332 - Training and 1910.269",
       "afTrainingRequirement": "Employees with implanted medical devices must notify their supervisors before work and seek medical assessment before duties in EMF environments. Use AF EMF program controls and local work restrictions as the training basis.",
-      "afTrainingSource": "DAFMAN 91-203 para. 28.2.4.1",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.4.1",
       "notes": "",
       "link": ""
     },
     {
       "id": "14.1.3.7",
       "title": "Respiratory Protection Program",
-      "reference": "AFI 48-137; AF Form 2767",
+      "reference": "DAFI 48-137 - Respiratory Protection Program; AF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing",
       "trainingRequirement": "Provide comprehensive, understandable respirator training before use and at least annually thereafter. Cover why the respirator is needed, limitations, emergency use, inspection, donning and seal checks, maintenance and storage, and symptoms that may limit safe use.",
-      "trainingSource": "OSHA 2254 / 29 CFR 1910.134",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.134 - Respiratory protection",
       "afTrainingRequirement": "Respiratory hazards must be evaluated by Bioenvironmental Engineering and respiratory protection used where required by the occupational health assessment. Use the AF Respiratory Protection Program for controls, fit testing, and local training requirements.",
-      "afTrainingSource": "DAFMAN 91-203 para. 2.2.4 and para. 28.2.11",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2.4 and para. 28.2.11",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.19",
+      "title": "ALARA Ionizing Radiation Training",
+      "reference": "AFMAN 48-148 - Ionizing Radiation Protection",
+      "trainingRequirement": "Inform personnel working in or frequenting radiation areas about the presence of radiation or radioactive materials, related safety problems, the precautions and devices used to minimize exposure, and how to obtain exposure reports.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1096 - Ionizing radiation; AFMAN 48-148 - Ionizing Radiation Protection",
+      "afTrainingRequirement": "Communications and electronics personnel must understand the hazards of broken radioactive tubes, reporting expectations, packaging and handling controls, and the need to notify the supervisor and radiation safety office after exposure. Use AF radiation program requirements with the OSHA standard.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.4.2",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.15",
+      "title": "Fetal Protection Program",
+      "reference": "DAFMAN 48-146 - Occupational Health Program Management; AFRCI 41-104 - Professional Board and National Certification Examinations as applicable",
+      "trainingRequirement": "Use AF occupational and public health guidance to brief reproductive hazards, reporting expectations, and referral procedures. No direct OSHA 2254 module is mapped here.",
+      "trainingSource": "DAFMAN 48-146 - Occupational Health Program Management / local procedures",
       "notes": "",
       "link": ""
     }
   ],
   "savedLibraryPdf": "JSTO-Library/181-iw-mdg-library-package.pdf",
-  "savedAt": "2026-05-01T19:19:25.513Z"
+  "savedAt": "2026-05-05T17:42:16.162Z",
+  "libraryMeta": {
+    "uploadedBy": "Morgan",
+    "uploadedById": "morgan",
+    "savedLibraryPdf": "JSTO-Library/181-iw-mdg-library-package.pdf",
+    "savedAt": "2026-05-05T17:42:16.162Z"
+  }
 }
