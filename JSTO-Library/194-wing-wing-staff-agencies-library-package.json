@@ -3,12 +3,12 @@
     "unit": "194 Wing",
     "workCenter": "Wing Staff Agencies",
     "exportBasename": "",
-    "officeSymbol": "Wing Staff/Admin",
-    "supervisor": "John Austin, Command Chief, CMSgt",
-    "phone": "DSN: 312-370-3388",
-    "reviewer": "Wesley Colberg",
+    "officeSymbol": "Wing Staff / Admin",
+    "supervisor": "",
+    "phone": "",
+    "reviewer": "",
     "reviewDate": "",
-    "effectiveDate": "2026-05-06",
+    "effectiveDate": "",
     "workDescription": "",
     "references": "",
     "hazardAnalysis": "",
@@ -25,8 +25,8 @@
     "emergencyEquipment": "",
     "documentationNotes": "",
     "annualReviewLog": "",
-    "uploadedBy": "194th Wing Staff",
-    "uploadedById": "194th wing staff"
+    "uploadedBy": "wesley colberg",
+    "uploadedById": "wesley colberg"
   },
   "unitImage": {
     "name": "Fancy Logo.jpeg",
@@ -51,11 +51,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-  "savedAt": "2026-05-05T23:16:47.371Z",
+  "savedAt": "2026-05-05T23:27:04.319Z",
   "libraryMeta": {
-    "uploadedBy": "194th Wing Staff",
-    "uploadedById": "194th wing staff",
+    "uploadedBy": "wesley colberg",
+    "uploadedById": "wesley colberg",
     "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-    "savedAt": "2026-05-05T23:16:47.371Z"
+    "savedAt": "2026-05-05T23:27:04.319Z"
   }
 }
