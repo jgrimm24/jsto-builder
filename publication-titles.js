@@ -30,7 +30,7 @@ const PUBLICATION_REFERENCE_MAP = [
     title: "Occupational Noise and Hearing Conservation Program"
   },
   {
-    match: /AFI 48-137/g,
+    match: /\bAFI 48-137\b/g,
     canonical: "DAFI 48-137",
     title: "Respiratory Protection Program"
   },
@@ -40,17 +40,17 @@ const PUBLICATION_REFERENCE_MAP = [
     title: "Laser and Optical Radiation Protection Program"
   },
   {
-    match: /AFI 48-145/g,
+    match: /\bAFI 48-145\b/g,
     canonical: "DAFI 48-145",
     title: "Occupational and Environmental Health Program"
   },
   {
-    match: /AFI 48-148/g,
+    match: /\bAFI 48-148\b/g,
     canonical: "AFMAN 48-148",
     title: "Ionizing Radiation Protection"
   },
   {
-    match: /AFMAN 48-146/g,
+    match: /\bAFMAN 48-146\b/g,
     canonical: "DAFMAN 48-146",
     title: "Occupational Health Program Management"
   },
@@ -182,7 +182,12 @@ function expandPublicationTitles(value) {
   PUBLICATION_REFERENCE_MAP.forEach(({ match, canonical, title }) => {
     const fullText = `${canonical} - ${title}`;
     nextValue = nextValue.replace(match, (matchedValue, offset, source) => {
-      return source.slice(offset).startsWith(fullText) ? matchedValue : fullText;
+      const before = source.slice(0, offset);
+      const after = source.slice(offset);
+      if (after.startsWith(fullText) || before.endsWith("D")) {
+        return matchedValue;
+      }
+      return fullText;
     });
   });
 
