@@ -256,6 +256,15 @@ const OPTIONAL_MODULES = [
   },
   {
     id: "local-7",
+    title: "Thermal Stress / Heat and Cold Stress",
+    reference: "DAFMAN 91-203; AFI 48-145; local Bioenvironmental Engineering or Occupational Health guidance",
+    trainingRequirement: "Cover heat stress, cold stress, WBGT or locally directed exposure monitoring, acclimatization, hydration, work/rest cycles, buddy checks, PPE or clothing considerations, symptom recognition, supervisor notification, and emergency response actions for suspected heat illness or cold injury.",
+    trainingSource: "AF occupational safety and occupational health guidance; local BE/OEH procedures",
+    afTrainingRequirement: "Use the occupational health risk assessment, local BE recommendations, and supervisor hazard controls to brief personnel on thermal stress hazards and controls for hot, cold, humid, outdoor, flight line, industrial, or PPE-intensive work areas.",
+    afTrainingSource: "DAFMAN 91-203 and AFI 48-145"
+  },
+  {
+    id: "local-8",
     title: "Jewelry / Loose Articles Restrictions",
     reference: "Workplace-specific limits on rings, necklaces, watches, and loose items",
     trainingRequirement: "Use local shop rules and hazard analysis to define where jewelry, loose clothing, or unsecured items are prohibited around moving parts, climbing, electrical work, or snag hazards.",
