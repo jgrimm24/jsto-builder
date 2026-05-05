@@ -265,6 +265,15 @@ const OPTIONAL_MODULES = [
   },
   {
     id: "local-8",
+    title: "Ergonomics / Office and Administrative Workstation Safety",
+    reference: "DAFMAN 91-203; OSHA ergonomics guidance; local Bioenvironmental Engineering or Occupational Health guidance",
+    trainingRequirement: "Cover workstation setup, chair adjustment, monitor height and distance, keyboard and mouse position, neutral posture, repetitive motion, micro-pauses or task variation, safe lifting of office supplies, file cabinet and storage safety, early reporting of discomfort, and how to request a BE ergonomic assessment when needed.",
+    trainingSource: "OSHA ergonomics guidance; local BE/OEH procedures",
+    afTrainingRequirement: "Use DAFMAN 91-203 office safety and ergonomics guidance to brief administrative and computer-based workers on musculoskeletal disorder risk factors, workstation adjustment, posture, repetitive motion controls, manual handling of office materials, and supervisor follow-up for ergonomic concerns.",
+    afTrainingSource: "DAFMAN 91-203 Chapter 2"
+  },
+  {
+    id: "local-9",
     title: "Jewelry / Loose Articles Restrictions",
     reference: "Workplace-specific limits on rings, necklaces, watches, and loose items",
     trainingRequirement: "Use local shop rules and hazard analysis to define where jewelry, loose clothing, or unsecured items are prohibited around moving parts, climbing, electrical work, or snag hazards.",
