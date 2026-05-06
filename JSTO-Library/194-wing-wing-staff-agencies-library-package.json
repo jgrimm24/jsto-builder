@@ -18,7 +18,7 @@
     "emergencyNumbers": "Emergency - 911\nRegional Command Post - Primary: 509-247-7100\n                                                  Alternate: 509-247-4045\nDuring Duty Hours (Local Dispatch), 194 SFS BDOC - DSN: 370-3841\nAfter Duty Hours (Local Dispatch): Joint Operations Center - 253-512-8130 \n",
     "medicalFacility": "- Madigan Emergency Room and Urgent Care\n9040A Jackson Ave.\nJoint Base Lewis-McChord, WA 98431\n(253) 968-1110\n\n- MultiCare Allenmore Hospital Emergency Department\n1901 S Union Ave, Tacoma, WA 98405\n(253) 459-6400\n\n- St. Clare Hospital - Emergency Room\n11315 Bridgeport Way Southwest First Floor, Lakewood, WA 98499\n(253) 985-1711\n\n- MultiCare Good Samaritan Emergency – Parkland\n14815 Pacific Ave S, Tacoma, WA 98444\n(253) 697-8660\n\nThere is not an emergency medical treatment facility located on Camp Murray. The nearest Emergency medical facility is located on JBLM at the Madigan Army Medical Center. If emergency responders are needed, call 911 from any base telephone. (Note: If you dial 911 from your cell phone, it may delay response since the call goes to an off-base responder). The Fire Department will respond with paramedics/EMTs that are on shift. They can evaluate the injuries and recommend further medical attention. If further medical attention is needed, an ambulance may be called to transport the individual to a medical facility. If it is not a severe injury, but the person feels that a doctor needs to check it, they may go to an off-base medical provider of their choice within a reasonable distance (25 miles).",
     "evacuation": "",
-    "shelter": "",
+    "shelter": "• Bldg. 54: Room 115 \n• Bldg. 50:  Close and lock outer doors and office doors, remain in your offices. \n• Bldg. 51: Close and lock outer doors and office doors, remain in your offices. \n• Bldg. 109:  Airman Care – Auditorium\n• Bldg. 109:  CPTS – Auditorium\n",
     "activeShooter": "",
     "weatherShelter": "",
     "bulletinBoard": "",
@@ -51,11 +51,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-  "savedAt": "2026-05-06T17:57:26.922Z",
+  "savedAt": "2026-05-06T18:01:22.741Z",
   "libraryMeta": {
     "uploadedBy": "wesley colberg",
     "uploadedById": "wesley colberg",
     "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-    "savedAt": "2026-05-06T17:57:26.922Z"
+    "savedAt": "2026-05-06T18:01:22.741Z"
   }
 }
