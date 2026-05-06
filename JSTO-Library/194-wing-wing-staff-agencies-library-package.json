@@ -23,6 +23,7 @@
     "weatherShelter": "Shelter in Place",
     "bulletinBoard": "Bldg. 54 Rm. 115 bulletin board \nBldg. 109 across from Rm. 230 CPTS bulletin board in the hallway\nBldg. 50 Main Hallway ",
     "emergencyEquipment": "Emergency Power Cutoff Type\tLocation\nBldg. 50 Circuit breaker panel(s)\tRoom 107 Janitors closet\nBldg. 51 Circuit breaker panel(s)\tRoom 107 Janitors closet\nBldg. 54 Circuit breaker panel(s)\tRoom 112 Utility Room \n\t\nLOCATION OF EMERGENCY EQUIPMENT:\n\nFire Alarm Pull Box Locations: \nBldg. 50:  1 - Next to main entrance – building (local only) not connected to JBLM fire Call 911\nBldg. 51:  3 - Next to each Exit - building (local only) not connected to JBLM fire Call 911\nBldg. 54:  None - Call 911\nBldg. 109: Next to each exit and at the south CPTS hallway entrance\n\nFire Extinguishers:\nBldg. 50: Next to Woman’s Restroom\nBldg. 51: Next to Woman’s Restroom\nBldg. 54: One near the restrooms, one near the electrical room, and one near each exit.\nBldg. 109: Fire extinguishers are located across from the restrooms in the north hallway, in the hallway the south end of the finance hallway and outside of the entry to the  to the CPTS area near customer service.  \n\nFirst Aid Kits: \nBldg. 50: Next to Woman’s Restroom\nBldg. 51: Next to Woman’s Restroom\nBldg. 54: One near the restrooms. \nBldg. 109: located in lower floor Med Grp Lobby.  \n\nAEDs: \nBldg. 50: N/A\nBldg. 51: N/A\nBldg. 54: N/A\nBldg. 109: located in lower floor Med Grp Lobby. \n\nEmergency Shower And Eyewash Equipment:  - N/A\nN/A\n",
+    "dafvaPostingLocation": "",
     "documentationNotes": "Documentation And Maintenance:\n\nTraining Record: Supervisors will document all safety, fire, and health training using AF Form 55, Employee Safety and Health Record, or an equivalent electronic system (e.g., a printout from ARCNET, or a local digital record).\n\nNote: If the AF Form 55 is mandated for use as the training documentation device, the entity that mandated the form usage will prescribe the requirement in writing to include entries that require signatures, e.g., HAZCOM, respirator, low powered industrial, hazardous energy control (LOTO), fall protection, confined spaces, radiation safety, laser safety, etc.\n\nRefresher Training: \n\n• Will be conducted and documented when employees demonstrate a lack of understanding of their required safety responsibilities or, \n• If training has a specified frequency for recurrence (e.g. such as is called for in DAFMAN 91-203, Chapter 21, Hazardous Energy Control).\n\n\nDisposition: When an individual permanently changes station (PCS), separates, or retires, the supervisor or Unit Training Manager (UTM) will provide them with a copy of their completed training record to hand-carry. The unit will destroy its copy one year after the member's departure. \n",
     "annualReviewLog": "",
     "uploadedBy": "wesley colberg",
@@ -92,14 +93,23 @@
       "trainingSource": "Local emergency action plan",
       "notes": "Active Shooter: Annual training via Percipio covering \"Avoid, Deny, Defend\" principles, with local procedures directing personnel to barricade in place or evacuate to the Bldg. 81 (PCRC) rally point for accountability.\n\nLocal Hazards: Potential for workplace violence or active shooter incidents within Wing Staff facilities (Bldgs. 50, 51, 54, and 109).\nLocal Procedures: Execute \"Avoid, Deny, Defend.\" Evacuate if possible or barricade in a secure area away from windows. Once safe or when officially cleared by Law Enforcement, proceed to the primary rally point at Bldg. 81 (PCRC) for accountability.\nTraining Summary: Mandatory course preparing personnel to identify active shooter characteristics, understand \"Avoid-Deny-Defend\" principles, and learn appropriate actions to take during an attack and when law enforcement arrives.\nTraining Location: Completed via DAF E-Learning (Percipio): https://share.percipio.com/cd/VzXuGtFNX\nInterval / Documentation: Annual requirement. Completion records are automatically maintained within the Percipio learning management system.",
       "link": "https://share.percipio.com/cd/VzXuGtFNX"
+    },
+    {
+      "id": "custom-1778108964566",
+      "title": "Office Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chpter 2.",
+      "trainingRequirement": "Document the local task or hazard, identify where the training is located, and explain how completion is documented.",
+      "trainingSource": "Custom module",
+      "notes": "Frequency: One Time\n\nRegulation: DAFMAN 91-203\n\nDescription: Non-Critical Safety; This course is conducted at local level. Employers are required to provide an office environment free from hazards. Management should ensure that employees are educated about the many office hazards which many workers may not be aware of, such as noise, poor ergonomics, damaged electrical wires, inoperative fire extinguishers, and lack of emergency plans. Personnel assigned to office work environments are required to complete office safety training.  Supervisors can be provided training when personnel assigned.\n\nRecords are maintained in Percipio. ",
+      "link": "https://share.percipio.com/cd/-lUDlMeRk"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-  "savedAt": "2026-05-06T22:38:17.655Z",
+  "savedAt": "2026-05-06T23:11:55.672Z",
   "libraryMeta": {
     "uploadedBy": "wesley colberg",
     "uploadedById": "wesley colberg",
     "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-    "savedAt": "2026-05-06T22:38:17.655Z"
+    "savedAt": "2026-05-06T23:11:55.672Z"
   }
 }
