@@ -10,7 +10,7 @@
     "reviewDate": "2025-11-25",
     "effectiveDate": "2025-11-25",
     "workDescription": "The 194th Vehicle Maintenance Flight guarantees the operational readiness of the 194th Wing by sustaining a fully serviced and reliable vehicle fleet. Operations are primarily conducted within the front, middle, and back shops of the maintenance facility. This JSTO establishes the training requirements for diverse vehicle maintenance activities, strictly enforcing all safety protocols and PPE standards to protect personnel while maximizing fleet capability.",
-    "references": "Available on EPUBS (https://www.e-publishing.af.mil/)\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 91-204",
+    "references": "Available on EPUBS (https://www.e-publishing.af.mil/)\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 91-204 - Safety Investigations Reports\nDAFI 91-207 - The Traffic Safety Program\nDAFI 90-802 - Risk Management\nDAFI 48-127 - Occupational Noise and Hearing Conservation Program\nDAFMAN 48-146 - Occupational Health Program Management\nDAFI 48-145 - Occupational and Environmental Health Program\nDAFPAM 90-803 - Risk Management Guidelines and Tools\nDAFMAN 91-224 - Ground Safety Investigation and Hazard Reporting\nDAFI 24-301 - Ground Transportation (Official GMV Use)\n\nTO's available on ETIMS (https://etims.cce.af.mil/ETIMS/index)\nTO 36-1-191-WA-1 – Technical and Managerial Reference for Motor Vehicle Maintenance\n\nJob Safety Analysis (JSA) PPE / Manufacturer’s Instructions:\nJSA PPE binder located Rm. 104 in Bldg. 102\nManufacturer’s Instruction for all equipment are located in the Shop Equipment binders in Rm. 102 in Bldg. 102\n\n\n\n\n",
     "hazardAnalysis": "",
     "riskManagementNotes": "",
     "trafficSafetyNotes": "",
@@ -51,11 +51,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/194th-lrs-vehicle-maintenance-library-package.pdf",
-  "savedAt": "2026-05-06T16:06:22.134Z",
+  "savedAt": "2026-05-06T16:29:25.766Z",
   "libraryMeta": {
     "uploadedBy": "MSgt Daniel Lee",
     "uploadedById": "msgt daniel lee",
     "savedLibraryPdf": "JSTO-Library/194th-lrs-vehicle-maintenance-library-package.pdf",
-    "savedAt": "2026-05-06T16:06:22.134Z"
+    "savedAt": "2026-05-06T16:29:25.766Z"
   }
 }
