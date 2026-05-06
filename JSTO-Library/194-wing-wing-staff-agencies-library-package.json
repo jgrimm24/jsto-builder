@@ -20,7 +20,7 @@
     "evacuation": "",
     "shelter": "• Bldg. 54: Room 115 \n• Bldg. 50:  Close and lock outer doors and office doors, remain in your offices. \n• Bldg. 51: Close and lock outer doors and office doors, remain in your offices. \n• Bldg. 109:  Airman Care – Auditorium\n• Bldg. 109:  CPTS – Auditorium\n",
     "activeShooter": "",
-    "weatherShelter": "",
+    "weatherShelter": "Shelter in Place",
     "bulletinBoard": "",
     "emergencyEquipment": "",
     "documentationNotes": "",
@@ -51,11 +51,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-  "savedAt": "2026-05-06T18:01:22.741Z",
+  "savedAt": "2026-05-06T18:10:19.427Z",
   "libraryMeta": {
     "uploadedBy": "wesley colberg",
     "uploadedById": "wesley colberg",
     "savedLibraryPdf": "JSTO-Library/194-wing-wing-staff-agencies-library-package.pdf",
-    "savedAt": "2026-05-06T18:01:22.741Z"
+    "savedAt": "2026-05-06T18:10:19.427Z"
   }
 }
