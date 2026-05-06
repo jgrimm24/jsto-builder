@@ -313,6 +313,7 @@ const defaultState = {
     weatherShelter: "",
     bulletinBoard: "",
     emergencyEquipment: "",
+    dafvaPostingLocation: "",
     documentationNotes: "",
     annualReviewLog: ""
   },
@@ -1331,12 +1332,19 @@ function renderRequiredDocuments() {
     }
   ];
 
-  const items = docs.map((doc) => `
+  const items = docs.map((doc) => {
+    const postingLocation = doc.label === "DAFVA 91-209"
+      ? `<br><strong>Location Posted:</strong> ${formatText(state.meta.dafvaPostingLocation, "Enter where DAFVA 91-209 is posted for this work center.")}`
+      : "";
+
+    return `
     <li>
       <a href="${doc.href}" target="_blank" rel="noreferrer">${doc.label}</a>${doc.note ? ` <span class="required-doc-inline-note">${doc.note}</span>` : ""}<br>
       <span class="muted">${doc.description}</span>
+      ${postingLocation}
     </li>
-  `).join("");
+  `;
+  }).join("");
 
   return `<ul>${items}</ul>`;
 }
