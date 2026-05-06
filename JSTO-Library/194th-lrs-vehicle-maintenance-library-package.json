@@ -10,7 +10,7 @@
     "reviewDate": "2025-11-25",
     "effectiveDate": "2025-11-25",
     "workDescription": "The 194th Vehicle Maintenance Flight guarantees the operational readiness of the 194th Wing by sustaining a fully serviced and reliable vehicle fleet. Operations are primarily conducted within the front, middle, and back shops of the maintenance facility. This JSTO establishes the training requirements for diverse vehicle maintenance activities, strictly enforcing all safety protocols and PPE standards to protect personnel while maximizing fleet capability.",
-    "references": "Available on EPUBS (https://www.e-publishing.af.mil/)\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 91-204 - Safety Investigations Reports\nDAFI 91-207 - The Traffic Safety Program\nDAFI 90-802 - Risk Management\nDAFI 48-127 - Occupational Noise and Hearing Conservation Program\nDAFMAN 48-146 - Occupational Health Program Management\nDAFI 48-145 - Occupational and Environmental Health Program\nDAFPAM 90-803 - Risk Management Guidelines and Tools\nDAFMAN 91-224 - Ground Safety Investigation and Hazard Reporting\nDAFI 24-301 - Ground Transportation (Official GMV Use)\n\nTO's available on ETIMS (https://etims.cce.af.mil/ETIMS/index)\nTO 36-1-191-WA-1 – Technical and Managerial Reference for Motor Vehicle Maintenance\n\nJob Safety Analysis (JSA) PPE / Manufacturer’s Instructions:\nJSA PPE binder located Rm. 104 in Bldg. 102\nManufacturer’s Instruction for all equipment are located in the Shop Equipment binders in Rm. 102 in Bldg. 102\n\n\n\n\n",
+    "references": "Available on EPUBS (https://www.e-publishing.af.mil/)\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 91-204 - Safety Investigations Reports\nDAFI 91-207 - The Traffic Safety Program\nDAFI 90-802 - Risk Management\nDAFI 48-127 - Occupational Noise and Hearing Conservation Program\nDAFMAN 48-146 - Occupational Health Program Management\nDAFI 48-145 - Occupational and Environmental Health Program\nDAFPAM 90-803 - Risk Management Guidelines and Tools\nDAFMAN 91-224 - Ground Safety Investigation and Hazard Reporting\nDAFI 24-301 - Ground Transportation (Official GMV Use)\nTO's available on ETIMS (https://etims.cce.af.mil/ETIMS/index)\nTO 36-1-191-WA-1 – Technical and Managerial Reference for Motor Vehicle Maintenance\nJob Safety Analysis (JSA) PPE / Manufacturer’s Instructions:\nJSA PPE binder located Rm. 104 in Bldg. 102\nManufacturer’s Instruction for all equipment are located in the Shop Equipment binders in Rm. 102 in Bldg. 102",
     "hazardAnalysis": "",
     "riskManagementNotes": "",
     "trafficSafetyNotes": "",
@@ -21,7 +21,7 @@
     "shelter": "",
     "activeShooter": "",
     "weatherShelter": "",
-    "bulletinBoard": "",
+    "bulletinBoard": "Main Hallway next to Rm. 105",
     "emergencyEquipment": "",
     "documentationNotes": "",
     "annualReviewLog": "",
@@ -49,13 +49,162 @@
     "type": ""
   },
   "moduleReferences": [],
-  "selectedModules": [],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees on hazardous energy sources, magnitude, and isolation methods; affected employees on the purpose and use of procedures; and other nearby employees on restart/reenergization prohibitions. Retrain when assignments, equipment, processes, or procedures change, or when inspections show gaps.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "afTrainingRequirement": "DAFMAN 91-203 establishes a formal Hazardous Energy Control Program with dedicated training, documented procedures, and periodic self-inspections before servicing or maintenance work is performed.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 21",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "AFI 90-821 - Hazard Communication (HAZCOM) Program; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Provide effective training at initial assignment and whenever a new chemical hazard is introduced. Cover where hazardous chemicals are present, the written program, labels and SDS access, how releases are detected, hazard types, protective measures, emergency procedures, and required PPE.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1200 - Hazard Communication",
+      "afTrainingRequirement": "Employees potentially exposed to chemical hazards must complete HAZCOM training upon initial assignment and whenever a new hazard or chemical is introduced or new tasks create new hazards. Supervisors must ensure SDS access for chemicals used in the work process.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.5 and para. 28.3.3",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "AFI 48-127 - Occupational Noise and Hearing Conservation Program",
+      "trainingRequirement": "Provide a hearing conservation training program for employees exposed at or above the action level, repeat it annually, and update it when equipment or work processes change. Cover hearing effects, protector selection and care, and the purpose of audiometric testing.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.95 - Occupational noise exposure",
+      "afTrainingRequirement": "Hazardous noise concerns must be evaluated and controls recommended through the occupational health risk assessment process. Use the AF Hearing Conservation Program as the training and control basis when shop noise hazards are identified.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2.2",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.5",
+      "title": "Confined Space Program",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 23; 29 CFR 1910.146 - Permit-required confined spaces",
+      "trainingRequirement": "Train affected employees before first assignment, before duty changes, when permit-space operations introduce new hazards, and when deviations or inadequate knowledge are identified. Training must establish proficiency and be documented by employee, trainer, and date.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.146 - Permit-required confined spaces",
+      "afTrainingRequirement": "Employees entering confined spaces must be trained to safely accomplish assigned duties and rescue procedures for the specific permit-required space entered. Safety observers and attendants must also be trained on rescue procedures for each type of permit-required confined space.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.9 and para. 28.3.2",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.6",
+      "title": "Manual and Powered Hoists",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 35",
+      "trainingRequirement": "When hoisting operations involve overhead or gantry cranes, instruct personnel involved in multi-crane lifts on positioning, rigging, and movement coordination under a qualified person, and ensure operators are familiar with the operation and care of fire extinguishers provided. For crawler, locomotive, and truck cranes, make operating and maintenance personnel familiar with extinguisher use and local crane procedures.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.179 - Overhead and gantry cranes and 1910.180",
+      "afTrainingRequirement": "MHE operator qualification and training must be provided by the responsible organization using lesson plans for each equipment type that include formal instruction, hands-on demonstrations, practical exercises, and evaluation. Forklift operators must be evaluated at least once every three years and retrained after unsafe operation, accidents, different equipment assignments, or workplace changes.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 12.6.1 through 12.6.5",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.9",
+      "title": "Fall Arrest Systems",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 13; 29 CFR 1910.66 - Powered platforms for building maintenance; 29 CFR 1926.503 - Training requirements",
+      "trainingRequirement": "Train personnel in safe personal fall arrest system use before use and after any component or system change. Pair this with the AF and local fall protection requirements for inspection, anchorage, rescue, and user limitations.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.66 - Powered platforms for building maintenance",
+      "afTrainingRequirement": "Any work above four feet requires a fall protection program and appropriate safety gear. Use the local fall protection program, rescue procedures, and chapter-specific AF requirements for application-level training.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.7 and Chapter 13",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "Common local training item often broken out separately with fixed and portable ladder rules",
+      "trainingRequirement": "Use local ladder lesson plans, manufacturer instructions, and AF walking-working surface guidance. OSHA 2254 (2015 edition) does not provide a dedicated general-industry ladder training summary in the same way it does for lockout, forklifts, or confined spaces, so this remains primarily AF/local-driven.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "afTrainingRequirement": "Personnel using ladders at any working height must be trained when first assigned, and that training must include hands-on instruction covering ladder defects, electrocution hazards, positioning, and placement for various job sites. Training must be documented under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 7.4.3.7",
+      "notes": "Personnel who use ladders at working heights of 4 feet or more will be adequately trained in the care and use of different types of ladders. The supervisor or a designated trainer will conduct this training when a worker is first assigned. Information presented during safety briefings will satisfy the periodic training requirement. All training will include hands-on instruction to include inspection of ladders for defects, possible electrocution hazards, proper positioning, and placement of ladders for various job sites.",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "Manual lifting techniques and available lifting devices",
+      "trainingRequirement": "Cover shop-specific lifting limits, two-person lift triggers, hand truck and lifting-device use, and when supervisors require assisted handling. No direct OSHA 2254 standalone manual-lifting module is mapped here.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "afTrainingRequirement": "Supervisors must ensure thorough training on proper manual lifting techniques, required PPE, and the use of manual lifting devices. Training must use both verbal and written materials, include practice on proper motions, and be documented under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.10.3",
+      "notes": "Never lift anything by yourself if you feel you cannot handle it.  For team lifting adjust the load so each person carries an equal part. Test lifts should be made before proceeding. Make every move in unison. Use a forklift or other mechanical lifting devise if possible. If you do have to lift something, here are some simple procedures to follow:\n•\tPosition feet correctly.  One foot to the rear of the object and the other slightly ahead and to the side of the object.\n•\tCrouch close to the load to minimize strain on the back.\n•\tGrip with full palm not fingertips.  Ensure load is free of grease and sharp points. Wear gloves when necessary.\n•\tAlways keep the back as straight as possible and avoid arching. Keep the back muscles tightened throughout the duration of the lift. Do not relax the back until the load is released. Bend from the hips and not from the middle of the back.\n•\tWith the arms, slide the object toward the body to give it some motion, use the legs to lift the object and bring the back to a vertical position.  Keep the object close to the body.\n•\tWhen setting the object down use the same motion as when lifting, but reverse the motion. Lower the load by bending the legs and crouching with the back straight. Take care when releasing the load to prevent injury to fingers, hands, or feet.\n•\tDo not twist your body to turn.  If you need to turn, pivot on your heels in the direction you need to turn.  Avoid any necessary twisting and lower the item in the same way you lift it. If you need help lifting an object because it is too heave or awkward ask for assistance.\nWhen using the stairs:\n•\tAdhere to the guidance provided by the supervisor.\n•\tTry to reduce the bulk or size of the object carried to allow for maximum visibility.\n•\tUse assistance when required and available.\n\n\nRemember to: \n•\tPlace objects to be lifted at the approximate height of the knuckles when the arms dangle at side of the body.\n•\tLimits stack height to shoulder level. If items must be stacked higher, provide step-up access to eliminate lifting above shoulder level.\n•\tUse grips, handles, and other devices to provide better control of items.\n•\tSlide materials instead of lifting, whenever possible.\n•\tUse gravity assist in moving materials.\n•\tTeam lifting will be used when items are known to weigh more than 25 pounds or when items are lifted from an awkward position or location. \n",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "Local extinguisher, pull station, and fire reporting procedures",
+      "trainingRequirement": "Review the fire prevention plan with employees when the plan is developed, when responsibilities change, and when the plan changes. If extinguishers are provided for employee use, train employees on the general principles of extinguisher use and the hazards of incipient-stage firefighting at initial assignment and at least annually. Train designated users on the specific equipment they are expected to use.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.39 - Fire prevention plans and 1910.157",
+      "afTrainingRequirement": "Facility managers and supervisors must establish and maintain a fire prevention training program through the JSTO so employees understand their fire prevention and protection responsibilities in their work areas. This is fulfilled through job safety training and documentation under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 6.2.1.1",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-7",
+      "title": "Thermal Stress / Heat and Cold Stress",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; DAFI 48-145 - Occupational and Environmental Health Program; local Bioenvironmental Engineering or Occupational Health guidance",
+      "trainingRequirement": "Cover heat stress, cold stress, WBGT or locally directed exposure monitoring, acclimatization, hydration, work/rest cycles, buddy checks, PPE or clothing considerations, symptom recognition, supervisor notification, and emergency response actions for suspected heat illness or cold injury.",
+      "trainingSource": "AF occupational safety and occupational health guidance; local BE/OEH procedures",
+      "afTrainingRequirement": "Use the occupational health risk assessment, local BE recommendations, and supervisor hazard controls to brief personnel on thermal stress hazards and controls for hot, cold, humid, outdoor, flight line, industrial, or PPE-intensive work areas.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards and DAFI 48-145 - Occupational and Environmental Health Program",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-8",
+      "title": "Ergonomics / Office and Administrative Workstation Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; OSHA ergonomics guidance; local Bioenvironmental Engineering or Occupational Health guidance",
+      "trainingRequirement": "Cover workstation setup, chair adjustment, monitor height and distance, keyboard and mouse position, neutral posture, repetitive motion, micro-pauses or task variation, safe lifting of office supplies, file cabinet and storage safety, early reporting of discomfort, and how to request a BE ergonomic assessment when needed.",
+      "trainingSource": "OSHA ergonomics guidance; local BE/OEH procedures",
+      "afTrainingRequirement": "Use DAFMAN 91-203 office safety and ergonomics guidance to brief administrative and computer-based workers on musculoskeletal disorder risk factors, workstation adjustment, posture, repetitive motion controls, manual handling of office materials, and supervisor follow-up for ergonomic concerns.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 2",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-9",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Workplace-specific limits on rings, necklaces, watches, and loose items",
+      "trainingRequirement": "Use local shop rules and hazard analysis to define where jewelry, loose clothing, or unsecured items are prohibited around moving parts, climbing, electrical work, or snag hazards.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "custom-1778087594854",
+      "title": "Walking/Working Surfaces",
+      "reference": "Local guidance",
+      "trainingRequirement": "Document the local task or hazard, identify where the training is located, and explain how completion is documented.",
+      "trainingSource": "Custom module",
+      "notes": "Conditions that result in falls from height or traditional walking surfaces (such as slippery floors, poor housekeeping, uneven walking surfaces, exposed ledges, ladders, etc.). Walk with special care on slippery surfaces. Wear protective anti-slip footgear when walking on ice and snow. Maintain clean ice-free sidewalks by promptly, and frequently, shoveling snow. Use hand rails. Do not carry objects that might obstruct your view when walking. Wipe up all spilled liquids immediately. Aisles and passageways should be kept clear of tripping hazards such as wastebaskets, cartons, electric cords, open drawers, ladders, and personnel belongings. Torn carpets, loose/curled mats, liquids spilled on floors, light failures, or any condition that could cause tripping or slipping should be reported immediately to your supervisor. Watch your step when stepping off aircraft surfaces.",
+      "link": ""
+    },
+    {
+      "id": "custom-1778087615576",
+      "title": "Stairways",
+      "reference": "Local guidance",
+      "trainingRequirement": "Document the local task or hazard, identify where the training is located, and explain how completion is documented.",
+      "trainingSource": "Custom module",
+      "notes": "Do not run up or down stairs, always use hand rails.  Do not skip steps if in a hurry. When climbing stairs stay to your right.  When going down stairs stay to your right. If carrying packages be sure of your footing. Do not store or throw anything on steps or stairways. Even a piece of paper, a paper clip, a cellophane wrapper or match can create a slipping hazard. Report any damage to stairs or hand rail to your building custodian.",
+      "link": ""
+    }
+  ],
   "savedLibraryPdf": "JSTO-Library/194th-lrs-vehicle-maintenance-library-package.pdf",
-  "savedAt": "2026-05-06T16:29:25.766Z",
+  "savedAt": "2026-05-06T17:22:50.809Z",
   "libraryMeta": {
     "uploadedBy": "MSgt Daniel Lee",
     "uploadedById": "msgt daniel lee",
     "savedLibraryPdf": "JSTO-Library/194th-lrs-vehicle-maintenance-library-package.pdf",
-    "savedAt": "2026-05-06T16:29:25.766Z"
+    "savedAt": "2026-05-06T17:22:50.809Z"
   }
 }
