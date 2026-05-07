@@ -8,13 +8,24 @@
     "npm": "10.x"
   },
   "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "latest",
     "puppeteer": "^24.8.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
   },
   "puppeteer": {
     "skipDownload": true
   },
   "scripts": {
     "postinstall": "PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer npx puppeteer browsers install chrome",
-    "start": "PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer node server.js"
+    "start": "PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer node server.js",
+    "cap:add:ios": "cap add ios",
+    "cap:add:android": "cap add android",
+    "cap:sync": "cap sync",
+    "cap:open:ios": "cap open ios",
+    "cap:open:android": "cap open android"
   }
 }
