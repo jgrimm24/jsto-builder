@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "unit": "48 SFS",
+    "workCenter": "Standardization and Evaluation",
+    "exportBasename": "",
+    "officeSymbol": "SELQ",
+    "supervisor": "Rose/TSgt/Evaluator",
+    "phone": "226-6203",
+    "reviewer": "TSgt Rose",
+    "reviewDate": "2026-05-07",
+    "effectiveDate": "2026-05-07",
+    "workDescription": "",
+    "references": "",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "Organization           On-Base       Off-Base\nCommand Post     226-4800      01638-52-4800\nFire Department   911                  999 or 112\nAmbulance             911                  999 or 112\nSecurity Police       911                  999 or 112\nWing Safety             226-3737      01638-52-3737",
+    "medicalFacility": "Family Health Clinic\nBldg 932\nRAF Lakenheath\nOpen: Mon-Fri 0730-1630\nAppointment DSN: 226-8010\nCANX - 24 hrs in advance\n\n\nAllergy and Immunizations\nBldg 932\nRAF Lakenheath\nWalk-in hours:\nMon-Fri 07:30 – 1630*\n*Every Fourth Thursday 1300-1630\nDSN: 226-8010\n\n\nPharmacy\nBldg 935\nOpen: Mon-Fri0730-1900*\n*Every Fourth Thursday 1230 -1700\nPhone: DSN 226-8347\n\n\nTri-Care Office\nDSN: 226-8688\n\n\nDental Squadron\nBldg 944\nMon-Fri 07:30 –1630\nPhone: DSN 226-8317\nAppointment: DSN 226-8010\nCANX - 24 hrs in advance\n\n\nEmergency Room (RAF Lakenheath)\nBldg 935\nDSN: 226-4226\n\n- Understand Definition of Emergency: \"Potential loss of life, limb or eyesight\"\n- When in doubt, call 911 (On-base) or 999 (Off-base)\n- Use military hospital if available",
+    "evacuation": "Primary: Exit through the front of bldg. 949 to Burgerking parking lot\n\nAlternate: Exit the JLTV barn door of bldg. 949 to the Post Office parking lot",
+    "shelter": "Room 1-08",
+    "activeShooter": "1. Escape\n2. Barricade\n3. Fight",
+    "weatherShelter": "Room 1-08",
+    "bulletinBoard": "First Floor (UK) Foyer",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "SSgt Washington",
+    "uploadedById": "ssgt washington"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/48-sfs-standardization-and-evaluation-library-package.pdf",
+  "savedAt": "2026-05-07T14:46:09.796Z",
+  "libraryMeta": {
+    "uploadedBy": "SSgt Washington",
+    "uploadedById": "ssgt washington",
+    "savedLibraryPdf": "JSTO-Library/48-sfs-standardization-and-evaluation-library-package.pdf",
+    "savedAt": "2026-05-07T14:46:09.796Z"
+  }
+}
