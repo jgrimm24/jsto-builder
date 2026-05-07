@@ -1,0 +1,8 @@
+{
+  "appId": "mil.jsto.builder",
+  "appName": "JSTO Builder",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  }
+}
