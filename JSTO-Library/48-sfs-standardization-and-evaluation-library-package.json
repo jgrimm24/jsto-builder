@@ -9,12 +9,12 @@
     "reviewer": "TSgt Rose",
     "reviewDate": "2026-05-07",
     "effectiveDate": "2026-05-07",
-    "workDescription": "",
-    "references": "",
-    "hazardAnalysis": "",
-    "riskManagementNotes": "",
-    "trafficSafetyNotes": "",
-    "motorcycleSafetyReps": "",
+    "workDescription": "Prepares Duty Position Evaluation questions, scenarios, and Task Performance Checklists (TPC's) for use in training and evaluation of over 540 Security Forces personnel. Prepares and administers examinations for 17 different critical and duty positions. Schedules unit personnel for initial and annual standardization evaluation appointments. Conducts realistic practical performance evaluations of individuals and teams. Aids in conducting annual inspections of unit work centers, ensuring compliance with policies and procedures. Prepares exercise scenarios as a trusted agent for the 48 FW Inspection Team during Wing inspections. Monitors and tracks QC trends and Squadron MICT Checklists.",
+    "references": "DAFI 36-2646",
+    "hazardAnalysis": "Not Applicable",
+    "riskManagementNotes": "RM is a continuous, sequential methodology consisting of a defined process depending onmission requirements.\n\nAccept No Unnecessary Risk: If not all the hazards are identified, then too much risk may\nbe accepted.\n\nMake Decisions At The Appropriate Level: Those accountable for the success or failure of\nthe mission must be included in the risk-decision process. This establishes clear\naccountability. Commanders must ensure subordinates know how much risk they may\naccept and when they must elevate the decision to a higher level.\n\nTraining is required and available on ADLS.",
+    "trafficSafetyNotes": "Licensing: All personnel who operate a private motor vehicle or a government motor vehicle will maintain current a 3AF Form 435, 3AF Driving/Fuel Permit United Kingdom.",
+    "motorcycleSafetyReps": "Motorcycle riders will in process the squadron Motorcycle Safety Representative prior to\nriding in the United Kingdom.",
     "emergencyNumbers": "Organization           On-Base       Off-Base\nCommand Post     226-4800      01638-52-4800\nFire Department   911                  999 or 112\nAmbulance             911                  999 or 112\nSecurity Police       911                  999 or 112\nWing Safety             226-3737      01638-52-3737",
     "medicalFacility": "Family Health Clinic\nBldg 932\nRAF Lakenheath\nOpen: Mon-Fri 0730-1630\nAppointment DSN: 226-8010\nCANX - 24 hrs in advance\n\n\nAllergy and Immunizations\nBldg 932\nRAF Lakenheath\nWalk-in hours:\nMon-Fri 07:30 – 1630*\n*Every Fourth Thursday 1300-1630\nDSN: 226-8010\n\n\nPharmacy\nBldg 935\nOpen: Mon-Fri0730-1900*\n*Every Fourth Thursday 1230 -1700\nPhone: DSN 226-8347\n\n\nTri-Care Office\nDSN: 226-8688\n\n\nDental Squadron\nBldg 944\nMon-Fri 07:30 –1630\nPhone: DSN 226-8317\nAppointment: DSN 226-8010\nCANX - 24 hrs in advance\n\n\nEmergency Room (RAF Lakenheath)\nBldg 935\nDSN: 226-4226\n\n- Understand Definition of Emergency: \"Potential loss of life, limb or eyesight\"\n- When in doubt, call 911 (On-base) or 999 (Off-base)\n- Use military hospital if available",
     "evacuation": "Primary: Exit through the front of bldg. 949 to Burgerking parking lot\n\nAlternate: Exit the JLTV barn door of bldg. 949 to the Post Office parking lot",
@@ -22,9 +22,9 @@
     "activeShooter": "1. Escape\n2. Barricade\n3. Fight",
     "weatherShelter": "Room 1-08",
     "bulletinBoard": "First Floor (UK) Foyer",
-    "emergencyEquipment": "",
-    "dafvaPostingLocation": "",
-    "documentationNotes": "",
+    "emergencyEquipment": "Not Applicable",
+    "dafvaPostingLocation": "Safety Bulletin Board",
+    "documentationNotes": "Training Documentation is maintained in the Share Drive.",
     "annualReviewLog": "",
     "uploadedBy": "SSgt Washington",
     "uploadedById": "ssgt washington"
@@ -52,11 +52,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/48-sfs-standardization-and-evaluation-library-package.pdf",
-  "savedAt": "2026-05-07T14:49:59.722Z",
+  "savedAt": "2026-05-07T15:11:55.809Z",
   "libraryMeta": {
     "uploadedBy": "SSgt Washington",
     "uploadedById": "ssgt washington",
     "savedLibraryPdf": "JSTO-Library/48-sfs-standardization-and-evaluation-library-package.pdf",
-    "savedAt": "2026-05-07T14:49:59.722Z"
+    "savedAt": "2026-05-07T15:11:55.809Z"
   }
 }
