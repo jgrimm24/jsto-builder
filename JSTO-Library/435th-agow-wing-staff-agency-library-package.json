@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "unit": "435th AGOW",
+    "workCenter": "Wing Staff Agency",
+    "exportBasename": "",
+    "officeSymbol": "WSA",
+    "supervisor": "TSgt Betz, Gerald",
+    "phone": "314-480-3266",
+    "reviewer": "TSgt Betz, Gerald",
+    "reviewDate": "2026-05-07",
+    "effectiveDate": "2026-05-07",
+    "workDescription": "",
+    "references": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "Gerald Betz",
+    "uploadedById": "gerald betz"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+    "OSHA 2254 - Training Requirements in OSHA Standards",
+    "29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)"
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees on hazardous energy sources, magnitude, and isolation methods; affected employees on the purpose and use of procedures; and other nearby employees on restart/reenergization prohibitions. Retrain when assignments, equipment, processes, or procedures change, or when inspections show gaps.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "afTrainingRequirement": "DAFMAN 91-203 establishes a formal Hazardous Energy Control Program with dedicated training, documented procedures, and periodic self-inspections before servicing or maintenance work is performed.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 21",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/435th-agow-wing-staff-agency-library-package.pdf",
+  "savedAt": "2026-05-07T06:26:37.071Z",
+  "libraryMeta": {
+    "uploadedBy": "Gerald Betz",
+    "uploadedById": "gerald betz",
+    "savedLibraryPdf": "JSTO-Library/435th-agow-wing-staff-agency-library-package.pdf",
+    "savedAt": "2026-05-07T06:26:37.071Z"
+  }
+}
