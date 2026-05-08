@@ -7,8 +7,8 @@
     "supervisor": "Morgan/GS-11/USR",
     "phone": "812-877-5713",
     "reviewer": "Morgan",
-    "reviewDate": "2026-04-30",
-    "effectiveDate": "2026-04-30",
+    "reviewDate": "2026-05-08",
+    "effectiveDate": "2026-05-08",
     "workDescription": "To ensure medical fit and deployable forces. To provide expeditionary medics, providers, and medical personnel to serve in deployed environments.  To improve the health of all we serve.",
     "references": "AFI 48-109 - Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program Electromagnetic Field Radiation OEH Program\nDAFI 48-137 - Respiratory Protection Program Respiratory Protection Program\nAFI 48-139 - Laser and Optical Radiation Protection Program Laser and Optical Radiation Protection Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nAF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.134 - Respiratory protection\nAFMAN 48-148\n29 CFR 1910.1096 - Ionizing radiation\nDAFMAN 48-146\nAFRCI 41-104 - Professional Board and National Certification Examinations",
     "hazardAnalysis": "Hazards in the MDG include sharps/needle sticks, biohazard waste, ergonomic lifting, tripping, ladders, electrical shock/fire, outdore exposure to thermal stress, and typical office-related threats to personal health and safety.",
@@ -23,6 +23,7 @@
     "weatherShelter": "The building restrooms are designated shelter areas.",
     "bulletinBoard": "The Safety board is outside the bathroom area by office 16.  The halls and breakroom are decorated with training and safety aids, and should be reviewed when time is available.",
     "emergencyEquipment": "Everyone should familiarize themselves with the following:\n- There are four fire extinguishers in the building\n- There is a building fire alarm by each exit\n- There is a PA system by the exit near the immunization room (Key activated)\n- There are three eyewash stations throughout the building (In the lab areas)",
+    "dafvaPostingLocation": "",
     "documentationNotes": "",
     "annualReviewLog": "",
     "uploadedBy": "Morgan",
@@ -125,11 +126,11 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/181-iw-mdg-library-package.pdf",
-  "savedAt": "2026-05-05T17:42:16.162Z",
+  "savedAt": "2026-05-08T14:42:19.876Z",
   "libraryMeta": {
     "uploadedBy": "Morgan",
     "uploadedById": "morgan",
     "savedLibraryPdf": "JSTO-Library/181-iw-mdg-library-package.pdf",
-    "savedAt": "2026-05-05T17:42:16.162Z"
+    "savedAt": "2026-05-08T14:42:19.876Z"
   }
 }
