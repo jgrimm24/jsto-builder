@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "unit": "",
+    "workCenter": "",
+    "exportBasename": "",
+    "officeSymbol": "",
+    "supervisor": "",
+    "phone": "",
+    "reviewer": "",
+    "reviewDate": "",
+    "effectiveDate": "",
+    "workDescription": "",
+    "references": "",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "48 CES/CSS",
+    "uploadedById": "48 ces/css"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/library-package.pdf",
+  "savedAt": "2026-05-11T07:24:27.497Z",
+  "libraryMeta": {
+    "uploadedBy": "48 CES/CSS",
+    "uploadedById": "48 ces/css",
+    "savedLibraryPdf": "JSTO-Library/library-package.pdf",
+    "savedAt": "2026-05-11T07:24:27.497Z"
+  }
+}
