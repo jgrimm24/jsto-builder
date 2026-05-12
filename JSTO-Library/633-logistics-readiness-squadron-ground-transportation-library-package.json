@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "unit": "633 Logistics Readiness Squadron",
+    "workCenter": "Ground Transportation",
+    "exportBasename": "",
+    "officeSymbol": "LGRDDO",
+    "supervisor": "Philip Wilcoxen, TSgt, Superintendent",
+    "phone": "764-1138",
+    "reviewer": "SSgt Michael Segraves",
+    "reviewDate": "2026-05-12",
+    "effectiveDate": "2026-05-12",
+    "workDescription": "The 633d Logistics Readiness Squadron Ground Transportation element at Joint Base Langley-Eustis serves as the primary logistics hub for the 1st Fighter Wing’s F-22 Raptor mission and Headquarters Air Combat Command. Personnel manage a versatile fleet ranging from general-purpose passenger vehicles and distinguished visitor transport to heavy tractor-trailers, wreckers, and forklifts. A primary operational focus is Documented Cargo Operations (DCO), where Airmen conduct specialized airfield operations to facilitate the time-definite delivery of mission-critical supplies and aircraft components directly to flight line maintenance units. By synchronizing vehicle recovery, deployment distributions, and joint-service logistics with high-visibility personnel movement, this work center ensures the seamless flow of resources necessary for installation sustainment and global power projection",
+    "references": "",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "Michael Segraves",
+    "uploadedById": "michael segraves"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/633-logistics-readiness-squadron-ground-transportation-library-package.pdf",
+  "savedAt": "2026-05-12T16:14:22.031Z",
+  "libraryMeta": {
+    "uploadedBy": "Michael Segraves",
+    "uploadedById": "michael segraves",
+    "savedLibraryPdf": "JSTO-Library/633-logistics-readiness-squadron-ground-transportation-library-package.pdf",
+    "savedAt": "2026-05-12T16:14:22.031Z"
+  }
+}
