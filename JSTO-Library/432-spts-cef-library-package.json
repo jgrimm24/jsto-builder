@@ -10,21 +10,21 @@
     "reviewDate": "2025-08-08",
     "effectiveDate": "2026-05-12",
     "workDescription": "As a fire department, we have many training and real world incident responsibilities that provide various risks to our personnel on a daily basis.",
-    "references": "DAFI 48-137\nDESR 6055.09_DAFMAN 91-201\nDAFI 48-145",
-    "hazardAnalysis": "",
-    "riskManagementNotes": "",
-    "trafficSafetyNotes": "",
-    "motorcycleSafetyReps": "",
-    "emergencyNumbers": "",
-    "medicalFacility": "",
-    "evacuation": "",
-    "shelter": "",
-    "activeShooter": "",
-    "weatherShelter": "",
-    "bulletinBoard": "",
-    "emergencyEquipment": "",
-    "dafvaPostingLocation": "",
-    "documentationNotes": "",
+    "references": "DAFI 48-137\nDESR 6055.09_DAFMAN 91-201\nDAFI 48-145\nDAFMAN 48-146\nAFRCI 41-104 - Professional Board and National Certification Examinations",
+    "hazardAnalysis": "| Operational Task / Area | Specific Hazards | Risk / Consequence | Baseline Mitigations & Controls |\n\n| **Aircraft & Flightline (RPA Ops)** | Aviation fuels (Jet-A, JP-4), Unexploded Ordnance (UXO), armed aircraft, composite materials, running engines. | Fire/explosions, toxic inhalation, traumatic injury from ordnance or moving aircraft parts. | Maintain safe distances from intakes/exhausts, approach armed aircraft from safe angles, utilize full ARFF PPE and SCBA, coordinate with EOD for UXO. |\n\n| **Wildland & Environmental** | Desert climate extremes, rough terrain, extended operational hours, heavy gear transport. | Heat stroke, dehydration, severe physical exhaustion, musculoskeletal injuries, slips/trips/falls. | Implement work/rest cycles, enforce strict hydration protocols, utilize lightweight wildland PPE, conduct pre-season physical conditioning. |\n\n| **Structural & HAZMAT** | Structural degradation, extreme thermal dynamics, toxic smoke, chemical agents (including AFFF/PFAS). | Thermal burns, asphyxiation, structural crush injuries, long-term occupational illness (cancer). | Maintain strict two-in/two-out rule, continuous air monitoring, full structural PPE/SCBA, gross field decontamination post-incident. |\n\n| **Medical Response (EMS)** | Exposure to bodily fluids, unpredictable patient behavior, sharp objects (needles/glass). | Transmission of bloodborne pathogens (HIV, Hepatitis), biological infections, physical assault. | Universal precautions (nitrile gloves, eye protection, N95 masks), utilize sharps containers, maintain situational awareness. |\n\n| **Confined Space & Tech Rescue** | Oxygen-deficient or toxic/explosive atmospheres, tight egress points, engulfment (utility vaults, fuel cells). | Asphyxiation, entrapment, crushing injuries, psychological panic. | Pre-entry permitting, continuous multi-gas monitoring, lockout/tagout (LOTO), extraction harness/hoist systems, attendant on standby. |\n\n| **Highway 95 Responses** | High-speed traffic, distracted drivers, hazmat cargo (lithium/chemicals), complex extrications. | Struck-by secondary collisions (fatalities), high-energy trauma, toxic smoke inhalation. | \"Fend-off\" apparatus positioning, Class III high-visibility vests, advanced warning signs/cones, coordinate road closures with Nevada State Police. |\n\n| **Fire Hose Testing** | High water pressure (burst hazards), wet/slick concrete, heavy lifting of water-logged hoses. | Blunt force trauma from ruptured couplings, lower back/shoulder strains, slip/fall injuries. | Clear testing zones of non-essential personnel, use hose testing valves/gates, enforce proper lifting ergonomics, wear helmets and gloves. |\n\n| **Apparatus Testing & Maintenance** | Moving mechanical parts, high decibel engine noise, blind spots, toxic vehicle fluids (diesel exhaust, hydraulics). | Amputation/crush injuries, permanent hearing loss, struck-by incidents, chemical burns or inhalation. | Strict use of ground guides (spotters), dual hearing protection during pump tests, LOTO during maintenance, proper ventilation for exhaust. |\n\n| **Compressed Air / SCBA Ops** | High-pressure cylinders (up to 4,500 psi), compressor intake contamination, high-speed air release. | Catastrophic explosion (projectile hazard), carbon monoxide poisoning (if air is bad), acoustic trauma. | Use fragmentation/containment fill stations, isolate compressor intakes from vehicle exhaust, inspect cylinders for damage before filling. |",
+    "riskManagementNotes": "🛡️ Risk Management Fundamentals & SOG 26 Application\n\nRisk Management (RM) is the cornerstone of all Creech AFB Fire Department operations, ensuring that the inherent dangers of flightline emergencies, technical rescues, high-speed responses on US-95, and daily apparatus maintenance are continuously evaluated and mitigated. Grounded in the fundamental five-step RM process—identifying hazards, assessing risks, developing controls, implementing controls, and supervising outcomes—our approach demands proactive situational awareness from every firefighter. All personnel are strictly governed by our local risk management framework, SOG 26, which mandates the dynamic application of these RM principles during volatile emergency responses, as well as their deliberate application during routine tasks such as confined space permitting or SCBA filling. By executing the control measures outlined in this Job Hazard Analysis and strictly adhering to SOG 26, the department actively reduces mishap probability, safeguards our responders, and ensures sustained mission readiness for the Creech AFB installation.\n\nTo maintain operational proficiency and ensure strict compliance with Air Force safety standards, the department's annual training plan includes a mandatory, comprehensive review of these core risk management principles and SOG 26 protocols. Furthermore, all personnel are required to complete targeted annual safety training covering the specific hazards and controls outlined in this JHA. The successful completion of this occupational safety training is formally documented and tracked for every firefighter on their AF Form 55 (Employee Safety and Health Record).\n",
+    "trafficSafetyNotes": "\n🛑 Creech AFB Traffic Safety Program\n\nOperating vehicles (GOV/POV) at Creech AFB requires strict adherence to AFI 91-207. Due to the base's remote location, proactive risk management is critical for daily commutes and on-base operations.\n\nLocal & Commuter Hazards: The 45-60 minute commute on US-95 poses severe risks, including driver fatigue, high-speed commercial traffic, extreme weather (flash floods, blinding sun glare), and frequent high-impact wildlife crossings (wild burros). Additionally, driving on the Creech flightline requires specialized certification due to heavy RPA traffic.\n\nBase Vehicle Rules: Cell phone use without a hands-free device is strictly prohibited on the installation. Seatbelts are mandatory for all occupants, speed limits are strictly enforced by Security Forces, and ground guides (spotters) are mandatory when backing any fire apparatus.\n\nMotorcycle Safety: Due to elevated highway risks, all riders must complete an approved Motorcycle Safety Foundation (MSF) course and register in the MUSTT system. Mandatory PPE (DOT-helmet, eye protection, long sleeves/jacket, full-fingered gloves, long pants, and over-the-ankle boots) must be worn on and off base.\n\nPoints of Contact:\nUnit Safety Rep (USR): [JaCorey Jones / SSgt / 702-404-3801]\nWing Safety Office: [702-404-1393]",
+    "motorcycleSafetyReps": "Squadron Motorcycle Safety Rep (MSR): [Devon Dixon / TSgt / 702-404-1321]",
+    "emergencyNumbers": "Emergency Numbers\nDirect - 911\nOn-Base - 702-404-0911\nNon-Emergency Fire - 702-404-0213\nNon-Emergency SF - 702-404-0556",
+    "medicalFacility": "Creech AFB Clinic\nFront Desk Number - 702-404-1142\nDuty Hours Only - No ER Capabilities",
+    "evacuation": "Personnel will evacuate to designated assembly points. Personnel in Building 1150 will evacuate to the parking lot located on the west of the main entrance. Personnel in building 85 will evacuate to the theater parking lot (bldg. 39). Personnel remain there until cleared by emergency personnel to return to your work area. \n\nUpon notification to evacuate the area/buildings immediately. Secure any CUI evidence that is not secured (bring it with you if you have to). IF SAFE TO DO SO, all personnel will grab their PPE on the way to their FD vehicles and pull vehicles out of stalls to assembly area and standby for instructions. Do not use the telephone or operate any electronic equipment until you have arrived at the assembly area. See assembly areas for both stations below.\n",
+    "shelter": "Bldg. 85:  Located in Room 3\nBldg. 1150:  Located in Room 145",
+    "activeShooter": "Run\nHide\nFight\nWait until all clear!",
+    "weatherShelter": "Use SIP rooms at either stations as they do not have windows.",
+    "bulletinBoard": "Your safety bulletin board is located: \nFire Station 1 Building 1150 – main hallway outside of the Training Room \nFire Station 2 Building 85 – hallway near restroom.",
+    "emergencyEquipment": "Location and Use of Emergency and Fire Protection Equipment:\nEMERGENCY/FIRE EQUIPMENT LOCATION AND USE\na. Emergency Power Cutoffs: (Circuit Breaker Panels) In East Side Mechanical Room Station 1 on the west side of the building in the center of the building, or West Side Mechanical Rm Station 2. \nb. Fire Alarm Pull Boxes: Located throughout the building near exits. Show each person all locations.\nc. Bomb Threat Checklist: Located near phone and in the Creech Phone Directory.\nd. Fire Extinguishers: Located around each station. Show each person all locations.",
+    "dafvaPostingLocation": "See Safety Bulletin Boards.",
+    "documentationNotes": "All training will be documented on individual AF Form 55, initially and annually.  All documents are uploaded on Teams.",
     "annualReviewLog": "",
     "uploadedBy": "Abel Salas",
     "uploadedById": "abel salas"
@@ -52,7 +52,9 @@
   "moduleReferences": [
     "DAFI 48-137",
     "DESR 6055.09_DAFMAN 91-201",
-    "DAFI 48-145"
+    "DAFI 48-145",
+    "DAFMAN 48-146",
+    "AFRCI 41-104 - Professional Board and National Certification Examinations"
   ],
   "selectedModules": [
     {
@@ -264,14 +266,23 @@
       "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
       "notes": "",
       "link": ""
+    },
+    {
+      "id": "14.1.3.15",
+      "title": "Fetal Protection Program",
+      "reference": "DAFMAN 48-146 - Occupational Health Program Management; AFRCI 41-104 - Professional Board and National Certification Examinations as applicable",
+      "trainingRequirement": "Use AF occupational and public health guidance to brief reproductive hazards, reporting expectations, and referral procedures. No direct OSHA 2254 module is mapped here.",
+      "trainingSource": "DAFMAN 48-146 - Occupational Health Program Management / local procedures",
+      "notes": "",
+      "link": ""
     }
   ],
   "savedLibraryPdf": "JSTO-Library/432-spts-cef-library-package.pdf",
-  "savedAt": "2026-05-12T16:57:35.256Z",
+  "savedAt": "2026-05-12T18:18:28.811Z",
   "libraryMeta": {
     "uploadedBy": "Abel Salas",
     "uploadedById": "abel salas",
     "savedLibraryPdf": "JSTO-Library/432-spts-cef-library-package.pdf",
-    "savedAt": "2026-05-12T16:57:35.256Z"
+    "savedAt": "2026-05-12T18:18:28.811Z"
   }
 }
