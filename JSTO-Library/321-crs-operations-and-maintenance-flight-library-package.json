@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "unit": "321 CRS",
+    "workCenter": "Operations and Maintenance Flight",
+    "exportBasename": "",
+    "officeSymbol": "DOM ",
+    "supervisor": "MSgt Richard Potts",
+    "phone": "609-754-2051",
+    "reviewer": "Capt Akil Romany ",
+    "reviewDate": "",
+    "effectiveDate": "2026-05-12",
+    "workDescription": "Contingency Response\nAircraft Maintenance \nAirfield Operations \nCommand and Control \nWeather \nEmergency Management \nFlight Line Ramp Operations ",
+    "references": "DAFI 21-101 (Aircraft and Equipment Maintenance Management)\nDAFI 21-101-AMCSUP-CRWSU (Aircraft and Equipment Maintenance Management)\nDAFMAN 91-203 (Department of the Air Force Occupational Safety, Fire, and Health Standards)\nDAFI 15-129 (Air and Space Weather Operations) \nAFMAN 10-207 (Command Posts) \nAFMAN 32-1007 (Emergency Management Operations) \nAFI 10-202 (Contingency Response Forces) \nAFMAN 13-204 V1-V2 (Airfield Management Operations)",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "Richard Potts",
+    "uploadedById": "richard potts"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/321-crs-operations-and-maintenance-flight-library-package.pdf",
+  "savedAt": "2026-05-12T14:39:04.978Z",
+  "libraryMeta": {
+    "uploadedBy": "Richard Potts",
+    "uploadedById": "richard potts",
+    "savedLibraryPdf": "JSTO-Library/321-crs-operations-and-maintenance-flight-library-package.pdf",
+    "savedAt": "2026-05-12T14:39:04.978Z"
+  }
+}
