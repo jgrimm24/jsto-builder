@@ -6,7 +6,7 @@
     "officeSymbol": "SCOS",
     "supervisor": "Gregory Swendsen/Lt Col/ SCOS CC",
     "phone": "757-225-6962",
-    "reviewer": "Alex Arevalo",
+    "reviewer": "Alexa Arevalo",
     "reviewDate": "2026-05-01",
     "effectiveDate": "2026-02-03",
     "workDescription": "",
@@ -23,8 +23,11 @@
     "weatherShelter": "",
     "bulletinBoard": "Hallway\n",
     "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
     "documentationNotes": "",
-    "annualReviewLog": ""
+    "annualReviewLog": "",
+    "uploadedBy": "Alexa Arevalo",
+    "uploadedById": "alexa arevalo"
   },
   "unitImage": {
     "name": "440.png",
@@ -49,5 +52,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-440-scos-library-package.pdf",
-  "savedAt": "2026-05-01T13:48:46.108Z"
+  "savedAt": "2026-05-14T17:32:16.564Z",
+  "libraryMeta": {
+    "uploadedBy": "Alexa Arevalo",
+    "uploadedById": "alexa arevalo",
+    "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-440-scos-library-package.pdf",
+    "savedAt": "2026-05-14T17:32:16.564Z"
+  }
 }
