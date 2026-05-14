@@ -24,7 +24,7 @@
     "bulletinBoard": "Hallway\n",
     "emergencyEquipment": "",
     "dafvaPostingLocation": "",
-    "documentationNotes": "",
+    "documentationNotes": "https://usaf.dps.mil/teams/11813/735SCOG/440SCOS/Lists/JSTO%20TRAINING%202026/overview.aspx",
     "annualReviewLog": "",
     "uploadedBy": "Alexa Arevalo",
     "uploadedById": "alexa arevalo"
@@ -52,11 +52,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-440-scos-library-package.pdf",
-  "savedAt": "2026-05-14T17:32:16.564Z",
+  "savedAt": "2026-05-14T17:36:39.841Z",
   "libraryMeta": {
     "uploadedBy": "Alexa Arevalo",
     "uploadedById": "alexa arevalo",
     "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-440-scos-library-package.pdf",
-    "savedAt": "2026-05-14T17:32:16.564Z"
+    "savedAt": "2026-05-14T17:36:39.841Z"
   }
 }
