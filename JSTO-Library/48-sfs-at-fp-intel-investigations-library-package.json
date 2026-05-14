@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "unit": "48 SFS",
+    "workCenter": "AT/FP Intel & Investigations",
+    "exportBasename": "",
+    "officeSymbol": "S-2",
+    "supervisor": "Mata, TSgt, NCOIC, Investigations",
+    "phone": "226-1852",
+    "reviewer": "SSgt Washington",
+    "reviewDate": "2026-05-14",
+    "effectiveDate": "2026-05-14",
+    "workDescription": "Intelligence Ops - Conduct threat analysis, analyze adversary TTPs (Tactics, Techniques, and Procedures), and produce intelligence briefs for leadership.\nInvestigations - Perform criminal investigations, process crime scenes, handle evidence, and conduct subject/witness interviews/interrogations.\nForce Protection - Manage the base's Threat Working Group (TWG) inputs and act as the primary liaison with AFOSI and local law enforcement.\nSecurity Programs - Oversight of the Information Security (INFOSEC), Operations Security (OPSEC), and Industrial Security programs within the squadron.\nField Support - Conduct site vulnerability assessments and support Integrated Defense (ID) planning through terrain and threat analysis.",
+    "references": "DAFI 31-115 Law & Order Operations\nDAFI 31-118 Security Forces Standards & Procedures\nDAFI 71-101, V1 Criminal Investigations\nDAFMAN 31-116 AF Motor Vehicle Traffic Supervision\nDAFMAN 31-101, V3 Installation Access Control\nDAFMAN 16-1404 Information Security Program\nDAFI 31-117 Arming & Use of Force\nAFI 90-821 - Hazard Communication (HAZCOM) Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.1200 - Hazard Communication",
+    "hazardAnalysis": "Crime Scene Processing \nPotential Hazards: Exposure to bloodborne pathogens, biohazards, fentanyl/illicit drugs, sharp objects (needles/glass), and unstable terrain.\t\n\nControls: Mandatory PPE (Nitrile gloves, N95 masks/respirators, boot covers). Use of designated sharps containers. Never touch suspected fentanyl without extreme precaution/HAZMAT support; maintain Narcan (Naloxone) in S2 kits.\n\n\nEvidence Handling & Vault Storage \nPotential Hazards: Accidental firearm discharge, exposure to hazardous materials/narcotics, and ergonomic injuries from lifting heavy evidence boxes.\t\n\nControls: Mandatory clearing barrel procedures before securing weapons in the vault. Utilize Two-Person Integrity (TPI) for narcotics. Ensure adequate ventilation in the drug storage area. Apply proper lifting techniques.\n\nSuspect Interviews & Interrogations\t\nPotential Hazards: Physical assault by an uncooperative suspect, suspect self-harm, or rapid escalation of violence in a confined space.\t\n\nControls: Suspect must be thoroughly searched by Patrols/S2 prior to entering the interview room. S2 personnel must secure their sidearms in a lockbox prior to entry. Interview room furniture must be bolted to the floor. Active duress alarm/panic button must be tested daily.\n\nIntelligence Analysis & Office Work\t\nPotential Hazards: Ergonomic strain (back/neck/wrists) from prolonged computer work, eye strain, and trip hazards from SIPR/NIPR cables.\t\n\nControls: Adhere to DAFMAN 91-203 office safety standards. Ensure workstations are ergonomically adjustable. Maintain clear walking paths. Implement the 20-20-20 rule for eye strain.\n\nInvestigative Vehicle Operations\t\nPotential Hazards: High-speed response accidents, driving under psychological stress, and operating unmarked vehicles with limited emergency lighting.\t\n\nControls: Mandatory emergency vehicle operations training. Adherence to base speed limits unless utilizing authorized emergency response protocols. Ensure all emergency lights/sirens are PMCS'd (preventative maintenance) weekly.\n\n",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "Organization/\t\t\tOn-Base/\t\tOff-Base\n\nCommand Post /\t\t        226-4800\t/\t01638-52-4800\nFire Department /\t\t  911\t\t/\t999 or 112\nAmbulance\t \t/\t          911\t\t/\t999 or 112\nSecurity Police \t/\t          911\t\t/\t999 or 112\nWing Safety\t\t  /              226-3737  \t/\t01638-52-3737\n",
+    "medicalFacility": "Emergency Room (RAF Lakenheath)\nBldg 935\nPhone:  DSN 226-4226\n",
+    "evacuation": "Primary: Exit through the front of bldg. 949 to Burgerking parking lot\nAlternate: Exit the JLTV barn door of bldg. 949 to the Post Office parking lot",
+    "shelter": "Room 1-08",
+    "activeShooter": "1.\tEscape\n2.\tBarricade\n3.\tFight",
+    "weatherShelter": "Room 1-08",
+    "bulletinBoard": " First Floor (UK) Foyer ",
+    "emergencyEquipment": "Fire Extinguisher: First Floor (UK) Foyer and First Floor (UK) Hallway",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "Training will be documented on AF Form 55 and stored in the members folder on 48 SFS (R) Drive.",
+    "annualReviewLog": "",
+    "uploadedBy": "Investigator Mata, Reggie",
+    "uploadedById": "investigator mata, reggie"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    "AFI 90-821 - Hazard Communication (HAZCOM) Program",
+    "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+    "OSHA 2254 - Training Requirements in OSHA Standards",
+    "29 CFR 1910.1200 - Hazard Communication"
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Train exposed employees at initial assignment and at least annually, with additional training when tasks or procedures create new exposure. Cover disease signs and transmission, the exposure control plan, task recognition, engineering controls, work practices, PPE use and disposal, and Hepatitis B vaccine information.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1030 - Bloodborne Pathogens",
+      "afTrainingRequirement": "Any person whose duties involve reasonably anticipated exposure to blood or other potentially infectious material must be trained and enrolled in the Bloodborne Pathogen Program. Supervisors of affected workplaces must establish a written exposure control plan and conduct training.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.9",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "AFI 90-821 - Hazard Communication (HAZCOM) Program; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Provide effective training at initial assignment and whenever a new chemical hazard is introduced. Cover where hazardous chemicals are present, the written program, labels and SDS access, how releases are detected, hazard types, protective measures, emergency procedures, and required PPE.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1200 - Hazard Communication",
+      "afTrainingRequirement": "Employees potentially exposed to chemical hazards must complete HAZCOM training upon initial assignment and whenever a new hazard or chemical is introduced or new tasks create new hazards. Supervisors must ensure SDS access for chemicals used in the work process.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.5 and para. 28.3.3",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "custom-1778757117694",
+      "title": "Interview Room Safety",
+      "reference": "Hands-on certification on securing weapons, searching suspects, and activating BDOC duress alarms.",
+      "trainingRequirement": "Document the local task or hazard, identify where the training is located, and explain how completion is documented.",
+      "trainingSource": "Custom module",
+      "notes": "The interview room is a high-risk, confined environment where S2 personnel interact closely with suspects who may be stressed, uncooperative, or hostile. The primary safety objective is to eliminate the presence of lethal weapons, maintain an unimpeded egress route for the investigator, and ensure immediate tactical support via duress monitoring.",
+      "link": ""
+    },
+    {
+      "id": "local-3",
+      "title": "Government Vehicle / Utility Vehicle Use",
+      "reference": "Local GOV, GVO, or UTV operating rules and licensing expectations",
+      "trainingRequirement": "Document local licensing, route restrictions, spotter use, rollover protection, and unit-specific operating rules. OSHA 2254 does not provide a direct GOV/UTV training excerpt here.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "notes": "Licensing: All personnel who operate a private motor vehicle or a government motor vehicle will maintain current a 3AF Form 435, 3AF Driving/Fuel Permit United Kingdom.\n\nMotorcycle riders will in process the squadron Motorcycle Safety Representative prior to riding in the United Kingdom.",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/48-sfs-at-fp-intel-investigations-library-package.pdf",
+  "savedAt": "2026-05-14T11:26:25.825Z",
+  "libraryMeta": {
+    "uploadedBy": "Investigator Mata, Reggie",
+    "uploadedById": "investigator mata, reggie",
+    "savedLibraryPdf": "JSTO-Library/48-sfs-at-fp-intel-investigations-library-package.pdf",
+    "savedAt": "2026-05-14T11:26:25.825Z"
+  }
+}
