@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "unit": "96 SFS",
+    "workCenter": "Safety Manager",
+    "exportBasename": "",
+    "officeSymbol": "S5R",
+    "supervisor": "Merriman, Deon/TSgt/USAF",
+    "phone": "882-7264",
+    "reviewer": "TSgt Merriman",
+    "reviewDate": "2026-05-15",
+    "effectiveDate": "2026-05-15",
+    "workDescription": "S1/S5 sections operate out of building 272 and building VCC. Typical duties are admin in nature with the exception of ESS and physical security. ",
+    "references": "31-Series- Air Force Guidance, 90-Series- Air Force Guidance, 91-Series Publications\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.1030 - Bloodborne Pathogens\nAFI 48-127 - Occupational Noise and Hearing Conservation Program\n29 CFR 1910.95 - Occupational noise exposure\nDESR 6055.09_DAFMAN 91-201\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\n29 CFR 1910.151 - Medical services and first aid\nDAFI 48-145\n29 CFR 1910.1450 - Occupational exposure to hazardous chemicals in laboratories\nAFI 48-139 - Laser and Optical Radiation Protection Program\n29 CFR 1910.39 - Fire prevention plans",
+    "hazardAnalysis": "Ergo hazards assosiated with admin work, fall hazards assosiated with use of ladders, patrol duites hazards while operating patrol vehicles. ",
+    "riskManagementNotes": "Inital training in DAF Learning, and annual in DAF Learning",
+    "trafficSafetyNotes": "Responding to calls for serivce, increased traffic hazards during summer months.",
+    "motorcycleSafetyReps": "INV Foley/S2, Mr. Boggio/96TW/SEG",
+    "emergencyNumbers": "911\nBDOC-850-882-2000",
+    "medicalFacility": "Eglin AFB Hospital",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "All personnel are expected to evac to the parking lot, each section lead will conduct roll call of all personal. ",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "TSgt Merriman, Deon/15 May 2026/DSN-882-7264",
+    "uploadedBy": "TSgt Merriman, Deon",
+    "uploadedById": "tsgt merriman, deon"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+    "OSHA 2254 - Training Requirements in OSHA Standards",
+    "29 CFR 1910.1030 - Bloodborne Pathogens",
+    "AFI 48-127 - Occupational Noise and Hearing Conservation Program",
+    "29 CFR 1910.95 - Occupational noise exposure",
+    "DESR 6055.09_DAFMAN 91-201",
+    "DAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program",
+    "29 CFR 1910.151 - Medical services and first aid",
+    "DAFI 48-145",
+    "29 CFR 1910.1450 - Occupational exposure to hazardous chemicals in laboratories",
+    "AFI 48-139 - Laser and Optical Radiation Protection Program",
+    "29 CFR 1910.39 - Fire prevention plans"
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Train exposed employees at initial assignment and at least annually, with additional training when tasks or procedures create new exposure. Cover disease signs and transmission, the exposure control plan, task recognition, engineering controls, work practices, PPE use and disposal, and Hepatitis B vaccine information.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1030 - Bloodborne Pathogens",
+      "afTrainingRequirement": "Any person whose duties involve reasonably anticipated exposure to blood or other potentially infectious material must be trained and enrolled in the Bloodborne Pathogen Program. Supervisors of affected workplaces must establish a written exposure control plan and conduct training.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.9",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "AFI 48-127 - Occupational Noise and Hearing Conservation Program",
+      "trainingRequirement": "Provide a hearing conservation training program for employees exposed at or above the action level, repeat it annually, and update it when equipment or work processes change. Cover hearing effects, protector selection and care, and the purpose of audiometric testing.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.95 - Occupational noise exposure",
+      "afTrainingRequirement": "Hazardous noise concerns must be evaluated and controls recommended through the occupational health risk assessment process. Use the AF Hearing Conservation Program as the training and control basis when shop noise hazards are identified.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2.2",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.11",
+      "title": "Explosives Safety Training",
+      "reference": "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards; DAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program",
+      "trainingRequirement": "Use explosives-specific AF lesson plans and local operating instructions. OSHA 2254 includes transportation and explosives references, but the Air Force explosives program should remain the primary training basis for this module.",
+      "trainingSource": "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards / local procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.13",
+      "title": "CPR Training",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 1",
+      "trainingRequirement": "Where work conditions require trained first-aid responders, ensure personnel are adequately trained and available. OSHA 2254 links first-aid and CPR availability to certain work settings, but local mission risk and AF requirements should define who must hold current CPR credentials.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.151 - Medical services and first aid and 1910.269; DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+      "afTrainingRequirement": "Initial first aid and CPR training must be completed before assigning duties that require it, refresher training must occur before certification expires, and CPR training must include PAD instruction. Remote or high-risk work must have an immediate medical response plan.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.8",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 24",
+      "trainingRequirement": "Use flight-line-specific AF lesson plans and local airfield driving rules. OSHA 2254 does not provide a direct flight-line driving training excerpt for this module.",
+      "trainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards / local procedures",
+      "afTrainingRequirement": "Use Chapter 24 flightline vehicle operations rules and local licensing programs. For specialized equipment like forklifts and hi-lifts around aircraft, only licensed drivers may operate and the owning organization must provide special training with spotter support as required.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 24.13 and para. 24.13.10",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.16",
+      "title": "Medical Surveillance Examination",
+      "reference": "DAFI 48-145 - Occupational and Environmental Health Program",
+      "trainingRequirement": "Tie this module to the specific exposure program and explain when surveillance is required, how scheduling works, and what triggers follow-up. OSHA 2254 aligns most directly where laboratory or substance-specific standards require information on exposure limits, signs and symptoms, and protective measures, but the AF medical surveillance program should remain the primary driver.",
+      "trainingSource": "Partial OSHA 2254 - Training Requirements in OSHA Standards alignment with 29 CFR 1910.1450 - Occupational exposure to hazardous chemicals in laboratories and exposure-specific standards",
+      "afTrainingRequirement": "Use the occupational health risk assessment and exposure-specific program requirements to decide who needs surveillance, what triggers enrollment, and what training or briefings must accompany the surveillance requirement.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2 and DAFI 48-145 - Occupational and Environmental Health Program",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-3",
+      "title": "Government Vehicle / Utility Vehicle Use",
+      "reference": "Local GOV, GVO, or UTV operating rules and licensing expectations",
+      "trainingRequirement": "Document local licensing, route restrictions, spotter use, rollover protection, and unit-specific operating rules. OSHA 2254 does not provide a direct GOV/UTV training excerpt here.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.18",
+      "title": "Laser Safety Training",
+      "reference": "AFI 48-139 - Laser and Optical Radiation Protection Program",
+      "trainingRequirement": "Use AF laser program guidance for laser classes, beam hazards, eyewear selection, alignment controls, and access restrictions. No direct OSHA 2254 module is mapped here.",
+      "trainingSource": "AFI 48-139 - Laser and Optical Radiation Protection Program",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-2",
+      "title": "Active Shooter Response",
+      "reference": "Local emergency response briefing and lockdown procedures",
+      "trainingRequirement": "Tie this to the local emergency action plan, shelter/lockdown locations, notification methods, and commander-directed response procedures.",
+      "trainingSource": "Local emergency action plan",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "Manual lifting techniques and available lifting devices",
+      "trainingRequirement": "Cover shop-specific lifting limits, two-person lift triggers, hand truck and lifting-device use, and when supervisors require assisted handling. No direct OSHA 2254 standalone manual-lifting module is mapped here.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "afTrainingRequirement": "Supervisors must ensure thorough training on proper manual lifting techniques, required PPE, and the use of manual lifting devices. Training must use both verbal and written materials, include practice on proper motions, and be documented under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.10.3",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "Local extinguisher, pull station, and fire reporting procedures",
+      "trainingRequirement": "Review the fire prevention plan with employees when the plan is developed, when responsibilities change, and when the plan changes. If extinguishers are provided for employee use, train employees on the general principles of extinguisher use and the hazards of incipient-stage firefighting at initial assignment and at least annually. Train designated users on the specific equipment they are expected to use.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.39 - Fire prevention plans and 1910.157",
+      "afTrainingRequirement": "Facility managers and supervisors must establish and maintain a fire prevention training program through the JSTO so employees understand their fire prevention and protection responsibilities in their work areas. This is fulfilled through job safety training and documentation under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 6.2.1.1",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-7",
+      "title": "Thermal Stress / Heat and Cold Stress",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; DAFI 48-145 - Occupational and Environmental Health Program; local Bioenvironmental Engineering or Occupational Health guidance",
+      "trainingRequirement": "Cover heat stress, cold stress, WBGT or locally directed exposure monitoring, acclimatization, hydration, work/rest cycles, buddy checks, PPE or clothing considerations, symptom recognition, supervisor notification, and emergency response actions for suspected heat illness or cold injury.",
+      "trainingSource": "AF occupational safety and occupational health guidance; local BE/OEH procedures",
+      "afTrainingRequirement": "Use the occupational health risk assessment, local BE recommendations, and supervisor hazard controls to brief personnel on thermal stress hazards and controls for hot, cold, humid, outdoor, flight line, industrial, or PPE-intensive work areas.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards and DAFI 48-145 - Occupational and Environmental Health Program",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-9",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Workplace-specific limits on rings, necklaces, watches, and loose items",
+      "trainingRequirement": "Use local shop rules and hazard analysis to define where jewelry, loose clothing, or unsecured items are prohibited around moving parts, climbing, electrical work, or snag hazards.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/96-sfs-safety-manager-library-package.pdf",
+  "savedAt": "2026-05-15T18:49:52.368Z",
+  "libraryMeta": {
+    "uploadedBy": "TSgt Merriman, Deon",
+    "uploadedById": "tsgt merriman, deon",
+    "savedLibraryPdf": "JSTO-Library/96-sfs-safety-manager-library-package.pdf",
+    "savedAt": "2026-05-15T18:49:52.368Z"
+  }
+}
