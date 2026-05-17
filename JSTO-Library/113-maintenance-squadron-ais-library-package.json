@@ -10,13 +10,13 @@
     "reviewDate": "2026-05-17",
     "effectiveDate": "2026-05-19",
     "workDescription": "The Avionics Intermediate Shop (AFSC: 2A0X1) Personnel perform and manage avionics test station functions and activities for F-16 aircraft.  Personnel operate, inspect, maintain, program, and calibrate computer and manually operated avionics test equipment, support equipment, and aircraft avionics systems components.  Certain components that are tested emit radio frequency radiation.  Electrical hazards include high voltage and high amperage.  Repair actions include soldering, utilization of hazmat for cleaning and adhesive purposes.  Compressed Air and Compressed Nitrogen are used for cleaning and testing purposes.  Personnel also process supplies through the supply system.  This requires loading and unloading wooden crates and reusable cardboard containers of often heavy weight.  Mobility requirements involve pallet building.",
-    "references": "dafi48-109, dafi48-109_113MXGSUP, T.O. 00-25-234, T.O. 00-25-259, T.O. 1-1A-15, T.O. 00-25-223, T.O. 1-1-312\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)\nAFI 90-821 - Hazard Communication (HAZCOM) Program\n29 CFR 1910.1200 - Hazard Communication\nAFI 48-127 - Occupational Noise and Hearing Conservation Program\n29 CFR 1910.95 - Occupational noise exposure\n29 CFR 1910.146 - Permit-required confined spaces\nDAFI 48-137\nAF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing\n29 CFR 1910.134 - Respiratory protection\n29 CFR 1910.151 - Medical services and first aid\nAFI 48-109 - Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program\n29 CFR 1910.332 - Training\n29 CFR 1910.39 - Fire prevention plans\nDAFI 48-145",
+    "references": "dafi48-109, dafi48-109_113MXGSUP, T.O. 00-25-234, T.O. 00-25-259, T.O. 1-1A-15, T.O. 00-25-223, T.O. 1-1-312\nDAFI 48-145",
     "hazardAnalysis": "EMFR, Electrical hazards, Soldering, Hazmat, Compressed Air and Compressed Nitrogen, and Heavy Lifting.  Refer to BioEnviromental Survey for controls.",
     "riskManagementNotes": "",
     "trafficSafetyNotes": "",
     "motorcycleSafetyReps": "",
-    "emergencyNumbers": "",
-    "medicalFacility": "Malcolm Grow ",
+    "emergencyNumbers": "Dial 911 which will reach Prince Georges County Police.\nDial 301-98-9911 to reach JB Andrews Security Forces",
+    "medicalFacility": "Malcolm Grow Medical Clinics and Surgery Center\n1060 W Perimeter Rd, Joint Base Andrews, MD 20762\n(888) 999-1212",
     "evacuation": "Follow the nearest exit and meet at the Gazebo at the SE corner of Hangar 16 (Bldg. 3119)",
     "shelter": "Building 3109, Room 112",
     "activeShooter": "",
@@ -61,21 +61,6 @@
     "type": "application/pdf"
   },
   "moduleReferences": [
-    "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
-    "OSHA 2254 - Training Requirements in OSHA Standards",
-    "29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
-    "AFI 90-821 - Hazard Communication (HAZCOM) Program",
-    "29 CFR 1910.1200 - Hazard Communication",
-    "AFI 48-127 - Occupational Noise and Hearing Conservation Program",
-    "29 CFR 1910.95 - Occupational noise exposure",
-    "29 CFR 1910.146 - Permit-required confined spaces",
-    "DAFI 48-137",
-    "AF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing",
-    "29 CFR 1910.134 - Respiratory protection",
-    "29 CFR 1910.151 - Medical services and first aid",
-    "AFI 48-109 - Electromagnetic Field Radiation (EMFR) Occupational and Environmental Health Program",
-    "29 CFR 1910.332 - Training",
-    "29 CFR 1910.39 - Fire prevention plans",
     "DAFI 48-145"
   ],
   "selectedModules": [
@@ -120,17 +105,6 @@
       "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.146 - Permit-required confined spaces",
       "afTrainingRequirement": "Employees entering confined spaces must be trained to safely accomplish assigned duties and rescue procedures for the specific permit-required space entered. Safety observers and attendants must also be trained on rescue procedures for each type of permit-required confined space.",
       "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 28.2.9 and para. 28.3.2",
-      "notes": "",
-      "link": ""
-    },
-    {
-      "id": "14.1.3.7",
-      "title": "Respiratory Protection Program",
-      "reference": "DAFI 48-137 - Respiratory Protection Program; AF Form 2767 - Occupational Health Training & Protective Equipment Fit Testing",
-      "trainingRequirement": "Provide comprehensive, understandable respirator training before use and at least annually thereafter. Cover why the respirator is needed, limitations, emergency use, inspection, donning and seal checks, maintenance and storage, and symptoms that may limit safe use.",
-      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.134 - Respiratory protection",
-      "afTrainingRequirement": "Respiratory hazards must be evaluated by Bioenvironmental Engineering and respiratory protection used where required by the occupational health assessment. Use the AF Respiratory Protection Program for controls, fit testing, and local training requirements.",
-      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2.4 and para. 28.2.11",
       "notes": "",
       "link": ""
     },
@@ -240,11 +214,11 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/113-maintenance-squadron-ais-library-package.pdf",
-  "savedAt": "2026-05-17T19:54:26.955Z",
+  "savedAt": "2026-05-17T20:12:43.271Z",
   "libraryMeta": {
     "uploadedBy": "scott morrill",
     "uploadedById": "scott morrill",
     "savedLibraryPdf": "JSTO-Library/113-maintenance-squadron-ais-library-package.pdf",
-    "savedAt": "2026-05-17T19:54:26.955Z"
+    "savedAt": "2026-05-17T20:12:43.271Z"
   }
 }
