@@ -330,6 +330,7 @@ const defaultState = {
     dataUrl: ""
   },
   emergencyEquipmentFiles: [],
+  mishapReportingFiles: [],
   gvoRiskFiles: [],
   form1118Files: [],
   bioSurvey: {
@@ -363,6 +364,9 @@ const removeEvacuationImageButton = document.getElementById("remove-evacuation-i
 const emergencyEquipmentFilesInput = document.getElementById("emergency-equipment-files");
 const emergencyEquipmentFilesStatus = document.getElementById("emergency-equipment-files-status");
 const removeEmergencyEquipmentFilesButton = document.getElementById("remove-emergency-equipment-files");
+const mishapReportingFilesInput = document.getElementById("mishap-reporting-files");
+const mishapReportingFilesStatus = document.getElementById("mishap-reporting-files-status");
+const removeMishapReportingFilesButton = document.getElementById("remove-mishap-reporting-files");
 const gvoRiskFilesInput = document.getElementById("gvo-risk-files");
 const gvoRiskStatus = document.getElementById("gvo-risk-status");
 const removeGvoRiskFilesButton = document.getElementById("remove-gvo-risk-files");
@@ -396,6 +400,7 @@ if (dafsmsImageStatus) {
 }
 renderEvacuationImageStatus();
 renderEmergencyEquipmentFilesStatus();
+renderMishapReportingFilesStatus();
 renderGvoRiskStatus();
 renderForm1118Status();
 renderBioSurveyStatus();
@@ -432,6 +437,8 @@ evacuationImageInput.addEventListener("change", uploadEvacuationImage);
 removeEvacuationImageButton.addEventListener("click", removeEvacuationImage);
 emergencyEquipmentFilesInput.addEventListener("change", uploadEmergencyEquipmentFiles);
 removeEmergencyEquipmentFilesButton.addEventListener("click", removeEmergencyEquipmentFiles);
+mishapReportingFilesInput.addEventListener("change", uploadMishapReportingFiles);
+removeMishapReportingFilesButton.addEventListener("click", removeMishapReportingFiles);
 gvoRiskFilesInput.addEventListener("change", uploadGvoRiskFiles);
 removeGvoRiskFilesButton.addEventListener("click", removeGvoRiskFiles);
 form1118FilesInput.addEventListener("change", uploadForm1118Files);
@@ -504,6 +511,7 @@ function loadState() {
         ...(parsed.evacuationImage || {})
       },
       emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+      mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
       gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
       form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
       bioSurvey: {
@@ -905,6 +913,11 @@ function renderPreview() {
     <section class="preview-section">
       <h3>Reporting Unsafe Equipment, Conditions, or Procedures</h3>
       ${renderUnsafeReportingSection()}
+    </section>
+
+    <section class="preview-section">
+      <h3>Local Mishap / Hazard Reporting Procedures</h3>
+      ${renderMishapReportingFilesPreview()}
     </section>
 
     <section class="preview-section">
@@ -1593,6 +1606,33 @@ function renderEmergencyEquipmentFiles() {
   `;
 }
 
+function renderMishapReportingFilesStatus() {
+  const count = state.mishapReportingFiles.length;
+  if (!count) {
+    mishapReportingFilesStatus.textContent = "No mishap or hazard reporting procedures uploaded yet.";
+    return;
+  }
+
+  mishapReportingFilesStatus.textContent = `${count} mishap / hazard reporting procedure file${count === 1 ? "" : "s"} loaded.`;
+}
+
+function renderMishapReportingFilesPreview() {
+  if (!state.mishapReportingFiles.length) {
+    return `<p class="muted">No local mishap or hazard reporting procedures uploaded.</p>`;
+  }
+
+  const items = state.mishapReportingFiles.map((file, index) => `
+      <li>${renderUploadedAsset(file, `Mishap / Hazard Reporting Procedure ${index + 1}`, "Mishap or hazard reporting procedure")}</li>
+    `).join("");
+
+  return `
+    <div class="mishap-reporting-files-preview">
+      <strong>Uploaded Local Procedures:</strong>
+      <ul>${items}</ul>
+    </div>
+  `;
+}
+
 function renderGvoRiskStatus() {
   const count = state.gvoRiskFiles.length;
   if (!count) {
@@ -1881,6 +1921,39 @@ function removeEmergencyEquipmentFiles() {
   renderPreview();
 }
 
+async function uploadMishapReportingFiles(event) {
+  const files = Array.from(event.target.files || []);
+  if (!files.length) {
+    return;
+  }
+
+  const loadedFiles = await Promise.all(files.map((file) => new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      resolve({
+        name: file.name,
+        dataUrl: String(reader.result || ""),
+        type: file.type || ""
+      });
+    };
+    reader.readAsDataURL(file);
+  })));
+
+  state.mishapReportingFiles = [...state.mishapReportingFiles, ...loadedFiles];
+  mishapReportingFilesInput.value = "";
+  saveState();
+  renderMishapReportingFilesStatus();
+  renderPreview();
+}
+
+function removeMishapReportingFiles() {
+  state.mishapReportingFiles = [];
+  mishapReportingFilesInput.value = "";
+  saveState();
+  renderMishapReportingFilesStatus();
+  renderPreview();
+}
+
 async function uploadGvoRiskFiles(event) {
   const files = Array.from(event.target.files || []);
   if (!files.length) {
@@ -1991,6 +2064,7 @@ function applyImportedState(parsed) {
       ...(parsed.evacuationImage || {})
     },
     emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+    mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
     gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
     form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
     bioSurvey: {
@@ -2007,6 +2081,7 @@ function applyImportedState(parsed) {
   renderDafsmsImageStatus();
   renderEvacuationImageStatus();
   renderEmergencyEquipmentFilesStatus();
+  renderMishapReportingFilesStatus();
   renderGvoRiskStatus();
   renderForm1118Status();
   renderBioSurveyStatus();
