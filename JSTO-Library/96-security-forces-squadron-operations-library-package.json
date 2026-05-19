@@ -9,19 +9,19 @@
     "reviewer": "TSgt Deon Merriman",
     "reviewDate": "2026-05-19",
     "effectiveDate": "2026-05-19",
-    "workDescription": "S3O/Flights operate out of Building 272, 1462, gate shacks, and police vehicles. Typical duties are administrative in nature, checking IDs and responding to incidents.",
+    "workDescription": "S3O/Flights operate out of Building 272, 1462, gate shacks, and police vehicles. Typical duties are administrative in nature, controlling access to Eglin AFB and responding to incidents.",
     "references": "31-Series- Air Force Guidance, 90-Series- Air Force Guidance, 91-Series Publications\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nOSHA 2254 - Training Requirements in OSHA Standards\n29 CFR 1910.1030 - Bloodborne Pathogens\nAFI 48-127 - Occupational Noise and Hearing Conservation Program\n29 CFR 1910.95 - Occupational noise exposure\nDESR 6055.09_DAFMAN 91-201\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\n29 CFR 1910.151 - Medical services and first aid\nDAFI 48-145\n29 CFR 1910.1450 - Occupational exposure to hazardous chemicals in laboratories\nAFI 48-139 - Laser and Optical Radiation Protection Program\n29 CFR 1910.39 - Fire prevention plans\nDAFMAN 48-146\nAFRCI 41-104 - Professional Board and National Certification Examinations",
     "hazardAnalysis": "\nErgo hazards associated with admin work, fall hazards associated with use of ladders, patrol duties hazards while operating patrol vehicles.",
     "riskManagementNotes": "",
-    "trafficSafetyNotes": "Responding to calls for service, increased traffic hazards during summer months andusing a spotter while backing up",
+    "trafficSafetyNotes": "Responding to calls for service, increased traffic hazards during summer months and using a spotter while backing up",
     "motorcycleSafetyReps": "INV Foley/S2, Mr. Boggio/96TW/SEG",
     "emergencyNumbers": "911\nBDOC: 850-882-2000",
     "medicalFacility": "Eglin AFB Hospital",
-    "evacuation": "",
+    "evacuation": "Parking lot adjacent from building 272",
     "shelter": "Patrolmans/Flight Chiefs office",
     "activeShooter": "Apply PPE and stand by response/recall",
-    "weatherShelter": "",
-    "bulletinBoard": "Hallway",
+    "weatherShelter": "Patrolmans/Flight Chiefs office",
+    "bulletinBoard": "Building 272 hallway",
     "emergencyEquipment": "All personnel are expected to evacuate to the parking lot across from building 272, each section lead will conduct roll call of all  personal.",
     "dafvaPostingLocation": "",
     "documentationNotes": "",
@@ -42,6 +42,7 @@
     "dataUrl": ""
   },
   "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
   "gvoRiskFiles": [],
   "form1118Files": [],
   "bioSurvey": {
@@ -209,11 +210,11 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/96-security-forces-squadron-operations-library-package.pdf",
-  "savedAt": "2026-05-19T16:50:13.225Z",
+  "savedAt": "2026-05-19T17:00:20.412Z",
   "libraryMeta": {
     "uploadedBy": "Selena Johnson",
     "uploadedById": "selena johnson",
     "savedLibraryPdf": "JSTO-Library/96-security-forces-squadron-operations-library-package.pdf",
-    "savedAt": "2026-05-19T16:50:13.225Z"
+    "savedAt": "2026-05-19T17:00:20.412Z"
   }
 }
