@@ -17,11 +17,11 @@
     "motorcycleSafetyReps": "",
     "emergencyNumbers": "",
     "medicalFacility": "",
-    "evacuation": "",
+    "evacuation": "In Case of a Fire - Think \"SPEED\"\nSounds the alarm or yell \"FIRE FIRE FIRE\"\nPhone the Fire Department \nEvacuate the building and meet up in the parking lot of building 1156\nExtinguish the fire if possible \nDirect firefighters to the fire ",
     "shelter": "",
     "activeShooter": "",
     "weatherShelter": "",
-    "bulletinBoard": "",
+    "bulletinBoard": "Bldg 1156 - Main Corridoor",
     "emergencyEquipment": "",
     "dafvaPostingLocation": "",
     "documentationNotes": "",
@@ -53,11 +53,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
-  "savedAt": "2026-05-20T12:55:18.266Z",
+  "savedAt": "2026-05-20T15:35:23.627Z",
   "libraryMeta": {
     "uploadedBy": "48 CES/CSS JSTO",
     "uploadedById": "48 ces/css jsto",
     "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
-    "savedAt": "2026-05-20T12:55:18.266Z"
+    "savedAt": "2026-05-20T15:35:23.627Z"
   }
 }
