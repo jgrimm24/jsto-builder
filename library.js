@@ -8,6 +8,8 @@ const listElement = document.getElementById("library-list");
 const refreshButton = document.getElementById("refresh-library");
 const identityInput = document.getElementById("library-identity");
 let libraryDeleteAvailable = Boolean(LIBRARY_API_BASE);
+let identityReloadTimer = 0;
+let libraryLoadSequence = 0;
 
 hydrateIdentityField();
 
@@ -20,15 +22,27 @@ if (refreshButton) {
 if (identityInput) {
   identityInput.addEventListener("input", () => {
     writeStoredIdentity(identityInput.value);
-    loadLibraryFiles();
+    scheduleIdentityReload();
   });
 }
 
 loadLibraryFiles();
 
-async function loadLibraryFiles() {
-  setStatus("Loading JSTO library files...");
-  renderLoading();
+function scheduleIdentityReload() {
+  window.clearTimeout(identityReloadTimer);
+  setStatus("Checking library ownership...");
+  identityReloadTimer = window.setTimeout(() => {
+    loadLibraryFiles({ preserveList: true });
+  }, 500);
+}
+
+async function loadLibraryFiles(options = {}) {
+  const loadId = ++libraryLoadSequence;
+  const preserveList = Boolean(options.preserveList) && listElement.innerHTML.trim();
+  setStatus(preserveList ? "Checking library ownership..." : "Loading JSTO library files...");
+  if (!preserveList) {
+    renderLoading();
+  }
 
   if (LIBRARY_API_BASE) {
     try {
@@ -40,6 +54,10 @@ async function loadLibraryFiles() {
         throw new Error(result.error || "Unable to load JSTO Library files.");
       }
 
+      if (loadId !== libraryLoadSequence) {
+        return;
+      }
+
       libraryDeleteAvailable = true;
       const packages = Array.isArray(result.packages) ? result.packages : [];
       renderLibraryFiles(packages);
@@ -48,9 +66,15 @@ async function loadLibraryFiles() {
       return;
     } catch (error) {
       try {
+        if (loadId !== libraryLoadSequence) {
+          return;
+        }
         await loadLibraryFilesFromGitHub(error);
         return;
       } catch (fallbackError) {
+        if (loadId !== libraryLoadSequence) {
+          return;
+        }
         renderError(fallbackError instanceof Error ? fallbackError.message : "Unable to load JSTO Library files.");
         return;
       }
@@ -58,8 +82,14 @@ async function loadLibraryFiles() {
   }
 
   try {
+    if (loadId !== libraryLoadSequence) {
+      return;
+    }
     await loadLibraryFilesFromGitHub();
   } catch (error) {
+    if (loadId !== libraryLoadSequence) {
+      return;
+    }
     renderError(error instanceof Error ? error.message : "Unable to load JSTO Library files.");
   }
 }
