@@ -9,15 +9,15 @@
     "reviewer": "MSgt Jimenez, Kenneth ",
     "reviewDate": "2026-05-20",
     "effectiveDate": "2026-05-20",
-    "workDescription": "",
-    "references": "",
+    "workDescription": "The CSS (Commander Support Staff) and the Command Team (Commander, Chief Deputy & Shirt) are located within Building 1156 and the UTM (Unit Training Manager), USR (Unit Safety Representative) & VCO (Vehicle Control Officer) are in Building 1146. All three sections work within an ‘Admin Building’ but fall under the same section for this JSTO.",
+    "references": "DAFMAN 91-203 Air Force Occupational Safety, Fire and Health Standards\nDAFMAN 91-224 Ground Safety Investigation and Hazard Reporting\nDAFI 90-802 Risk Management\nDAFI 91-204 Safety Investigations and Reports\nDAFI 91-207 Traffic Safety Program\nDAFI 91-202 Department of The Air Force (DAF) Mishap Prevention program",
     "hazardAnalysis": "",
     "riskManagementNotes": "",
     "trafficSafetyNotes": "",
     "motorcycleSafetyReps": "",
     "emergencyNumbers": "",
     "medicalFacility": "",
-    "evacuation": "In Case of a Fire - Think \"SPEED\"\nSounds the alarm or yell \"FIRE FIRE FIRE\"\nPhone the Fire Department \nEvacuate the building and meet up in the parking lot of building 1156\nExtinguish the fire if possible \nDirect firefighters to the fire ",
+    "evacuation": "In Case of a Fire - Think \"SPEED\"\nSound the alarm or yell \"FIRE FIRE FIRE\"\nPhone the Fire Department \nEvacuate the building and meet up in the parking lot of building 1156\nExtinguish the fire if possible \nDirect firefighters to the fire ",
     "shelter": "",
     "activeShooter": "",
     "weatherShelter": "",
@@ -53,11 +53,11 @@
   "moduleReferences": [],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
-  "savedAt": "2026-05-20T15:35:23.627Z",
+  "savedAt": "2026-05-20T15:40:38.559Z",
   "libraryMeta": {
     "uploadedBy": "48 CES/CSS JSTO",
     "uploadedById": "48 ces/css jsto",
     "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
-    "savedAt": "2026-05-20T15:35:23.627Z"
+    "savedAt": "2026-05-20T15:40:38.559Z"
   }
 }
