@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "unit": "48 Civil Engineer Squadron",
+    "workCenter": "48 CES/CSS",
+    "exportBasename": "",
+    "officeSymbol": "48 CES/CSS",
+    "supervisor": "",
+    "phone": "",
+    "reviewer": "",
+    "reviewDate": "",
+    "effectiveDate": "",
+    "workDescription": "",
+    "references": "",
+    "hazardAnalysis": "",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuation": "",
+    "shelter": "",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "48 CES/CSS JSTO",
+    "uploadedById": "48 ces/css jsto"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
+  "savedAt": "2026-05-20T12:39:14.381Z",
+  "libraryMeta": {
+    "uploadedBy": "48 CES/CSS JSTO",
+    "uploadedById": "48 ces/css jsto",
+    "savedLibraryPdf": "JSTO-Library/48-civil-engineer-squadron-48-ces-css-library-package.pdf",
+    "savedAt": "2026-05-20T12:39:14.381Z"
+  }
+}
