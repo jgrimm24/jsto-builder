@@ -7,9 +7,11 @@ const statusElement = document.getElementById("library-status");
 const listElement = document.getElementById("library-list");
 const refreshButton = document.getElementById("refresh-library");
 const identityInput = document.getElementById("library-identity");
+const searchInput = document.getElementById("library-search");
 let libraryDeleteAvailable = Boolean(LIBRARY_API_BASE);
 let identityReloadTimer = 0;
 let libraryLoadSequence = 0;
+let loadedPackages = [];
 
 hydrateIdentityField();
 
@@ -23,6 +25,13 @@ if (identityInput) {
   identityInput.addEventListener("input", () => {
     writeStoredIdentity(identityInput.value);
     scheduleIdentityReload();
+  });
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    renderLibraryFiles(loadedPackages);
+    updateLibraryCountStatus(loadedPackages.length);
   });
 }
 
@@ -60,9 +69,9 @@ async function loadLibraryFiles(options = {}) {
 
       libraryDeleteAvailable = true;
       const packages = Array.isArray(result.packages) ? result.packages : [];
-      renderLibraryFiles(packages);
-      const count = packages.length;
-      setStatus(`${count} JSTO package${count === 1 ? "" : "s"} in the library.`);
+      loadedPackages = packages;
+      renderLibraryFiles(loadedPackages);
+      updateLibraryCountStatus(loadedPackages.length);
       return;
     } catch (error) {
       try {
@@ -121,10 +130,10 @@ async function loadLibraryFilesFromGitHub(originalError) {
 
   libraryDeleteAvailable = false;
   const packages = groupLibraryPackages(files);
-  renderLibraryFiles(packages);
-  const count = packages.length;
+  loadedPackages = packages;
+  renderLibraryFiles(loadedPackages);
   const reason = originalError instanceof Error && originalError.message ? ` The upload service appears blocked on this network (${originalError.message}).` : "";
-  setStatus(`${count} JSTO package${count === 1 ? "" : "s"} loaded from GitHub.${reason} Delete and Edit are unavailable from this network view.`);
+  updateLibraryCountStatus(loadedPackages.length, `loaded from GitHub.${reason} Delete and Edit are unavailable from this network view.`);
 }
 
 function renderLoading() {
@@ -157,12 +166,20 @@ function groupLibraryPackages(files) {
 }
 
 function renderLibraryFiles(packages) {
-  if (!Array.isArray(packages) || !packages.length) {
+  const allPackages = Array.isArray(packages) ? packages : [];
+  const filteredPackages = filterLibraryPackages(allPackages);
+
+  if (!allPackages.length) {
     listElement.innerHTML = '<div class="library-empty">No JSTOs have been saved to the library yet.</div>';
     return;
   }
 
-  listElement.innerHTML = packages.map((jstoPackage) => {
+  if (!filteredPackages.length) {
+    listElement.innerHTML = '<div class="library-empty">No JSTOs match that search.</div>';
+    return;
+  }
+
+  listElement.innerHTML = filteredPackages.map((jstoPackage) => {
     const pdfFile = jstoPackage.pdf || {};
     const jsonFile = jstoPackage.json || null;
     const sizeLabel = formatBytes(pdfFile.size || 0);
@@ -215,6 +232,46 @@ function renderLibraryFiles(packages) {
       handleDelete(button);
     });
   });
+}
+
+function filterLibraryPackages(packages) {
+  const query = normalizeSearchText(searchInput?.value || "");
+  if (!query) {
+    return packages;
+  }
+
+  return packages.filter((jstoPackage) => normalizeSearchText(createPackageSearchText(jstoPackage)).includes(query));
+}
+
+function createPackageSearchText(jstoPackage) {
+  const pdfFile = jstoPackage?.pdf || {};
+  const jsonFile = jstoPackage?.json || {};
+  return [
+    pdfFile.name,
+    pdfFile.path,
+    jsonFile.name,
+    jsonFile.path,
+    jstoPackage?.uploadedBy,
+    jstoPackage?.key
+  ].filter(Boolean).join(" ");
+}
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function updateLibraryCountStatus(totalCount, suffix = "in the library.") {
+  const filteredCount = filterLibraryPackages(loadedPackages).length;
+  const query = String(searchInput?.value || "").trim();
+  if (query) {
+    setStatus(`${filteredCount} of ${totalCount} JSTO package${totalCount === 1 ? "" : "s"} match "${query}".`);
+    return;
+  }
+
+  setStatus(`${totalCount} JSTO package${totalCount === 1 ? "" : "s"} ${suffix}`);
 }
 
 function createLibraryFileDownloadUrl(value) {
