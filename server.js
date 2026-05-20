@@ -53,8 +53,20 @@ function normalizeIdentity(value) {
   return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
 }
 
+function normalizeIdentityKey(value) {
+  return normalizeIdentity(value)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
 function isAdminIdentity(identity) {
-  return adminIdentitySet.has(normalizeIdentity(identity));
+  const normalizedIdentity = normalizeIdentity(identity);
+  const identityKey = normalizeIdentityKey(identity);
+  return adminIdentitySet.has(normalizedIdentity)
+    || Array.from(adminIdentitySet).some((adminIdentity) => normalizeIdentityKey(adminIdentity) === identityKey);
 }
 
 function sendJson(res, statusCode, payload) {
@@ -530,7 +542,12 @@ function canManageOwnedLibraryItem(uploadedById, identity) {
     return true;
   }
 
-  return Boolean(uploadedById) && normalizedIdentity === uploadedById;
+  const normalizedUploadedById = normalizeIdentity(uploadedById);
+  return Boolean(normalizedUploadedById)
+    && (
+      normalizedIdentity === normalizedUploadedById
+      || normalizeIdentityKey(normalizedIdentity) === normalizeIdentityKey(normalizedUploadedById)
+    );
 }
 
 function createForbiddenError(message) {
