@@ -15,6 +15,11 @@ const libraryDeleteToken = process.env.LIBRARY_DELETE_TOKEN || "";
 const libraryAdminIdentities = process.env.LIBRARY_ADMIN_IDENTITIES || "";
 const maxBodySize = 90 * 1024 * 1024;
 const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const libraryPackageCacheMs = 60 * 1000;
+let libraryPackageCache = {
+  expiresAt: 0,
+  packages: []
+};
 const adminIdentitySet = new Set(
   String(libraryAdminIdentities || "")
     .split(",")
@@ -377,14 +382,14 @@ async function renderLibraryPdf(payload, serviceBaseUrl) {
   }
 }
 
-function createGitHubHeaders(extraHeaders = {}) {
+function createGitHubHeaders(extraHeaders = {}, options = {}) {
   const headers = {
     "Accept": "application/vnd.github+json",
     "User-Agent": "jsto-builder-upload-service",
     ...extraHeaders
   };
 
-  if (githubToken) {
+  if (githubToken && options.includeAuth !== false) {
     headers.Authorization = `Bearer ${githubToken}`;
   }
 
@@ -392,12 +397,21 @@ function createGitHubHeaders(extraHeaders = {}) {
 }
 
 async function fetchGitHubJson(url, options = {}) {
-  const response = await fetch(url, {
+  const requestOptions = {
     ...options,
     headers: createGitHubHeaders(options.headers || {})
-  });
+  };
+  let response = await fetch(url, requestOptions);
+  let result = await response.json().catch(() => ({}));
 
-  const result = await response.json().catch(() => ({}));
+  if (!response.ok && shouldRetryGitHubRequestWithoutAuth(response, result, options)) {
+    response = await fetch(url, {
+      ...options,
+      headers: createGitHubHeaders(options.headers || {}, { includeAuth: false })
+    });
+    result = await response.json().catch(() => ({}));
+  }
+
   if (!response.ok) {
     const error = new Error(result.message || "GitHub request failed.");
     error.statusCode = response.status;
@@ -405,6 +419,15 @@ async function fetchGitHubJson(url, options = {}) {
   }
 
   return result;
+}
+
+function shouldRetryGitHubRequestWithoutAuth(response, result, options) {
+  const method = String(options.method || "GET").toUpperCase();
+  const message = String(result?.message || "");
+  return method === "GET"
+    && githubToken
+    && response.status === 403
+    && /rate limit/i.test(message);
 }
 
 async function fetchExistingGitHubFileSha(targetPath) {
@@ -440,13 +463,23 @@ async function createGitHubFile(targetPath, content, message) {
     body.sha = existingSha;
   }
 
-  return fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
+  const result = await fetchGitHubJson(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${encodeURIComponent(targetPath).replace(/%2F/g, "/")}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(body)
   });
+
+  invalidateLibraryPackageCache();
+  return result;
+}
+
+function invalidateLibraryPackageCache() {
+  libraryPackageCache = {
+    expiresAt: 0,
+    packages: []
+  };
 }
 
 async function listLibraryItems() {
@@ -524,6 +557,15 @@ async function fetchLibraryJsonIfExists(targetPath) {
   }
 }
 
+async function fetchLibraryJsonFromDownloadUrl(downloadUrl) {
+  const response = await fetch(downloadUrl);
+  if (!response.ok) {
+    throw new Error(`The JSTO editable package request failed with ${response.status}.`);
+  }
+
+  return response.json();
+}
+
 function getOwnershipFromState(state) {
   const libraryMeta = state?.libraryMeta || {};
   const meta = state?.meta || {};
@@ -585,6 +627,10 @@ async function getPackageOwnershipForPath(targetPath) {
 }
 
 async function buildLibraryPackages(identity) {
+  if (libraryPackageCache.expiresAt > Date.now()) {
+    return applyLibraryPackagePermissions(libraryPackageCache.packages, identity);
+  }
+
   const files = await listLibraryItems();
   const packageMap = new Map();
 
@@ -611,20 +657,47 @@ async function buildLibraryPackages(identity) {
       continue;
     }
 
-    const ownership = item.json ? await getPackageOwnershipForPath(item.json.path) : { uploadedBy: "", uploadedById: "", hasOwnership: false };
-    const isLegacy = !ownership.hasOwnership;
+    const ownership = item.json ? await getPackageOwnershipFromJsonFile(item.json) : { uploadedBy: "", uploadedById: "", hasOwnership: false };
     packages.push({
       key: item.key,
       pdf: item.pdf,
       json: item.json || null,
       uploadedBy: ownership.uploadedBy || "",
       hasOwnership: ownership.hasOwnership,
-      canEdit: Boolean(item.json && (isLegacy || canManageOwnedLibraryItem(ownership.uploadedById, identity))),
-      canDelete: isLegacy || canManageOwnedLibraryItem(ownership.uploadedById, identity)
+      uploadedById: ownership.uploadedById || ""
     });
   }
 
-  return packages.sort((a, b) => String(a.pdf?.name || "").localeCompare(String(b.pdf?.name || "")));
+  libraryPackageCache = {
+    expiresAt: Date.now() + libraryPackageCacheMs,
+    packages: packages.sort((a, b) => String(a.pdf?.name || "").localeCompare(String(b.pdf?.name || "")))
+  };
+
+  return applyLibraryPackagePermissions(libraryPackageCache.packages, identity);
+}
+
+async function getPackageOwnershipFromJsonFile(jsonFile) {
+  const state = jsonFile?.downloadUrl
+    ? await fetchLibraryJsonFromDownloadUrl(jsonFile.downloadUrl)
+    : await fetchLibraryJsonIfExists(jsonFile?.path);
+
+  return getOwnershipFromState(state || {});
+}
+
+function applyLibraryPackagePermissions(packages, identity) {
+  return packages.map((item) => {
+    const isLegacy = !item.hasOwnership;
+    const canManage = canManageOwnedLibraryItem(item.uploadedById, identity);
+    return {
+      key: item.key,
+      pdf: item.pdf,
+      json: item.json || null,
+      uploadedBy: item.uploadedBy || "",
+      hasOwnership: item.hasOwnership,
+      canEdit: Boolean(item.json && (isLegacy || canManage)),
+      canDelete: isLegacy || canManage
+    };
+  });
 }
 
 function ensureDeleteAuthorized(deleteToken) {
@@ -682,6 +755,7 @@ async function deleteLibraryFile(payload) {
       branch: githubBranch
     })
   });
+  invalidateLibraryPackageCache();
 }
 
 async function saveLibrarySubmission(payload, serviceBaseUrl) {
