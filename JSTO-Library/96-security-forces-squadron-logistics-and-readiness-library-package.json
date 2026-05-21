@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "unit": "96 Security Forces Squadron",
+    "workCenter": "Logistics and Readiness",
+    "exportBasename": "",
+    "officeSymbol": "S4",
+    "supervisor": "Kile Barrett/SMSgt/Superintendent, Logistics & Readiness",
+    "phone": "850-882-2236",
+    "reviewer": "TSgt Gregory Pryor",
+    "reviewDate": "2026-05-21",
+    "effectiveDate": "2026-05-21",
+    "workDescription": "S4 operates out of Building 615 with space split between offices and a warehouse. Typical duties entail administrative work as well as gear/supply issue, basic vehicle and self-help projects, managing unit funds, armory operations and deployment preparation.",
+    "references": "DESR 6055.09_DAFMAN 91-201",
+    "hazardAnalysis": "Building 615 has warehouse conditions, equipment and tools that could cause hazards. The 96 SFS Armory has explosive/hazardous material that could cause hazards.",
+    "riskManagementNotes": "",
+    "trafficSafetyNotes": "",
+    "motorcycleSafetyReps": "POC- SSgt Don Hawk, 850-882-2000",
+    "emergencyNumbers": "911\nBDOC: 850-882-2000",
+    "medicalFacility": "Eglin AFB Hospital",
+    "evacuation": "Parking lot outside 615 between 615 and Eglin Federal Credit Union",
+    "shelter": "Shelter in place room within S4 section is Room 100/Supply Closet near the main offices. This would also be the severe weather shelter location. ",
+    "activeShooter": "",
+    "weatherShelter": "",
+    "bulletinBoard": "",
+    "emergencyEquipment": "",
+    "dafvaPostingLocation": "",
+    "documentationNotes": "",
+    "annualReviewLog": "",
+    "uploadedBy": "TSgt Gregory Pryor",
+    "uploadedById": "tsgt gregory pryor"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    "DESR 6055.09_DAFMAN 91-201"
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Train exposed employees at initial assignment and at least annually, with additional training when tasks or procedures create new exposure. Cover disease signs and transmission, the exposure control plan, task recognition, engineering controls, work practices, PPE use and disposal, and Hepatitis B vaccine information.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.1030 - Bloodborne Pathogens",
+      "afTrainingRequirement": "Any person whose duties involve reasonably anticipated exposure to blood or other potentially infectious material must be trained and enrolled in the Bloodborne Pathogen Program. Supervisors of affected workplaces must establish a written exposure control plan and conduct training.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.9",
+      "notes": "Blood Borne Pathogens are annual training requirements through the SFS Training Section",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "AFI 48-127 - Occupational Noise and Hearing Conservation Program",
+      "trainingRequirement": "Provide a hearing conservation training program for employees exposed at or above the action level, repeat it annually, and update it when equipment or work processes change. Cover hearing effects, protector selection and care, and the purpose of audiometric testing.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.95 - Occupational noise exposure",
+      "afTrainingRequirement": "Hazardous noise concerns must be evaluated and controls recommended through the occupational health risk assessment process. Use the AF Hearing Conservation Program as the training and control basis when shop noise hazards are identified.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 2.2.2",
+      "notes": "Hearing conservation is governed via Occupational health through the Air Force Medical Group",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.11",
+      "title": "Explosives Safety Training",
+      "reference": "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards; DAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program",
+      "trainingRequirement": "Use explosives-specific AF lesson plans and local operating instructions. OSHA 2254 includes transportation and explosives references, but the Air Force explosives program should remain the primary training basis for this module.",
+      "trainingSource": "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards / local procedures",
+      "notes": "All armorers and any Ammunition Custodians complete Explosive Safety CBT prior to certification, or when added to the Custodian account, and maintain currency",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.13",
+      "title": "CPR Training",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards Chapter 1",
+      "trainingRequirement": "Where work conditions require trained first-aid responders, ensure personnel are adequately trained and available. OSHA 2254 links first-aid and CPR availability to certain work settings, but local mission risk and AF requirements should define who must hold current CPR credentials.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.151 - Medical services and first aid and 1910.269; DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards",
+      "afTrainingRequirement": "Initial first aid and CPR training must be completed before assigning duties that require it, refresher training must occur before certification expires, and CPR training must include PAD instruction. Remote or high-risk work must have an immediate medical response plan.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 1.8",
+      "notes": "CPR training is a bi-annual requirement that is managed by the SFS Training Section",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.18",
+      "title": "Laser Safety Training",
+      "reference": "AFI 48-139 - Laser and Optical Radiation Protection Program",
+      "trainingRequirement": "Use AF laser program guidance for laser classes, beam hazards, eyewear selection, alignment controls, and access restrictions. No direct OSHA 2254 module is mapped here.",
+      "trainingSource": "AFI 48-139 - Laser and Optical Radiation Protection Program",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-2",
+      "title": "Active Shooter Response",
+      "reference": "Local emergency response briefing and lockdown procedures",
+      "trainingRequirement": "Tie this to the local emergency action plan, shelter/lockdown locations, notification methods, and commander-directed response procedures.",
+      "trainingSource": "Local emergency action plan",
+      "notes": "Members working normal duties within the section will utilize the Run, Hide, Fight concepts unless armed for duty in a response capability",
+      "link": ""
+    },
+    {
+      "id": "local-3",
+      "title": "Government Vehicle / Utility Vehicle Use",
+      "reference": "Local GOV, GVO, or UTV operating rules and licensing expectations",
+      "trainingRequirement": "Document local licensing, route restrictions, spotter use, rollover protection, and unit-specific operating rules. OSHA 2254 does not provide a direct GOV/UTV training excerpt here.",
+      "trainingSource": "No direct OSHA 2254 - Training Requirements in OSHA Standards training excerpt; local procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "Local extinguisher, pull station, and fire reporting procedures",
+      "trainingRequirement": "Review the fire prevention plan with employees when the plan is developed, when responsibilities change, and when the plan changes. If extinguishers are provided for employee use, train employees on the general principles of extinguisher use and the hazards of incipient-stage firefighting at initial assignment and at least annually. Train designated users on the specific equipment they are expected to use.",
+      "trainingSource": "OSHA 2254 - Training Requirements in OSHA Standards / 29 CFR 1910.39 - Fire prevention plans and 1910.157",
+      "afTrainingRequirement": "Facility managers and supervisors must establish and maintain a fire prevention training program through the JSTO so employees understand their fire prevention and protection responsibilities in their work areas. This is fulfilled through job safety training and documentation under DAFI 91-202.",
+      "afTrainingSource": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards para. 6.2.1.1",
+      "notes": "Fire extinguishers are posted near the main door to S4 offices and inside Room 100/Supply Closet. A fire pull switch is located by the main entrance of Building 615 near the bay door.",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/96-security-forces-squadron-logistics-and-readiness-library-package.pdf",
+  "savedAt": "2026-05-21T13:35:15.295Z",
+  "libraryMeta": {
+    "uploadedBy": "TSgt Gregory Pryor",
+    "uploadedById": "tsgt gregory pryor",
+    "savedLibraryPdf": "JSTO-Library/96-security-forces-squadron-logistics-and-readiness-library-package.pdf",
+    "savedAt": "2026-05-21T13:35:15.295Z"
+  }
+}
