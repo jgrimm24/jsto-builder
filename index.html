@@ -39,32 +39,26 @@
         <div class="hero-branding">
           <label class="unit-image-upload">
             <span>Unit Image</span>
-            <input id="unit-image" type="file" accept="image/*">
+            <input id="unit-image-file" type="file" accept="image/*">
           </label>
-          <div id="unit-image-status" class="file-status muted">No unit image uploaded yet.</div>
+          <div id="unit-image-status" class="muted">No unit image uploaded yet.</div>
           <button id="remove-unit-image" class="button" type="button">Remove Unit Image</button>
         </div>
         <div class="hero-actions">
           <button id="print-pdf" class="button primary" type="button">Export PDF</button>
-          <button id="save-browser" class="button" type="button">Save in Browser</button>
-          <button id="save-library" class="button secondary" type="button">Save to JSTO Library</button>
-          <input id="upload-json" type="file" accept="application/json">
+          <button id="save-state" class="button" type="button">Save in Browser</button>
+          <button id="save-library" class="button secondary" type="button">Save to Library</button>
         </div>
       </div>
     </header>
 
-    <main class="layout">
-      <section class="panel form-panel">
-        <div class="section-heading section-heading-with-action">
-          <div class="section-heading-copy">
-            <h2>Outline Setup</h2>
-            <p>Required DAFI items are always included. Use the dropdown to add job-specific training modules.</p>
-          </div>
-          <button id="clear-setup" class="button clear-setup-button" type="button">Clear Setup</button>
-        </div>
+    <div class="layout-grid">
+      <section class="form-panel">
+        <h2>Outline Setup</h2>
+        <p>Required DAFI items are always included. Use the dropdown to add job-specific training modules.</p>
 
-        <form id="jsto-form">
-          <div class="form-grid">
+        <form id="outline-form">
+          <div class="form-grid two-up">
             <label>
               Unit
               <input name="unit" type="text" placeholder="e.g. 123d Maintenance Squadron">
@@ -75,160 +69,139 @@
             </label>
             <label>
               Work Area / Office Symbol
-              <input name="officeSymbol" type="text" placeholder="e.g. Wing Staff/Admin">
+              <input name="officeSymbol" type="text" placeholder="e.g. MXA / CSS / Bldg 12">
             </label>
             <label>
-              Current Shop Supervisor
-              <input name="supervisor" type="text" placeholder="Current supervisor name / rank / title">
+              Contact Phone
+              <input name="phone" type="text" placeholder="DSN or commercial number">
             </label>
             <label>
-              Current Supervisor Contact Phone
-              <input name="phone" type="text" placeholder="Current DSN or commercial number">
+              Shop Supervisor
+              <input name="supervisor" type="text" placeholder="Name / rank / title">
             </label>
             <label>
-              Current Reviewer
-              <input name="reviewer" type="text" placeholder="Name of the most recent annual reviewer">
+              Reviewer
+              <input name="reviewer" type="text" placeholder="Annual reviewer">
             </label>
             <label>
-              Current Review Date
+              Review Date
               <input name="reviewDate" type="date">
             </label>
             <label>
               Effective Date
               <input name="effectiveDate" type="date">
             </label>
+            <label>
+              Uploaded By
+              <input id="library-identity" name="uploadedBy" type="text" placeholder="Enter the name used for JSTO Library saves">
+            </label>
+            <label>
+              Export PDF Filename
+              <input name="exportBasename" type="text" placeholder="e.g. 123d_MXS_AGE_JSTO_FY26">
+            </label>
           </div>
 
           <label>
             Work Center Description
-            <textarea name="workDescription" rows="3" placeholder="Describe the mission, location, and typical duties for this work center."></textarea>
+            <textarea name="description" rows="4" placeholder="Describe the mission, location, and typical duties for this work center."></textarea>
           </label>
 
           <label>
             Reference Documents
-            <span class="field-callout">Job-specific module references are added automatically when you select modules from the catalog below. Use this box for work-center-specific references that are not tied to a selected module.</span>
-            <textarea name="references" rows="3" placeholder="List TOs, JHAs, operating instructions, DAFIs, DAFMANs, local supplements, manufacturer guidance, etc."></textarea>
+            <textarea name="references" rows="4" placeholder="List TOs, JHAs, operating instructions, DAFIs, DAFMANs, local supplements, manufacturer guidance, etc."></textarea>
           </label>
 
           <label>
             Work Area Hazard Analysis / JHA Notes
-            <textarea name="hazardAnalysis" rows="4" placeholder="Summarize work area hazards, BE survey findings, JHAs, JSAs, manufacturer instructions, and hierarchy of controls used for this shop."></textarea>
+            <textarea name="jhaNotes" rows="4" placeholder="Summarize JHA findings, BE survey notes, major hazards, controls, and special restrictions for this work center."></textarea>
           </label>
 
           <label>
-            Risk Management Fundamentals / Refresher Notes
-            <textarea name="riskManagementNotes" rows="3" placeholder="Describe how the work center covers RM fundamentals, refresher expectations, and where RM training files or briefing materials are maintained."></textarea>
+            Emergency Numbers
+            <textarea name="emergencyNumbers" rows="3" placeholder="911, base dispatch, fire desk, command post, etc."></textarea>
           </label>
 
-          <section class="traffic-editor-block">
-            <div class="traffic-editor-header">
-              <h3>Traffic Safety Program</h3>
-              <p>Fill out these Wing- or installation-specific traffic safety details so the JSTO reflects local hazards, vehicle rules, and motorcycle points of contact.</p>
-            </div>
+          <label>
+            Medical Facility / Treatment Procedures
+            <textarea name="medicalFacility" rows="3" placeholder="Clinic, hospital, after-hours care, ambulance procedures, etc."></textarea>
+          </label>
 
-            <label>
-              Traffic Safety Local Hazards / Vehicle Notes
-              <textarea name="trafficSafetyNotes" rows="4" placeholder="Enter local gate hazards, base-specific traffic concerns, speed limits, golf cart / GOV / GVO rules, backing / spotter requirements, and where vehicle training is documented."></textarea>
-            </label>
+          <label>
+            Evacuation Route / Muster Point
+            <textarea name="evacuationRoute" rows="3" placeholder="Primary route, alternate route, and assembly location."></textarea>
+          </label>
 
-            <label>
-              Unit Motorcycle Safety Representatives / Traffic Contacts
-              <textarea name="motorcycleSafetyReps" rows="3" placeholder="List the unit or group motorcycle safety representatives, traffic safety POCs, and local rider briefing requirements."></textarea>
-            </label>
+          <label>
+            Shelter in Place Locations
+            <textarea name="shelterInPlace" rows="3" placeholder="Storm shelter, interior rooms, lockdown spaces, etc."></textarea>
+          </label>
 
-            <label>
-              Risk Assessment for Routine Use of GVOs in Traffic, Industrial, or Pedestrian Environments
-              <input id="gvo-risk-files" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" multiple>
-            </label>
-            <div id="gvo-risk-status" class="file-status muted">No GVO risk assessment files uploaded yet.</div>
-            <button id="remove-gvo-risk-files" class="button" type="button">Remove GVO Risk Assessment Files</button>
-          </section>
+          <label>
+            Active Shooter Response Methods
+            <textarea name="activeShooterMethods" rows="3" placeholder="Run, hide, fight; lockdown steps; local notification methods; rally or all-clear instructions."></textarea>
+          </label>
 
-          <div class="form-grid">
-            <label>
-              Emergency Numbers
-              <textarea class="expandable-field" name="emergencyNumbers" rows="2" data-editor-label="Emergency Numbers" placeholder="911
-On-base dispatch
-Fire desk
-Supervisor cell"></textarea>
-            </label>
-            <label>
-              Medical Facility
-              <textarea class="expandable-field" name="medicalFacility" rows="2" data-editor-label="Medical Facility" placeholder="Clinic name
-After-hours hospital
-Treatment process"></textarea>
-            </label>
-            <label>
-              Evacuation Route / Muster Point
-              <textarea class="expandable-field" name="evacuation" rows="2" data-editor-label="Evacuation Route / Muster Point" placeholder="Primary route
-Alternate route
-Meetup location"></textarea>
-            </label>
-            <label>
-              Shelter in Place
-              <textarea class="expandable-field" name="shelter" rows="2" data-editor-label="Shelter in Place" placeholder="Protected room
-Door / room number"></textarea>
-            </label>
-            <label>
-              Active Shooter Response Methods
-              <textarea class="expandable-field" name="activeShooter" rows="2" data-editor-label="Active Shooter Response Methods" placeholder="Run
-Hide
-Fight
-Local reporting actions"></textarea>
-            </label>
-            <label>
-              Adverse Weather Shelter
-              <textarea class="expandable-field" name="weatherShelter" rows="2" data-editor-label="Adverse Weather Shelter" placeholder="Tornado shelter
-Severe weather shelter"></textarea>
-            </label>
-            <label>
-              Safety Bulletin Board Location
-              <textarea class="expandable-field" name="bulletinBoard" rows="2" data-editor-label="Safety Bulletin Board Location" placeholder="Hallway
-Break room
-Shop entry"></textarea>
-            </label>
-          </div>
+          <label>
+            Adverse Weather Shelter
+            <textarea name="adverseWeatherShelter" rows="3" placeholder="Tornado, lightning, hail, flood, or other severe weather shelter instructions."></textarea>
+          </label>
+
+          <label>
+            Safety Bulletin Board Location
+            <textarea name="safetyBoardLocation" rows="2" placeholder="Location posted, e.g. safety bulletin board, break room, main hallway, shop entrance, etc."></textarea>
+          </label>
 
           <label>
             Emergency Evacuation Route Image
-            <input id="evacuation-image" type="file" accept="image/*">
+            <input id="evacuation-image-file" type="file" accept="image/*">
           </label>
           <div id="evacuation-image-status" class="file-status muted">No evacuation route image uploaded yet.</div>
           <button id="remove-evacuation-image" class="button" type="button">Remove Evacuation Image</button>
 
           <label>
             Emergency Equipment / Fire Protection Notes
-            <textarea name="emergencyEquipment" rows="4" placeholder="List fire extinguishers, pull stations, power cutoffs, eyewash, showers, foam systems, alarms, AEDs, and local response instructions."></textarea>
+            <textarea name="fireEquipmentNotes" rows="4" placeholder="List fire extinguishers, pull stations, power cutoffs, eyewash, showers, foam systems, alarms, AEDs, and local response instructions."></textarea>
           </label>
 
           <label>
-            Emergency Equipment / AED Maps or Photos
+            Emergency Equipment Maps / AED & Fire Extinguisher Location Photos
             <input id="emergency-equipment-files" type="file" accept="image/*,.pdf" multiple>
           </label>
-          <div id="emergency-equipment-files-status" class="file-status muted">No emergency equipment maps or photos uploaded yet.</div>
+          <div id="emergency-equipment-files-status" class="file-status muted">No emergency equipment maps or location photos uploaded yet.</div>
           <button id="remove-emergency-equipment-files" class="button" type="button">Remove Emergency Equipment Files</button>
 
           <label>
-            Mishap / Hazard Reporting Procedures
-            <input id="mishap-reporting-files" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" multiple>
+            Traffic Safety Local Hazards / Vehicle Notes
+            <textarea name="trafficSafetyNotes" rows="4" placeholder="Enter local gate hazards, base-specific traffic concerns, spotter rules, and where vehicle training is documented."></textarea>
           </label>
-          <div id="mishap-reporting-files-status" class="file-status muted">No mishap or hazard reporting procedures uploaded yet.</div>
-          <button id="remove-mishap-reporting-files" class="button" type="button">Remove Mishap / Hazard Reporting Files</button>
 
-          <div class="catalog">
-            <div class="catalog-header">
-              <div>
-                <h3>Job-Specific Module Catalog</h3>
-                <p>Select from DAFI 91-202 paragraph 14.1.3 and add only what applies to the work center.</p>
-              </div>
-              <div class="catalog-controls">
-                <select id="module-select" aria-label="Job-specific training module">
-                  <option value="">Choose a module to add</option>
-                </select>
-                <button id="add-module" class="button secondary" type="button">Add Module</button>
-              </div>
+          <label>
+            Unit Motorcycle Safety Representatives / Traffic Contacts
+            <textarea name="trafficContacts" rows="3" placeholder="List unit or group motorcycle safety representatives, traffic safety contacts, and local rider briefing requirements."></textarea>
+          </label>
+
+          <label>
+            Risk Assessment for Routine Use of GVOs in Traffic, Industrial, or Pedestrian Environments
+            <input id="gvo-risk-files" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" multiple>
+          </label>
+          <div id="gvo-risk-files-status" class="file-status muted">No routine-use GVO risk assessment files uploaded yet.</div>
+          <button id="remove-gvo-risk-files" class="button" type="button">Remove GVO Risk Assessment Files</button>
+
+          <div class="module-catalog">
+            <div>
+              <h3>Job-Specific Module Catalog</h3>
+              <p>Select from DAFI 91-202 paragraph 14.1.3 and add only what applies to the work center.</p>
             </div>
-            <div id="custom-module-builder" class="custom-module-builder" hidden>
+            <div class="module-catalog-actions">
+              <select id="module-select">
+                <option value="">Choose a module to add</option>
+              </select>
+              <button id="add-module" class="button secondary" type="button">Add Module</button>
+            </div>
+          </div>
+
+          <div id="custom-module-fields" class="custom-module-fields" hidden>
+            <div class="form-grid two-up">
               <label>
                 Custom Module Title
                 <input id="custom-module-title" type="text" placeholder="e.g. Shop-specific hazard or task">
@@ -237,14 +210,22 @@ Shop entry"></textarea>
                 Custom Module Reference
                 <input id="custom-module-reference" type="text" placeholder="e.g. Local OI, TO, JHA, manufacturer guidance">
               </label>
-              <button id="add-custom-module" class="button secondary" type="button">Add Custom Module</button>
             </div>
-            <div id="selected-modules" class="selected-modules"></div>
+            <button id="add-custom-module" class="button" type="button">Add Custom Module</button>
           </div>
+
+          <div id="selected-modules" class="selected-modules"></div>
+
+          <label>
+            DAF Form 457 / DAF Form 1118 / Other Mishap Reporting Reference Files
+            <input id="mishap-reporting-files" type="file" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx" multiple>
+          </label>
+          <div id="mishap-reporting-files-status" class="file-status muted">No reporting reference files uploaded yet.</div>
+          <button id="remove-mishap-reporting-files" class="button" type="button">Remove Reporting Reference Files</button>
 
           <label>
             Training Documentation Notes
-            <textarea name="documentationNotes" rows="3" placeholder="Explain how training will be documented, where records will be maintained, and how transfer/disposition will be handled."></textarea>
+            <textarea name="documentNotes" rows="4" placeholder="Explain how training will be documented, where records will be maintained, and how transfer/disposition will be handled."></textarea>
           </label>
 
           <label>
@@ -268,23 +249,20 @@ Shop entry"></textarea>
 
           <label>
             Annual Review History
-            <span class="field-callout">Use the fields above for the current supervisor and most recent review. Record each annual JSTO review entry here so the review table in the preview stays current year over year.</span>
-            <textarea name="annualReviewLog" rows="4" placeholder="Enter one review per line, for example: Joe Grimm | 03 May 2026 | DSN 555-1234"></textarea>
+            <textarea name="annualReviewLog" rows="4" placeholder="Enter annual review history, for example: 22 Nov 2025 - Supervisor review completed - reference updates."></textarea>
           </label>
         </form>
       </section>
 
-      <section class="panel preview-panel">
-        <div class="section-heading">
-          <h2>Print Preview</h2>
-          <p>This page is formatted to print cleanly as a PDF from the browser.</p>
-        </div>
+      <section class="preview-panel">
+        <h2>Print Preview</h2>
+        <p>This page is formatted to print cleanly as a PDF from the browser.</p>
         <article id="preview" class="preview"></article>
       </section>
-    </main>
+    </div>
   </div>
 
-  <template id="module-card-template">
+  <template id="module-template">
     <article class="module-card">
       <div class="module-card-header">
         <h4 class="module-title"></h4>
@@ -327,7 +305,7 @@ Shop entry"></textarea>
     }
   </script>
   <script src="library-ownership.js?v=20260503-3"></script>
-  <script src="app.js?v=20260519-1"></script>
+  <script src="app.js?v=20260603-1"></script>
   <script src="ergonomics-image.js?v=20260506-1"></script>
   <script src="preview-labels.js?v=20260506-1"></script>
   <script src="publication-titles.js?v=20260505-1"></script>
