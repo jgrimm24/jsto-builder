@@ -74,6 +74,22 @@ function isAdminIdentity(identity) {
     || Array.from(adminIdentitySet).some((adminIdentity) => normalizeIdentityKey(adminIdentity) === identityKey);
 }
 
+function logLibraryError(context, error, extra = {}) {
+  const details = {
+    statusCode: error instanceof Error && error.statusCode ? error.statusCode : undefined,
+    message: error instanceof Error ? error.message : String(error),
+    stack: error instanceof Error ? error.stack : undefined,
+    githubOwner,
+    githubRepo,
+    githubBranch,
+    libraryPath,
+    hasGitHubToken: Boolean(githubToken),
+    ...extra
+  };
+
+  console.error(`[jsto-library] ${context}`, details);
+}
+
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8",
@@ -928,6 +944,12 @@ http.createServer(async (req, res) => {
         libraryUrl: saved.htmlUrl
       });
     } catch (error) {
+      logLibraryError("save-library failed", error, {
+        identity: String(req.headers["x-library-user"] || payload?.uploadedBy || payload?.state?.meta?.uploadedBy || "").trim(),
+        requestPath: requestUrl.pathname,
+        method: req.method,
+        hasBody: true
+      });
       sendJson(res, 500, {
         ok: false,
         error: error instanceof Error ? error.message : "JSTO Library upload failed."
