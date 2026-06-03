@@ -232,7 +232,7 @@ function getLocalAssetPath(assetUrl, serviceBaseUrl) {
       return "";
     }
 
-    const normalizedPath = path.normalize(decodeURIComponent(asset.pathname)).replace(/^(\.\.[/\\])+/, "");
+    const normalizedPath = path.normalize(decodeURIComponent(asset.pathname)).replace(/^(\.\.[/\\])+/g, "");
     const filePath = path.join(root, normalizedPath);
     const relativePath = path.relative(root, filePath);
     if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
@@ -927,9 +927,11 @@ http.createServer(async (req, res) => {
   }
 
   if (requestUrl.pathname === "/api/save-library" && req.method === "POST") {
+    let payload = null;
+
     try {
       const body = await readRequestBody(req);
-      const payload = JSON.parse(body || "{}");
+      payload = JSON.parse(body || "{}");
       if (!payload || typeof payload !== "object") {
         throw new Error("Upload payload is missing.");
       }
@@ -948,7 +950,7 @@ http.createServer(async (req, res) => {
         identity: String(req.headers["x-library-user"] || payload?.uploadedBy || payload?.state?.meta?.uploadedBy || "").trim(),
         requestPath: requestUrl.pathname,
         method: req.method,
-        hasBody: true
+        hasBody: Boolean(payload)
       });
       sendJson(res, 500, {
         ok: false,
