@@ -521,6 +521,24 @@ function normalizeLibraryIdentity(value) {
     : libraryOwnership.normalizeIdentity(value);
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatText(value, fallback = "") {
+  const text = String(value || "").trim();
+  if (!text) {
+    return escapeHtml(fallback);
+  }
+
+  return escapeHtml(text).replace(/\n/g, "<br>");
+}
+
 function syncLibraryIdentityField() {
   if (!libraryIdentityInput) {
     return;
@@ -1839,10 +1857,105 @@ function uploadEvacuationImage(event) {
 
 function removeEvacuationImage() {
   state.evacuationImage = { ...defaultState.evacuationImage };
-  evacuationImageInput.value = "";
+  if (evacuationImageInput) {
+    evacuationImageInput.value = "";
+  }
   saveState();
   renderEvacuationImageStatus();
   renderPreview();
+}
+
+function renderEvacuationImageStatus() {
+  if (!evacuationImageStatus) {
+    return;
+  }
+
+  if (!state.evacuationImage.dataUrl) {
+    evacuationImageStatus.textContent = "No evacuation route image uploaded yet.";
+    return;
+  }
+
+  evacuationImageStatus.textContent = `Loaded evacuation route image: ${state.evacuationImage.name || "uploaded image"}`;
+}
+
+function renderFileCollectionStatus(statusElement, files, emptyLabel, loadedLabel) {
+  if (!statusElement) {
+    return;
+  }
+
+  const count = Array.isArray(files) ? files.length : 0;
+  if (!count) {
+    statusElement.textContent = emptyLabel;
+    return;
+  }
+
+  statusElement.textContent = `${count} ${loadedLabel}${count === 1 ? "" : "s"} uploaded.`;
+}
+
+function renderEmergencyEquipmentFilesStatus() {
+  renderFileCollectionStatus(
+    emergencyEquipmentFilesStatus,
+    state.emergencyEquipmentFiles,
+    "No emergency equipment maps or location photos uploaded yet.",
+    "emergency equipment file"
+  );
+}
+
+function renderMishapReportingFilesStatus() {
+  renderFileCollectionStatus(
+    mishapReportingFilesStatus,
+    state.mishapReportingFiles,
+    "No reporting reference files uploaded yet.",
+    "reporting reference file"
+  );
+}
+
+function renderGvoRiskStatus() {
+  renderFileCollectionStatus(
+    gvoRiskFilesStatus,
+    state.gvoRiskFiles,
+    "No routine-use GVO risk assessment files uploaded yet.",
+    "GVO risk assessment file"
+  );
+}
+
+function renderForm1118Status() {
+  renderFileCollectionStatus(
+    form1118Status,
+    state.form1118Files,
+    "No DAF Form 1118 files uploaded yet.",
+    "DAF Form 1118 file"
+  );
+}
+
+function renderBioSurveyPreview() {
+  if (!state.bioSurvey.dataUrl) {
+    return `
+      <div class="bio-survey-preview">
+        <p><strong>Bioenvironmental Workplace Survey:</strong> <span class="muted">No Bioenvironmental Workplace Survey uploaded.</span></p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="bio-survey-preview">
+      <p><strong>Bioenvironmental Workplace Survey:</strong></p>
+      ${renderUploadedAsset(state.bioSurvey, state.bioSurvey.name || "Bioenvironmental Workplace Survey", "Bioenvironmental Workplace Survey")}
+    </div>
+  `;
+}
+
+function renderBioSurveyStatus() {
+  if (!bioSurveyStatus) {
+    return;
+  }
+
+  if (!state.bioSurvey.dataUrl) {
+    bioSurveyStatus.textContent = "No Bioenvironmental Workplace Survey uploaded yet.";
+    return;
+  }
+
+  bioSurveyStatus.textContent = `Loaded Bioenvironmental Workplace Survey: ${state.bioSurvey.name || "uploaded file"}`;
 }
 
 async function uploadEmergencyEquipmentFiles(event) {
@@ -1862,7 +1975,9 @@ async function uploadEmergencyEquipmentFiles(event) {
 
 function removeEmergencyEquipmentFiles() {
   state.emergencyEquipmentFiles = [];
-  emergencyEquipmentFilesInput.value = "";
+  if (emergencyEquipmentFilesInput) {
+    emergencyEquipmentFilesInput.value = "";
+  }
   saveState();
   renderEmergencyEquipmentFilesStatus();
   renderPreview();
@@ -1885,7 +2000,9 @@ async function uploadMishapReportingFiles(event) {
 
 function removeMishapReportingFiles() {
   state.mishapReportingFiles = [];
-  mishapReportingFilesInput.value = "";
+  if (mishapReportingFilesInput) {
+    mishapReportingFilesInput.value = "";
+  }
   saveState();
   renderMishapReportingFilesStatus();
   renderPreview();
@@ -1908,7 +2025,9 @@ async function uploadGvoRiskFiles(event) {
 
 function removeGvoRiskFiles() {
   state.gvoRiskFiles = [];
-  gvoRiskFilesInput.value = "";
+  if (gvoRiskFilesInput) {
+    gvoRiskFilesInput.value = "";
+  }
   saveState();
   renderGvoRiskStatus();
   renderPreview();
@@ -1931,7 +2050,9 @@ async function uploadForm1118Files(event) {
 
 function removeForm1118Files() {
   state.form1118Files = [];
-  form1118FilesInput.value = "";
+  if (form1118FilesInput) {
+    form1118FilesInput.value = "";
+  }
   saveState();
   renderForm1118Status();
   renderPreview();
@@ -1953,7 +2074,9 @@ function uploadBioSurvey(event) {
 
 function removeBioSurvey() {
   state.bioSurvey = { ...defaultState.bioSurvey };
-  bioSurveyInput.value = "";
+  if (bioSurveyInput) {
+    bioSurveyInput.value = "";
+  }
   saveState();
   renderBioSurveyStatus();
   renderPreview();
