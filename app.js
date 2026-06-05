@@ -434,6 +434,44 @@ function initialize() {
   loadLibraryStateFromUrl();
 }
 
+function normalizeLoadedState(rawState) {
+  const container = rawState && typeof rawState === "object" ? rawState : {};
+  const parsed = container.state && typeof container.state === "object" ? container.state : container;
+  const parsedSelectedModules = Array.isArray(parsed.selectedModules) ? parsed.selectedModules : [];
+  const migratedRiskManagementModule = parsedSelectedModules.find((module) => module?.id === "local-4");
+
+  return {
+    ...parsed,
+    meta: {
+      ...defaultState.meta,
+      ...(parsed.meta || {}),
+      riskManagementNotes: parsed?.meta?.riskManagementNotes || migratedRiskManagementModule?.notes || defaultState.meta.riskManagementNotes
+    },
+    unitImage: {
+      ...defaultState.unitImage,
+      ...(parsed.unitImage || {})
+    },
+    dafsmsImage: {
+      ...defaultState.dafsmsImage,
+      ...(parsed.dafsmsImage || {})
+    },
+    evacuationImage: {
+      ...defaultState.evacuationImage,
+      ...(parsed.evacuationImage || {})
+    },
+    emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
+    mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
+    gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
+    form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
+    bioSurvey: {
+      ...defaultState.bioSurvey,
+      ...(parsed.bioSurvey || {})
+    },
+    moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : [],
+    selectedModules: parsedSelectedModules.filter((module) => module?.id !== "local-4")
+  };
+}
+
 function loadState() {
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (!stored) {
@@ -442,31 +480,7 @@ function loadState() {
 
   try {
     const parsed = JSON.parse(stored);
-    return {
-      meta: { ...defaultState.meta, ...parsed.meta },
-      unitImage: {
-        ...defaultState.unitImage,
-        ...(parsed.unitImage || {})
-      },
-      dafsmsImage: {
-        ...defaultState.dafsmsImage,
-        ...(parsed.dafsmsImage || {})
-      },
-      evacuationImage: {
-        ...defaultState.evacuationImage,
-        ...(parsed.evacuationImage || {})
-      },
-      emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
-      mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
-      gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
-      form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
-      bioSurvey: {
-        ...defaultState.bioSurvey,
-        ...(parsed.bioSurvey || {})
-      },
-      moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : defaultState.moduleReferences,
-      selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
-    };
+    return normalizeLoadedState(parsed);
   } catch {
     return JSON.parse(JSON.stringify(defaultState));
   }
@@ -1946,31 +1960,7 @@ function removeBioSurvey() {
 }
 
 function applyImportedState(parsed) {
-  state = {
-    meta: { ...defaultState.meta, ...parsed.meta },
-    unitImage: {
-      ...defaultState.unitImage,
-      ...(parsed.unitImage || {})
-    },
-    dafsmsImage: {
-      ...defaultState.dafsmsImage,
-      ...(parsed.dafsmsImage || {})
-    },
-    evacuationImage: {
-      ...defaultState.evacuationImage,
-      ...(parsed.evacuationImage || {})
-    },
-    emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
-    mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
-    gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
-    form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
-    bioSurvey: {
-      ...defaultState.bioSurvey,
-      ...(parsed.bioSurvey || {})
-    },
-    moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : [],
-    selectedModules: Array.isArray(parsed.selectedModules) ? parsed.selectedModules : []
-  };
+  state = normalizeLoadedState(parsed);
   hydrateForm();
   syncLibraryIdentityField();
   renderSelectedModules();
@@ -2015,7 +2005,7 @@ async function loadLibraryStateFromUrl() {
       throw new Error(result.error || "Unable to load JSTO editable package.");
     }
 
-    applyImportedState(result.state || {});
+    applyImportedState(result);
     const cleanUrl = `${window.location.pathname}${window.location.hash || ""}`;
     window.history.replaceState({}, document.title, cleanUrl);
   } catch (error) {

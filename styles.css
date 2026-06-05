@@ -35,7 +35,9 @@ body {
 }
 
 .hero,
-.panel {
+.panel,
+.form-panel,
+.preview-panel {
   backdrop-filter: blur(18px);
   background: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -126,13 +128,24 @@ h1 {
   justify-content: flex-start;
 }
 
-.layout {
+.layout,
+.layout-grid {
   display: grid;
   grid-template-columns: minmax(360px, 0.95fr) minmax(360px, 1.05fr);
   gap: 24px;
 }
 
-.panel {
+.preview-panel {
+  align-self: start;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+  position: sticky;
+  top: 28px;
+}
+
+.panel,
+.form-panel,
+.preview-panel {
   border-radius: var(--radius);
   padding: 22px;
 }
@@ -960,7 +973,6 @@ body.modal-open {
 
 @media (max-width: 1080px) {
   .hero,
-  .layout,
   .form-grid,
   .preview-grid,
   .catalog-header,
@@ -971,6 +983,19 @@ body.modal-open {
 
   .hero-actions {
     justify-content: start;
+  }
+}
+
+@media (max-width: 860px) {
+  .layout,
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    max-height: none;
+    overflow: visible;
+    position: static;
   }
 }
 
@@ -1037,11 +1062,20 @@ body.modal-open {
     display: none;
   }
 
-  .layout {
+  .layout,
+  .layout-grid {
     display: block;
   }
 
+  .preview-panel {
+    max-height: none;
+    overflow: visible;
+    position: static;
+  }
+
   .panel,
+  .form-panel,
+  .preview-panel,
   .preview {
     box-shadow: none;
     border: 0;
