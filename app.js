@@ -263,6 +263,15 @@ const moduleCatalog = [
     afTrainingBasis: "Shop-specific safety restrictions"
   },
   {
+    id: "local-8",
+    title: "Personal Protective Equipment (PPE)",
+    reference: "DAFMAN 91-203, Chapter 14; 29 CFR 1910 Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
+    trainingRequirement: "Train each affected worker on when PPE is necessary, what PPE is necessary, how to properly don, doff, adjust, and wear PPE, the limitations of assigned PPE, and the proper care, maintenance, useful life, and disposal of PPE. Require workers to demonstrate understanding and proper use before performing work requiring PPE, and retrain when workplace conditions, job assignments, PPE types, or worker knowledge gaps make prior training obsolete.",
+    afTrainingRequirement: "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
+    trainingBasis: "OSHA 2254 / Personal Protective Equipment",
+    afTrainingBasis: "DAFMAN 91-203 / Personal Protective Equipment"
+  },
+  {
     id: "custom-other",
     title: "Other",
     reference: "Local / Custom module",
