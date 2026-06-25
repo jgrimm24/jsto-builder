@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260605-2">
+  <link rel="stylesheet" href="styles.css?v=20260625-1">
   <script>
     window.JSTO_LIBRARY_UPLOAD_URL = "https://jsto-builder-upload.onrender.com";
   </script>
@@ -54,10 +54,22 @@
 
     <div class="layout-grid">
       <section class="form-panel">
-        <h2>Outline Setup</h2>
-        <p>Required DAFI items are always included. Use the dropdown to add job-specific training modules.</p>
+        <div class="section-heading section-heading-with-action">
+          <div class="section-heading-copy">
+            <h2>Outline Setup</h2>
+            <p>Required DAFI items are always included. Use the dropdown to add job-specific training modules.</p>
+          </div>
+          <button id="clear-setup" class="button clear-setup-button" type="button">Clear Setup</button>
+        </div>
 
         <form id="outline-form">
+          <div class="setup-control-row">
+            <label>
+              Uploaded By
+              <input id="library-identity" name="uploadedBy" type="text" placeholder="Enter the name used for JSTO Library saves">
+            </label>
+          </div>
+
           <div class="form-grid two-up">
             <label>
               Unit
@@ -90,10 +102,6 @@
             <label>
               Effective Date
               <input name="effectiveDate" type="date">
-            </label>
-            <label>
-              Uploaded By
-              <input id="library-identity" name="uploadedBy" type="text" placeholder="Enter the name used for JSTO Library saves">
             </label>
             <label>
               Export PDF Filename
@@ -311,6 +319,6 @@
   <script src="publication-titles.js?v=20260505-1"></script>
   <script src="annual-review-preview.js?v=20260503-1"></script>
   <script src="export-naming.js?v=20260426-1"></script>
-  <script src="clear-setup.js?v=20260503-1"></script>
+  <script src="clear-setup.js?v=20260625-1"></script>
 </body>
 </html>
