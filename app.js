@@ -623,6 +623,11 @@ function renderPreview() {
     </section>
 
     <section>
+      <h2>Work Area Hazard Analysis / JHA Notes</h2>
+      <p>${formatText(state.meta.jhaNotes, "Summarize JHA findings, BE survey notes, major hazards, controls, and special restrictions for this work center.")}</p>
+    </section>
+
+    <section>
       <h2>Required Training Topics</h2>
       <div class="pill-grid">
         ${state.moduleReferences.map((item) => `<span class="pill">${escapeHtml(item.title)}</span>`).join("")}
