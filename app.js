@@ -300,6 +300,7 @@ const defaultState = {
   mishapReportingFiles: [],
   gvoRiskFiles: [],
   form1118Files: [],
+  jhaFiles: [],
   bioSurvey: {
     name: "",
     dataUrl: "",
@@ -396,6 +397,9 @@ const removeGvoRiskFilesButton = document.getElementById("remove-gvo-risk-files"
 const form1118FilesInput = document.getElementById("form-1118-files");
 const form1118Status = document.getElementById("form-1118-status");
 const removeForm1118FilesButton = document.getElementById("remove-form-1118-files");
+const jhaFilesInput = document.getElementById("jha-files");
+const jhaFilesStatus = document.getElementById("jha-files-status");
+const removeJhaFilesButton = document.getElementById("remove-jha-files");
 const bioSurveyInput = document.getElementById("bio-survey-file");
 const bioSurveyStatus = document.getElementById("bio-survey-status");
 const removeBioSurveyButton = document.getElementById("remove-bio-survey");
@@ -437,6 +441,7 @@ function initialize() {
   renderMishapReportingFilesStatus();
   renderGvoRiskStatus();
   renderForm1118Status();
+  renderJhaFilesStatus();
   renderBioSurveyStatus();
   renderPreview();
   wireEvents();
@@ -472,6 +477,7 @@ function normalizeLoadedState(rawState) {
     mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
     gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
     form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
+    jhaFiles: Array.isArray(parsed.jhaFiles) ? parsed.jhaFiles : [],
     bioSurvey: {
       ...defaultState.bioSurvey,
       ...(parsed.bioSurvey || {})
@@ -719,6 +725,7 @@ function renderPreview() {
       <h2>Documentation and Review</h2>
       <p>${formatText(state.meta.documentNotes, "Document initial, refresher, and task-specific training in the work center record, review annually or when work conditions change, and maintain records per local records management requirements.")}</p>
       ${renderBioSurveyPreview()}
+      ${renderJhaFilesPreview()}
       <p><strong>Annual Review Log:</strong><br>${formatText(state.meta.annualReviewLog, "Record the supervisor annual review history here.")}</p>
       ${renderAnnualReviewLogTable()}
     </section>
@@ -1324,6 +1331,12 @@ function wireEvents() {
   }
   if (removeForm1118FilesButton) {
     removeForm1118FilesButton.addEventListener("click", removeForm1118Files);
+  }
+  if (jhaFilesInput) {
+    jhaFilesInput.addEventListener("change", uploadJhaFiles);
+  }
+  if (removeJhaFilesButton) {
+    removeJhaFilesButton.addEventListener("click", removeJhaFiles);
   }
   if (bioSurveyInput) {
     bioSurveyInput.addEventListener("change", uploadBioSurvey);
@@ -1942,6 +1955,15 @@ function renderForm1118Status() {
   );
 }
 
+function renderJhaFilesStatus() {
+  renderFileCollectionStatus(
+    jhaFilesStatus,
+    state.jhaFiles,
+    "No Job Hazard Analysis files uploaded yet.",
+    "Job Hazard Analysis file"
+  );
+}
+
 function renderBioSurveyPreview() {
   if (!state.bioSurvey.dataUrl) {
     return `
@@ -1955,6 +1977,27 @@ function renderBioSurveyPreview() {
     <div class="bio-survey-preview">
       <p><strong>Bioenvironmental Workplace Survey:</strong></p>
       ${renderUploadedAsset(state.bioSurvey, state.bioSurvey.name || "Bioenvironmental Workplace Survey", "Bioenvironmental Workplace Survey")}
+    </div>
+  `;
+}
+
+function renderJhaFilesPreview() {
+  if (!state.jhaFiles.length) {
+    return `
+      <div class="jha-files-preview">
+        <p><strong>Applicable Job Hazard Analyses:</strong> <span class="muted">No Job Hazard Analysis files uploaded.</span></p>
+      </div>
+    `;
+  }
+
+  const items = state.jhaFiles.map((file, index) => `
+      <li>${renderUploadedAsset(file, `Job Hazard Analysis ${index + 1}`, "Job Hazard Analysis")}</li>
+    `).join("");
+
+  return `
+    <div class="jha-files-preview">
+      <strong>Applicable Job Hazard Analyses:</strong>
+      <ul>${items}</ul>
     </div>
   `;
 }
@@ -2072,6 +2115,31 @@ function removeForm1118Files() {
   renderPreview();
 }
 
+async function uploadJhaFiles(event) {
+  const files = Array.from(event.target.files || []);
+  if (!files.length) {
+    return;
+  }
+
+  const loadedFiles = await Promise.all(files.map(createDataUrlFileRecord));
+
+  state.jhaFiles = [...state.jhaFiles, ...loadedFiles];
+  jhaFilesInput.value = "";
+  saveState();
+  renderJhaFilesStatus();
+  renderPreview();
+}
+
+function removeJhaFiles() {
+  state.jhaFiles = [];
+  if (jhaFilesInput) {
+    jhaFilesInput.value = "";
+  }
+  saveState();
+  renderJhaFilesStatus();
+  renderPreview();
+}
+
 function uploadBioSurvey(event) {
   const [file] = event.target.files || [];
   if (!file) {
@@ -2109,6 +2177,7 @@ function applyImportedState(parsed) {
   renderMishapReportingFilesStatus();
   renderGvoRiskStatus();
   renderForm1118Status();
+  renderJhaFilesStatus();
   renderBioSurveyStatus();
   renderPreview();
   saveState();

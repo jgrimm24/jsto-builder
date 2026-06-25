@@ -1,14 +1,21 @@
 const CLEAR_SETUP_FILE_INPUT_IDS = [
-  "unit-image",
-  "upload-json",
-  "evacuation-image",
+  "unit-image-file",
+  "dafsms-image-file",
+  "evacuation-image-file",
   "emergency-equipment-files",
+  "mishap-reporting-files",
   "gvo-risk-files",
   "form-1118-files",
+  "jha-files",
   "bio-survey-file",
+  "upload-state",
   "custom-module-title",
   "custom-module-reference"
 ];
+
+function getOutlineForm() {
+  return document.getElementById("outline-form") || document.getElementById("jsto-form");
+}
 
 function cloneDefaultSetupState() {
   return JSON.parse(JSON.stringify(defaultState));
@@ -53,7 +60,7 @@ function clearCurrentSetup() {
   clearSetupTransientInputs();
 
   if (typeof ensureExportField === "function") {
-    const form = document.getElementById("jsto-form");
+    const form = getOutlineForm();
     const exportField = form ? ensureExportField(form) : null;
     if (exportField) {
       exportField.value = "";
@@ -61,7 +68,7 @@ function clearCurrentSetup() {
   }
 
   if (typeof updateExportPlaceholder === "function") {
-    const form = document.getElementById("jsto-form");
+    const form = getOutlineForm();
     const exportField = form?.elements?.namedItem("exportBasename");
     if (form && exportField) {
       updateExportPlaceholder(exportField, form);
