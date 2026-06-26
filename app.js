@@ -1680,6 +1680,19 @@ function buildLibraryIdentityHeaders() {
   return identity ? { "X-Library-User": identity } : {};
 }
 
+function createPdfPayload() {
+  return {
+    submittedAt: new Date().toISOString(),
+    libraryVersion: 1,
+    filename: createExportPdfFilename(),
+    unit: state.meta.unit || "",
+    workCenter: state.meta.workCenter || "",
+    officeSymbol: state.meta.officeSymbol || "",
+    previewHtml: preview.innerHTML,
+    state
+  };
+}
+
 async function exportPdfFromService(payload) {
   const response = await fetch(`${LIBRARY_UPLOAD_URL}/api/export-pdf`, {
     method: "POST",
