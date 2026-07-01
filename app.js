@@ -348,6 +348,8 @@ const defaultState = {
 };
 
 const STORAGE_KEY = "jsto-outline-builder-v20260503-1";
+const STORAGE_BACKUP_KEY = "jsto-outline-builder-backup-v1";
+const STORAGE_WARNING_SESSION_KEY = "jsto-outline-builder-storage-warning-shown";
 const fieldEditorModal = document.getElementById("field-editor-modal");
 const fieldEditorTitle = document.getElementById("field-editor-title");
 const fieldEditorText = document.getElementById("field-editor-text");
@@ -488,7 +490,7 @@ function normalizeLoadedState(rawState) {
 }
 
 function loadState() {
-  const stored = window.localStorage.getItem(STORAGE_KEY);
+  const stored = readStorageValue(STORAGE_KEY) || readStorageValue(STORAGE_BACKUP_KEY);
   if (!stored) {
     return JSON.parse(JSON.stringify(defaultState));
   }
@@ -506,7 +508,98 @@ function saveState() {
     state.meta.uploadedBy = readLibraryIdentity();
   }
   state.meta.uploadedById = normalizeLibraryIdentity(state.meta.uploadedBy);
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  const fullState = JSON.stringify(state);
+  const backupState = JSON.stringify(createStorageBackupState(state));
+
+  try {
+    window.localStorage.setItem(STORAGE_KEY, fullState);
+    try {
+      window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
+    } catch {
+      // The primary save succeeded; skip the extra backup if storage is tight.
+    }
+  } catch {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, backupState);
+      window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
+      showStorageFallbackWarning();
+    } catch {
+      try {
+        window.localStorage.removeItem(STORAGE_KEY);
+        window.localStorage.setItem(STORAGE_KEY, backupState);
+        window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
+        showStorageFallbackWarning();
+      } catch {
+        showStorageFailureWarning();
+      }
+    }
+  }
+}
+
+function readStorageValue(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return "";
+  }
+}
+
+function createStorageBackupState(sourceState) {
+  return {
+    ...sourceState,
+    savedAt: new Date().toISOString(),
+    storageMode: "text-backup",
+    unitImage: omitStoredFileData(sourceState.unitImage),
+    dafsmsImage: omitStoredFileData(sourceState.dafsmsImage),
+    evacuationImage: omitStoredFileData(sourceState.evacuationImage),
+    emergencyEquipmentFiles: omitStoredFileDataArray(sourceState.emergencyEquipmentFiles),
+    mishapReportingFiles: omitStoredFileDataArray(sourceState.mishapReportingFiles),
+    gvoRiskFiles: omitStoredFileDataArray(sourceState.gvoRiskFiles),
+    form1118Files: omitStoredFileDataArray(sourceState.form1118Files),
+    jhaFiles: omitStoredFileDataArray(sourceState.jhaFiles),
+    bioSurvey: omitStoredFileData(sourceState.bioSurvey)
+  };
+}
+
+function omitStoredFileData(file) {
+  if (!file || typeof file !== "object") {
+    return { name: "", dataUrl: "", type: "" };
+  }
+
+  return {
+    ...file,
+    dataUrl: "",
+    storageOmitted: Boolean(file.dataUrl)
+  };
+}
+
+function omitStoredFileDataArray(files) {
+  return Array.isArray(files) ? files.map(omitStoredFileData) : [];
+}
+
+function showStorageFallbackWarning() {
+  showStorageWarningOnce(
+    "Your JSTO text was saved, but this browser is out of space for uploaded attachments. If you refresh, uploaded files may need to be re-added. To protect the work, use Save to Library or Export PDF before continuing."
+  );
+}
+
+function showStorageFailureWarning() {
+  showStorageWarningOnce(
+    "This browser could not save the JSTO changes. Please export or save to the library before leaving this page."
+  );
+}
+
+function showStorageWarningOnce(message) {
+  try {
+    if (window.sessionStorage.getItem(STORAGE_WARNING_SESSION_KEY)) {
+      return;
+    }
+    window.sessionStorage.setItem(STORAGE_WARNING_SESSION_KEY, "1");
+  } catch {
+    // If sessionStorage is blocked, still show the warning.
+  }
+
+  window.alert(message);
 }
 
 function readLibraryIdentity() {
