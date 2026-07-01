@@ -69,7 +69,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-family: "IBM Plex Serif", serif;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
   line-height: 1.02;
   max-width: 12ch;
 }
@@ -87,6 +87,31 @@ h1 {
   display: grid;
   gap: 22px;
   align-content: space-between;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.storage-disclaimer {
+  max-width: 34rem;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 2px solid rgba(190, 35, 25, 0.72);
+  border-left-width: 8px;
+  background: linear-gradient(135deg, rgba(190, 35, 25, 0.16), rgba(255, 246, 244, 0.96));
+  color: #7a1711;
+  font-weight: 700;
+  line-height: 1.45;
+  box-shadow: 0 14px 30px rgba(190, 35, 25, 0.12);
+}
+
+.storage-disclaimer strong {
+  color: #b42318;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .hero-branding {

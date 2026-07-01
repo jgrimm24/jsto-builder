@@ -475,11 +475,11 @@ function normalizeLoadedState(rawState) {
       ...defaultState.evacuationImage,
       ...(parsed.evacuationImage || {})
     },
-    emergencyEquipmentFiles: Array.isArray(parsed.emergencyEquipmentFiles) ? parsed.emergencyEquipmentFiles : [],
-    mishapReportingFiles: Array.isArray(parsed.mishapReportingFiles) ? parsed.mishapReportingFiles : [],
-    gvoRiskFiles: Array.isArray(parsed.gvoRiskFiles) ? parsed.gvoRiskFiles : [],
-    form1118Files: Array.isArray(parsed.form1118Files) ? parsed.form1118Files : [],
-    jhaFiles: Array.isArray(parsed.jhaFiles) ? parsed.jhaFiles : [],
+    emergencyEquipmentFiles: normalizeStoredFileArray(parsed.emergencyEquipmentFiles),
+    mishapReportingFiles: normalizeStoredFileArray(parsed.mishapReportingFiles),
+    gvoRiskFiles: normalizeStoredFileArray(parsed.gvoRiskFiles),
+    form1118Files: normalizeStoredFileArray(parsed.form1118Files),
+    jhaFiles: normalizeStoredFileArray(parsed.jhaFiles),
     bioSurvey: {
       ...defaultState.bioSurvey,
       ...(parsed.bioSurvey || {})
@@ -487,6 +487,10 @@ function normalizeLoadedState(rawState) {
     moduleReferences: Array.isArray(parsed.moduleReferences) ? parsed.moduleReferences : [],
     selectedModules: parsedSelectedModules.filter((module) => module?.id !== "local-4")
   };
+}
+
+function normalizeStoredFileArray(files) {
+  return Array.isArray(files) ? files.filter((file) => file?.dataUrl) : [];
 }
 
 function loadState() {
@@ -508,30 +512,18 @@ function saveState() {
     state.meta.uploadedBy = readLibraryIdentity();
   }
   state.meta.uploadedById = normalizeLibraryIdentity(state.meta.uploadedBy);
-  const fullState = JSON.stringify(state);
-  const backupState = JSON.stringify(createStorageBackupState(state));
+  const browserDraftState = JSON.stringify(createBrowserDraftState(state));
 
   try {
-    window.localStorage.setItem(STORAGE_KEY, fullState);
-    try {
-      window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
-    } catch {
-      // The primary save succeeded; skip the extra backup if storage is tight.
-    }
+    window.localStorage.setItem(STORAGE_KEY, browserDraftState);
+    window.localStorage.setItem(STORAGE_BACKUP_KEY, browserDraftState);
   } catch {
     try {
-      window.localStorage.setItem(STORAGE_KEY, backupState);
-      window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
-      showStorageFallbackWarning();
+      window.localStorage.removeItem(STORAGE_KEY);
+      window.localStorage.setItem(STORAGE_KEY, browserDraftState);
+      window.localStorage.setItem(STORAGE_BACKUP_KEY, browserDraftState);
     } catch {
-      try {
-        window.localStorage.removeItem(STORAGE_KEY);
-        window.localStorage.setItem(STORAGE_KEY, backupState);
-        window.localStorage.setItem(STORAGE_BACKUP_KEY, backupState);
-        showStorageFallbackWarning();
-      } catch {
-        showStorageFailureWarning();
-      }
+      showStorageFailureWarning();
     }
   }
 }
@@ -544,48 +536,26 @@ function readStorageValue(key) {
   }
 }
 
-function createStorageBackupState(sourceState) {
+function createBrowserDraftState(sourceState) {
   return {
     ...sourceState,
     savedAt: new Date().toISOString(),
-    storageMode: "text-backup",
-    unitImage: omitStoredFileData(sourceState.unitImage),
-    dafsmsImage: omitStoredFileData(sourceState.dafsmsImage),
-    evacuationImage: omitStoredFileData(sourceState.evacuationImage),
-    emergencyEquipmentFiles: omitStoredFileDataArray(sourceState.emergencyEquipmentFiles),
-    mishapReportingFiles: omitStoredFileDataArray(sourceState.mishapReportingFiles),
-    gvoRiskFiles: omitStoredFileDataArray(sourceState.gvoRiskFiles),
-    form1118Files: omitStoredFileDataArray(sourceState.form1118Files),
-    jhaFiles: omitStoredFileDataArray(sourceState.jhaFiles),
-    bioSurvey: omitStoredFileData(sourceState.bioSurvey)
+    storageMode: "text-only-browser-draft",
+    unitImage: { ...defaultState.unitImage },
+    dafsmsImage: { ...defaultState.dafsmsImage },
+    evacuationImage: { ...defaultState.evacuationImage },
+    emergencyEquipmentFiles: [],
+    mishapReportingFiles: [],
+    gvoRiskFiles: [],
+    form1118Files: [],
+    jhaFiles: [],
+    bioSurvey: { ...defaultState.bioSurvey }
   };
-}
-
-function omitStoredFileData(file) {
-  if (!file || typeof file !== "object") {
-    return { name: "", dataUrl: "", type: "" };
-  }
-
-  return {
-    ...file,
-    dataUrl: "",
-    storageOmitted: Boolean(file.dataUrl)
-  };
-}
-
-function omitStoredFileDataArray(files) {
-  return Array.isArray(files) ? files.map(omitStoredFileData) : [];
-}
-
-function showStorageFallbackWarning() {
-  showStorageWarningOnce(
-    "Your JSTO text was saved, but this browser is out of space for uploaded attachments. If you refresh, uploaded files may need to be re-added. To protect the work, use Save to Library or Export PDF before continuing."
-  );
 }
 
 function showStorageFailureWarning() {
   showStorageWarningOnce(
-    "This browser could not save the JSTO changes. Please export or save to the library before leaving this page."
+    "This browser could not save the JSTO text changes. Please export or save to the library before leaving this page."
   );
 }
 
@@ -1441,7 +1411,7 @@ function wireEvents() {
   if (saveButton) {
     saveButton.addEventListener("click", () => {
       saveState();
-      window.alert("Saved in this browser.");
+      window.alert("Typed JSTO text saved in this browser. Uploaded images, PDFs, and attachments are only kept if you Export PDF or Save to Library before leaving this page.");
     });
   }
   const saveLibraryButton = document.getElementById("save-library");
@@ -1992,7 +1962,7 @@ async function saveToLibrary() {
     window.alert("JSTO PDF uploaded to the JSTO Library. Use the Library Manager to open or delete it.");
   } catch (error) {
     const message = error instanceof Error ? error.message : "JSTO Library upload failed.";
-    window.alert(`${message} You can still use Save in Browser as a backup.`);
+    window.alert(`${message} You can still use Save Text in Browser as a text-only backup, but uploaded files require Export PDF or a successful Save to Library before leaving the page.`);
   } finally {
     saveLibraryButton.disabled = false;
     saveLibraryButton.textContent = originalLabel;
