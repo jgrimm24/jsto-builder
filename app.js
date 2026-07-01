@@ -1654,6 +1654,42 @@ function saveFieldEditor() {
   closeFieldEditor();
 }
 
+function sanitizeFilenameStem(value) {
+  return String(value || "")
+    .replace(/\.pdf$/i, "")
+    .replace(/\.json$/i, "")
+    .replace(/[<>:"/\\|?*\u0000-\u001f]/g, "-")
+    .replace(/\s+/g, " ")
+    .replace(/-+/g, "-")
+    .replace(/[. ]+$/g, "")
+    .trim();
+}
+
+function createExportFilenameStem(fallback = "JSTO Outline") {
+  const exportBasename = sanitizeFilenameStem(state.meta.exportBasename);
+  if (exportBasename) {
+    return exportBasename;
+  }
+
+  const parts = [
+    state.meta.unit,
+    state.meta.workCenter,
+    state.meta.officeSymbol
+  ]
+    .map(sanitizeFilenameStem)
+    .filter(Boolean);
+
+  return parts.join(" - ") || fallback;
+}
+
+function createStateFilename() {
+  return `${createExportFilenameStem("jsto-outline")}.json`;
+}
+
+function createExportPdfFilename() {
+  return `${createExportFilenameStem("jsto-export")}.pdf`;
+}
+
 function downloadState() {
   saveState();
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
