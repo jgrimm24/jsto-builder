@@ -201,7 +201,9 @@ h1 {
 
 .setup-control-row {
   display: grid;
-  grid-template-columns: minmax(260px, 0.5fr);
+  grid-template-columns: minmax(260px, 0.45fr) minmax(320px, 1fr);
+  align-items: end;
+  gap: 14px;
   margin-bottom: 14px;
 }
 
@@ -254,7 +256,7 @@ textarea {
 
 .library-ownership-callout {
   display: block;
-  margin: 10px 0 12px;
+  margin: 0 0 14px;
   padding: 14px 16px;
   border-radius: 18px;
   border: 1px solid rgba(197, 106, 45, 0.28);
