@@ -14,6 +14,7 @@ const libraryPath = process.env.GITHUB_LIBRARY_PATH || "JSTO-Library";
 const libraryDeleteToken = process.env.LIBRARY_DELETE_TOKEN || "";
 const libraryAdminIdentities = process.env.LIBRARY_ADMIN_IDENTITIES || "";
 const maxBodySize = 90 * 1024 * 1024;
+const corsAllowHeaders = "Content-Type, X-Library-Delete-Token, X-Library-User";
 const stylesCss = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const libraryPackageCacheMs = 60 * 1000;
 let libraryPackageCache = {
@@ -95,7 +96,7 @@ function sendJson(res, statusCode, payload) {
     "Content-Type": "application/json; charset=utf-8",
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+    "Access-Control-Allow-Headers": corsAllowHeaders
   });
   res.end(JSON.stringify(payload));
 }
@@ -107,7 +108,7 @@ function sendPdf(res, filename, pdfBytes) {
     "Content-Disposition": `attachment; filename="${String(filename || "jsto-export.pdf").replace(/"/g, "")}"`,
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+    "Access-Control-Allow-Headers": corsAllowHeaders
   });
   res.end(pdfBytes);
 }
@@ -119,7 +120,7 @@ function sendInlinePdf(res, filename, pdfBytes) {
     "Content-Disposition": `inline; filename="${String(filename || "jsto-library.pdf").replace(/"/g, "")}"`,
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+    "Access-Control-Allow-Headers": corsAllowHeaders
   });
   res.end(pdfBytes);
 }
@@ -849,7 +850,7 @@ http.createServer(async (req, res) => {
     res.writeHead(204, {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,POST,DELETE,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, X-Library-Delete-Token"
+      "Access-Control-Allow-Headers": corsAllowHeaders
     });
     res.end();
     return;

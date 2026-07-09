@@ -1775,8 +1775,7 @@ function buildLibraryDeleteHeaders(deleteToken = "") {
 }
 
 function buildLibraryIdentityHeaders() {
-  const identity = String(state.meta.uploadedBy || readLibraryIdentity() || "").trim();
-  return identity ? { "X-Library-User": identity } : {};
+  return {};
 }
 
 function createPdfPayload() {
