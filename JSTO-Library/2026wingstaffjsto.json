@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "181 IW",
+    "workCenter": "Wing Staff",
+    "officeSymbol": "Wing Staff JSTO",
+    "supervisor": "Col Christopher Brownell",
+    "reviewer": "Joseph Grimm",
+    "reviewDate": "2026-07-10",
+    "effectiveDate": "2026-07-10",
+    "description": "",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "2026WingStaffJSTO",
+    "uploadedBy": "LukeOtte",
+    "uploadedById": "lukeotte",
+    "dafvaPostingLocation": "",
+    "phone": "812-877-5249"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/2026wingstaffjsto.pdf",
+  "savedAt": "2026-07-10T11:00:44.817Z",
+  "libraryMeta": {
+    "uploadedBy": "LukeOtte",
+    "uploadedById": "lukeotte",
+    "savedLibraryPdf": "JSTO-Library/2026wingstaffjsto.pdf",
+    "savedAt": "2026-07-10T11:00:44.817Z"
+  }
+}
