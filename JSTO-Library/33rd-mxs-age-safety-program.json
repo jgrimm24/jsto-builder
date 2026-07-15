@@ -266,17 +266,6 @@
       "link": ""
     },
     {
-      "id": "local-4",
-      "title": "Risk Management Fundamentals",
-      "reference": "DAFI 90-802; DAFPAM 90-803",
-      "trainingRequirement": "Train workers to identify hazards, assess risk, implement controls, supervise the task, and re-evaluate controls during and after operations.",
-      "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
-      "trainingBasis": "Local / Risk Management Guidance",
-      "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
-      "notes": "",
-      "link": ""
-    },
-    {
       "id": "local-5",
       "title": "Manual Lifting and Material Handling",
       "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
@@ -321,13 +310,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-07-15T20:27:43.942Z",
+  "savedAt": "2026-07-15T21:50:41.519Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/33rd-mxs-age-safety-program.pdf",
   "libraryMeta": {
     "uploadedBy": "Ssgt Hazel",
     "uploadedById": "ssgt hazel",
     "savedLibraryPdf": "JSTO-Library/33rd-mxs-age-safety-program.pdf",
-    "savedAt": "2026-07-15T20:27:43.942Z"
+    "savedAt": "2026-07-15T21:50:41.519Z"
   }
 }
