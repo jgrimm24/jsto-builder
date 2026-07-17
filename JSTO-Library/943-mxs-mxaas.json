@@ -8,7 +8,7 @@
     "reviewDate": "2026-07-14",
     "effectiveDate": "2026-07-14",
     "description": "The Specialist Flight provides back-shop and on-aircraft maintenance for the HH-60 fleet, directly troubleshooting and repairing critical mission systems to ensure training and CSAR missions can be executed safely. They diagnose, repair, and maintain the following vital HH-60 systems: Avionics, EW, GAC, E&E, and Propulsion.",
-    "references": "",
+    "references": "DAFI91-202 AF Occupational Safety and Health (AFOSH) Program;\nDAFMAN 32-1067 Storm Water Pollution;\n",
     "jhaNotes": "JHA - Fall Protection Guidance for HH-60 Top Fuselage Section\nJHA - Fall Protection Guidance for HH-60 Tail Pylon/Tail Rotor",
     "emergencyNumbers": "Fire Dept: 911 / 228-3333 / Non-ER 228-4757;\nSecurity Forces Non-ER: 228-3200;\nCommand Post: 228-7400;\nBase Ops: 228-4315 / 228-4507;\n943 MXS MOC: 228-2353;\nPublic Health: 228-2714;\n943 RQG Safety: 228-2329 / 228-1608;\n355th Wing Safety: 228-3311 / Cell 520-909-0316;\n\nIf the base 911 telephone system is down (228-3333), report fire or medical emergencies by calling 520-965-5965, and security forces related incidents, call 520-909-8476.",
     "medicalFacility": "NON-EMERGENCIES:\n1) 355 MDG (base clinic & after-hours nurse), Bldg 400, DMAFB AZ, 520-228-2778;\n2) Health and Wellness Center (HAWC), Bldg 4220, DMAFB AZ, 520-228-2294\n\nLOCAL AREA HOSPITALS: \n1) St. Joseph's Hospital, 350 N. Wilmot Rd., Tucson AZ 85711, 520-873-3000;\n2) St. Mary's Hospital, 1601 W. St. Mary's Rd., Tucson AZ 85745, 520-872-2254;\n3) Banner UMC (Main), 1501 N. Campbell Ave., Tucson AZ 85724, 520-594-0111;\n4) Southern AZ VA HCS, 3601 S. 6th Ave., Tucson AZ 85723, 520-792-1450;\n5) Tucson Medical Center, 5301 E. Grant Rd., Tucson AZ 85712, 520-327-5461;\n6) NW Medical Center; 6200 N. La Cholla Blvd., Tucson AZ 85741, 520-742-9000",
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-07-17T19:22:25.549Z",
+  "savedAt": "2026-07-17T19:26:05.225Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/943-mxs-mxaas.pdf",
   "libraryMeta": {
     "uploadedBy": "MichelleParedes",
     "uploadedById": "michelleparedes",
     "savedLibraryPdf": "JSTO-Library/943-mxs-mxaas.pdf",
-    "savedAt": "2026-07-17T19:22:25.549Z"
+    "savedAt": "2026-07-17T19:26:05.225Z"
   }
 }
