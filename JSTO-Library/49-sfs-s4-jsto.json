@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "49 Security Forces Squadron",
+    "workCenter": "Logistics and Readiness",
+    "officeSymbol": "Bldg 302 & 294 / S4",
+    "supervisor": "ADDICUS L. NILAND, MSgt",
+    "reviewer": "",
+    "reviewDate": "2026-07-22",
+    "effectiveDate": "2026-07-22",
+    "description": "The primary mission is to ensure that home station and deployed defenders are fully armed, equipped, and operationally ready for daily law enforcement, base defense, and global wartime missions. Because Security Forces operate 24/7/365, S4 works continuously behind the scenes to manage multi-million dollar squadron budgets, acquire vital tactical gear, sustain specialized vehicle fleets, and coordinate personnel deployment requirements. Three of the most critical roles that enable the S4 to accomplish this massive sustainment mission are the Unit Deployment Manager (UDM), the Supply NCO, and the Vehicle Control Officer (VCO).",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "911, 575-572-7171",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "49 SFS_S4 JSTO",
+    "uploadedBy": "Niland",
+    "uploadedById": "niland",
+    "dafvaPostingLocation": "",
+    "phone": "575-572-0607"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-07-22T21:13:10.942Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/49-sfs-s4-jsto.pdf",
+  "libraryMeta": {
+    "uploadedBy": "Niland",
+    "uploadedById": "niland",
+    "savedLibraryPdf": "JSTO-Library/49-sfs-s4-jsto.pdf",
+    "savedAt": "2026-07-22T21:13:10.942Z"
+  }
+}
