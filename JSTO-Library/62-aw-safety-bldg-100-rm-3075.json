@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "unit": "62 AW",
+    "workCenter": "Safety",
+    "officeSymbol": "Bldg 100, Rm 3075",
+    "supervisor": "Mark Allen, MSgt, Superintendent",
+    "reviewer": "Mark Allen, MSgt",
+    "reviewDate": "2026-07-28",
+    "effectiveDate": "2026-07-28",
+    "description": "The 62 AW Safety office provides consultation, investigation, and inspection support to the Air Force contingent on Joint Base Lewis-McChord. ",
+    "references": "29 CFR 1904\n29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards)\n29 CFR Part 1926 - Safety and Health Regulations for Construction\nDODI 6055.04\nDODI 6055.07\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFI 91-203\nDAFI 91-204\nDiscipline specific 91- series manuals\n",
+    "jhaNotes": "Personnel assigned to the 62 AW Safety office will conduct their duties throughout the Wing. They may be exposed or working in the vicinity of the following operations: construction, material handling, chemical usage, aircraft maintenance, vehicle maintenance, airfield systems repair, explosive operations, and more. Safety personnel shall always be aware of their surroundings when performing inspections, and avoid putting themselves in hazardous situations. ",
+    "emergencyNumbers": "Police, Fire, and Medical Emergencies: 911\n446 Wing Safety- COM: (253) 982-5307 / DSN: 382-5307\nMaintenance Operations Control- COM: (253) 982-3336 / DSN: 382-3336\nCommand Post- COM: (253) 982-2635 / DSN: 382-2635\nSecurity Forces LE Desk-  COM: (253) 982-5624",
+    "medicalFacility": "McChord Field Clinic (NO EMERGENCY ROOM): 690 Barnes Blvd JBLM, WA 98438 \n(253) 982-2273\n\nMadigan Army Medical Center (MAMC): BLDG 9040 Fitzsimmons Drive Tacoma, WA 98431 \n(253) 982-1110\n\nAmerican Lake VA Hospital: 9600 Veterans Drive Tacoma, WA 98493\n1-800-329-8387\n\nBremerton Naval Hospital: One Boone Road Bremerton, WA 98312\n1-800-422-1383 \n\nSt Clare Hospital: 11315 Bridgeport Way SW Lakewood, WA 98499\n (253) 985-1711 \n\nTacoma General Hospital: 315 Martin Luther King Jr. Way Tacoma, WA 98405\n(253) 403-1000\n\nAllenmore Hospital: 1901 S Union Ave Tacoma, WA 98405\n(253) 459-6633\n\n",
+    "evacuationRoute": "Primary Route: Exit the safety office and go down the stairs to the first floor. Turn right, walk down the hall and exit through the first available door that leads outside. \n\nSecondary Exit: Exit the safety office, turn towards the left and follow the hallway all the way around to the JAG office. Walk down the stairs, exit through the first available door that leads outside. \n\nThe assembly area will be in the parking lot near the flag pole. ",
+    "shelterInPlace": "Building 100, mall area (MPF)",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "If directed, go to the Shelter-In-Place. Follow instructions from Weather and Command Post. ",
+    "fireEquipmentNotes": "No fire extinguishers are located in the office. Evacuate the area if a fire is present. ",
+    "safetyBoardLocation": "The bulletin board is located near the refrigerator.",
+    "trafficSafetyNotes": "I-5 is the main highway and a major source of vehicle accidents; construction, poor visibility due to weather, and erratic drivers are common. Roadways in Washington are also twisting with blind spots in thick forested areas, exercise caution when driving outside of city limits. ",
+    "trafficContacts": "There are currently no motorcycle riders in WSA. If you are a motorcycle rider, contact the Occupational Safety office for assistance. ",
+    "annualReviewLog": "Supervisor review completed 28 Jul 26.",
+    "documentNotes": "Document JSTO training on the DAF 55, located in the Occupational Safety sharedrive. ",
+    "exportBasename": "",
+    "uploadedBy": "62AWSafety",
+    "uploadedById": "62awsafety",
+    "dafvaPostingLocation": "Safety bulletin board near the refrigerator.",
+    "phone": "982-9999"
+  },
+  "unitImage": {
+    "name": "download.jpg",
+    "dataUrl": "data:image/jpeg;base64,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"
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-3",
+      "title": "Government Vehicle / Utility Vehicle Use",
+      "reference": "DAFI 91-207; local procedures",
+      "trainingRequirement": "Train vehicle operators on seat belts, speed limits, local traffic hazards, spotter use while backing, and restrictions on electronic device use while driving.",
+      "afTrainingRequirement": "Brief operators on unit-specific government vehicle training requirements, local route restrictions, low-speed vehicle rules, and documentation of qualification.",
+      "trainingBasis": "OSHA 2254 / Vehicle and Mobile Equipment Concepts",
+      "afTrainingBasis": "DAFI 91-207 / local traffic safety procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-7",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Local procedures / equipment guidance",
+      "trainingRequirement": "Train workers on removing jewelry and securing loose articles when working around machinery, electrical hazards, rotating equipment, or snag hazards.",
+      "afTrainingRequirement": "Use local work-center restrictions and equipment guidance to define prohibited items and exceptions for mission-essential tasks.",
+      "trainingBasis": "Local / Equipment Guidance",
+      "afTrainingBasis": "Shop-specific safety restrictions",
+      "notes": "If assisting workcenters during an inspection, remove jewelry prior to work. ",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
+      "trainingRequirement": "Train workers on proper lifting techniques, team lifting, load assessment, and use of lifting aids to reduce musculoskeletal injury risk.",
+      "afTrainingRequirement": "Provide verbal and written guidance on manual lifting, lifting devices, and local reporting actions for strain or overexertion symptoms.",
+      "trainingBasis": "OSHA 2254 / Ergonomics and Material Handling Concepts",
+      "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/62-aw-safety-bldg-100-rm-3075.pdf",
+  "savedAt": "2026-07-28T22:19:49.815Z",
+  "libraryMeta": {
+    "uploadedBy": "62AWSafety",
+    "uploadedById": "62awsafety",
+    "savedLibraryPdf": "JSTO-Library/62-aw-safety-bldg-100-rm-3075.pdf",
+    "savedAt": "2026-07-28T22:19:49.815Z"
+  }
+}
