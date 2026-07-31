@@ -16,7 +16,7 @@
     "shelterInPlace": "Building 100, mall area (MPF)",
     "activeShooterMethods": "",
     "adverseWeatherShelter": "If directed, go to the Shelter-In-Place. Follow instructions from Weather and Command Post. ",
-    "fireEquipmentNotes": "No fire extinguishers are located in the office. Evacuate the area if a fire is present. ",
+    "fireEquipmentNotes": "One fire extinguisher is located along the wall near the front door (weapons cubicle). The secondary extinguisher is in the hallway towards the Wing/CC office. ",
     "safetyBoardLocation": "The bulletin board is located near the refrigerator.",
     "trafficSafetyNotes": "I-5 is the main highway and a major source of vehicle accidents; construction, poor visibility due to weather, and erratic drivers are common. Roadways in Washington are also twisting with blind spots in thick forested areas, exercise caution when driving outside of city limits. ",
     "trafficContacts": "There are currently no motorcycle riders in WSA. If you are a motorcycle rider, contact the Occupational Safety office for assistance. ",
@@ -135,11 +135,11 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/62-aw-safety-bldg-100-rm-3075.pdf",
-  "savedAt": "2026-07-28T22:19:49.815Z",
+  "savedAt": "2026-07-31T16:21:05.379Z",
   "libraryMeta": {
     "uploadedBy": "62AWSafety",
     "uploadedById": "62awsafety",
     "savedLibraryPdf": "JSTO-Library/62-aw-safety-bldg-100-rm-3075.pdf",
-    "savedAt": "2026-07-28T22:19:49.815Z"
+    "savedAt": "2026-07-31T16:21:05.379Z"
   }
 }
