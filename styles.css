@@ -1072,6 +1072,35 @@ body.modal-open {
 }
 
 @media print {
+  .preview > section,
+  .preview-section,
+  .preview li,
+  .hoc-block,
+  .active-shooter-block,
+  .dafsms-block,
+  .saferep-block,
+  .fire-extinguisher-block,
+  .unsafe-reporting-block,
+  .traffic-safety-block,
+  .unsafe-reporting-card,
+  .traffic-safety-card,
+  .dafsms-panel-card,
+  .uploaded-asset-card {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .preview > section {
+    margin-bottom: 16px;
+  }
+
+  .preview h2,
+  .preview h3,
+  .preview h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
   img {
     display: block;
     break-inside: avoid;
@@ -1119,6 +1148,20 @@ body.modal-open {
   .unsafe-reporting-block,
   .traffic-safety-block {
     display: block;
+  }
+
+  .hoc-block,
+  .active-shooter-block,
+  .dafsms-block,
+  .saferep-block,
+  .fire-extinguisher-block,
+  .unsafe-reporting-block,
+  .traffic-safety-block,
+  .unsafe-reporting-card,
+  .traffic-safety-card,
+  .dafsms-panel-card,
+  .uploaded-asset-card {
+    background: transparent;
   }
 
   body {
