@@ -775,6 +775,9 @@ function renderPreview() {
         <li><strong>DAF Form 457:</strong> Use to document and elevate unsafe conditions, equipment, or processes.</li>
         <li><strong>SAFEREP:</strong> Use the approved mishap or hazard reporting channel for additional reporting when directed by local procedures.</li>
       </ul>
+      <figure class="saferep-app-graphic">
+        <img src="assets/SAFEREP-app.png?v=20260804-1" alt="SAFEREP app safety reporting reference graphic">
+      </figure>
       <div class="unsafe-tag-gallery">
         <img src="assets/AF Form 979.jpg?v=20260603-1" alt="Danger tag reference">
         <img src="assets/AF Form 980.jpg?v=20260603-1" alt="Caution tag reference">

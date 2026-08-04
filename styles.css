@@ -887,6 +887,21 @@ body.modal-open {
   gap: 12px;
 }
 
+.saferep-app-graphic {
+  margin: 16px 0;
+}
+
+.saferep-app-graphic img {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 42, 42, 0.12);
+  background: white;
+}
+
 .unsafe-reporting-tag-item {
   margin: 0;
   display: grid;
@@ -1115,6 +1130,7 @@ body.modal-open {
   .hoc-image-wrap,
   .active-shooter-image-wrap,
   .dafsms-image-wrap,
+  .saferep-app-graphic,
   .saferep-link-card,
   .fire-extinguisher-image,
   .traffic-safety-image-wrap,
@@ -1127,6 +1143,7 @@ body.modal-open {
   .active-shooter-image,
   .dafsms-image,
   .saferep-image,
+  .saferep-app-graphic img,
   .fire-extinguisher-image,
   .traffic-safety-image,
   .uploaded-asset-pdf-page-image,
@@ -1139,6 +1156,11 @@ body.modal-open {
     width: auto;
     max-height: 9.2in;
     margin: 0 auto;
+  }
+
+  .saferep-app-graphic img {
+    max-height: 8.6in;
+    object-fit: contain;
   }
 
   .active-shooter-block,
