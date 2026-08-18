@@ -16,7 +16,7 @@
     "shelterInPlace": "The SIP Room is your personal work center, or as defined by CADS leadership.\n\n1.\tAlert all building occupants to complete their Building Shelter-In-Place tasks.\n\n2.\tGet all your personnel inside the building.\n\n3.\tClose all exterior and interior doors. Close and lock all windows.\n\n4.\tShut down the building HVAC system.\n\n5.\tDuct tape plastic sheeting around all exterior windows and vents.\n\n6.\tDuct tape around exterior doors.  Place wet towels over the crack at the bottom of the exterior doors.\n\n7.\tSecure all classified materials.\n\n8.\tMove to the most interior room(s) in your building. This is your SAFE ROOM.\n\n9.\tSeal the safe room doors with duct tape.\n\n10.\tOnce the Building Shelter-In-Place tasks have been completed, notify Command.  Report your building number and the number of personnel that you have sheltered.\n\n11.\tFollow all emergency directions provided by the Command Post.\n\n12.\tTune to the local radio or television for additional information.\n\n13.\tPerform First Aid as necessary.\n\n14.\tWait for the “ALL CLEAR” to be issued by the Command Post before resuming normal operations.  Evacuate the building.  Emergency Response personnel will determine if the building needs to be ventilated.\n",
     "activeShooterMethods": "Lock down the building, stay away from doors and windows.",
     "adverseWeatherShelter": "",
-    "fireEquipmentNotes": "Fire extinguishers are located in every hallway within the DLP. AEDs are located at the entrance of the Ops floor",
+    "fireEquipmentNotes": "Fire extinguishers and fire alarms are located in every hallway within the DLP. AEDs are located at the entrance of the Ops floor and first floor foyer next to Comm room main entrance. ",
     "safetyBoardLocation": "Located outside CSS room, to the right of the book shelfs.",
     "trafficSafetyNotes": "Local Traffic Hazards:\n\nNorth Bay has numerous road hazards, including unimproved dirt roads, paved roads with poor shoulders, and adverse weather conditions such as wind/dust storms and snow/ice, which can lead to vehicle rollovers. Rollovers on Highway 11, especially during snow/black ice conditions. Personnel should reduce speed and prepare for slick roads. It is recommended to check road conditions before traveling, especially in winter weather. Road reports can be accessed at http://511on.ca/. \n",
     "trafficContacts": "Motorcycle Operator Training:\n\nMilitary personnel who operate or intend to operate a motorcycle on a roadway, government-owned or leased motorcycles, and Air Force civilian personnel required to operate a motorcycle must complete motorcycle safety training. This training is mandatory for motorcycles with engine displacements of over 49cc unless specified otherwise by state, territory, host nation, or applicable SOFA requirements.\n\nMotorcycle safety training does not substitute for state licensing requirements. Riders must possess a valid motorcycle license, endorsement, or rider’s permit before operating a motorcycle on roadways, including travel to and from training locations.\nAll newly assigned personnel must complete the commander’s initial motorcycle safety briefing within 30 duty days of assignment or identification as a rider. Personnel transferring out will complete out-processing through the motorcycle safety representative to transfer their record in the MUSTT/Training module. Motorcycle riders are required to attend an annual/pre-season motorcycle safety briefing.\n\nPlease contact USR if planning to operate motorcycle.",
@@ -134,13 +134,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-08-18T14:55:13.334Z",
+  "savedAt": "2026-08-18T15:01:08.424Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/det2-jsto-fy26.pdf",
   "libraryMeta": {
     "uploadedBy": "TSgt Gil, Alex",
     "uploadedById": "tsgt gil alex",
     "savedLibraryPdf": "JSTO-Library/det2-jsto-fy26.pdf",
-    "savedAt": "2026-08-18T14:55:13.334Z"
+    "savedAt": "2026-08-18T15:01:08.424Z"
   }
 }
