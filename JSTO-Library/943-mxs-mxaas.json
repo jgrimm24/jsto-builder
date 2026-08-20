@@ -108,7 +108,7 @@
       "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
       "trainingBasis": "OSHA 2254 / Hazard Communication",
       "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
-      "notes": ": Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance. Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies. NOTE: The physical HAZCOM Program Binder is housed in the APG office (room 106). Primary POC: SMSgt Benjamin Wells (MXAAA), Ph: 228-2235; Alternate POCs: MSgt Jesus Munoz (MXAAA), Ph: 228-5975 and MSgt Anthony Campas (MXAASA), Ph: 228-2325. Members receive HAZCOM training and complete Knowledge Assessment annually which are documented on their DAF Form 55. DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication.",
+      "notes": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance. Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies. NOTE: The physical HAZCOM Program Binder is housed in the APG office (room 106). Primary POC: SMSgt Benjamin Wells (MXAAA), Ph: 228-2235; Alternate POCs: MSgt Jesus Munoz (MXAAA), Ph: 228-5975 and MSgt Anthony Campas (MXAASA), Ph: 228-2325. Members receive HAZCOM training and complete Knowledge Assessment annually which are documented on their DAF Form 55. DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication.",
       "link": "https://usaf.dps.mil/:b:/r/teams/SpecialistSection488/Shared%20Documents/Safety%20and%20HAZCOM/HAZCOM/01%20Tab%20E1%20-%20Work%20Area%20Specific%20HAZCOM%20Training%20(cao%2009%20Jun%2026).pdf?d=w3bcd52fdb0eb4ca6ba8a68d5485156f1&csf=1&web=1&e=cmYs8F"
     },
     {
@@ -240,7 +240,7 @@
       "afTrainingRequirement": "Document the governing reference, training location, and how completion is tracked for this custom module.",
       "trainingBasis": "Custom / Local requirement",
       "afTrainingBasis": "Custom / Local requirement",
-      "notes": "local environmental stewardship (2024)",
+      "notes": "Technicians are briefed annually through their work center JSTO which is documented on the member’s DAF Form 55. local environmental stewardship (2024)",
       "link": "https://www.dm.af.mil/Portals/99/Docs/Public%20Information%20Docs/2024%20355%20WG%20Environmental%20Commitment%20Statement.pdf?ver=GEJAffbju3FDNvHc0oWi6g%3d%3d&timestamp=1737055772075"
     },
     {
@@ -253,15 +253,26 @@
       "afTrainingBasis": "Custom / Local requirement",
       "notes": "Local Clean Water Act training for spill response (SPCC) and stormwater pollution prevention (SWPPP).",
       "link": "https://usaf.dps.mil/:p:/r/teams/SpecialistSection488/Shared%20Documents/Safety%20and%20HAZCOM/Training/Stormwater%20Training_CWA%20SWPPP%20%26%20SPCC_Final_2025.pptx?d=w6a68ae47f3f2455797f8719b94f4b1a6&csf=1&web=1&e=AkGRvX"
+    },
+    {
+      "id": "custom-1787186956969",
+      "title": "Lockout/Tagout",
+      "reference": "DAFMAN91-203, Chapter 21",
+      "trainingRequirement": "Describe the unit-specific hazard, certification, or recurring training requirement that applies to this work center.",
+      "afTrainingRequirement": "Document the governing reference, training location, and how completion is tracked for this custom module.",
+      "trainingBasis": "Custom / Local requirement",
+      "afTrainingBasis": "Custom / Local requirement",
+      "notes": "Technicians must receive initial training which is documented on the member’s DAF Form 55.",
+      "link": "https://usaf.dps.mil/:p:/r/teams/SpecialistSection488/Shared%20Documents/Safety%20and%20HAZCOM/Training/Lockout%20Tagout%20Training.ppt?d=w7c4124ed294a47d48076233bd445c11d&csf=1&web=1&e=7qcJqL"
     }
   ],
-  "savedAt": "2026-08-20T00:37:31.922Z",
+  "savedAt": "2026-08-20T00:50:45.791Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/943-mxs-mxaas.pdf",
   "libraryMeta": {
     "uploadedBy": "MichelleParedes",
     "uploadedById": "michelleparedes",
     "savedLibraryPdf": "JSTO-Library/943-mxs-mxaas.pdf",
-    "savedAt": "2026-08-20T00:37:31.922Z"
+    "savedAt": "2026-08-20T00:50:45.791Z"
   }
 }
