@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "unit": "9 Air Support Operations Squadron",
+    "workCenter": "Command, D-Flight",
+    "officeSymbol": "Bldg. 22038 / CMD/ DFlt",
+    "supervisor": "MSgt Frank R. Olszynski ",
+    "reviewer": "Joshua Stadler",
+    "reviewDate": "2026-08-13",
+    "effectiveDate": "2026-08-13",
+    "description": "The 9th Air Support Operations Squadron (9 ASOS) is a United States Air Force unit located at Fort Hood, Texas. The squadron’s mission is to organize, train, equip, and support Tactical Air Control Party (TACP) personnel and associated operations.\n\nPersonnel covered by this Job Safety Training Outline (JSTO) include the Command Section, Director of Operations, Command Support Staff, and additional support personnel assigned to D-Flight. D-Flight consists of Resource Management, Intelligence, Cyber, Radio Maintenance, Civil Engineering, Supply, and Vehicle Maintenance personnel.\n\nThe work center operates in administrative offices, maintenance and storage facilities, vehicle areas, communications workspaces, and other locations used to support squadron operations. Personnel may also perform duties in field environments, military training areas, and other temporary duty locations.\n\nThis JSTO covers the routine and mission-support duties performed by assigned personnel, including administrative support, operational planning, resource management, intelligence support, cybersecurity and communications activities, radio equipment maintenance, facility support, supply operations, vehicle maintenance, material handling, and general workplace activities. It also addresses the hazards, required safety practices, personal protective equipment, emergency procedures, and risk-control measures associated with these duties.\n",
+    "references": "The primary overarching publication for all chapters in this JSTO is DAFI 91-203 (Air Force Consolidated Occupational Safety Instruction).\n\nThe following primary reference directives, Technical Orders (TOs), AFMANs, and manufacturer guidelines provide detailed, functional safety policy across D-Flight's specific functional areas:\n\nCommand, Ops & Office Safety\nDAFI 91-203, Chapter 10: Ergonomics and Office Safety.\n\nDAFI 91-203, Chapter 6 & 7: Fire Prevention, Emergency Egress, and Walking-Working Surfaces.\n\nJHA Standard: Air Force Form 4392 (Pre-Task Safety Analysis / Job Hazard Analysis).\n\nRadio Maintenance & Cyber Communications\nDAFMAN 17-1301: Computer Security (COMPUSEC).\n\nDAFI 91-203, Chapter 8 & 28: Electrical Safety and Radio Frequency (RF) Radiation/Antenna Systems.\n\nTO 00-33A-1001: General Technical Manual for Ground Electronics Systems Maintenance.\n\nIEEE C95.1 / DoD Instruction 6055.11: Protection Levels for Electromagnetic Field Human Exposure.\n\nMaterial Handling, Supply & Vehicle Maintenance\nDAFMAN 24-306: Operation of Air Force Government Motor Vehicles (GMVs).\n\nAFMAN 24-301: Ground Transportation and Material Handling Equipment Operations.\n\nDAFI 91-203, Chapter 12 & 30: MHE (Forklifts) and Motor Vehicle Operations/Maintenance.\n\nTO 36-1-191: Technical Manual for Motor Vehicle Maintenance and Inspection.\n\nManufacturer Guidance: Forklift Operator Manuals (e.g., Caterpillar, Hyster, TEREX 10K capacity specifications).\n\nCivil Engineering & Facility Maintenance\nDAFI 91-203, Chapters 9, 11, 21, 22: Emergency Eyewash/Showers, Hand/Power Tools, LOTO, and Flammable/Combustible Liquids.\n\nDAFMAN 91-201: Explosive Safety Standards (applies if CE handles site planning or munitions storage facilities).\n\nOSHA 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart S / NFPA 70E: Electrical Safety in the Workplace.\n\nLocal Installation Guidance (Fort Cavazos / 9 ASOS)\nIII Armored Corps & Fort Cavazos Regulation 385-10: Fort Cavazos Safety Program (local range, wildlife, and heat stress/WBGT policies).\n\n9 ASOS Operating Instructions (OIs): Unit-level OIs for vehicle maintenance bay operations, battery charging room procedures, and antenna mast field deployment.",
+    "jhaNotes": "Bioenvironmental Engineering (BE) Survey Notes & Industrial Hygiene Limits\nNoise Exposures: BE surveys identify steady-state noise >85 dBA during generator operations and impulse noise >140 dBP in vehicle maintenance/pneumatic tool zones. Annual audiometric testing required for enrolled D-Flight personnel.\n\nChemical Exposures: Potential chemical hazards include petroleum, oil, and lubricants (POL), aerosol solvents, brake cleaners, and battery electrolyte. Vapor concentrations must remain below OSHA Permissible Exposure Limits (PELs) via mechanical dilution ventilation.\n\nIndoor Air Quality & Ventilation: Battery charging bays must maintain active exhaust systems to prevent hydrogen gas accumulation (>1% concentration limit).\n\nWork Center Special Restrictions\nContact Lenses: Restricted in battery service areas and solvent cleaning zones unless non-vented chemical splash goggles are worn.\n\nJewelry & Loose Clothing: Rings, watches, neck chains, and loose uniforms are strictly prohibited when operating machinery, working on vehicle engines, or handling MHE.\n\nChemical Storage: Flammable liquids capped at single-shift quantities outside approved fire safety cabinets. No open flames within 50 feet of fuel or battery charging bays.\n\n",
+    "emergencyNumbers": "Ambulance 911\nCommand Post 254-286-6823\n93 AGOW Safety DSN 460-9750 Comm 229-257-9750/9749\n",
+    "medicalFacility": "Carl R. Darnall Regonal Medical Center Info Desk: 254-288-8000/8904\nCarl R. Darnall Regonal Medical Center Appointment Line: 254-288-8888\nRussell Collier Health Clinic: 254-553-3146/3147\nPatient Advocacy: 254-288-8156",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "9ASOS_JSTO_SWMS_AUG26",
+    "uploadedBy": "9ASOSSWMS",
+    "uploadedById": "9asosswms",
+    "dafvaPostingLocation": "",
+    "phone": "254-285-6086"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.7",
+      "title": "Respiratory Protection Program",
+      "reference": "DAFI 48-137; 29 CFR 1910.134 - Respiratory protection",
+      "trainingRequirement": "Train users before respirator use and at least annually on why the respirator is necessary, how improper fit or maintenance can compromise protection, and how to inspect, don, doff, use, and store the respirator.",
+      "afTrainingRequirement": "Document fit testing and occupational health training on AF Form 2767 and ensure wearers understand emergency-use limits, cartridge change-out, cleaning, and medical qualification requirements.",
+      "trainingBasis": "OSHA 2254 / Respiratory Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Respiratory Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.10",
+      "title": "Forklift / Material Handling Equipment",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
+      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
+      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
+      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
+      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.11",
+      "title": "Explosives Safety Training",
+      "reference": "DESR 6055.09_DAFMAN 91-201 - Explosives Safety Standards; DAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program",
+      "trainingRequirement": "Use explosives-specific AF lesson plans and local operating instructions. OSHA 2254 includes transportation and explosives references, but the Air Force explosives program should remain the primary training basis for this module.",
+      "afTrainingRequirement": "Provide initial and task-specific explosives safety training using approved lesson plans, local instructions, and quantity-distance / compatibility controls before personnel work with explosives.",
+      "trainingBasis": "OSHA 2254 / Explosives and Transportation References",
+      "afTrainingBasis": "DESR6055.09_DAFMAN91-201 / local procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.13",
+      "title": "CPR Training",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 1",
+      "trainingRequirement": "Provide CPR and AED training before assignment where required, and refresh qualification before expiration.",
+      "afTrainingRequirement": "Ensure designated responders maintain current certification and understand location and use of local AED assets under the unit mishap prevention program.",
+      "trainingBasis": "Local / First Aid Program",
+      "afTrainingBasis": "DAFMAN 91-203 / Emergency Response and CPR",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.15",
+      "title": "Fetal Protection Program",
+      "reference": "DAFMAN 48-146",
+      "trainingRequirement": "Provide job-specific hazard awareness for reproductive health risks where occupational exposures may affect pregnant workers or fetuses.",
+      "afTrainingRequirement": "Use occupational and environmental health guidance to discuss declaration options, exposure review, and local work restriction procedures.",
+      "trainingBasis": "Local / Occupational Health Guidance",
+      "afTrainingBasis": "DAFMAN 48-146 / Fetal Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedAt": "2026-08-25T19:25:08.030Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/9asos-jsto-swms-aug26.pdf",
+  "libraryMeta": {
+    "uploadedBy": "9ASOSSWMS",
+    "uploadedById": "9asosswms",
+    "savedLibraryPdf": "JSTO-Library/9asos-jsto-swms-aug26.pdf",
+    "savedAt": "2026-08-25T19:25:08.030Z"
+  }
+}
