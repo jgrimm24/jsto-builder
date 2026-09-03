@@ -154,15 +154,26 @@
       "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
       "notes": "Facility Managers and Supervisors must establish and maintain a fire prevention training program through the JSTO so employees understand their fire prevention and protection responsibilities in the work area. This is fulfilled through job safety training and documentation under DAFI 91-202. Review the prevenetion plan with employee when the plan is developed, when responsibilities change, and wehn the plan changes. If extinguishers are provided for employee use, train employees on the general principles of extinguisher use and the hazards of incipient-stage firefighting at initial assignment and at least annually. Train designated users on the specific equipment they are expected to use.",
       "link": ""
+    },
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Provide bloodborne pathogens training at initial assignment and at least annually thereafter, covering exposure control, modes of transmission, and protective measures.",
+      "afTrainingRequirement": "Enroll applicable workers in the local bloodborne pathogens program and ensure exposure control plan requirements, reporting actions, and PPE procedures are covered before task performance.",
+      "trainingBasis": "OSHA 2254 / Bloodborne Pathogens",
+      "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
+      "notes": "Members may be exposed to fluids during routine and austere operations. Members should follow proper PPE guidance and reporting actions.",
+      "link": ""
     }
   ],
-  "savedAt": "2026-09-03T15:16:47.422Z",
+  "savedAt": "2026-09-03T15:41:10.792Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
   "libraryMeta": {
     "uploadedBy": "Butler",
     "uploadedById": "butler",
     "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
-    "savedAt": "2026-09-03T15:16:47.422Z"
+    "savedAt": "2026-09-03T15:41:10.792Z"
   }
 }
