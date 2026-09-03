@@ -8,7 +8,7 @@
     "reviewDate": "2026-09-03",
     "effectiveDate": "2026-09-07",
     "description": "Building 1907, 4th Floor, Room number 401.\nThe training flight is responsible for overseeing formal, ancillary, & AFSC-specific training for squadron personnel. They provide high-level coordination, expertise, and trust to ensure all personnel meet readiness standards for TRANSCOM Alert cycles. The flight tracks and schedules all training to maintain critical mission capability and manages cross-functional training plans, consolidates AFSC requirements, and delivers tailored readiness reporting to Wing leadership.",
-    "references": "DAFMAN 91-203\nDAFI 48-127",
+    "references": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 48-127",
     "jhaNotes": "No major workplace hazards exist in this area. Ensure personnel are aligning with proper workstation ergonomics and posture and taking adequate breaks to rest eyes and move bodies.",
     "emergencyNumbers": "Command Post: 609-754-3935\nJB MDL Base Defense Operations Center: 609-562-6001\nEmergency: 911\nMental Health Emergency: 988",
     "medicalFacility": "- JB MDL Clinic/87th Medical Group is open 0730-1600 during duty days\n- Same Day Acute Care is open 0800-1500\n- Appointment Line: (866) 377-2778\n- JBMDL does NOT have emergency room, call 911 for emergencies and 988 for mental health emergencies. \n- For urgent concerns outside of duty hours, contact the Nurse Advice Line at 1-800-TRICARE",
@@ -23,8 +23,8 @@
     "annualReviewLog": "TSgt Joshua Butler - 3 September 2026 - (609-754-0898",
     "documentNotes": "Safety training records will be maintained within the DOX Teams folder and with the Unit Safety Representative Program.",
     "exportBasename": "321_CRS_DOX_JSTO",
-    "uploadedBy": "321_CRS_DOX_JSTO",
-    "uploadedById": "321 crs dox jsto",
+    "uploadedBy": "Butler",
+    "uploadedById": "butler",
     "dafvaPostingLocation": "",
     "phone": "609-754-0898"
   },
@@ -156,12 +156,13 @@
       "link": ""
     }
   ],
+  "savedAt": "2026-09-03T15:16:47.422Z",
+  "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
-  "savedAt": "2026-09-03T15:14:31.870Z",
   "libraryMeta": {
-    "uploadedBy": "321_CRS_DOX_JSTO",
-    "uploadedById": "321 crs dox jsto",
+    "uploadedBy": "Butler",
+    "uploadedById": "butler",
     "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
-    "savedAt": "2026-09-03T15:14:31.870Z"
+    "savedAt": "2026-09-03T15:16:47.422Z"
   }
 }
