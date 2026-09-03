@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "unit": "321st Contingency Response Squadron",
+    "workCenter": "Training Flight",
+    "officeSymbol": "DOX/BLDG 1907/Rm 401",
+    "supervisor": "(M)Sgt Andrew Piroli",
+    "reviewer": "TSgt Joshua Butler",
+    "reviewDate": "2026-09-03",
+    "effectiveDate": "2026-09-07",
+    "description": "Building 1907, 4th Floor, Room number 401.\nThe training flight is responsible for overseeing formal, ancillary, & AFSC-specific training for squadron personnel. They provide high-level coordination, expertise, and trust to ensure all personnel meet readiness standards for TRANSCOM Alert cycles. The flight tracks and schedules all training to maintain critical mission capability and manages cross-functional training plans, consolidates AFSC requirements, and delivers tailored readiness reporting to Wing leadership.",
+    "references": "DAFMAN 91-203\nDAFI 48-127",
+    "jhaNotes": "No major workplace hazards exist in this area. Ensure personnel are aligning with proper workstation ergonomics and posture and taking adequate breaks to rest eyes and move bodies.",
+    "emergencyNumbers": "Command Post: 609-754-3935\nJB MDL Base Defense Operations Center: 609-562-6001\nEmergency: 911\nMental Health Emergency: 988",
+    "medicalFacility": "- JB MDL Clinic/87th Medical Group is open 0730-1600 during duty days\n- Same Day Acute Care is open 0800-1500\n- Appointment Line: (866) 377-2778\n- JBMDL does NOT have emergency room, call 911 for emergencies and 988 for mental health emergencies. \n- For urgent concerns outside of duty hours, contact the Nurse Advice Line at 1-800-TRICARE",
+    "evacuationRoute": "The primary evacuation route will be the staircase closest to the elevator(s) and the alternate evacuation routes will be the other 2 stair cases (1 located by the Transition Section and the other by the DOM flight). The assembly location will be at the smoke pit/dumpter location outside of BLDG 1907.",
+    "shelterInPlace": "- DO Shop in Room 450, kit located in Room 453.\n- The Rook/Conference Room in Room 414.",
+    "activeShooterMethods": "Fight, Flight, Barricade. Ensure that windows are covered and doors are barricaded, silence any devices and monitor base emergency notifications systems.",
+    "adverseWeatherShelter": "Shelter in Place rooms unless otherwise directed.",
+    "fireEquipmentNotes": "Closest fire extinguisher locations are:\n- To the left of the flight entrance, down the hall by the restroom\n- To the right of the flight entrance, in the Group Leadership hallway\n- There are 7 total extinguishers across the 4th floor",
+    "safetyBoardLocation": "Main Foyer Hallways outside of the Command Section by the freight and passenger elevators",
+    "trafficSafetyNotes": "Base speed limit is 25 MPH unless otherwise posted.\nBe mindful of deer and other wildlife on the installation and ranges\nRoad conditions advisories can be found on the JB MDL Facebook page or the JB MDL app\n- Green: Roads are clear and dry. Use normal operating procedures.\n- Yellow: Roads may be wet and/or slippery. Exercise caution and reduce speeds to 5 MPH below the posted speed limit.\n- Red: Road conditions are hazardous. Use extreme caution and reduce speeds to 15 MPH throughout the base and 5 MPH in housing and parking lots.\n- Black: Roads are extremely hazardous. Only mission essential and required personnel repoaring for duty are authorized to drive on base - use extreme caution!",
+    "trafficContacts": "321 CRS Motorcycle Safety Reps:\nSSgt Roy Blackmon\nSSgt Dan Drake",
+    "annualReviewLog": "TSgt Joshua Butler - 3 September 2026 - (609-754-0898",
+    "documentNotes": "Safety training records will be maintained within the DOX Teams folder and with the Unit Safety Representative Program.",
+    "exportBasename": "321_CRS_DOX_JSTO",
+    "uploadedBy": "321_CRS_DOX_JSTO",
+    "uploadedById": "321 crs dox jsto",
+    "dafvaPostingLocation": "",
+    "phone": "609-754-0898"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "Members may be required to complete an annual audiogram, coordinated with Occupational Helath at the 87th Medical Group clinic. Contact the appointment line to sechedule: (866) 377-2778, option 1,2,5,2 or email the org box at dha.jbmdl.mcguire-87th-mdg.mbx.87-omrs-occ-health@health.mil",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.10",
+      "title": "Forklift / Material Handling Equipment",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
+      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
+      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
+      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
+      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
+      "notes": "Members may be required to complete forklift competency training in line with their AFSC or mission requirements. All training should be coordinated with Port Flight.",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.13",
+      "title": "CPR Training",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 1",
+      "trainingRequirement": "Provide CPR and AED training before assignment where required, and refresh qualification before expiration.",
+      "afTrainingRequirement": "Ensure designated responders maintain current certification and understand location and use of local AED assets under the unit mishap prevention program.",
+      "trainingBasis": "Local / First Aid Program",
+      "afTrainingBasis": "DAFMAN 91-203 / Emergency Response and CPR",
+      "notes": "Training is required for established mission-ready requirements. SrA Richard Ramos in the CSS is the primary POC for this training and all certifications are maintained by the CPR program and Training Flight.",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "Members may be required to complete flightline driving competency training in line with their AFSC or mission requirements. All training should be coordinated with SSgt Roger Lattimore and certification is tracked by the Training Flight.",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
+      "trainingRequirement": "Train workers on proper lifting techniques, team lifting, load assessment, and use of lifting aids to reduce musculoskeletal injury risk.",
+      "afTrainingRequirement": "Provide verbal and written guidance on manual lifting, lifting devices, and local reporting actions for strain or overexertion symptoms.",
+      "trainingBasis": "OSHA 2254 / Ergonomics and Material Handling Concepts",
+      "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
+      "notes": "Manual lifting will be required during cargo preparation, exercise, and field conditions. Utilize proepr lifting form and implement two-person or MHE lifts when appropriate.",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; local fire prevention plan",
+      "trainingRequirement": "Train personnel on fire hazards, reporting procedures, extinguisher locations, evacuation routes, pull stations, and local emergency response actions.",
+      "afTrainingRequirement": "Use the JSTO and local fire prevention plan to brief workers on work-center fire hazards, alarm reporting, extinguisher use, and evacuation accountability.",
+      "trainingBasis": "OSHA 2254 / Fire Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
+      "notes": "Facility Managers and Supervisors must establish and maintain a fire prevention training program through the JSTO so employees understand their fire prevention and protection responsibilities in the work area. This is fulfilled through job safety training and documentation under DAFI 91-202. Review the prevenetion plan with employee when the plan is developed, when responsibilities change, and wehn the plan changes. If extinguishers are provided for employee use, train employees on the general principles of extinguisher use and the hazards of incipient-stage firefighting at initial assignment and at least annually. Train designated users on the specific equipment they are expected to use.",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
+  "savedAt": "2026-09-03T15:14:31.870Z",
+  "libraryMeta": {
+    "uploadedBy": "321_CRS_DOX_JSTO",
+    "uploadedById": "321 crs dox jsto",
+    "savedLibraryPdf": "JSTO-Library/321-crs-dox-jsto.pdf",
+    "savedAt": "2026-09-03T15:14:31.870Z"
+  }
+}
