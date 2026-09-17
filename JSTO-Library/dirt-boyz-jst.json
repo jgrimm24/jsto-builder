@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "unit": "796 CES",
+    "workCenter": "CEOHH - Dirt Boyz",
+    "officeSymbol": "Bldg 541",
+    "supervisor": "Mr. John Corlew",
+    "reviewer": "John Corlew",
+    "reviewDate": "2026-09-17",
+    "effectiveDate": "2026-09-17",
+    "description": "Move dirt and operate equipment.",
+    "references": "DAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program, DAF Mishap Prevention Program\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Consolidated Safety, Fire and Health Standards",
+    "jhaNotes": "JHA - Taxi Hotel Milling",
+    "emergencyNumbers": "911 - EMS/Law Enforcement\n850-882-4020 - Command Post",
+    "medicalFacility": "Eglin Hospital and Emergency Department\n306 Boatner Road\nEglin AFB, FL 32542\n\n850-883-8600",
+    "evacuationRoute": "Personnel will evacuate to the \"Big Cedar Tree\" for accountability.",
+    "shelterInPlace": "Shelter In-place location is the Break Room, located in Bldg. 541",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "Dirt Boyz JST",
+    "uploadedBy": "Mr.DavidQuick",
+    "uploadedById": "mr davidquick",
+    "dafvaPostingLocation": "",
+    "phone": "850-882-9693"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Provide bloodborne pathogens training at initial assignment and at least annually thereafter, covering exposure control, modes of transmission, and protective measures.",
+      "afTrainingRequirement": "Enroll applicable workers in the local bloodborne pathogens program and ensure exposure control plan requirements, reporting actions, and PPE procedures are covered before task performance.",
+      "trainingBasis": "OSHA 2254 / Bloodborne Pathogens",
+      "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedAt": "2026-09-17T18:58:53.856Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/dirt-boyz-jst.pdf",
+  "libraryMeta": {
+    "uploadedBy": "Mr.DavidQuick",
+    "uploadedById": "mr davidquick",
+    "savedLibraryPdf": "JSTO-Library/dirt-boyz-jst.pdf",
+    "savedAt": "2026-09-17T18:58:53.856Z"
+  }
+}
