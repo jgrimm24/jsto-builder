@@ -21,11 +21,11 @@
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
-    "documentNotes": "",
+    "documentNotes": "Training documentation is maintained in the Training Folder, located in the Supervisor's Office.",
     "exportBasename": "Dirt Boyz JST",
     "uploadedBy": "Mr.DavidQuick",
     "uploadedById": "mr davidquick",
-    "dafvaPostingLocation": "",
+    "dafvaPostingLocation": "Located on Bulletin Board in the Break Room",
     "phone": "850-882-9693"
   },
   "unitImage": {
@@ -110,15 +110,70 @@
       "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
       "notes": "",
       "link": ""
+    },
+    {
+      "id": "14.1.3.10",
+      "title": "Forklift / Material Handling Equipment",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
+      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
+      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
+      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
+      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
+      "trainingRequirement": "Train workers on proper lifting techniques, team lifting, load assessment, and use of lifting aids to reduce musculoskeletal injury risk.",
+      "afTrainingRequirement": "Provide verbal and written guidance on manual lifting, lifting devices, and local reporting actions for strain or overexertion symptoms.",
+      "trainingBasis": "OSHA 2254 / Ergonomics and Material Handling Concepts",
+      "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
+      "notes": "",
+      "link": ""
     }
   ],
-  "savedAt": "2026-09-17T18:58:53.856Z",
+  "savedAt": "2026-09-17T19:06:47.868Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/dirt-boyz-jst.pdf",
   "libraryMeta": {
     "uploadedBy": "Mr.DavidQuick",
     "uploadedById": "mr davidquick",
     "savedLibraryPdf": "JSTO-Library/dirt-boyz-jst.pdf",
-    "savedAt": "2026-09-17T18:58:53.856Z"
+    "savedAt": "2026-09-17T19:06:47.868Z"
   }
 }
