@@ -3,11 +3,11 @@
     "unit": "156th Wing ",
     "workCenter": "Wing Staff Agencies / Comptroller Flight",
     "officeSymbol": "WSA_CPTF",
-    "supervisor": "",
-    "reviewer": "",
-    "reviewDate": "2026-09-18",
+    "supervisor": "Maj Ernesto Ayala, CPTF Commander",
+    "reviewer": "MSgt Raphael Medina",
+    "reviewDate": "2026-07-21",
     "effectiveDate": "2026-09-18",
-    "description": "",
+    "description": "The 156th Wing Staff Agencies (WSA) and the 156th Comptroller Flight (156 CPTF) serve as the executive decision-making, regulatory, and financial foundation of the 156th Wing, Puerto Rico Air National Guard (PRANG) based out of Muñiz Air National Guard Base, Carolina, Puerto Rico. \n\nWorking directly in support of the Wing Commander, these sections maintain military readiness, safeguard resources, protect civil liberties, and manage base-wide operations.",
     "references": "",
     "jhaNotes": "",
     "emergencyNumbers": "",
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-18T17:16:04.199Z",
+  "savedAt": "2026-09-18T17:36:09.337Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/156-wsa-cpptf-jsto-fy26.pdf",
   "libraryMeta": {
     "uploadedBy": "Raphael  Medina",
     "uploadedById": "raphael medina",
     "savedLibraryPdf": "JSTO-Library/156-wsa-cpptf-jsto-fy26.pdf",
-    "savedAt": "2026-09-18T17:16:04.199Z"
+    "savedAt": "2026-09-18T17:36:09.337Z"
   }
 }
