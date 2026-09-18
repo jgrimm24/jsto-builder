@@ -94,14 +94,26 @@
       "title": "DAFSMS Responsibilities"
     }
   ],
-  "selectedModules": [],
-  "savedAt": "2026-09-18T22:29:47.992Z",
+  "selectedModules": [
+    {
+      "id": "local-4",
+      "title": "Risk Management Fundamentals",
+      "reference": "DAFI 90-802; DAFPAM 90-803",
+      "trainingRequirement": "Train workers to identify hazards, assess risk, implement controls, supervise the task, and re-evaluate controls during and after operations.",
+      "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
+      "trainingBasis": "Local / Risk Management Guidance",
+      "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
+      "notes": "Risk Management Fundamentals: Reference: DAFSMS and local RM program guidance. Address hazard identification, control selection, local escalation expectations, and when RM refresher training must be completed for this work center. Risk Management (RM) is a continuous and systematic process designed to preserve combat readiness and enhance force protection by proactively identifying, assessing, and mitigating operational hazards. I have structured this framework around four foundational principles: accepting no unnecessary risk, ensuring decisions are made at the appropriate command authority, integrating assessment early into mission planning, and maintaining continuous application throughout the operational lifecycle. This cycle is executed through a structured five-step methodology that begins with the identification of real or potential hazards, followed by a detailed assessment of their probability and severity to determine overall risk levels. Once identified, leaders develop and implement mitigation controls—such as engineering, administrative, or protective measures—and continuously supervise operations to evaluate control efficacy and adjust for emerging variables in the environment. To facilitate this process, the Joint Risk Assessment Tool (JRAT) serves as the primary web-based, automated platform managed by the U.S. Army Combat Readiness Center (USACRC) for standardizing risk management across the Department of War. This centralized system automates the generation of the DD Form 2977 (Deliberate Risk Assessment Worksheet) and provides specialized portals for each service branch to ensure alignment with joint standards and mishap statistics. I should note that JRAT streamlines the assessment process by offering pre-populated libraries of mission types and hazards, incorporating real-world lessons learned from historical data, and enabling global coordination for joint operations. By leveraging this tool, personnel can ensure their risk assessments are data-driven, compliant, and effectively integrated into the mission planning process to fortify force protection.",
+      "link": ""
+    }
+  ],
+  "savedAt": "2026-09-18T22:32:57.447Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/156-wsa-cptf-jsto-fy26.pdf",
   "libraryMeta": {
     "uploadedBy": "Raphael  Medina",
     "uploadedById": "raphael medina",
     "savedLibraryPdf": "JSTO-Library/156-wsa-cptf-jsto-fy26.pdf",
-    "savedAt": "2026-09-18T22:29:47.992Z"
+    "savedAt": "2026-09-18T22:32:57.447Z"
   }
 }
