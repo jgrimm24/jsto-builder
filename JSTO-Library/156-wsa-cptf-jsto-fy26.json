@@ -12,7 +12,7 @@
     "jhaNotes": "",
     "emergencyNumbers": "",
     "medicalFacility": "",
-    "evacuationRoute": "",
+    "evacuationRoute": "WING HEADQUARTERS BLDG# 22 FIRE EVACUATION PLAN:\n\nACTION TO BE TAKEN UPON DISCOVERY OF FIRE IN THIS BUILDING OR IMMEDIATE AREA\n\nSOUND FIRE ALARM AIR HORNS NEAR FIRE EXTINGUISHERS.\n\nIMMEDIATELY GO TO NEAREST TELEPHONE AND CALL FIRE DEPT (OFF-BASE): 911\n\nMAKE EFFORTS TO CONTROL THE FIRE WITH EXTINGUISHER AVAILABLE UNTIL FIRE DEPARTMENT PERSONNEL ARRIVE.\n\nNOTIFY BUILDING MANAGER AS SOON AS POSSIBLE AT TEL: 787-253-5271 or 787-253-5278.\n\nALL PERSONNEL WILL IMMEDIATELY EVACUATE THE BUILDING (UNLESS ADVISED IN ADVANCE OF WORK/TESTING).\n\nMUSTER POINT IS: SOUTHSIDE OF BUILDING 11.\n\nACCOUNT FOR ALL PERSONNEL AT ASSEMBLY POINT AND REPORT TO BDOC AT TEL: 787-253-5204 or COMMAND POST AT TEL: 787-253-7405.\n\nENSURE PERSONNEL WITH HEARING OR SIGHT PROBLEMS KNOW THEY ARE TO EVACUATE - ASSIGN SOMEONE TO ASSIST THEM AND REPORT TO DESIGNATED ASSEMBLY POINT.\n-------------------------------------------------------------------------------------------------\nBLDG. # 80 FIRE EVACUATION PLAN\n\nACTION TO BE TAKEN UPON DISCOVERY OF FIRE IN THIS BUILDING OR IMMEDIATE AREA\n\nSOUND FIRE ALARM.\n\nIMMEDIATELY GO TO THE NEAREST TELEPHONE AND CALL THE FIRE DEPARTMENT:\n\n(A) DURING NORMAL WORKING HOURS, ANG TEL: 911 \n\n(B) DURING OFF DUTY HOURS, PRPA TEL: 787-791-0224\n\nMAKE EFFORTS TO CONTROL THE FIRE with extinguishers available until the arrival of Fire Department personnel.\n\nALL PERSONNEL WILL IMMEDIATELY EVACUATE THE BUILDING (unless advised in advance of scheduled maintenance/testing of the alarm system).\n\nACCOUNT FOR ALL PERSONNEL at the designated ASSEMBLY POINT (BLDG. 80 PARKING LOT) and report accountability to BDOC at 787-253-5177 or the Command Post at 787-253-7405.\n\nNOTIFY THE BUILDING MANAGER & BDOC as soon as possible:\n\n(A) BUILDING MANAGER OFFICE: 253-9624\n\n(B) BDOC: 253-9204 or 787-253-5177",
     "shelterInPlace": "",
     "activeShooterMethods": "",
     "adverseWeatherShelter": "",
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-18T21:32:26.120Z",
+  "savedAt": "2026-09-18T21:45:29.414Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/156-wsa-cptf-jsto-fy26.pdf",
   "libraryMeta": {
     "uploadedBy": "Raphael  Medina",
     "uploadedById": "raphael medina",
     "savedLibraryPdf": "JSTO-Library/156-wsa-cptf-jsto-fy26.pdf",
-    "savedAt": "2026-09-18T21:32:26.120Z"
+    "savedAt": "2026-09-18T21:45:29.414Z"
   }
 }
