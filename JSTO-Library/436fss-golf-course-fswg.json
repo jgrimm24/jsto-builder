@@ -10,21 +10,21 @@
     "description": "The mission of this golf course is to support morale, welfare, and recreation by providing affordable, athletic and social outlets thats enhance physical and mental well-being of airmen and their families.",
     "references": "",
     "jhaNotes": "Work area hazards include the operating of equipment and mowers, mixing and spraying turf chemicals. Storing and dispensing of fuel and oils to prevent spills and fire.",
-    "emergencyNumbers": "",
-    "medicalFacility": "",
-    "evacuationRoute": "",
-    "shelterInPlace": "",
+    "emergencyNumbers": "911",
+    "medicalFacility": "Med center,Kent General",
+    "evacuationRoute": "Building 810 has 7 exits that leads to the parking lot and patio.",
+    "shelterInPlace": "Shelter in place is located in building 810 center office.",
     "activeShooterMethods": "",
-    "adverseWeatherShelter": "",
+    "adverseWeatherShelter": "Weather shelter area in center office building 810.",
     "fireEquipmentNotes": "",
-    "safetyBoardLocation": "",
+    "safetyBoardLocation": "Located in center office building 810",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
     "documentNotes": "",
     "exportBasename": "",
-    "uploadedBy": "Sam",
-    "uploadedById": "sam",
+    "uploadedBy": "SamGolf",
+    "uploadedById": "samgolf",
     "dafvaPostingLocation": "",
     "phone": "677-2988"
   },
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-29T15:48:48.345Z",
+  "savedAt": "2026-09-29T15:54:46.657Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
   "libraryMeta": {
-    "uploadedBy": "Sam",
-    "uploadedById": "sam",
+    "uploadedBy": "SamGolf",
+    "uploadedById": "samgolf",
     "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
-    "savedAt": "2026-09-29T15:48:48.345Z"
+    "savedAt": "2026-09-29T15:54:46.657Z"
   }
 }
