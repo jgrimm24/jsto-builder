@@ -21,11 +21,11 @@
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
-    "documentNotes": "",
+    "documentNotes": "Training documents will be in employee files and binders.",
     "exportBasename": "",
     "uploadedBy": "SamGolf",
     "uploadedById": "samgolf",
-    "dafvaPostingLocation": "",
+    "dafvaPostingLocation": "Safey board is located in the center office, building 810",
     "phone": "677-2988"
   },
   "unitImage": {
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-29T15:57:59.315Z",
+  "savedAt": "2026-09-29T16:14:41.010Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
   "libraryMeta": {
     "uploadedBy": "SamGolf",
     "uploadedById": "samgolf",
     "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
-    "savedAt": "2026-09-29T15:57:59.315Z"
+    "savedAt": "2026-09-29T16:14:41.010Z"
   }
 }
