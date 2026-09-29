@@ -20,7 +20,7 @@
     "safetyBoardLocation": "Located in center office building 810",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
-    "annualReviewLog": "",
+    "annualReviewLog": "N/A",
     "documentNotes": "Training documents will be in employee files and binders.",
     "exportBasename": "",
     "uploadedBy": "SamGolf",
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-29T16:17:53.184Z",
+  "savedAt": "2026-09-29T16:20:27.734Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
   "libraryMeta": {
     "uploadedBy": "SamGolf",
     "uploadedById": "samgolf",
     "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
-    "savedAt": "2026-09-29T16:17:53.184Z"
+    "savedAt": "2026-09-29T16:20:27.734Z"
   }
 }
