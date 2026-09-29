@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "169th LRS",
+    "workCenter": "TMO",
+    "officeSymbol": "TMO/ LRS ",
+    "supervisor": "Kelso, Paul / MSgt ",
+    "reviewer": "Gregory Hamiltion / CMSGT",
+    "reviewDate": "2026-09-29",
+    "effectiveDate": "2026-09-29",
+    "description": "The Traffic Management Office (TMO) executes secure, rapid, and compliant transport logistics for personnel, personal property, and military cargo. The primary safety mission of this work center is to execute high-tempo distribution operations while maintaining a zero-mishap, fully compliant safety program in accordance with DAFMAN 91-203.\n\n",
+    "references": "IAW AFI Standard  91-203 and 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout) , The Air Force Hazard Communication Program (AFHCP) , AFI 91-203 CH 35 , Materials Handling and Storage Equipment,  and 29 CFR 1910.178 - Powered industrial trucks, AFI 91-203 CH 9 and applicable technical order, AFI 91-203 CH 7.",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "169th_LRS_JSTO_FY27",
+    "uploadedBy": "TMO-Traffic Mgt",
+    "uploadedById": "tmo traffic mgt",
+    "dafvaPostingLocation": ""
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-09-29T13:59:11.589Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/169th-lrs-jsto-fy27.pdf",
+  "libraryMeta": {
+    "uploadedBy": "TMO-Traffic Mgt",
+    "uploadedById": "tmo traffic mgt",
+    "savedLibraryPdf": "JSTO-Library/169th-lrs-jsto-fy27.pdf",
+    "savedAt": "2026-09-29T13:59:11.589Z"
+  }
+}
