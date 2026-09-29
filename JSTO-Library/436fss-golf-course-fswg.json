@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "436FSS",
+    "workCenter": "Golf Course",
+    "officeSymbol": "FSWG",
+    "supervisor": "Samuel Barresi",
+    "reviewer": "",
+    "reviewDate": "2026-09-29",
+    "effectiveDate": "2026-09-29",
+    "description": "The mission of this golf course is to support morale, welfare, and recreation by providing affordable, athletic and social outlets thats enhance physical and mental well-being of airmen and their families.",
+    "references": "",
+    "jhaNotes": "Work area hazards include the operating of equipment and mowers, mixing and spraying turf chemicals. Storing and dispensing of fuel and oils to prevent spills and fire.",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "",
+    "uploadedBy": "Sam",
+    "uploadedById": "sam",
+    "dafvaPostingLocation": "",
+    "phone": "677-2988"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-09-29T15:48:48.345Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
+  "libraryMeta": {
+    "uploadedBy": "Sam",
+    "uploadedById": "sam",
+    "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
+    "savedAt": "2026-09-29T15:48:48.345Z"
+  }
+}
