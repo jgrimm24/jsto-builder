@@ -16,7 +16,7 @@
     "shelterInPlace": "Shelter in place is located in building 810 center office.",
     "activeShooterMethods": "",
     "adverseWeatherShelter": "Weather shelter area in center office building 810.",
-    "fireEquipmentNotes": "",
+    "fireEquipmentNotes": "Fire extinguishers located in building 810 and outside of building. Fire alarms located throughout building 810. Shelter in place kit located in center office bulding 810.",
     "safetyBoardLocation": "Located in center office building 810",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
@@ -89,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-09-29T15:54:46.657Z",
+  "savedAt": "2026-09-29T15:57:59.315Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
   "libraryMeta": {
     "uploadedBy": "SamGolf",
     "uploadedById": "samgolf",
     "savedLibraryPdf": "JSTO-Library/436fss-golf-course-fswg.pdf",
-    "savedAt": "2026-09-29T15:54:46.657Z"
+    "savedAt": "2026-09-29T15:57:59.315Z"
   }
 }
