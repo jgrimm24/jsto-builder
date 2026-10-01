@@ -3,8 +3,8 @@
     "unit": "139 OG",
     "workCenter": "Aircrew",
     "officeSymbol": "Building 17",
-    "supervisor": "",
-    "reviewer": "",
+    "supervisor": "Ed Huff/SMSgt/Loadmaster Section Supervisor",
+    "reviewer": "SMSgt Ed Huff",
     "reviewDate": "2026-10-01",
     "effectiveDate": "2026-10-01",
     "description": "The primary mission is the safe execution of localized and global C-130 tactical airlift, tactical airdrop (personnel and heavy equipment), aeromedical evacuation, and dirt/unimproved landing zone (LZ) operations. Ground tasks include mission planning, pre-flight briefing, cargo loading, weight and balance calculations, and pre/post-flight aircraft inspections.",
@@ -188,13 +188,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-10-01T15:41:46.178Z",
+  "savedAt": "2026-10-01T16:53:16.212Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/139-aw-og-aircrew.pdf",
   "libraryMeta": {
     "uploadedBy": "139_AW_OG Aircrew",
     "uploadedById": "139 aw og aircrew",
     "savedLibraryPdf": "JSTO-Library/139-aw-og-aircrew.pdf",
-    "savedAt": "2026-10-01T15:41:46.178Z"
+    "savedAt": "2026-10-01T16:53:16.212Z"
   }
 }
