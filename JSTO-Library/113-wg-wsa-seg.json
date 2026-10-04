@@ -8,7 +8,7 @@
     "reviewDate": "2026-10-04",
     "effectiveDate": "2026-10-04",
     "description": "Wing Staff Agency personnel include the Wing Command Staff, Command Post, Inspector General, Safety, Public Affairs, Judge Advocate General, Chaplain Corps, and Comptroller Flight (Finance). These offices primarily perform administrative duties in an office environment. Job Hazard Analysis (JHA) findings and Bioenvironmental Engineering (BE) survey notes should address typical administrative hazards, including ergonomic stressors from prolonged computer use, slips/trips/falls, electrical hazards, office equipment use, emergency evacuation procedures, and workplace stress/fatigue.\n\nSafety and Public Affairs personnel may be required to perform duties on the flightline and in areas containing moving vehicles, ground support equipment, and aircraft. Major hazards in these areas include aircraft operations, vehicle traffic, moving equipment, jet blast, prop/rotor wash, high noise levels, foreign object debris (FOD), uneven surfaces, weather exposure, and restricted operational areas.\n\nRequired controls include completion of required flightline and local safety training; use of appropriate personal protective equipment, including hearing protection and high-visibility apparel as required; compliance with flightline driving, pedestrian, FOD, and airfield procedures; maintaining situational awareness around aircraft and vehicles; use of designated walkways and safe stand-off distances; and coordination with the responsible airfield or maintenance organization before entering operational areas. Personnel will not enter restricted areas, approach operating aircraft, operate vehicles or equipment, or conduct photography/public affairs activities near aircraft without required authorization, training, and escort requirements as applicable.",
-    "references": "Wing Staff Agency personnel will comply with all applicable Department of the Air Force Instructions (DAFIs), Department of the Air Force Manuals (DAFMANs), installation directives, and local operating procedures relevant to their assigned duties and work locations. Supervisors are responsible for ensuring personnel receive required training, understand applicable safety and emergency procedures, and comply with established workplace controls.\n\nWhere DAFI, DAFMAN, installation, or local guidance differs, personnel will follow the most restrictive applicable requirement unless otherwise directed by the appropriate authority. Personnel will notify their supervisor or unit safety representative of unclear requirements, unsafe conditions, or conflicts between procedures before proceeding with work.\nList of Instruction applicable to the workplace is:\nDAFMAN 91-203\nDAFI 91-202\nDAFI 91-207\nDODI 6055.01\n",
+    "references": "Wing Staff Agency personnel will comply with all applicable Department of the Air Force Instructions (DAFIs), Department of the Air Force Manuals (DAFMANs), installation directives, and local operating procedures relevant to their assigned duties and work locations. Supervisors are responsible for ensuring personnel receive required training, understand applicable safety and emergency procedures, and comply with established workplace controls.\n\nWhere DAFI, DAFMAN, installation, or local guidance differs, personnel will follow the most restrictive applicable requirement unless otherwise directed by the appropriate authority. Personnel will notify their supervisor or unit safety representative of unclear requirements, unsafe conditions, or conflicts between procedures before proceeding with work.\nList of Instruction applicable to the workplace is:\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program\nDAFI 91-207\nDODI 6055.01\n",
     "jhaNotes": "Primary work hazards include:- Office ergonomics, including repetitive-motion, workstation, and manual-material-handling hazards.- Slips, trips, and falls from cords, wet floors, uneven surfaces, stairways, ladders, and elevated work.- Electrical hazards associated with office equipment, power strips, damanged cords, and unauthorized\nequipment.- Fire, evacuation, severe weather, and emergency response hazards.- Cleaning chemical exposure, including disinfectants, bleach, and other common-area cleaning\nproducts.- Noise, flying debris, high-pressure water, chemical splash, vibration, and struck-by hazards when\npersonnel volunteer or are assigned lawn-care, pressure-washing, facility-maintenance, or similar\nsupport tasks.- Vehicle, pedestrian, bicycle, parking-lot, and flight-line hazards when performing duties outside the\noffice area.\nApplicable guidance and references:\nEmployees will follow applicable technical orders, job guides, manufacturer instructions, Safety Data\nSheets (SDS), approved work instructions, job orders, risk-management documentation (Deliberate\nRisks Assessment Worksheets), and Job Hazard Analyses (JHAs), when applicable",
     "emergencyNumbers": "From Land line: 911\n\nFrom cell phone: 301-981-9911In the event of a fire, medical emergency, security incident, hazardous condition, or other immediate threat to life or property, personnel will promptly contact emergency services.\n\nFrom a landline: Dial 911.\n\nFrom a cellular phone: Dial 301-981-9911.\n\nWhen contacting emergency dispatch, remain calm and provide the following information:\n\nExact location, including building number, floor, room, or nearest identifiable landmark.\n\nNature of the emergency (e.g., medical emergency, fire, injury, aircraft-related hazard, suspicious activity, or hazardous material spill).\n\nNumber of personnel involved or injured and the apparent severity of injuries, if known.\n\nAny immediate hazards present, such as fire, smoke, fuel, moving vehicles, aircraft operations, electrical hazards, or unsafe conditions.\n\nA callback telephone number and point of contact, if available.\n\nPersonnel should not place themselves at risk while reporting an emergency. If safe to do so, notify nearby personnel, activate the appropriate alarm system, provide basic aid within the limits of training, and direct emergency responders to the location. Follow installation emergency procedures, evacuation routes, and instructions from emergency responders or designated building personnel.",
     "medicalFacility": "AGR personnel will use Malcolm Grow Medical Clinics and Surgery Center at Joint Base Andrews for routine medical care, treatment, and occupational health support. When performing duties at another military installation, personnel may use the local military treatment facility in accordance with installation procedures and eligibility requirements.\n\nIf medical assistance is required outside normal on-base clinic hours, personnel should seek care at a local emergency room or urgent care facility, as appropriate to the severity of the condition. For life-threatening emergencies, personnel should immediately call 911 from a landline or 301-981-9911 from a cellular phone.\n\nOn Base ER hours: 0700 to 1900 hours, 7 days a week.",
@@ -88,14 +88,81 @@
       "title": "DAFSMS Responsibilities"
     }
   ],
-  "selectedModules": [],
-  "savedAt": "2026-10-04T14:19:50.842Z",
+  "selectedModules": [
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; local fire prevention plan",
+      "trainingRequirement": "Train personnel on fire hazards, reporting procedures, extinguisher locations, evacuation routes, pull stations, and local emergency response actions.",
+      "afTrainingRequirement": "Use the JSTO and local fire prevention plan to brief workers on work-center fire hazards, alarm reporting, extinguisher use, and evacuation accountability.",
+      "trainingBasis": "OSHA 2254 / Fire Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-4",
+      "title": "Risk Management Fundamentals",
+      "reference": "DAFI 90-802; DAFPAM 90-803",
+      "trainingRequirement": "Train workers to identify hazards, assess risk, implement controls, supervise the task, and re-evaluate controls during and after operations.",
+      "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
+      "trainingBasis": "Local / Risk Management Guidance",
+      "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Provide bloodborne pathogens training at initial assignment and at least annually thereafter, covering exposure control, modes of transmission, and protective measures.",
+      "afTrainingRequirement": "Enroll applicable workers in the local bloodborne pathogens program and ensure exposure control plan requirements, reporting actions, and PPE procedures are covered before task performance.",
+      "trainingBasis": "OSHA 2254 / Bloodborne Pathogens",
+      "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-3",
+      "title": "Government Vehicle / Utility Vehicle Use",
+      "reference": "DAFI 91-207; local procedures",
+      "trainingRequirement": "Train vehicle operators on seat belts, speed limits, local traffic hazards, spotter use while backing, and restrictions on electronic device use while driving.",
+      "afTrainingRequirement": "Brief operators on unit-specific government vehicle training requirements, local route restrictions, low-speed vehicle rules, and documentation of qualification.",
+      "trainingBasis": "OSHA 2254 / Vehicle and Mobile Equipment Concepts",
+      "afTrainingBasis": "DAFI 91-207 / local traffic safety procedures",
+      "notes": "Personnel authorized to operate government-owned vehicles (GOVs), utility vehicles, or other government-furnished transportation will comply with all applicable Department of the Air Force, installation, unit, and local traffic requirements. Only properly licensed, trained, and authorized personnel may operate a GOV or utility vehicle for official duties.\n\nBefore operating a vehicle, the driver will conduct a basic pre-use inspection to identify apparent safety concerns, including damage, tire condition, lights, mirrors, fuel level, brakes, safety equipment, and any required vehicle documentation. Drivers will report vehicle deficiencies, damage, malfunctions, or unsafe conditions to their supervisor or designated vehicle control official before operating the vehicle.\n\nVehicle operators will wear seat belts at all times, comply with posted speed limits and traffic-control devices, avoid distracted driving, and maintain safe following distances. Use of handheld electronic devices while driving is prohibited. Drivers will not operate a vehicle while impaired, fatigued, or otherwise unable to safely perform driving duties.\n\nWhen operating near buildings, parking lots, flightline areas, loading zones, pedestrians, or moving equipment, drivers will reduce speed and use heightened caution. Operators will yield to pedestrians, use spotters when required or when visibility is limited, and avoid backing whenever practical. When backing is necessary, the driver will ensure the area is clear and use a spotter when available.\n\nGOVs and utility vehicles will be used only for official purposes and by authorized personnel. Operators will secure vehicles when unattended, remove keys when required, park only in authorized areas, and ensure the vehicle does not block fire lanes, emergency access routes, building exits, aircraft movement areas, or other restricted locations. Any vehicle accident, damage, traffic violation, or unsafe operating condition will be reported immediately through the appropriate supervisory, vehicle control, and emergency-response channels.",
+      "link": ""
+    }
+  ],
+  "savedAt": "2026-10-04T14:44:43.238Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/113-wg-wsa-seg.pdf",
   "libraryMeta": {
     "uploadedBy": "Perez",
     "uploadedById": "perez",
     "savedLibraryPdf": "JSTO-Library/113-wg-wsa-seg.pdf",
-    "savedAt": "2026-10-04T14:19:50.842Z"
+    "savedAt": "2026-10-04T14:44:43.238Z"
   }
 }
