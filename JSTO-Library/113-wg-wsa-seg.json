@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "113 WG",
+    "workCenter": "Safety",
+    "officeSymbol": "113 SE",
+    "supervisor": "CMSgt Otero",
+    "reviewer": "",
+    "reviewDate": "2026-10-04",
+    "effectiveDate": "2026-10-04",
+    "description": "Wing Staff is comprised of the Wing Command staff, Command Post, Inspector General, Safety, PublicAffairs, Judge Advocate General, Chaplain Corps, and the Comptroller Flight (Finance). All offices areadministrative in nature. Safety and Public Affairs are required to work on the flightline and around moving equipment/aircraft",
+    "references": "",
+    "jhaNotes": "Primary work hazards include:- Office ergonomics, including repetitive-motion, workstation, and manual-material-handling hazards.- Slips, trips, and falls from cords, wet floors, uneven surfaces, stairways, ladders, and elevated work.- Electrical hazards associated with office equipment, power strips, damanged cords, and unauthorized\nequipment.- Fire, evacuation, severe weather, and emergency response hazards.- Cleaning chemical exposure, including disinfectants, bleach, and other common-area cleaning\nproducts.- Noise, flying debris, high-pressure water, chemical splash, vibration, and struck-by hazards when\npersonnel volunteer or are assigned lawn-care, pressure-washing, facility-maintenance, or similar\nsupport tasks.- Vehicle, pedestrian, bicycle, parking-lot, and flight-line hazards when performing duties outside the\noffice area.\nApplicable guidance and references:\nEmployees will follow applicable technical orders, job guides, manufacturer instructions, Safety Data\nSheets (SDS), approved work instructions, job orders, risk-management documentation (Deliberate\nRisks Assessment Worksheets), and Job Hazard Analyses (JHAs), when applicable",
+    "emergencyNumbers": "From Land line: 911\nFrom cell phone: 301-981-9911",
+    "medicalFacility": "For on dutyh perosnnel: Malcolm Growth Emergency room available between the hours opf 700 hours to 1900 hours, 7 daysd a week.\n\nFor emergencye outside this hours, visit local Emergency room or nearby base ER.",
+    "evacuationRoute": "",
+    "shelterInPlace": "Wing building 3252 shelretr in place, will be insidfe room 113. It is located on the lower level, past the wing lounge room.",
+    "activeShooterMethods": "In the event of an active shooter, individuals should employ the Avoid, Deny, Defend response method. This strategy is adaptable to the specific situation and environment.",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "113_WG_WSA_SEG",
+    "uploadedBy": "Perez",
+    "uploadedById": "perez",
+    "dafvaPostingLocation": "",
+    "phone": "857-5039"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-10-04T13:46:32.171Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/113-wg-wsa-seg.pdf",
+  "libraryMeta": {
+    "uploadedBy": "Perez",
+    "uploadedById": "perez",
+    "savedLibraryPdf": "JSTO-Library/113-wg-wsa-seg.pdf",
+    "savedAt": "2026-10-04T13:46:32.171Z"
+  }
+}
