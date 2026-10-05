@@ -10,8 +10,8 @@
     "description": "Provide entertainment for Dover AFB by maintaining 12 bowling lanes and machines to work properly. Provide meals and short order meals using deep fat fryers, and griddles.",
     "references": "AFI 34-118 AF Bowling Program/ 436 FSS OI 34-118  FOOD OPERATIONS.",
     "jhaNotes": "Hazardous working area withing the bowling machines, proper lock-out/tag-out procedures are in place. \nLifting of the lane machine where using proper lifting techniques are in place. \nWorking around hot grease in the deep fat fryers, using the griddle, using knives when cutting meats and vegetables.",
-    "emergencyNumbers": "",
-    "medicalFacility": "",
+    "emergencyNumbers": "911. ",
+    "medicalFacility": "436 MDG, CALL 911 request for ambulance if required.",
     "evacuationRoute": "We have primary evacuation plan and meeting place in the front parking lot",
     "shelterInPlace": "Our shelter in place is the conference room, used to known as the Airmans outpost.",
     "activeShooterMethods": "",
@@ -90,11 +90,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436fss-fswb-2026.pdf",
-  "savedAt": "2026-10-05T19:05:13.381Z",
+  "savedAt": "2026-10-05T19:09:33.727Z",
   "libraryMeta": {
     "uploadedBy": "Bowling Center",
     "uploadedById": "bowling center",
     "savedLibraryPdf": "JSTO-Library/436fss-fswb-2026.pdf",
-    "savedAt": "2026-10-05T19:05:13.381Z"
+    "savedAt": "2026-10-05T19:09:33.727Z"
   }
 }
