@@ -9,15 +9,15 @@
     "effectiveDate": "2026-10-05",
     "description": "Support of Wing functions and daily service to Airmen and Civilians providing food & beverage.",
     "references": "",
-    "jhaNotes": "",
-    "emergencyNumbers": "",
-    "medicalFacility": "",
-    "evacuationRoute": "",
-    "shelterInPlace": "",
-    "activeShooterMethods": "",
-    "adverseWeatherShelter": "",
+    "jhaNotes": "Natural gas, tools, knives and cleaning chemicals.",
+    "emergencyNumbers": "Emergencies 911\nEmergency Work Orders x6277",
+    "medicalFacility": "N/A",
+    "evacuationRoute": "Softball field located behind the building.",
+    "shelterInPlace": "Spouse Space, located in the lobby of the T-Tails Lounge.",
+    "activeShooterMethods": "Run and hide, lock doors, close blinds. Dial 911 if capable. Don't be a hero.",
+    "adverseWeatherShelter": "Utilize SIP",
     "fireEquipmentNotes": "",
-    "safetyBoardLocation": "",
+    "safetyBoardLocation": "Main Office",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
@@ -90,11 +90,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-fss-the-landings-fswc-bldg-479.pdf",
-  "savedAt": "2026-10-05T20:39:24.793Z",
+  "savedAt": "2026-10-06T18:55:59.402Z",
   "libraryMeta": {
     "uploadedBy": "Victoria Schwartz",
     "uploadedById": "victoria schwartz",
     "savedLibraryPdf": "JSTO-Library/436-fss-the-landings-fswc-bldg-479.pdf",
-    "savedAt": "2026-10-05T20:39:24.793Z"
+    "savedAt": "2026-10-06T18:55:59.402Z"
   }
 }
