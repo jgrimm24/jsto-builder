@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "181 Fuels Flight ",
+    "workCenter": "POL",
+    "officeSymbol": "LGRF / Bldg 53",
+    "supervisor": "Chad Dossett / MSgt / Fuels Superintendent ",
+    "reviewer": "",
+    "reviewDate": "2026-10-08",
+    "effectiveDate": "2026-10-08",
+    "description": "",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "181IW_LGRF_JSTO_2026",
+    "uploadedBy": "ChadDossett",
+    "uploadedById": "chaddossett",
+    "dafvaPostingLocation": "",
+    "phone": "8128775214"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/181iw-lgrf-jsto-2026.pdf",
+  "savedAt": "2026-10-08T20:24:47.518Z",
+  "libraryMeta": {
+    "uploadedBy": "ChadDossett",
+    "uploadedById": "chaddossett",
+    "savedLibraryPdf": "JSTO-Library/181iw-lgrf-jsto-2026.pdf",
+    "savedAt": "2026-10-08T20:24:47.518Z"
+  }
+}
