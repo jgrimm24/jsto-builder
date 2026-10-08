@@ -88,13 +88,47 @@
       "title": "DAFSMS Responsibilities"
     }
   ],
-  "selectedModules": [],
+  "selectedModules": [
+    {
+      "id": "local-7",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Local procedures / equipment guidance",
+      "trainingRequirement": "Train workers on removing jewelry and securing loose articles when working around machinery, electrical hazards, rotating equipment, or snag hazards.",
+      "afTrainingRequirement": "Use local work-center restrictions and equipment guidance to define prohibited items and exceptions for mission-essential tasks.",
+      "trainingBasis": "Local / Equipment Guidance",
+      "afTrainingBasis": "Shop-specific safety restrictions",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.10",
+      "title": "Forklift / Material Handling Equipment",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
+      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
+      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
+      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
+      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-8",
+      "title": "Personal Protective Equipment (PPE)",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 14; 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
+      "trainingRequirement": "Train each affected worker on when PPE is necessary, what PPE is necessary, how to properly don, doff, adjust, and wear PPE, the limitations of assigned PPE, and the proper care, maintenance, useful life, and disposal of PPE. Require workers to demonstrate understanding and proper use before performing work requiring PPE, and retrain when workplace conditions, job assignments, PPE types, or worker knowledge gaps make prior training obsolete.",
+      "afTrainingRequirement": "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
+      "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
+      "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
+      "notes": "",
+      "link": ""
+    }
+  ],
   "savedLibraryPdf": "JSTO-Library/181iw-lgrf-jsto-2026.pdf",
-  "savedAt": "2026-10-08T20:24:47.518Z",
+  "savedAt": "2026-10-08T20:26:26.679Z",
   "libraryMeta": {
     "uploadedBy": "ChadDossett",
     "uploadedById": "chaddossett",
     "savedLibraryPdf": "JSTO-Library/181iw-lgrf-jsto-2026.pdf",
-    "savedAt": "2026-10-08T20:24:47.518Z"
+    "savedAt": "2026-10-08T20:26:26.679Z"
   }
 }
