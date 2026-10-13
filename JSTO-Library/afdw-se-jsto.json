@@ -112,17 +112,6 @@
       "link": "https://usaf.percipio.com/courses/be50cd97-eb8a-4431-9e5b-9a3c620a9d9b"
     },
     {
-      "id": "local-3",
-      "title": "Government Vehicle / Utility Vehicle Use",
-      "reference": "DAFI 91-207; local procedures",
-      "trainingRequirement": "Train vehicle operators on seat belts, speed limits, local traffic hazards, spotter use while backing, and restrictions on electronic device use while driving.",
-      "afTrainingRequirement": "Brief operators on unit-specific government vehicle training requirements, local route restrictions, low-speed vehicle rules, and documentation of qualification.",
-      "trainingBasis": "OSHA 2254 / Vehicle and Mobile Equipment Concepts",
-      "afTrainingBasis": "DAFI 91-207 / local traffic safety procedures",
-      "notes": "",
-      "link": ""
-    },
-    {
       "id": "local-5",
       "title": "Manual Lifting and Material Handling",
       "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
@@ -157,12 +146,12 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/afdw-se-jsto.pdf",
-  "savedAt": "2026-10-13T18:54:14.019Z",
+  "savedAt": "2026-10-13T18:57:29.584Z",
   "libraryMeta": {
     "uploadedBy": "Chris Orbits",
     "uploadedById": "chris orbits",
     "savedLibraryPdf": "JSTO-Library/afdw-se-jsto.pdf",
-    "savedAt": "2026-10-13T18:54:14.019Z"
+    "savedAt": "2026-10-13T18:57:29.584Z"
   },
   "storageMode": "text-only-browser-draft"
 }
