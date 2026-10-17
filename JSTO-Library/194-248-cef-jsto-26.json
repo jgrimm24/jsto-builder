@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "194/248 CEF",
+    "workCenter": "BLDG 127/120/126",
+    "officeSymbol": "CEF COMPOUND",
+    "supervisor": "Justin Pierce / LtCol / BCE",
+    "reviewer": "",
+    "reviewDate": "2026-09-12",
+    "effectiveDate": "2026-09-12",
+    "description": "194th / 248th CEF duties are mainly administrative, office safety and general housekeeping are the primary hazards.  ",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "911 is our primary communication system for emergency services. From your office phone or mobile phone, please ensure you state the nature of the emergency, then give your building number, name, rank, and phone number. \nAdditionally, you will have to contact the Command Post:  \nCommand Post Contact Numbers: \nPrimary: 509-247-7100\nAlternate: 509-247-4045\n",
+    "medicalFacility": "There is not an emergency medical treatment facility located on Camp Murray.  The nearest Emergency medical facility is located on JBLM at the Madigan Army Medical Center.  If emergency responders are needed, call 911 from any base telephone. (Note: If you dial 911 from your cell phone, it may delay response since the call goes to an off-base responder). The Fire Department will respond with paramedics/EMTs that are on shift. They can evaluate the injuries and recommend further medical attention. If further medical attention is needed, an ambulance may be called to transport the individual to a medical facility. If it is not a severe injury, but the person feels that a doctor needs to check it, they may go to an off-base medical provider of their choice within a reasonable distance (25 miles).\n\nMadigan Emergency Room and Urgent Care \n9040A Jackson Ave. \nJoint Base Lewis-McChord, WA 98431\n(253) 968-1110\tSt. Clare Hospital - Emergency Room\n11315 Bridgeport Way Southwest First Floor, Lakewood, WA 98499\n(253) 985-1711\nMultiCare Allenmore Hospital Emergency Department\n1901 S Union Ave, Tacoma, WA 98405\n(253) 459-6400\tMultiCare Good Samaritan Emergency – Parkland\n14815 Pacific Ave S, Tacoma, WA 98444\n(253) 697-8660\n",
+    "evacuationRoute": "Evacuation Procedures: Upon notification, evacuate the area/building immediately. Secure sensitive information (bring it with you if needed).  Do not lock doors, use the telephone, or operate any electronic equipment until you have arrived at the office assembly area.\n•\tThe senior ranking person on duty for each workcenter is responsible for the accountability of all their personnel.  The senior ranking member at the evacuation point will ensure all personnel have been accounted.\n\nPrimary Rally Point: \n\nAlternate Rally Point:\n",
+    "shelterInPlace": "ON-SITE SHELTER LOCATION: If you hear, “Lockdown, Lockdown, Lockdown”, Unit personnel need to hide in their designated shelter location if they cannot evacuate. Use the following to determine a safe location and replace the information below with your designated shelter location:\na. Avoid areas with large or external windows.\nb. Attempt to find a place with solid doors (no windows) and walls.\nc. Avoid high traffic areas or rooms that cannot be locked or barricaded.\n\nBuilding 120 Shelter Locations:\n\nBuiliding 127 Shelter Locations:\n\nOFF-SITE SHELTER: Unit personnel will go to the PCRC Building 80 if necessary.   ",
+    "activeShooterMethods": "RUN, HIDE, FIGHT: After being notified of an active shooter (AtHoc, GIANT VOICE, radio network, telephone, gunfire, etc), unit members should do one of the following if practicable:\na.  Run: If an active shooter is in your immediate area, attempt to evacuate if you can do so safely. Do not take any belongings. Help others if possible, but do not stop to render aid or evacuate wounded personnel. Attempt to reach an off-site shelter location. Attempt to call first responders and provide as much information as possible.\nb.  Hide: If not immediately threatened, or if the active shooter is in an unknown location, or if you are unable to evacuate, make every attempt to hide your location. Lock/barricade doors, turn off lights and computers, silence cell phones/radios, and remain quiet. Do not report your location or who is with you via social media.\nc. Fight: If no other options are available to you and your health and safety are under immediate threat, act aggressively and with maximum violence to disable the active shooter. \n",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "Safety Bullentin Board is located at the front desk in building 127.  ",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "194_248_CEF_JSTO_26",
+    "uploadedBy": "NathanielDavis",
+    "uploadedById": "nathanieldavis",
+    "dafvaPostingLocation": "",
+    "phone": "3703202"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/194-248-cef-jsto-26.pdf",
+  "savedAt": "2026-10-17T19:42:11.747Z",
+  "libraryMeta": {
+    "uploadedBy": "NathanielDavis",
+    "uploadedById": "nathanieldavis",
+    "savedLibraryPdf": "JSTO-Library/194-248-cef-jsto-26.pdf",
+    "savedAt": "2026-10-17T19:42:11.747Z"
+  }
+}
