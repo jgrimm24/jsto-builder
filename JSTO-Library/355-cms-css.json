@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "335 CMS",
+    "workCenter": "CSS",
+    "officeSymbol": "BLDG 5423 /CSS",
+    "supervisor": "Lt. Christian Renfrew",
+    "reviewer": "Robert Fleming",
+    "reviewDate": "2026-10-19",
+    "effectiveDate": "2026-10-19",
+    "description": "Serve as the principal office assistant performing various clerical and administrative duties in support of the organization, performing office automation duties such as word processing in support of the clerical and administrative work. The position is located in an organization that is of limited complexity. Although the organization may include several subordinate units which are similar in subject matter, the supervisor directs the staff primarily through face-to-face meetings and internal procedural and\nadministrative controls are simple and informal.",
+    "references": "",
+    "jhaNotes": "Lifting, occasionally wet bathroom floors.",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "In case of a fire or event inside the facility",
+    "shelterInPlace": "Shelter in place location is in the UDM office near the center of the biulding.",
+    "activeShooterMethods": "Upon any active shooter event, all personnel will locate inside the UDM office until the all clear is giving. Secondary location: is the office across from the UDM office.",
+    "adverseWeatherShelter": "Adverse weather: In the very rare event of a tornado, all personnel will move to the UDM office and brace for adnormal wind damage.",
+    "fireEquipmentNotes": "Fire extinguishers are posted in a few section. The AED is used during PT testing and is located in the training office.",
+    "safetyBoardLocation": "All safety information is located on the bulletin boards in the main in hallways.",
+    "trafficSafetyNotes": "No vehicles are assigned to this section.",
+    "trafficContacts": "TSgt Coss 228-9296",
+    "annualReviewLog": "This JSTO has been recently develop and will be reviewed yearly.",
+    "documentNotes": "Training will be sent via email and will be tracked when replies are returning. This data will be added to a training spreadsheet on Teams.",
+    "exportBasename": "355 CMS/CSS",
+    "uploadedBy": "Robert Fleming",
+    "uploadedById": "robert fleming",
+    "dafvaPostingLocation": "Safety information will be posted on the bulletin boards in the main hallways",
+    "phone": "288-4219"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-10-19T16:26:35.942Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/355-cms-css.pdf",
+  "libraryMeta": {
+    "uploadedBy": "Robert Fleming",
+    "uploadedById": "robert fleming",
+    "savedLibraryPdf": "JSTO-Library/355-cms-css.pdf",
+    "savedAt": "2026-10-19T16:26:35.942Z"
+  }
+}
