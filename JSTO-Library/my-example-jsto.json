@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "unit": "436 Civil Engineer Squadron",
+    "workCenter": "Commander's Support Staff",
+    "officeSymbol": "",
+    "supervisor": "Terrell Kelley / MSgt / Commander's Exec",
+    "reviewer": "i don't know yet",
+    "reviewDate": "2026-10-29",
+    "effectiveDate": "2026-10-29",
+    "description": "",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "room W",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "my example jsto",
+    "uploadedBy": "SSgt Christopher Coney",
+    "uploadedById": "ssgt christopher coney",
+    "dafvaPostingLocation": "",
+    "phone": "302-677-4723"
+  },
+  "unitImage": {
+    "name": "EXAMPLE SCREENSHOT.png",
+    "dataUrl": "data:image/png;base64,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58/XD9JbW7nCNE27VLuildLoqw+ffVaWDIpXAVqt5oePavM/TtMw81ylGrc8Td56qz/dWlD74ouyZLxes4LHj+vjPEnUj7px25P6ka1K/VjWcvTC8fp68zbSU7vLkp6+AnFvryzN079+Pf9/VB3rabri+9FHzW2Rm7bFno3i1/pGXT2eZRusDTOuWdcos9ahnZ3+D/PU7hTMOt6trf73/rWvlZ8yjy6j3bhRtsLKXavV7R4eDvZ7eNjtbm93u5ubg/222/1+jo+73bt3u9319f7na2u5rMnxcbd79erwPMR56U3j8HCw3/X1wek3efhweLy97sKFPA89x8eD6+XGjcHPo966uHq1/CQ7Ps7jL6fZm/dyHXefLmPTMBcu1IcZp93O30M5vrW1+vpr+h5Lh4eD/cSutk7a7W738uXBedncLPs6OdQP9aO2/pq+x9Kq1I9lLEe73e2eOzc4rlHbUreb13k5/V63tpaHj/3Geb5xY/y2MWp7rG0LDx/2p7G+nv+uabf742havqZtsDfvNXfv1ocZt09pMup7bpqH2vdYrodR6/XcueF18vBhnl6rNdgvC2WNNikP4vN0ceMuPyu7cmfa23FM0o0KCakIIj3jhimHH9V/uYPvdnMgSqm+4y2HH9W129OtizThpr3I7zku/7TzOqq7fDnO8cmwyPWmfqgf83TPs34saznGrffatlT209Rtbk6/nXanHP+4/mt1rdXKIbE0al7LrjftcesvduU+pWaaeZiki8rPZu3W1wfHy9xOdbvdbnlVGQAAvqy0QQYAgEBABgCAQEAGAIBAG+SaU6fKEgCAF4NoNzdXkAEAIBCQAQAg0MQCAAACV5ABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAgEJABACAQkAEAIBCQAQAg+D9ehGCrl6deHQAAAABJRU5ErkJggg=="
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.5",
+      "title": "Confined Space Program",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 23; 29 CFR 1910.146 - Permit-required confined spaces",
+      "trainingRequirement": "Train entrants, attendants, supervisors, and rescue personnel so they understand their duties, hazards, signs and symptoms of exposure, communication procedures, and emergency actions before assignment.",
+      "afTrainingRequirement": "Provide duty-specific training for permit-required confined space roles, including monitor use, atmospheric hazards, entry permits, and rescue responsibilities before personnel participate in entries.",
+      "trainingBasis": "OSHA 2254 / Permit-Required Confined Spaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Confined Spaces",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies.",
+      "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
+      "trainingBasis": "OSHA 2254 / Hazard Communication",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedLibraryPdf": "JSTO-Library/my-example-jsto.pdf",
+  "savedAt": "2026-10-29T20:23:58.158Z",
+  "libraryMeta": {
+    "uploadedBy": "SSgt Christopher Coney",
+    "uploadedById": "ssgt christopher coney",
+    "savedLibraryPdf": "JSTO-Library/my-example-jsto.pdf",
+    "savedAt": "2026-10-29T20:23:58.158Z"
+  }
+}
