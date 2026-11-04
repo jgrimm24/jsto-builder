@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "unit": "245th CAOS",
+    "workCenter": "RAWS",
+    "officeSymbol": "Bldg 1070",
+    "supervisor": "SMSgt Bradford, Marvin",
+    "reviewer": "SSgt Arvai",
+    "reviewDate": "2026-11-04",
+    "effectiveDate": "2026-11-04",
+    "description": "",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "Dial 911, State location as Mcentire and give building number or area on base.",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "03 November 2026- Initial Iteration-Completed By: SSgt Arvai, Alexander",
+    "documentNotes": "",
+    "exportBasename": "",
+    "uploadedBy": "ssgt_arvai",
+    "uploadedById": "ssgt arvai",
+    "dafvaPostingLocation": "",
+    "phone": "583-8570"
+  },
+  "unitImage": {
+    "name": "245 CAOS SYMBOL.png",
+    "dataUrl": "data:image/png;base64,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"
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.9",
+      "title": "Fall Arrest Systems",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 13; 29 CFR 1910.66 - Powered platforms for building maintenance; 29 CFR 1926.503 - Training requirements",
+      "trainingRequirement": "Train employees exposed to fall hazards to recognize fall hazards and the procedures to minimize them, including use and inspection of fall arrest systems.",
+      "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fall%20Protection%20%26%20Ladders?d=wb334c81b3360421e94f53ccb5c01b69e&csf=1&web=1&e=Ku0q8f"
+    },
+    {
+      "id": "local-2",
+      "title": "Active Shooter Response",
+      "reference": "Installation emergency management guidance / local procedures",
+      "trainingRequirement": "Brief personnel on how to recognize an active shooter event, how to summon help, and how to apply local run-hide-fight guidance based on the facility layout.",
+      "afTrainingRequirement": "Use local emergency response procedures, shelter locations, and mass notification methods applicable to the duty location.",
+      "trainingBasis": "Local / Emergency Management Guidance",
+      "afTrainingBasis": "Installation / Unit Active Shooter Procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-8",
+      "title": "Personal Protective Equipment (PPE)",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 14; 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
+      "trainingRequirement": "Train each affected worker on when PPE is necessary, what PPE is necessary, how to properly don, doff, adjust, and wear PPE, the limitations of assigned PPE, and the proper care, maintenance, useful life, and disposal of PPE. Require workers to demonstrate understanding and proper use before performing work requiring PPE, and retrain when workplace conditions, job assignments, PPE types, or worker knowledge gaps make prior training obsolete.",
+      "afTrainingRequirement": "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
+      "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
+      "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
+      "notes": "",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/PPE?d=w7507e3466cb0486fbb9dfa6f104d4c10&csf=1&web=1&e=TMxMdE"
+    },
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/LOTO%20%26%20Hazardous%20Energy%20Control?d=wb278585b4d094581ac53738ece43d54a&csf=1&web=1&e=ECiTaK"
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; local fire prevention plan",
+      "trainingRequirement": "Train personnel on fire hazards, reporting procedures, extinguisher locations, evacuation routes, pull stations, and local emergency response actions.",
+      "afTrainingRequirement": "Use the JSTO and local fire prevention plan to brief workers on work-center fire hazards, alarm reporting, extinguisher use, and evacuation accountability.",
+      "trainingBasis": "OSHA 2254 / Fire Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
+      "notes": "",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fire%20Safety%20%26%20Egress?d=w28211f6d3d144689893f1d2e2c57a139&csf=1&web=1&e=8hSL0H"
+    }
+  ],
+  "savedAt": "2026-11-04T18:25:58.068Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/245th-caos-raws-bldg-1070.pdf",
+  "libraryMeta": {
+    "uploadedBy": "ssgt_arvai",
+    "uploadedById": "ssgt arvai",
+    "savedLibraryPdf": "JSTO-Library/245th-caos-raws-bldg-1070.pdf",
+    "savedAt": "2026-11-04T18:25:58.068Z"
+  }
+}
