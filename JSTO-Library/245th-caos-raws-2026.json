@@ -11,11 +11,11 @@
     "references": "DAFI 91-203",
     "jhaNotes": "",
     "emergencyNumbers": "Dial 911, State location as Mcentire and give building number or area on base.",
-    "medicalFacility": "",
-    "evacuationRoute": "",
-    "shelterInPlace": "",
-    "activeShooterMethods": "",
-    "adverseWeatherShelter": "",
+    "medicalFacility": "Base Clinic: 169th Medical Group (MDG) - Building 984\nAcute Care and Emergency Room Service are not provided here at McEntire but are located in the local surrounding area. If you are injured and feel you are in need of an ambulance, call 911. ALL injuries are to be reported to your supervisor, the McEntire Med Group and Base Safety immediately, however, do not delay treatment. Members on Military orders of any kind will have their initial visits (Line of Duty approved) sent to Tricare for payment. Any/all follow-up care that you receive must be pre-authorized by the Military Medical Support Office (MMSO). ",
+    "evacuationRoute": "Muster in the grass field between Building 1070 and Security Force Building.",
+    "shelterInPlace": "Building 1070 Auditorium.",
+    "activeShooterMethods": "Current Department of the Air Force and Department of Defense guidance directs individuals caught in an active shooter incident to execute the tiered response protocol: RUN, HIDE, FIGHT. If an escape path is clear, immediately evacuate (Run). If evacuation is not possible, conceal yourself, barricade entry points, and silence all electronic devices (Hide). As an absolute last resort when your life is in imminent danger, attempt to incapacitate the shooter using physical force and improvised weapons (Fight). Once safe, notify emergency responders (911 or Base Defense Operations Center [BDOC]).",
+    "adverseWeatherShelter": "Building 1070 Auditorium.",
     "fireEquipmentNotes": "",
     "safetyBoardLocation": "",
     "trafficSafetyNotes": "",
@@ -167,13 +167,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-04T18:44:57.839Z",
+  "savedAt": "2026-11-04T18:51:44.998Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-04T18:44:57.839Z"
+    "savedAt": "2026-11-04T18:51:44.998Z"
   }
 }
