@@ -8,8 +8,8 @@
     "reviewDate": "2026-11-03",
     "effectiveDate": "2026-11-03",
     "description": "The mission of Army Community Service (ACS) is to strengthen our community and enhance mission readiness, retention, and adaptation to the military lifestyle by providing total force members, their families, and leadership with effective, measurable services. While we do not provide clinical counseling, we help prioritize concerns and identify the resources or new behaviors needed to navigate the client's situation. \nWe are location in the Soldier Support Building to the far left entrance, 650 Monroe Ave., Room 126.",
-    "references": "All required documents can be found at: https://usaf.dps.mil/_layouts/15/sharepoint.aspx/onedrive",
-    "jhaNotes": "",
+    "references": "All required documents can be found at the ACS SharePoint, Safety Folder: https://usaf.dps.mil/_layouts/15/sharepoint.aspx/onedrive",
+    "jhaNotes": "OFFICE HAZARDS\nMajor causes of office injuries are falls, pushing/pulling, tripping and manual lifting. Personnel working in offices should keep file draws closed when not in use. Do not drape extension cords across walking areas or any other object that could be stepped on or cause a person to lose their balance. Avoid placing objects in high traffic areas and do not stand on chairs with wheels or wobbly desks or other unsuitable surfaces. Clean up spills immediately and post signs denoting wet floors. Remove obstructions from doorways and hallways.\n\nELECTRICAL SHOCK / EXTENSION CORDS\nBefore plugging a cord into the outlet, take a moment to look at the cord. The cord should be free from cracks, cuts or abrasions. If any defects in the cord are found, the cord needs to be replaced. Covering up the defect with electrical tape is not an approved fix. Notify your supervisor about the defected equipment. Electricity and water don’t mix.\n\nHAZARDOUS CHEMICALS\nWhen using cleaning supplies, do not mix different products (especially bleach and ammonia).  Open doors or turn on fans when using strong disinfecting sprays.  Use gloves when handling concentrated liquids or strong solutions.  Keep all items away from skin/eyes.",
     "emergencyNumbers": "Ambulance, Fire Department, Security Forces: Dail 911 from a DSN Phone.\n\n733 Security Forces: 757-878-4555\n\n733 Fire Department: 757-878-4281\n\n633 ABW Command Post: 757-225-5411, 757-764-1511\n\nOff Base: Dial 911\n",
     "medicalFacility": "McDonald Army Health Center\n(757) 314-7500 | Appointments: 1-866-645-4584\n\nAir Force civilian personnel must complete a Form CA-1 and CA-2 (obtained from your supervisor) prior to seeking treatment at the base hospital for any work-related injury or illness (emergencies excepted).\n\nAll active-duty military personnel, Air Force civilian personnel, and Non-Appropriated Funds personnel, whether full-time or part-time, are authorized to use the hospital for emergency treatment.",
     "evacuationRoute": "When directed, evacuate the building (taking your CAC) to a distance of at least 100 feet. Leave Bldg. 650 via front door and assemble in the secondary parking lot so all personnel may be accounted for by the senior ranking member.",
@@ -20,7 +20,7 @@
     "safetyBoardLocation": "Personnel should review the safety board once a month to ensure they are aware of all current safety policies. The safety bulletin board is located in the back wall in Staff Room 8A.",
     "trafficSafetyNotes": "Annual crash data for the local area can be acquired at http://www.511virginia.org/\n\nAll personnel will obey posted speed limits on and off-base.",
     "trafficContacts": "We do not have a Unit Motorcycle Rep because our squadron is all civilians.",
-    "annualReviewLog": "\n",
+    "annualReviewLog": "See attachment.\n",
     "documentNotes": "Training documents will be reviewed annually and the safety monitor will log the reviewed material via AF 55.",
     "exportBasename": "733FSS_ACS_JSTO_FY27",
     "uploadedBy": "733FSS_ACS_JSTO_FY27",
@@ -195,13 +195,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-04T14:55:59.311Z",
+  "savedAt": "2026-11-04T15:18:26.206Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/733fss-acs-jsto-fy27.pdf",
   "libraryMeta": {
     "uploadedBy": "733FSS_ACS_JSTO_FY27",
     "uploadedById": "733fss acs jsto fy27",
     "savedLibraryPdf": "JSTO-Library/733fss-acs-jsto-fy27.pdf",
-    "savedAt": "2026-11-04T14:55:59.311Z"
+    "savedAt": "2026-11-04T15:18:26.206Z"
   }
 }
