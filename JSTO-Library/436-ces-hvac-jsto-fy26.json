@@ -8,7 +8,7 @@
     "reviewDate": "2026-11-04",
     "effectiveDate": "2026-11-04",
     "description": "",
-    "references": "AFMAN 91-203, AFI 48-20, OSHA 29 CFR 1910, NFPA 70E, Lif Safety Code 1, DAFBI 48-101, AFI 90-821, AFI 21-101 AMC Sup 1, DAFBI 21-105, AFMAN 32-1068",
+    "references": "AFMAN 91-203, AFI 48-20, OSHA 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards), NFPA 70E, Lif Safety Code 1, DAFBI 48-101, AFI 90-821 - Hazard Communication (HAZCOM) Program, AFI 21-101 AMC Sup 1, DAFBI 21-105, AFMAN 32-1068",
     "jhaNotes": "",
     "emergencyNumbers": "911 - emergency. BDOC - 302-677-6666",
     "medicalFacility": "436 Medical Clinic, Bayhealth hospital",
@@ -16,7 +16,7 @@
     "shelterInPlace": "S.I.P. Break room",
     "activeShooterMethods": "Individuals should employ the Avoid, Deny, Defend response method. This strategy is adaptable to the specific situation and environment.",
     "adverseWeatherShelter": "During adverse weather Shelter in PLace would be in the break room.",
-    "fireEquipmentNotes": "",
+    "fireEquipmentNotes": "Fire Alarms - HVAC Shop left of roll up door.\nFirst Aid Kit - HVAC shop left of the bathroom door.\nEye Wash - HVAC shop back door, hazmat container.\nCircuit breakers for areas that might need to be cut off - Outside wall near tool room.\nUtility& HVAC shutoff - HVAC shop left of front door. Water shutoff in mechanical room near chiller.",
     "safetyBoardLocation": "Posted in the break room on the wall.",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
@@ -96,11 +96,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-04T20:43:34.668Z",
+  "savedAt": "2026-11-04T20:54:26.328Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-04T20:43:34.668Z"
+    "savedAt": "2026-11-04T20:54:26.328Z"
   }
 }
