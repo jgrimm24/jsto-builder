@@ -8,7 +8,7 @@
     "reviewDate": "2026-11-04",
     "effectiveDate": "2026-11-04",
     "description": "",
-    "references": "",
+    "references": "AFMAN 91-203, AFI 48-20, OSHA 29 CFR 1910, NFPA 70E, Lif Safety Code 1, DAFBI 48-101, AFI 90-821, AFI 21-101 AMC Sup 1, DAFBI 21-105, AFMAN 32-1068",
     "jhaNotes": "",
     "emergencyNumbers": "911 - emergency. BDOC - 302-677-6666",
     "medicalFacility": "436 Medical Clinic, Bayhealth hospital",
@@ -96,11 +96,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-04T19:42:45.507Z",
+  "savedAt": "2026-11-04T20:43:34.668Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-04T19:42:45.507Z"
+    "savedAt": "2026-11-04T20:43:34.668Z"
   }
 }
