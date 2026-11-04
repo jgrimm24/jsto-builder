@@ -17,7 +17,7 @@
     "activeShooterMethods": "Individuals should employ the Avoid, Deny, Defend response method. This strategy is adaptable to the specific situation and environment.",
     "adverseWeatherShelter": "During adverse weather Shelter in PLace would be in the break room.",
     "fireEquipmentNotes": "",
-    "safetyBoardLocation": "",
+    "safetyBoardLocation": "Posted in the break room on the wall.",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
@@ -96,11 +96,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-04T19:31:20.230Z",
+  "savedAt": "2026-11-04T19:34:33.115Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-04T19:31:20.230Z"
+    "savedAt": "2026-11-04T19:34:33.115Z"
   }
 }
