@@ -108,7 +108,7 @@
       "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
       "afTrainingBasis": "DAFMAN 91-203 / Ladders",
-      "notes": "",
+      "notes": "Personnel who use ladders at working heights of six feet or more will be adequately trained in the care and use of different types of ladders. Training will be conducted IAW DAFMAN 91-203, Chapter 7. The supervisor, or a designated trainer, will conduct this training when a worker is first assigned and periodically as needed. 245 ATCS Safety will provide training and presentation materials.",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fall%20Protection%20%26%20Ladders?d=wb334c81b3360421e94f53ccb5c01b69e&csf=1&web=1&e=Ku0q8f"
     },
     {
@@ -141,7 +141,7 @@
       "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
       "trainingBasis": "OSHA 2254 / Lockout-Tagout",
       "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
-      "notes": "",
+      "notes": "Installation of Lockout/Tagout devices shall be performed by authorized personnel only.\n\nLockout is the preferred method of isolating machines or equipment from energy sources.  Tags are warning devices attached to energy isolating devices, and do not provide the physical restraint on those devices that is provided by a lock.  \n\nWhen a lock or tag is attached to an energy isolating device, only the supervisor and the authorized personnel who initially installed the lock or tag can remove it. It can never be bypassed, ignored, or otherwise defeated.\n\nA tag will be used in conjunction with the lock. AF Form 979, Danger Tag, will be used for immediate danger. AF Form 980, Caution Tag, will be used to warn personnel against potential hazards. AF Form 981, Out of Order Tag, will be used for indicating that a piece of equipment, machinery, or system is out of order. AF Form 982, Do Not Start Tag, will be used to alert personnel of hazards associated with starting equipment. This tag is used for a short time until an energy-isolating device can be installed.  \n\nNo attempt shall be made to override any energy isolation device when it is locked or tagged out. Doing so will result in severe discipline and potential termination of employment.  \n\nFor more information on Lockout/Tagout refer to DAFMAN 91-203, Chapter 21. For information on training refer to Part II.\n",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/LOTO%20%26%20Hazardous%20Energy%20Control?d=wb278585b4d094581ac53738ece43d54a&csf=1&web=1&e=ECiTaK"
     },
     {
@@ -152,7 +152,7 @@
       "afTrainingRequirement": "Use the JSTO and local fire prevention plan to brief workers on work-center fire hazards, alarm reporting, extinguisher use, and evacuation accountability.",
       "trainingBasis": "OSHA 2254 / Fire Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
-      "notes": "",
+      "notes": "Supervisors shall establish and maintain a training and certification system to ensure employees are trained and understand their fire prevention and protection responsibilities in their work areas. This training and certification system shall include documented annual training of employees, including fire extinguisher training and location of fire extinguishers, and immediate indoctrination of newly hired employees.\n\nInitial and annual training will be conducted IAW DAFMAN 91-203 as well as NFPA 101, The Life Safety Code. Training is offered through Advanced Distance Learning System (ADLS) under the miscellaneous folder. For further information on Fire Extinguisher training, refer to Part II.\n",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fire%20Safety%20%26%20Egress?d=w28211f6d3d144689893f1d2e2c57a139&csf=1&web=1&e=8hSL0H"
     },
     {
@@ -176,15 +176,26 @@
       "afTrainingBasis": "DAFMAN 48-146 / Fetal Protection",
       "notes": "Workers in industrial workplaces may have potential exposures to hazards that can affect their reproductive health. There are hazards present to both male and female employees that affect the ability to reproduce as well as the normal and healthy development of a fetus.  Reproductive Health Training is a one-time training requirement that is required as part of an employee’s Initial Job Safety Training. Outlines for this training are provided by Public Health. If new workplace hazards are introduced that pose a significant threat to the employee’s reproductive health, additional workplace specific training will be required.\n\nTraining will be conducted IAW AFI 44-102, Medical Care Management, AFI 48-145, Occupational and Environmental Health Program, and ANGI 40-104, Pregnancy of Air National Guard Personnel. In addition to the one-time training requirement, female workers that become pregnant must report their pregnancy to the Public Health office at the MDG as soon as reasonably possible, but NLT than the first UTA for traditional members or within 5 workdays for full-time employees. Supervisors must ensure this training is accomplished and that pregnant members report immediately to the MDG. The MDG will perform a pregnancy profile evaluation to determine potential hazards of the workplace as well as restrictions to protect the employee and their fetus. Supervisors must ensure that members are following their duty restrictions. Pregnant members must report any changes in medical status to the MDG immediately.\n",
       "link": ""
+    },
+    {
+      "id": "local-7",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Local procedures / equipment guidance",
+      "trainingRequirement": "Train workers on removing jewelry and securing loose articles when working around machinery, electrical hazards, rotating equipment, or snag hazards.",
+      "afTrainingRequirement": "Use local work-center restrictions and equipment guidance to define prohibited items and exceptions for mission-essential tasks.",
+      "trainingBasis": "Local / Equipment Guidance",
+      "afTrainingBasis": "Shop-specific safety restrictions",
+      "notes": "",
+      "link": ""
     }
   ],
-  "savedAt": "2026-11-04T18:58:24.432Z",
+  "savedAt": "2026-11-04T19:18:44.912Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-04T18:58:24.432Z"
+    "savedAt": "2026-11-04T19:18:44.912Z"
   }
 }
