@@ -7,8 +7,8 @@
     "reviewer": "SSgt Arvai",
     "reviewDate": "2026-11-04",
     "effectiveDate": "2026-11-04",
-    "description": "",
-    "references": "",
+    "description": "245th CAOS is an expeditionary unit organized to rapidly deploy, establish, operate, and sustain combat airfield operations in austere, forward-deployed, contingency, or Agile Combat Employment (ACE) environments. The squadron integrates deployable Air Traffic Control (ATC), Airfield Management (AM), and Radar, Airfield, and Weather Systems (RAWS) maintenance to provide safe, expeditionary command-and-control of aircraft and airfield infrastructure.",
+    "references": "DAFI 91-203",
     "jhaNotes": "",
     "emergencyNumbers": "Dial 911, State location as Mcentire and give building number or area on base.",
     "medicalFacility": "",
@@ -97,7 +97,7 @@
       "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
-      "notes": "",
+      "notes": "Current Department of the Air Force and Department of Defense guidance directs individuals caught in an active shooter incident to execute the tiered response protocol: RUN, HIDE, FIGHT. If an escape path is clear, immediately evacuate (Run). If evacuation is not possible, conceal yourself, barricade entry points, and silence all electronic devices (Hide). As an absolute last resort when your life is in imminent danger, attempt to incapacitate the shooter using physical force and improvised weapons (Fight). Once safe, notify emergency responders (911 or Base Defense Operations Center [BDOC]).",
       "link": ""
     },
     {
@@ -154,15 +154,26 @@
       "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
       "notes": "",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fire%20Safety%20%26%20Egress?d=w28211f6d3d144689893f1d2e2c57a139&csf=1&web=1&e=8hSL0H"
+    },
+    {
+      "id": "local-2",
+      "title": "Active Shooter Response",
+      "reference": "Installation emergency management guidance / local procedures",
+      "trainingRequirement": "Brief personnel on how to recognize an active shooter event, how to summon help, and how to apply local run-hide-fight guidance based on the facility layout.",
+      "afTrainingRequirement": "Use local emergency response procedures, shelter locations, and mass notification methods applicable to the duty location.",
+      "trainingBasis": "Local / Emergency Management Guidance",
+      "afTrainingBasis": "Installation / Unit Active Shooter Procedures",
+      "notes": "",
+      "link": ""
     }
   ],
-  "savedAt": "2026-11-04T18:26:37.739Z",
+  "savedAt": "2026-11-04T18:44:57.839Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-04T18:26:37.739Z"
+    "savedAt": "2026-11-04T18:44:57.839Z"
   }
 }
