@@ -7,7 +7,7 @@
     "reviewer": "TSGT KORY WILSON",
     "reviewDate": "2026-11-04",
     "effectiveDate": "2026-11-04",
-    "description": "",
+    "description": "The items below are mandatory and will be briefed to all personnel. Develop a work center specific JSTG based on Attachment 4, Job Safety Training Outline (JSTO), on safety, fire protection/prevention and health requirements. Documents will be maintained and centrally located, readily available to supervisor and individual. The 14 mandatory items below can be documented as one item, i.e., course code for JSTO mandatory training. Job specific items and any additional training identified in a Bioenvironmental survey will be documented individually, as appropriate.  The supervisor will document and maintain completed training in the work area.  \nMethods of documentation may include, but are not limited to, the AF IMT 55, Employee Safety and Health Record, electronic mediums such as AFFORMs/MAF LOG C2/G081 or locally developed products. If the AF IMT 55 is mandated for use as the training documentation device, the entity that mandated the form usage will prescribe the requirement in writing to include entries that require signatures, e.g., HAZCOM, respirator, powered industrial trucks, lockout/tagout, fall protection, confined spaces, radiation safety, laser safety, etc. Note:  Training requirements vary, i.e., some documents may require the signature of the supervisor or the person who conducted the training, while other documents may require the initials of the individual (trainee) and trainer/supervisor. \nDocumentation will contain the following minimum data: trainee name (last, first, middle initial), type of training and date of training. Neither the trainer or trainee signature is required unless specified in writing by the applicable chain of authority. Note:  If the Integrated Maintenance Data System (IMDS), Core Automated Maintenance System (CAMS), etc., cannot support minimum documentation requirements, then they are not suitable as a documentation product.",
     "references": "AFMAN 91-203, AFI 48-20, OSHA 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards), NFPA 70E, Lif Safety Code 1, DAFBI 48-101, AFI 90-821 - Hazard Communication (HAZCOM) Program, AFI 21-101 AMC Sup 1, DAFBI 21-105, AFMAN 32-1068",
     "jhaNotes": "",
     "emergencyNumbers": "911 - emergency. BDOC - 302-677-6666",
@@ -96,11 +96,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-04T20:54:26.328Z",
+  "savedAt": "2026-11-04T21:04:55.713Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-04T20:54:26.328Z"
+    "savedAt": "2026-11-04T21:04:55.713Z"
   }
 }
