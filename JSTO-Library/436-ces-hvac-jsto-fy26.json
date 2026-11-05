@@ -94,13 +94,47 @@
       "title": "DAFSMS Responsibilities"
     }
   ],
-  "selectedModules": [],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.9",
+      "title": "Fall Arrest Systems",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 13; 29 CFR 1910.66 - Powered platforms for building maintenance; 29 CFR 1926.503 - Training requirements",
+      "trainingRequirement": "Train employees exposed to fall hazards to recognize fall hazards and the procedures to minimize them, including use and inspection of fall arrest systems.",
+      "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies.",
+      "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
+      "trainingBasis": "OSHA 2254 / Hazard Communication",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
+      "notes": "",
+      "link": ""
+    }
+  ],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-05T14:00:09.499Z",
+  "savedAt": "2026-11-05T14:26:54.572Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-05T14:00:09.499Z"
+    "savedAt": "2026-11-05T14:26:54.572Z"
   }
 }
