@@ -12,7 +12,7 @@
     "jhaNotes": "",
     "emergencyNumbers": "911 - emergency. BDOC - 302-677-6666",
     "medicalFacility": "During normal duty hours on weekdays, personnel are to report to Dover AFB Clinic for assessment and treatment of injuries suffered while on-the-job. Civilian employees may elect to receive treatment from their personal physician.\n\nIf the injury or medical condition does not permit the injured person to first report to Dover AFB Clinic, the individuals should be treated at the closest medical facility which in most cases will be Bay Health Medical Center (otherwise known as Kent General Hospital) located in downtown Dover, contact information is: (302) 674-4700.\n\nThe Base Clinic is located in Building 300. Also, advise member that the Base Clinic no longer provides 24 hour emergency service. Make sure the individual understands the procedure to get medical attention on and off duty as per TRICARE provider procedures (1-877-TRICARE or 1-877-874-2273).",
-    "evacuationRoute": "Fire rally in parking of 615. \nBomb threat rally point 600 parking. \nAlternate rally point 423(gym) parking lot.",
+    "evacuationRoute": "Fire Route:\nPersonnel evacuating from Bldg. 615 shall take the most direct to the 615 parking lot near building 605\n\nAlternate Fire Route:\nPersonnel evacuating shall take the most direct route to the 600 parking lot\n\nBomb Route:\nPersonnel evacuating from Bldg. 615 shall take the most direct to the 615 parking lot near building 605\n\nAlternate Route:\nPersonnel evacuating shall take the most direct route to the 600 parking lot.\n",
     "shelterInPlace": "S.I.P. Break room",
     "activeShooterMethods": "Individuals should employ the Avoid, Deny, Defend response method. This strategy is adaptable to the specific situation and environment.",
     "adverseWeatherShelter": "During adverse weather Shelter in PLace would be in the break room.",
@@ -96,11 +96,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-04T21:26:22.917Z",
+  "savedAt": "2026-11-05T13:44:16.513Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-04T21:26:22.917Z"
+    "savedAt": "2026-11-05T13:44:16.513Z"
   }
 }
