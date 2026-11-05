@@ -20,7 +20,7 @@
     "safetyBoardLocation": "Safety Visual Aid (DAFVA 91-209) Location\nPosted Location: Building 615, Main Safety Information Board located in Breakroom 111.",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
-    "annualReviewLog": "",
+    "annualReviewLog": "02 October 2026 next review 01 October 2027",
     "documentNotes": "",
     "exportBasename": "436 CES/CEOFE JSTO",
     "uploadedBy": "TSgt Cornejo",
@@ -255,17 +255,6 @@
       "link": ""
     },
     {
-      "id": "local-4",
-      "title": "Risk Management Fundamentals",
-      "reference": "DAFI 90-802; DAFPAM 90-803",
-      "trainingRequirement": "Train workers to identify hazards, assess risk, implement controls, supervise the task, and re-evaluate controls during and after operations.",
-      "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
-      "trainingBasis": "Local / Risk Management Guidance",
-      "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
-      "notes": "",
-      "link": ""
-    },
-    {
       "id": "local-6",
       "title": "Fire Protection and Prevention",
       "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; local fire prevention plan",
@@ -300,11 +289,11 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-ceofe-jsto.pdf",
-  "savedAt": "2026-11-05T21:11:03.992Z",
+  "savedAt": "2026-11-05T21:19:59.113Z",
   "libraryMeta": {
     "uploadedBy": "TSgt Cornejo",
     "uploadedById": "tsgt cornejo",
     "savedLibraryPdf": "JSTO-Library/436-ces-ceofe-jsto.pdf",
-    "savedAt": "2026-11-05T21:11:03.992Z"
+    "savedAt": "2026-11-05T21:19:59.113Z"
   }
 }
