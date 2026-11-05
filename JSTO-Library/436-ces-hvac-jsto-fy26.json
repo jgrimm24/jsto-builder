@@ -25,7 +25,7 @@
     "exportBasename": "436_CES_HVAC_JSTO_FY26",
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
-    "dafvaPostingLocation": "",
+    "dafvaPostingLocation": "All AFVA 91-209 will be posted in a conspicuous location in each work center.   AFVA 91-209 is required to be posted on the unit safety bulletin board.  The AFVA 91-209 outlines the requirement for Federal Agencies to establish programs to protect their personnel from work-related deaths, injuries and illnesses.  The Air Force Occupational Safety and Health Program is explained in AFI 91-202",
     "phone": "677-4850"
   },
   "unitImage": {
@@ -141,12 +141,12 @@
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-05T15:56:46.277Z",
+  "savedAt": "2026-11-05T15:59:04.493Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-05T15:56:46.277Z"
+    "savedAt": "2026-11-05T15:59:04.493Z"
   },
   "storageMode": "text-only-browser-draft"
 }
