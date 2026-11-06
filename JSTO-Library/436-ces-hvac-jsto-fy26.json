@@ -166,15 +166,92 @@
       "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
       "notes": "",
       "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.7",
+      "title": "Respiratory Protection Program",
+      "reference": "DAFI 48-137; 29 CFR 1910.134 - Respiratory protection",
+      "trainingRequirement": "Train users before respirator use and at least annually on why the respirator is necessary, how improper fit or maintenance can compromise protection, and how to inspect, don, doff, use, and store the respirator.",
+      "afTrainingRequirement": "Document fit testing and occupational health training on AF Form 2767 and ensure wearers understand emergency-use limits, cartridge change-out, cleaning, and medical qualification requirements.",
+      "trainingBasis": "OSHA 2254 / Respiratory Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Respiratory Protection",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.10",
+      "title": "Forklift / Material Handling Equipment",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
+      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
+      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
+      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
+      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.14",
+      "title": "Flight Line Driving",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
+      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
+      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
+      "trainingBasis": "Local / Installation Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.15",
+      "title": "Fetal Protection Program",
+      "reference": "DAFMAN 48-146",
+      "trainingRequirement": "Provide job-specific hazard awareness for reproductive health risks where occupational exposures may affect pregnant workers or fetuses.",
+      "afTrainingRequirement": "Use occupational and environmental health guidance to discuss declaration options, exposure review, and local work restriction procedures.",
+      "trainingBasis": "Local / Occupational Health Guidance",
+      "afTrainingBasis": "DAFMAN 48-146 / Fetal Protection",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.8",
+      "title": "Vehicle Mounted Elevated Work Platforms",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 16",
+      "trainingRequirement": "Provide model-specific training, safe operating procedures, fall protection expectations, and emergency lowering actions before use of elevated work platforms.",
+      "afTrainingRequirement": "Use locally approved lesson plans with hands-on demonstration, written testing, and supervisor certification before operators use mobile elevating work platforms.",
+      "trainingBasis": "Local / Manufacturer Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Mobile Elevating Work Platforms",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.16",
+      "title": "Medical Surveillance Examination",
+      "reference": "DAFI 48-145 - Occupational and Environmental Health Program",
+      "trainingRequirement": "Ensure workers understand when medical surveillance examinations are required, how they are scheduled, and why participation is tied to specific exposures.",
+      "afTrainingRequirement": "Cover local scheduling, reporting, and follow-up processes for required occupational and environmental health evaluations.",
+      "trainingBasis": "Local / Occupational Health Guidance",
+      "afTrainingBasis": "AFI 48-145 / Medical Surveillance",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-06T12:41:43.105Z",
+  "savedAt": "2026-11-06T12:45:21.608Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-06T12:41:43.105Z"
+    "savedAt": "2026-11-06T12:45:21.608Z"
   },
   "storageMode": "text-only-browser-draft"
 }
