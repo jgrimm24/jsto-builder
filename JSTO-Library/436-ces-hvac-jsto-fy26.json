@@ -155,15 +155,26 @@
       "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
       "notes": "",
       "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-06T12:39:50.876Z",
+  "savedAt": "2026-11-06T12:41:43.105Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-06T12:39:50.876Z"
+    "savedAt": "2026-11-06T12:41:43.105Z"
   },
   "storageMode": "text-only-browser-draft"
 }
