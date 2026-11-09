@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "436 CES",
+    "workCenter": "Power Production",
+    "officeSymbol": "CEOFP",
+    "supervisor": "Latham, Jared/MSgt/Power Production NCOIC",
+    "reviewer": "Jared Latham",
+    "reviewDate": "2026-11-09",
+    "effectiveDate": "2026-11-09",
+    "description": "The items below are mandatory and will be briefed to all personnel. Develop a work center specific JSTGbased on Attachment 4, Job Safety Training Outline (JSTO), on safety, fire protection/prevention andhealth requirements. Documents will be maintained and centrally located, readily available to supervisorand individual. The 14 mandatory items below can be documented as one item, i.e., course code forJSTO mandatory training. Job specific items and any additional training identified in a Bioenvironmentalsurvey will be documented individually, as appropriate. The supervisor will document and maintaincompleted training in the work area.Methods of documentation may include, but are not limited to, the AF IMT 55, Employee Safety andHealth Record, electronic mediums such as AFFORMs/MAF LOG C2/G081 or locally developedproducts. If the AF IMT 55 is mandated for use as the training documentation device, the entity thatmandated the form usage will prescribe the requirement in writing to include entries that requiresignatures, e.g., HAZCOM, respirator, powered industrial trucks, lockout/tagout, fall protection, confinedspaces, radiation safety, laser safety, etc. Note: Training requirements vary, i.e., some documents mayrequire the signature of the supervisor or the person who conducted the training, while other documentsmay require the initials of the individual (trainee) and trainer/supervisor.\nDocumentation will contain the following minimum data: trainee name (last, first, middle initial), type of training and date of training. Neither the trainer or trainee signature is required unless specified in writing by the applicable chain of authority. Note: If the Integrated Maintenance Data System (IMDS), Core Automated Maintenance System (CAMS), etc., cannot support minimum documentation requirements, then they are not suitable as a documentation product.",
+    "references": "Work area can be found in the JSTG located in section 3.1 table 1. at the following location in the sharedrive.\n",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "436 CES POWER PRODUCTION",
+    "uploadedBy": "436CESPOWERPRODUCTION",
+    "uploadedById": "436cespowerproduction",
+    "dafvaPostingLocation": "",
+    "phone": "677-4857"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-11-09T17:37:50.360Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/436-ces-power-production.pdf",
+  "libraryMeta": {
+    "uploadedBy": "436CESPOWERPRODUCTION",
+    "uploadedById": "436cespowerproduction",
+    "savedLibraryPdf": "JSTO-Library/436-ces-power-production.pdf",
+    "savedAt": "2026-11-09T17:37:50.360Z"
+  }
+}
