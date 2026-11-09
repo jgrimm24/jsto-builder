@@ -5,8 +5,8 @@
     "officeSymbol": "",
     "supervisor": "",
     "reviewer": "",
-    "reviewDate": "2026-11-05",
-    "effectiveDate": "2026-11-05",
+    "reviewDate": "2026-11-09",
+    "effectiveDate": "2026-11-09",
     "description": "",
     "references": "",
     "jhaNotes": "",
@@ -23,8 +23,8 @@
     "annualReviewLog": "",
     "documentNotes": "",
     "exportBasename": "",
-    "uploadedBy": "436CESDIRT",
-    "uploadedById": "436cesdirt",
+    "uploadedBy": "KONISHA",
+    "uploadedById": "konisha",
     "dafvaPostingLocation": ""
   },
   "unitImage": {
@@ -89,11 +89,11 @@
   ],
   "selectedModules": [],
   "savedLibraryPdf": "JSTO-Library/jsto-export.pdf",
-  "savedAt": "2026-11-05T16:17:14.571Z",
+  "savedAt": "2026-11-09T19:02:00.548Z",
   "libraryMeta": {
-    "uploadedBy": "436CESDIRT",
-    "uploadedById": "436cesdirt",
+    "uploadedBy": "KONISHA",
+    "uploadedById": "konisha",
     "savedLibraryPdf": "JSTO-Library/jsto-export.pdf",
-    "savedAt": "2026-11-05T16:17:14.571Z"
+    "savedAt": "2026-11-09T19:02:00.548Z"
   }
 }
