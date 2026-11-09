@@ -88,14 +88,103 @@
       "title": "DAFSMS Responsibilities"
     }
   ],
-  "selectedModules": [],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "LOCK OUT/TAG OUT PROCESS\n\nDE-ENERGIZE:\nSTEP ONE – PREPARATION: Determine if equipment specific written energy control procedures are applicable to the task.  Methods for energy isolation may include, but are not limited to, circuit breakers, disconnect switches, or valves.\nSTEP TWO – NOTIFICATION: Notify Supervision and all affected workers of the impending shutdown and that they shall not disturb lockout devices or attempt to restart the equipment until informed it is safe to resume normal operations.\nSTEP THREE – SHUTDOWN: Verify it is safe to shut down the equipment or machine.  The equipment or machine shall be turned off or shut down using normal stopping and shutdown procedures.\nSTEP FOUR – ISOLATION AND VERIFICATION: Isolate all energy sources.  Verify the correct energy isolating device has been switched off.  For example, if it’s safe to do so, try to turn the equipment on.\nSTEP FIVE – LOTO DEVICE APPLICATION: Affix LOTO Devices (typically locks) to secure energy isolating devices in an “OFF” or “SAFE” position.  Both tags and locks shall be installed.\nSTEP SIX – ADDITIONAL MEASURES: Once the system is locked and tagged out, all potentially hazardous stored or residual energy shall be relieved, disconnected, restrained or otherwise rendered safe. The authorized worker shall completely release or otherwise control any stored energy and block any unexpected motion.\nSTEP SEVEN – ISOLATION CONFIRMATION: Physically attempt to operate energy isolating devices and attempt to restart the equipment or machine using normal controls.\nSTEP EIGHT – KEEP LOTO DEVICES IN PLACE: A lock and tag shall remain in place until work on the equipment or machine is complete.\nRE-ENERGIZE:\nSTEP NINE – NOTIFICATION: Before restoring machines and equipment to service, Supervision and authorized employee will ensure all personnel, tools, and maintenance or servicing equipment have been removed and guards re-installed.  Remove all locks and tags to restore the energy isolating device to the “ON” position.  Start the machine or equipment to ensure it is safe for normal use.\nNotify all personnel the locks and tags have been removed and equipment is in service.\n",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.7",
+      "title": "Respiratory Protection Program",
+      "reference": "DAFI 48-137; 29 CFR 1910.134 - Respiratory protection",
+      "trainingRequirement": "Train users before respirator use and at least annually on why the respirator is necessary, how improper fit or maintenance can compromise protection, and how to inspect, don, doff, use, and store the respirator.",
+      "afTrainingRequirement": "Document fit testing and occupational health training on AF Form 2767 and ensure wearers understand emergency-use limits, cartridge change-out, cleaning, and medical qualification requirements.",
+      "trainingBasis": "OSHA 2254 / Respiratory Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Respiratory Protection",
+      "notes": "SrA Barbour is the Respirator Rep. He keeps all documents in the binder and tracks it on an excel sheet. ",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.9",
+      "title": "Fall Arrest Systems",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 13; 29 CFR 1910.66 - Powered platforms for building maintenance; 29 CFR 1926.503 - Training requirements",
+      "trainingRequirement": "Train employees exposed to fall hazards to recognize fall hazards and the procedures to minimize them, including use and inspection of fall arrest systems.",
+      "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies.",
+      "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
+      "trainingBasis": "OSHA 2254 / Hazard Communication",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-8",
+      "title": "Personal Protective Equipment (PPE)",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 14; 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
+      "trainingRequirement": "Train each affected worker on when PPE is necessary, what PPE is necessary, how to properly don, doff, adjust, and wear PPE, the limitations of assigned PPE, and the proper care, maintenance, useful life, and disposal of PPE. Require workers to demonstrate understanding and proper use before performing work requiring PPE, and retrain when workplace conditions, job assignments, PPE types, or worker knowledge gaps make prior training obsolete.",
+      "afTrainingRequirement": "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
+      "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
+      "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.3",
+      "title": "Bloodborne Pathogens",
+      "reference": "29 CFR 1910.1030 - Bloodborne Pathogens",
+      "trainingRequirement": "Provide bloodborne pathogens training at initial assignment and at least annually thereafter, covering exposure control, modes of transmission, and protective measures.",
+      "afTrainingRequirement": "Enroll applicable workers in the local bloodborne pathogens program and ensure exposure control plan requirements, reporting actions, and PPE procedures are covered before task performance.",
+      "trainingBasis": "OSHA 2254 / Bloodborne Pathogens",
+      "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
+      "notes": "",
+      "link": ""
+    }
+  ],
   "savedLibraryPdf": "JSTO-Library/436-ces-structures-ceohs.pdf",
-  "savedAt": "2026-11-09T18:12:41.643Z",
+  "savedAt": "2026-11-09T18:41:58.418Z",
   "libraryMeta": {
     "uploadedBy": "436CESSTRUCTURES",
     "uploadedById": "436cesstructures",
     "savedLibraryPdf": "JSTO-Library/436-ces-structures-ceohs.pdf",
-    "savedAt": "2026-11-09T18:12:41.643Z"
+    "savedAt": "2026-11-09T18:41:58.418Z"
   },
   "storageMode": "text-only-browser-draft"
 }
