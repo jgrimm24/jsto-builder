@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "436 CES",
+    "workCenter": "Power Production",
+    "officeSymbol": "CEOFP",
+    "supervisor": "Latham, Jared/MSgt/Power Production NCOIC",
+    "reviewer": "Jared Latham",
+    "reviewDate": "2026-11-09",
+    "effectiveDate": "2026-11-09",
+    "description": "",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "436_CES_CEOFP_JSTO_FY26",
+    "uploadedBy": "436CESPOWERPRODUCTION",
+    "uploadedById": "436cespowerproduction",
+    "dafvaPostingLocation": "",
+    "phone": "677-4857"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/436-ces-ceofp-jsto-fy26.pdf",
+  "savedAt": "2026-11-09T15:24:57.351Z",
+  "libraryMeta": {
+    "uploadedBy": "436CESPOWERPRODUCTION",
+    "uploadedById": "436cespowerproduction",
+    "savedLibraryPdf": "JSTO-Library/436-ces-ceofp-jsto-fy26.pdf",
+    "savedAt": "2026-11-09T15:24:57.351Z"
+  }
+}
