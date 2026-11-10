@@ -1,10 +1,10 @@
 {
   "meta": {
-    "unit": "",
-    "workCenter": "",
-    "officeSymbol": "",
-    "supervisor": "",
-    "reviewer": "",
+    "unit": "436AW",
+    "workCenter": "Safety",
+    "officeSymbol": "SE",
+    "supervisor": "TSgt Christopher Eiss",
+    "reviewer": "TSgt Christopher Eiss",
     "reviewDate": "2026-11-10",
     "effectiveDate": "2026-11-10",
     "description": "",
@@ -22,10 +22,11 @@
     "trafficContacts": "",
     "annualReviewLog": "",
     "documentNotes": "",
-    "exportBasename": "436aw-se-jsto.pdf",
-    "uploadedBy": "JSTO-Library/436aw-se-jsto.pdf",
-    "uploadedById": "jsto library 436aw se jsto pdf",
-    "dafvaPostingLocation": ""
+    "exportBasename": "436AW-SE-JSTO",
+    "uploadedBy": "436aw se",
+    "uploadedById": "436aw se",
+    "dafvaPostingLocation": "",
+    "phone": "677-6331"
   },
   "unitImage": {
     "name": "",
@@ -88,13 +89,13 @@
     }
   ],
   "selectedModules": [],
-  "savedAt": "2026-11-10T13:39:17.584Z",
+  "savedAt": "2026-11-10T14:01:32.283Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436aw-se-jsto.pdf",
   "libraryMeta": {
-    "uploadedBy": "JSTO-Library/436aw-se-jsto.pdf",
-    "uploadedById": "jsto library 436aw se jsto pdf",
+    "uploadedBy": "436aw se",
+    "uploadedById": "436aw se",
     "savedLibraryPdf": "JSTO-Library/436aw-se-jsto.pdf",
-    "savedAt": "2026-11-10T13:39:17.584Z"
+    "savedAt": "2026-11-10T14:01:32.283Z"
   }
 }
