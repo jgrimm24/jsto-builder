@@ -7,7 +7,7 @@
     "reviewer": "TSGT KORY WILSON",
     "reviewDate": "2026-11-04",
     "effectiveDate": "2026-11-04",
-    "description": "The items below are mandatory and will be briefed to all personnel. Develop a work center specific JSTG based on Attachment 4, Job Safety Training Outline (JSTO), on safety, fire protection/prevention and health requirements. Documents will be maintained and centrally located, readily available to supervisor and individual. The 14 mandatory items below can be documented as one item, i.e., course code for JSTO mandatory training. Job specific items and any additional training identified in a Bioenvironmental survey will be documented individually, as appropriate.  The supervisor will document and maintain completed training in the work area.  \nMethods of documentation may include, but are not limited to, the AF IMT 55, Employee Safety and Health Record, electronic mediums such as AFFORMs/MAF LOG C2/G081 or locally developed products. If the AF IMT 55 is mandated for use as the training documentation device, the entity that mandated the form usage will prescribe the requirement in writing to include entries that require signatures, e.g., HAZCOM, respirator, powered industrial trucks, lockout/tagout, fall protection, confined spaces, radiation safety, laser safety, etc. Note:  Training requirements vary, i.e., some documents may require the signature of the supervisor or the person who conducted the training, while other documents may require the initials of the individual (trainee) and trainer/supervisor. \nDocumentation will contain the following minimum data: trainee name (last, first, middle initial), type of training and date of training. Neither the trainer or trainee signature is required unless specified in writing by the applicable chain of authority. Note:  If the Integrated Maintenance Data System (IMDS), Core Automated Maintenance System (CAMS), etc., cannot support minimum documentation requirements, then they are not suitable as a documentation product.",
+    "description": "Responsible for all HVAC maintenance, repairs, and installations for Dover's 557 facility infrastructure, ensuring optimal work conditions for 11K base personnel. Conducts inspections and assigns equipment ratings for 4.5K assets, across 2 wings and its 31 C-5/C-17. This section provides 24/7/365 rapid response and capability, ensuring zero downtime for Dover AFB’s strategic airlift fleet (C-5M Super Galaxy and C-17 Globemaster III). Their continuous operations directly enable the projection of sovereign power, high-priority humanitarian relief, and the solemn transfer of fallen American service members.",
     "references": "AFMAN 91-203, AFI 48-20, OSHA 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards), NFPA 70E, Lif Safety Code 1, DAFBI 48-101, AFI 90-821 - Hazard Communication (HAZCOM) Program, AFI 21-101 AMC Sup 1, DAFBI 21-105, AFMAN 32-1068",
     "jhaNotes": "Work area can be found in the JSTG located in section 3.1 table 1. at the following location in the share drive. \nS:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material",
     "emergencyNumbers": "Ambulance - 911\nFire - 911\n436 CES Safety Representative - 677-6450\nCommand Post - 677-4201\nSecurity Forces - 677-6666 Option 1\nWing Safety: 436 AW/SE: 677-3369; 512 AW/SE: 677-3450\nShop Foreman/NCOIC: 677-4850\nSuperintendent: 677-4812\nFirst Sergeant: 677-4724/302-363-9053\nCommander: 677-6768/302-363-9010",
@@ -168,50 +168,6 @@
       "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
     },
     {
-      "id": "14.1.3.7",
-      "title": "Respiratory Protection Program",
-      "reference": "DAFI 48-137; 29 CFR 1910.134 - Respiratory protection",
-      "trainingRequirement": "Train users before respirator use and at least annually on why the respirator is necessary, how improper fit or maintenance can compromise protection, and how to inspect, don, doff, use, and store the respirator.",
-      "afTrainingRequirement": "Document fit testing and occupational health training on AF Form 2767 and ensure wearers understand emergency-use limits, cartridge change-out, cleaning, and medical qualification requirements.",
-      "trainingBasis": "OSHA 2254 / Respiratory Protection",
-      "afTrainingBasis": "DAFMAN 91-203 / Respiratory Protection",
-      "notes": "",
-      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
-    },
-    {
-      "id": "14.1.3.10",
-      "title": "Forklift / Material Handling Equipment",
-      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 35; 29 CFR 1910.178 - Powered industrial trucks",
-      "trainingRequirement": "Train powered industrial truck operators in truck-related and workplace-related topics, evaluate performance, and conduct refresher training when unsafe operation, incidents, or workplace changes occur.",
-      "afTrainingRequirement": "Use approved lesson plans, hands-on evaluation, and recurring reevaluation before certifying operators. Cover spotter requirements, aircraft proximity rules, and local route restrictions.",
-      "trainingBasis": "OSHA 2254 / Powered Industrial Trucks",
-      "afTrainingBasis": "DAFMAN 91-203 / Material Handling Equipment",
-      "notes": "",
-      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
-    },
-    {
-      "id": "14.1.3.14",
-      "title": "Flight Line Driving",
-      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 24",
-      "trainingRequirement": "Provide local flight line driving rules, markings, vehicle lighting requirements, restricted areas, and aircraft hazard awareness before granting driving privileges.",
-      "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
-      "trainingBasis": "Local / Installation Guidance",
-      "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
-      "notes": "",
-      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
-    },
-    {
-      "id": "14.1.3.15",
-      "title": "Fetal Protection Program",
-      "reference": "DAFMAN 48-146",
-      "trainingRequirement": "Provide job-specific hazard awareness for reproductive health risks where occupational exposures may affect pregnant workers or fetuses.",
-      "afTrainingRequirement": "Use occupational and environmental health guidance to discuss declaration options, exposure review, and local work restriction procedures.",
-      "trainingBasis": "Local / Occupational Health Guidance",
-      "afTrainingBasis": "DAFMAN 48-146 / Fetal Protection",
-      "notes": "",
-      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
-    },
-    {
       "id": "local-1",
       "title": "Ladder Safety",
       "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
@@ -232,26 +188,15 @@
       "afTrainingBasis": "DAFMAN 91-203 / Mobile Elevating Work Platforms",
       "notes": "",
       "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
-    },
-    {
-      "id": "14.1.3.16",
-      "title": "Medical Surveillance Examination",
-      "reference": "DAFI 48-145 - Occupational and Environmental Health Program",
-      "trainingRequirement": "Ensure workers understand when medical surveillance examinations are required, how they are scheduled, and why participation is tied to specific exposures.",
-      "afTrainingRequirement": "Cover local scheduling, reporting, and follow-up processes for required occupational and environmental health evaluations.",
-      "trainingBasis": "Local / Occupational Health Guidance",
-      "afTrainingBasis": "AFI 48-145 / Medical Surveillance",
-      "notes": "",
-      "link": "S:\\CEO\\CEOIH - Copy\\04. Safety\\7. TAB G - JSTG and Training Material\\Training Material"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-  "savedAt": "2026-11-06T12:59:11.790Z",
+  "savedAt": "2026-11-10T12:55:34.395Z",
   "libraryMeta": {
     "uploadedBy": "436CESHVAC",
     "uploadedById": "436ceshvac",
     "savedLibraryPdf": "JSTO-Library/436-ces-hvac-jsto-fy26.pdf",
-    "savedAt": "2026-11-06T12:59:11.790Z"
+    "savedAt": "2026-11-10T12:55:34.395Z"
   },
   "storageMode": "text-only-browser-draft"
 }
