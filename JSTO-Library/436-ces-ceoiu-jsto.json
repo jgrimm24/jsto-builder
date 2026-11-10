@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "unit": "436 CES",
+    "workCenter": "WFSM Shop",
+    "officeSymbol": "CEOIU",
+    "supervisor": "Donovan Janus, CIV, Foreman",
+    "reviewer": "SSgt Michael Kelley",
+    "reviewDate": "2026-11-10",
+    "effectiveDate": "2026-11-10",
+    "description": "Installs, inspects, maintains, troubleshoots, modifies, repairs, and manages plumbing, water distribution, wastewater collection systems, water and wastewater treatment systems, fire suppression, backflow prevention systems, natural gas distribution systems; (3E4X1A Fuel Systems Maintenance) liquid fuel storage, distribution, and dispensing systems. Complies with environmental and safety regulations.",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "Emergency: 911\nFire Dispatch: 677-4401/4405\nCommand Post: 677-4201",
+    "medicalFacility": "",
+    "evacuationRoute": "Fire Muster Point: Base Track\nBomb Threat Muster Point: Facility 945",
+    "shelterInPlace": "",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "436-ces-ceoiu-jsto",
+    "uploadedBy": "436-CES-CEOIU",
+    "uploadedById": "436 ces ceoiu",
+    "dafvaPostingLocation": "",
+    "phone": "677-4786"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedAt": "2026-11-10T15:57:00.439Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/436-ces-ceoiu-jsto.pdf",
+  "libraryMeta": {
+    "uploadedBy": "436-CES-CEOIU",
+    "uploadedById": "436 ces ceoiu",
+    "savedLibraryPdf": "JSTO-Library/436-ces-ceoiu-jsto.pdf",
+    "savedAt": "2026-11-10T15:57:00.439Z"
+  }
+}
