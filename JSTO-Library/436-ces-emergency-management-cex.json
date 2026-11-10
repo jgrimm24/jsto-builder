@@ -20,7 +20,7 @@
     "safetyBoardLocation": "CBRN Training Classroom Entry/Exit.",
     "trafficSafetyNotes": "",
     "trafficContacts": "",
-    "annualReviewLog": "",
+    "annualReviewLog": "Reviewed by TSgt Christopher Hoppler 10 November 2026.",
     "documentNotes": "Training doucmentation is located on the 436 CEX Microsoft Teams page under the Flight Continuity - Safety Section.",
     "exportBasename": "",
     "uploadedBy": "436CES/CEX",
@@ -145,13 +145,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-10T16:49:42.080Z",
+  "savedAt": "2026-11-10T16:50:44.809Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436-ces-emergency-management-cex.pdf",
   "libraryMeta": {
     "uploadedBy": "436CES/CEX",
     "uploadedById": "436ces cex",
     "savedLibraryPdf": "JSTO-Library/436-ces-emergency-management-cex.pdf",
-    "savedAt": "2026-11-10T16:49:42.080Z"
+    "savedAt": "2026-11-10T16:50:44.809Z"
   }
 }
