@@ -21,7 +21,7 @@
     "trafficSafetyNotes": "",
     "trafficContacts": "",
     "annualReviewLog": "",
-    "documentNotes": "",
+    "documentNotes": "Training doucmentation is located on the 436 CEX Microsoft Teams page under the Flight Continuity - Safety Section.",
     "exportBasename": "",
     "uploadedBy": "436CES/CEX",
     "uploadedById": "436ces cex",
@@ -134,17 +134,6 @@
       "link": ""
     },
     {
-      "id": "local-4",
-      "title": "Risk Management Fundamentals",
-      "reference": "DAFI 90-802; DAFPAM 90-803",
-      "trainingRequirement": "Train workers to identify hazards, assess risk, implement controls, supervise the task, and re-evaluate controls during and after operations.",
-      "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
-      "trainingBasis": "Local / Risk Management Guidance",
-      "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
-      "notes": "",
-      "link": ""
-    },
-    {
       "id": "local-8",
       "title": "Personal Protective Equipment (PPE)",
       "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 14; 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
@@ -156,13 +145,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-10T16:38:24.215Z",
+  "savedAt": "2026-11-10T16:49:42.080Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/436-ces-emergency-management-cex.pdf",
   "libraryMeta": {
     "uploadedBy": "436CES/CEX",
     "uploadedById": "436ces cex",
     "savedLibraryPdf": "JSTO-Library/436-ces-emergency-management-cex.pdf",
-    "savedAt": "2026-11-10T16:38:24.215Z"
+    "savedAt": "2026-11-10T16:49:42.080Z"
   }
 }
