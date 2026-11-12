@@ -185,8 +185,8 @@
       "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
       "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
       "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
-      "notes": "",
-      "link": ""
+      "notes": "Identified workers with a determined occupational exposure to hazardous noise will be enrolled in the HCP, complete annual HCP Training, and receive annual audiograms. This audiogram is tracked and maintained by PH no further documentation is required of shop level personnel. Personnel not enrolled in the HCP, but exposed to possible noise hazards will receive a one-time Hearing Protection Awareness Training from their supervisor. \nSupervisors must protect the hearing of assigned personnel by ensuring protective engineering and administrative controls are implemented. PPE must be provided and used by all workers. Supervisors must ensure the workplace complies with all OSHA, DoD, and AF HCP requirements. ",
+      "link": "https://usaf.dps.mil/:p:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Bio%20%26%20Engineering/New%20Worker%20Hearing%20Conservation%20Training_AFI48-127.pptx?d=wce5bb70918b141dc9b09e07ffe0e81d7&csf=1&web=1&e=eP7sYL"
     },
     {
       "id": "14.1.3.14",
@@ -196,8 +196,8 @@
       "afTrainingRequirement": "Use installation or unit-approved training and certification for airfield/fight line operations, to include local speed, spotter, and no-lone-zone requirements.",
       "trainingBasis": "Local / Installation Guidance",
       "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
-      "notes": "",
-      "link": ""
+      "notes": "The safe operation of all government and civilian motor vehicles on the flight line is absolutely essential to normal aircraft operations and maintenance. Motor vehicles present a clear and definite danger to aircraft and ground personnel. Carelessness, haste, and disregard for established safety standards are the primary causes of high accident potential (HAP) incidents, aircraft-vehicle mishaps, and personnel injury on the flight line.\nThe 245th CAOS has a very limited number of personnel that need/possess this training, but none are required. Flight line driving is done annually on ADLS and trained with 169 OG/AM Airfield Management.\n",
+      "link": "https://usaf.dps.mil/:b:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Airfield%20Driving%20Refresher%20training.pdf?d=w5bc1963f30eb43b29bca1a38d37833fc&csf=1&web=1&e=YEKWGk"
     },
     {
       "id": "local-3",
@@ -233,13 +233,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-12T16:37:45.123Z",
+  "savedAt": "2026-11-12T16:44:13.474Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-12T16:37:45.123Z"
+    "savedAt": "2026-11-12T16:44:13.474Z"
   }
 }
