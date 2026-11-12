@@ -232,15 +232,26 @@
       "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
       "notes": "Back injuries are a leading cause of lost work time. Not using proper lifting techniques can lead to a painful and debilitating back injury. Always consider the load you’re about to lift and never over-exert yourself! DAFMAN 91-203, AF Occupational Safety, Fire & Health Standards, covers lifting techniques in details. There are three basic methods of lifting, that is, straight back-bent knees, free style, and kinetic. Each has advan¬tages and limitations. The kinetic method is the most widely accepted and taught because it provides more stability for the worker while reducing load on the back muscles and intervertebral disks.\n •\tPosition feet correctly. Place feet far enough apart for balance with one foot to the rear of the object and the other foot slightly ahead of the other and to the side of the object.\n•\tCrouch close to the load. Crouching is preferred to squatting. Stay close to the load to minimize strain on the back muscles.\n•\tPick up materials with a full palm grip. Do not attempt to pick up weights with a fingertip grip. Ensure that the load is free of grease or sharp points which could cause injury. Use suitable gloves when necessary.\n•\tAlways keep the back as straight as possible. It may not be possible to keep the back in the vertical plane but avoid arching the back. Bend from the hips and not from the middle of the back.\n•\tWith the arms, slide the ob¬ject toward the body to give it some motion (kinetic energy). At the same time, use the legs to lift the object and bring the back to a vertical position. Keep the object close to the body while lifting.\n\nAcceptable carrying methods differ, based upon the type of material, distance, and number of workers. Workers should be instructed during initial train¬ing in each procedure (for example, neck, shoulder, side, tray, two-person, and under-arm carry methods, etc.). ",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Office%20%26%20Ergonomics?d=w85d8185766534d2c9287c2210f0fd583&csf=1&web=1&e=D9q1V4"
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies.",
+      "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
+      "trainingBasis": "OSHA 2254 / Hazard Communication",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
+      "notes": "Personnel who handle, use, or are potentially exposed to hazardous materials during official AF duties must be provided Hazard Communication (HAZCOM) training prior to the use of hazardous chemicals. The work area/shop supervisor is responsible for ensuring all workers are properly trained on the chemical hazards in their work area/shop, to include Initial Training (one-time) and Supplemental Training (as needed). All Safety Data Sheets (SDS) are located in the SDS binder above the Hazmat cabinets in Rm 05 BLDG. 1070 and Teams link: https://usaf.dps.mil/:f:/r/teams/169thOperationsGroup/Shared%20Documents/245%20ATCS/06.%20Safety/SDS?d=wd1bd2a78fb624052a6a7dd4c9d01c40f&csf=1&web=1&e=HfnWWr",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Environmental%20%26%20HAZMAT/Chemical%20Safety%20%26%20HAZMAT?d=w205de1f0eddd4cb2819e7c49f9784818&csf=1&web=1&e=N5hRtU"
     }
   ],
-  "savedAt": "2026-11-12T17:15:03.454Z",
+  "savedAt": "2026-11-12T17:20:57.170Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-12T17:15:03.454Z"
+    "savedAt": "2026-11-12T17:20:57.170Z"
   }
 }
