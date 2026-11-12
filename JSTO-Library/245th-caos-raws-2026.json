@@ -97,7 +97,7 @@
       "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
-      "notes": "",
+      "notes": "General Industry: In general industry, fall protection is required at 4 feet. The 4-foot rule applies to \nwalking and working surfaces and requires every open-sided floor or platform 4 feet or more above \nadjacent floor or ground level to be guarded. This requirement also applies to wall openings, window \nwall openings at a stairway landing, floor, platform, or balcony, from which there is a drop of more than 4 feet, and where the bottom of the opening is less than 3 feet above the platform or landing. Every \nchute wall opening from which there is a drop of more than 4 feet shall also be guarded.\nConstruction: In the construction industry, fall protection is required at 6 feet\n",
       "link": "https://usaf.dps.mil/:p:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Fall%20Protection%20%26%20Ladders/ANG+-+Fall+Protection+-+PFAS+Training.pptx?d=wb505c53e37cd453f91469addc00fffc2&csf=1&web=1&e=lapLtX"
     },
     {
@@ -119,7 +119,7 @@
       "afTrainingRequirement": "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
       "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
       "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
-      "notes": "",
+      "notes": "Hazards should be engineered out, isolated, guarded against, or a safer alternative used as a \nsubstitute whenever possible before considering the use of PPE. PPE devices alone should not be relied \non to provide protection against hazards, but should be used in conjunction with guards, engineering \ncontrols, and sound manufacturing practices.\nSupervisors shall conduct and document hazard assessments in each workplace where their \nemployees are performing duties. If PPE is required, the supervisor shall ensure that PPE is provided, \nused and maintained in a sanitary serviceable condition. They are responsible for maintaining discipline \nwith regard to personnel wearing properly fitted PPE, when required, and shall consult the installation \nGround Safety office and BE concerning the selection and use of PPE. \nPersonal Protective Equipment (PPE). PPE shall be used whenever there are hazards that can do \nbodily harm through absorption, inhalation or physical contact. This equipment includes respiratory protective devices, special clothing and protective devices for the eyes, face, head, torso and \nextremities. All PPE shall be approved for the work performed and shall be maintained in satisfactory \ncondition. The installation Ground Safety office and BE shall be consulted.",
       "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/PPE?d=w7507e3466cb0486fbb9dfa6f104d4c10&csf=1&web=1&e=TMxMdE"
     },
     {
@@ -178,13 +178,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-12T15:48:49.908Z",
+  "savedAt": "2026-11-12T15:58:30.557Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-12T15:48:49.908Z"
+    "savedAt": "2026-11-12T15:58:30.557Z"
   }
 }
