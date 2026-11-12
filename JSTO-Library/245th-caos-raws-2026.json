@@ -97,7 +97,7 @@
       "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
-      "notes": "Current Department of the Air Force and Department of Defense guidance directs individuals caught in an active shooter incident to execute the tiered response protocol: RUN, HIDE, FIGHT. If an escape path is clear, immediately evacuate (Run). If evacuation is not possible, conceal yourself, barricade entry points, and silence all electronic devices (Hide). As an absolute last resort when your life is in imminent danger, attempt to incapacitate the shooter using physical force and improvised weapons (Fight). Once safe, notify emergency responders (911 or Base Defense Operations Center [BDOC]).",
+      "notes": "",
       "link": ""
     },
     {
@@ -163,7 +163,7 @@
       "afTrainingRequirement": "Use local emergency response procedures, shelter locations, and mass notification methods applicable to the duty location.",
       "trainingBasis": "Local / Emergency Management Guidance",
       "afTrainingBasis": "Installation / Unit Active Shooter Procedures",
-      "notes": "",
+      "notes": "Current Department of the Air Force and Department of Defense guidance directs individuals caught in an active shooter incident to execute the tiered response protocol: RUN, HIDE, FIGHT. If an escape path is clear, immediately evacuate (Run). If evacuation is not possible, conceal yourself, barricade entry points, and silence all electronic devices (Hide). As an absolute last resort when your life is in imminent danger, attempt to incapacitate the shooter using physical force and improvised weapons (Fight). Once safe, notify emergency responders (911 or Base Defense Operations Center [BDOC]).",
       "link": ""
     },
     {
@@ -189,13 +189,13 @@
       "link": ""
     }
   ],
-  "savedAt": "2026-11-12T15:34:41.427Z",
+  "savedAt": "2026-11-12T15:37:24.354Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-12T15:34:41.427Z"
+    "savedAt": "2026-11-12T15:37:24.354Z"
   }
 }
