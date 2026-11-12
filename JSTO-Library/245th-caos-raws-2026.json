@@ -174,7 +174,7 @@
       "afTrainingRequirement": "Use local work-center restrictions and equipment guidance to define prohibited items and exceptions for mission-essential tasks.",
       "trainingBasis": "Local / Equipment Guidance",
       "afTrainingBasis": "Shop-specific safety restrictions",
-      "notes": "",
+      "notes": "Mishap statistics over the past 10 years have revealed that the loss of portions of fingers due to the ring catching on some object is one of the most frequent causes of lost-time permanent partial inju¬ries. Because of the potential for serious injury, finger rings will not be worn by personnel engaged in the following activities. This restriction is also extended to personnel who may be assigned to these tasks on an infrequent basis.\nNOTE: This prohibition applies only to personnel actually performing the work and is not intended for administrative and support personnel assigned to or visiting these areas. But remember, if the employee is involved in any of the activities then the prohibition DOES apply.\n\n•\tClimbing, ascending, or descending activi¬ties where personnel could fall or jump from elevated surfaces account for the majority of injuries caused by the finger ring catching on an object.  Some examples include personnel working on elevated surfaces: i.e., ladders, scaffolds, platforms, roofs, high reach vehicles, or descending from large ve¬hicles such as refuelers, wreckers, sweepers, dump trucks, and stake bed trucks. The stake bed truck has been associated with a large majority of injuries caused by personnel jumping or descending from a large vehicle.\n•\tMost materials handling operations.\n•\tWork activities where personnel are ex¬posed to moving machinery, rotating or revolving part, or any task that could result in hands being caught in moving parts.  Remove rings/jewelry when using the paper shredder!\n•\tWork activities where personnel are exposed to energized electrical circuits.\n\nWARNING: Placing tape over rings or wearing gloves on the hand with a ring does not provide protection or eliminate the requirement to remove finger rings.\n\nOther Jewelry: Any jewelry that presents a potential for catching, snagging, pulling, and tearing should be evaluated and restricted from wear if necessary. Some types of jewelry that should be controlled under these job situations are watches, bracelets, and necklaces. Whenever pos¬sible, these types of jewelry should be removed before entering work areas where jewelry hazards exist.\n\nJewelry will not be worn while working on or around any equipment. It’s a wise practice to remove all rings at the beginning of your shift and store them in your personal locker.\n",
       "link": ""
     },
     {
@@ -218,8 +218,8 @@
       "afTrainingRequirement": "Provide verbal and written guidance on manual lifting, lifting devices, and local reporting actions for strain or overexertion symptoms.",
       "trainingBasis": "OSHA 2254 / Ergonomics and Material Handling Concepts",
       "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
-      "notes": "",
-      "link": ""
+      "notes": "Back injuries are a leading cause of lost work time. Not using proper lifting techniques can lead to a painful and debilitating back injury. Always consider the load you’re about to lift and never over-exert yourself! DAFMAN 91-203, AF Occupational Safety, Fire & Health Standards, covers lifting techniques in details. There are three basic methods of lifting, that is, straight back-bent knees, free style, and kinetic. Each has advan¬tages and limitations. The kinetic method is the most widely accepted and taught because it provides more stability for the worker while reducing load on the back muscles and intervertebral disks.\n •\tPosition feet correctly. Place feet far enough apart for balance with one foot to the rear of the object and the other foot slightly ahead of the other and to the side of the object.\n•\tCrouch close to the load. Crouching is preferred to squatting. Stay close to the load to minimize strain on the back muscles.\n•\tPick up materials with a full palm grip. Do not attempt to pick up weights with a fingertip grip. Ensure that the load is free of grease or sharp points which could cause injury. Use suitable gloves when necessary.\n•\tAlways keep the back as straight as possible. It may not be possible to keep the back in the vertical plane but avoid arching the back. Bend from the hips and not from the middle of the back.\n•\tWith the arms, slide the ob¬ject toward the body to give it some motion (kinetic energy). At the same time, use the legs to lift the object and bring the back to a vertical position. Keep the object close to the body while lifting.\n\nAcceptable carrying methods differ, based upon the type of material, distance, and number of workers. Workers should be instructed during initial train¬ing in each procedure (for example, neck, shoulder, side, tray, two-person, and under-arm carry methods, etc.). ",
+      "link": "https://usaf.dps.mil/:f:/r/teams/169FWSafety/Shared%20Documents/SEG/Training/Occupational/Office%20%26%20Ergonomics?d=w85d8185766534d2c9287c2210f0fd583&csf=1&web=1&e=D9q1V4"
     },
     {
       "id": "local-4",
@@ -229,17 +229,17 @@
       "afTrainingRequirement": "Use the DAF risk management process to discuss local hazard reporting, supervisor involvement, and integration into routine tasks.",
       "trainingBasis": "Local / Risk Management Guidance",
       "afTrainingBasis": "DAFI 90-802 / DAFPAM 90-803",
-      "notes": "",
+      "notes": "RM principles, concepts, and techniques will be integrated into command level education and training programs. Supervisors and unit-level ORM advisors will stay properly educated and trained in ORM principles, concepts, and techniques with training materials from Base Safety. Supervisors and ORM advisors will then train their own section members. \n\nTraining will be conducted IAW AFI 90-802. The supervisor or a designated trainer will conduct this training when a worker is first assigned.\n",
       "link": ""
     }
   ],
-  "savedAt": "2026-11-12T16:29:30.032Z",
+  "savedAt": "2026-11-12T16:37:45.123Z",
   "storageMode": "text-only-browser-draft",
   "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
   "libraryMeta": {
     "uploadedBy": "ssgt_arvai",
     "uploadedById": "ssgt arvai",
     "savedLibraryPdf": "JSTO-Library/245th-caos-raws-2026.pdf",
-    "savedAt": "2026-11-12T16:29:30.032Z"
+    "savedAt": "2026-11-12T16:37:45.123Z"
   }
 }
