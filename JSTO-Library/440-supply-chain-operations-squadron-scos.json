@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "unit": "440 Supply Chain Operations Squadron",
+    "workCenter": "",
+    "officeSymbol": "SCOS",
+    "supervisor": "Major Joshua Garcia Rivera ",
+    "reviewer": "Alexa Arevalo",
+    "reviewDate": "2026-11-18",
+    "effectiveDate": "2026-11-18",
+    "description": "Our mission is to deliver effective support equipment management and warfighter support across the enterprise.",
+    "references": "",
+    "jhaNotes": "",
+    "emergencyNumbers": "",
+    "medicalFacility": "",
+    "evacuationRoute": "",
+    "shelterInPlace": "Training Room ",
+    "activeShooterMethods": "",
+    "adverseWeatherShelter": "",
+    "fireEquipmentNotes": "",
+    "safetyBoardLocation": "",
+    "trafficSafetyNotes": "",
+    "trafficContacts": "",
+    "annualReviewLog": "",
+    "documentNotes": "",
+    "exportBasename": "",
+    "uploadedBy": "alexaarevalo",
+    "uploadedById": "alexaarevalo",
+    "dafvaPostingLocation": "",
+    "phone": "7572256891"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [],
+  "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-scos.pdf",
+  "savedAt": "2026-11-18T19:04:59.160Z",
+  "libraryMeta": {
+    "uploadedBy": "alexaarevalo",
+    "uploadedById": "alexaarevalo",
+    "savedLibraryPdf": "JSTO-Library/440-supply-chain-operations-squadron-scos.pdf",
+    "savedAt": "2026-11-18T19:04:59.160Z"
+  }
+}
