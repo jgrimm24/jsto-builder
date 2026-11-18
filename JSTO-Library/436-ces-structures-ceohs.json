@@ -104,7 +104,7 @@
       "trainingBasis": "OSHA 2254 / Lockout-Tagout",
       "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
       "notes": "LOCK OUT/TAG OUT PROCESS\n\nDE-ENERGIZE:\nSTEP ONE – PREPARATION: Determine if equipment specific written energy control procedures are applicable to the task.  Methods for energy isolation may include, but are not limited to, circuit breakers, disconnect switches, or valves.\nSTEP TWO – NOTIFICATION: Notify Supervision and all affected workers of the impending shutdown and that they shall not disturb lockout devices or attempt to restart the equipment until informed it is safe to resume normal operations.\nSTEP THREE – SHUTDOWN: Verify it is safe to shut down the equipment or machine.  The equipment or machine shall be turned off or shut down using normal stopping and shutdown procedures.\nSTEP FOUR – ISOLATION AND VERIFICATION: Isolate all energy sources.  Verify the correct energy isolating device has been switched off.  For example, if it’s safe to do so, try to turn the equipment on.\nSTEP FIVE – LOTO DEVICE APPLICATION: Affix LOTO Devices (typically locks) to secure energy isolating devices in an “OFF” or “SAFE” position.  Both tags and locks shall be installed.\nSTEP SIX – ADDITIONAL MEASURES: Once the system is locked and tagged out, all potentially hazardous stored or residual energy shall be relieved, disconnected, restrained or otherwise rendered safe. The authorized worker shall completely release or otherwise control any stored energy and block any unexpected motion.\nSTEP SEVEN – ISOLATION CONFIRMATION: Physically attempt to operate energy isolating devices and attempt to restart the equipment or machine using normal controls.\nSTEP EIGHT – KEEP LOTO DEVICES IN PLACE: A lock and tag shall remain in place until work on the equipment or machine is complete.\nRE-ENERGIZE:\nSTEP NINE – NOTIFICATION: Before restoring machines and equipment to service, Supervision and authorized employee will ensure all personnel, tools, and maintenance or servicing equipment have been removed and guards re-installed.  Remove all locks and tags to restore the energy isolating device to the “ON” position.  Start the machine or equipment to ensure it is safe for normal use.\nNotify all personnel the locks and tags have been removed and equipment is in service.\n",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\13. TAB M- LOTO"
     },
     {
       "id": "14.1.3.7",
@@ -115,7 +115,7 @@
       "trainingBasis": "OSHA 2254 / Respiratory Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Respiratory Protection",
       "notes": "SrA Barbour is the Respirator Rep. He keeps all documents in the binder and tracks it on an excel sheet. ",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "14.1.3.9",
@@ -126,7 +126,7 @@
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
       "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "14.1.3.4",
@@ -137,7 +137,7 @@
       "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
       "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "14.1.3.2",
@@ -148,7 +148,7 @@
       "trainingBasis": "OSHA 2254 / Hazard Communication",
       "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "local-1",
@@ -159,7 +159,7 @@
       "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
       "afTrainingBasis": "DAFMAN 91-203 / Ladders",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "local-8",
@@ -170,7 +170,7 @@
       "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
       "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     },
     {
       "id": "14.1.3.3",
@@ -181,16 +181,16 @@
       "trainingBasis": "OSHA 2254 / Bloodborne Pathogens",
       "afTrainingBasis": "DAFMAN 91-203 / Bloodborne Pathogens",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOHS\\01. SHOP PROGRAMS\\Safety\\00. Shop Training Slides"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-structures-ceohs.pdf",
-  "savedAt": "2026-11-09T18:58:55.052Z",
+  "savedAt": "2026-11-18T18:26:02.461Z",
   "libraryMeta": {
     "uploadedBy": "436CESSTRUCTURES",
     "uploadedById": "436cesstructures",
     "savedLibraryPdf": "JSTO-Library/436-ces-structures-ceohs.pdf",
-    "savedAt": "2026-11-09T18:58:55.052Z"
+    "savedAt": "2026-11-18T18:26:02.461Z"
   },
   "storageMode": "text-only-browser-draft"
 }
