@@ -110,7 +110,7 @@
       "trainingBasis": "OSHA 2254 / Lockout-Tagout",
       "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOFP\\436 CES_CEOFP ONE NOTE SHOP Continuity\\Additional Duties\\Safety\\13. TAB M - LOTO\\03. Annual Training"
     },
     {
       "id": "14.1.3.2",
@@ -121,7 +121,7 @@
       "trainingBasis": "OSHA 2254 / Hazard Communication",
       "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOFP\\436 CES_CEOFP ONE NOTE SHOP Continuity\\Additional Duties\\Safety\\12. TAB L - HAZCOM"
     },
     {
       "id": "14.1.3.4",
@@ -132,7 +132,7 @@
       "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
       "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
       "notes": "",
-      "link": ""
+      "link": "S:\\CEO\\CEOFP\\436 CES_CEOFP ONE NOTE SHOP Continuity\\Additional Duties\\Safety\\07. TAB G - JSTO and Training Material\\03. Training\\Hearing Conservation"
     },
     {
       "id": "14.1.3.13",
@@ -154,15 +154,15 @@
       "trainingBasis": "Local / Installation Guidance",
       "afTrainingBasis": "DAFMAN 91-203 / Aircraft Flight Line – Ground Operations and Activities",
       "notes": "",
-      "link": ""
+      "link": "https://aodms.af.mil/AirfieldDriving"
     }
   ],
   "savedLibraryPdf": "JSTO-Library/436-ces-ceofp-jsto-fy27.pdf",
-  "savedAt": "2026-11-09T21:08:27.517Z",
+  "savedAt": "2026-11-19T18:13:15.309Z",
   "libraryMeta": {
     "uploadedBy": "ChristopherSimeon",
     "uploadedById": "christophersimeon",
     "savedLibraryPdf": "JSTO-Library/436-ces-ceofp-jsto-fy27.pdf",
-    "savedAt": "2026-11-09T21:08:27.517Z"
+    "savedAt": "2026-11-19T18:13:15.309Z"
   }
 }
