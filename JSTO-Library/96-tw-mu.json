@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "unit": "96 TW",
+    "workCenter": "Air Force Armament Museum",
+    "officeSymbol": "MU",
+    "supervisor": "Mr. Jacob Allen",
+    "reviewer": "Mr. Jacob Allen",
+    "reviewDate": "2026-10-30",
+    "effectiveDate": "2026-10-30",
+    "description": "The mission of the Air Force Armament Museum’s Aircraft Restoration Shop is to preserve, restore, and maintain the historically significant aerospace vehicles and aviation hardware that tell the story of the United States Air Force and the evolution of air armaments. ",
+    "references": "Aircraft-specific Technical Order Library - Restoration Supervisor's Office\nDAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Consolidated Safety, Fire and Occupational Health Standard\nDAFI 91-202 - The Department of the Air Force (DAF) Mishap Prevention Program, The DAF Mishap Prevention Program\nDAFI 91-207, The DAF Traffic Safety Program\nDAFI 90-821, The HAZCOM Program",
+    "jhaNotes": "The supervisor accomplished a Job Hazard Analysis for working at heights when cleaning, painting and restoring aircraft static dispalys.",
+    "emergencyNumbers": "Eglin Emergency Services - 911\nEglin Command Post - 850-882-4020\nEglin Safety Office - 850-882-2540, Option 3\nEglin BioEnvironmental Engineering - 850-882-8607\nEglin Public Health Office - 850-883-8608\nEglin Fire Prevention Office - 850-882-5856",
+    "medicalFacility": "96th Medical Group (Defense Health Agency)\nEmergency Department\n307 Boatner Road\nEglin AFB, Florida 32542\nTel.  911",
+    "evacuationRoute": "The Primary muster point will be the rear Museum employee's parking lot.  The Alternate muster point will be at the B-27 static display.",
+    "shelterInPlace": "Shelter-In Place location is located inside the Aircraft Armament Museum.",
+    "activeShooterMethods": "Run: If it is safe to do so, evacuate the area immediately.\nHave an escape route: Know the nearest exits and plan your escape.\nLeave belongings behind: Do not waste time gathering personal items.\nHelp others escape: If possible, assist others in leaving the area, but do not put yourself at risk.\nCall 911: Once you are safe, call emergency services to report the situation.\n\nHide: If evacuation is not possible, find a secure hiding place.\nStay out of sight: Choose a location that is not visible to the shooter.\nLock or block doors: Secure your hiding place to prevent entry.\nSilence your phone: Turn off all electronic devices to avoid detection.\nStay quiet: Remain as silent as possible until law enforcement arrives.\n\nFight: As a last resort, if your life is in imminent danger, confront the shooter.\nBe aggressive: Commit to your actions and act with physical aggression.\nUse improvised weapons: Throw items or use anything available to distract or incapacitate the shooter.\nFight until the threat is neutralized: Your survival may depend on your willingness to act decisively ",
+    "adverseWeatherShelter": "The weather shelter location is located in the Main Museum.",
+    "fireEquipmentNotes": "Fire extinguishers and pull-down stations are located by each emergency egress door. ",
+    "safetyBoardLocation": "The safety bulletin board is located in the main restoration shop facility.  An additional safety bulletin board is located in the employee lounge at the main museum.",
+    "trafficSafetyNotes": "Speed limit on the museum campus is 5 mph due to pedestrian foot traffic. ",
+    "trafficContacts": "The 96 TW Staff Agency Contacts for Motorcycles/Traffic Safety are Mr. Edward Boggio and Mr. Bill Walden at 850-882-2540, Option 3.",
+    "annualReviewLog": "003",
+    "documentNotes": "",
+    "exportBasename": "96 TW_MU",
+    "uploadedBy": "96TWMU",
+    "uploadedById": "96twmu",
+    "dafvaPostingLocation": "This visual aid is located on the safety bulletin boards in the restoration shop and main museum employee's lounge.",
+    "phone": "850-882-6726"
+  },
+  "unitImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "dafsmsImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "evacuationImage": {
+    "name": "",
+    "dataUrl": ""
+  },
+  "emergencyEquipmentFiles": [],
+  "mishapReportingFiles": [],
+  "gvoRiskFiles": [],
+  "form1118Files": [],
+  "jhaFiles": [],
+  "bioSurvey": {
+    "name": "",
+    "dataUrl": "",
+    "type": ""
+  },
+  "moduleReferences": [
+    {
+      "code": "14.1.2.1",
+      "title": "Workplace Hazards"
+    },
+    {
+      "code": "14.1.2.2",
+      "title": "Personal Protective Equipment"
+    },
+    {
+      "code": "14.1.2.3",
+      "title": "Emergency Action and Fire Prevention"
+    },
+    {
+      "code": "14.1.2.4",
+      "title": "Reporting Unsafe Equipment, Conditions, or Procedures"
+    },
+    {
+      "code": "14.1.2.5",
+      "title": "Mishap, Occupational Injury, and Illness Reporting"
+    },
+    {
+      "code": "14.1.2.6",
+      "title": "CA-10 and LS-201"
+    },
+    {
+      "code": "14.1.2.7",
+      "title": "DAF Traffic Safety Program"
+    },
+    {
+      "code": "14.1.2.8",
+      "title": "DAFVA 91-209 Location and Content"
+    },
+    {
+      "code": "14.1.2.9",
+      "title": "DAFSMS Responsibilities"
+    }
+  ],
+  "selectedModules": [
+    {
+      "id": "14.1.3.1",
+      "title": "Hazardous Energy Control",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 21; 29 CFR 1910.147 - The control of hazardous energy (lockout/tagout)",
+      "trainingRequirement": "Train authorized employees to recognize hazardous energy sources, the type and magnitude of energy present, and the methods and means for isolation and control. Train affected employees on the purpose and use of lockout/tagout procedures, and instruct all other employees on the prohibition against restarting locked or tagged equipment.",
+      "afTrainingRequirement": "Document initial and refresher training when job assignments, machines, processes, or energy control procedures change, or when inspections show employee knowledge gaps.",
+      "trainingBasis": "OSHA 2254 / Lockout-Tagout",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazardous Energy Control",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.2",
+      "title": "Hazard Communication",
+      "reference": "DAFI 90-821; 29 CFR 1910.1200 - Hazard Communication",
+      "trainingRequirement": "Train personnel on hazardous chemicals in their work area, labeling systems, safety data sheets, and the measures they can take to protect themselves during normal operations and foreseeable emergencies.",
+      "afTrainingRequirement": "Provide HazCom training upon initial assignment, whenever a new chemical hazard is introduced, and when new tasks expose workers to different hazardous materials. Ensure workers know how to access local SDS information and labeling guidance.",
+      "trainingBasis": "OSHA 2254 / Hazard Communication",
+      "afTrainingBasis": "DAFMAN 91-203 / Hazard Communication",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.4",
+      "title": "Hearing Conservation",
+      "reference": "DAFI 48-127; 29 CFR 1910.95 - Occupational noise exposure",
+      "trainingRequirement": "Train noise-exposed employees annually on the effects of noise, the purpose of hearing protectors, the advantages and disadvantages of various protectors, and the purpose of audiometric testing.",
+      "afTrainingRequirement": "Ensure workers enrolled in hearing conservation understand noise hazard areas, double-hearing protection requirements, and local follow-up actions tied to occupational health evaluations.",
+      "trainingBasis": "OSHA 2254 / Occupational Noise Exposure",
+      "afTrainingBasis": "DAFMAN 91-203 / Hearing Conservation",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.8",
+      "title": "Vehicle Mounted Elevated Work Platforms",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 16",
+      "trainingRequirement": "Provide model-specific training, safe operating procedures, fall protection expectations, and emergency lowering actions before use of elevated work platforms.",
+      "afTrainingRequirement": "Use locally approved lesson plans with hands-on demonstration, written testing, and supervisor certification before operators use mobile elevating work platforms.",
+      "trainingBasis": "Local / Manufacturer Guidance",
+      "afTrainingBasis": "DAFMAN 91-203 / Mobile Elevating Work Platforms",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.9",
+      "title": "Fall Arrest Systems",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 13; 29 CFR 1910.66 - Powered platforms for building maintenance; 29 CFR 1926.503 - Training requirements",
+      "trainingRequirement": "Train employees exposed to fall hazards to recognize fall hazards and the procedures to minimize them, including use and inspection of fall arrest systems.",
+      "afTrainingRequirement": "Cover anchorage selection, rescue planning, and equipment inspections before personnel use personal fall arrest systems in assigned tasks.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces and Fall Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fall Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-1",
+      "title": "Ladder Safety",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 7",
+      "trainingRequirement": "Train workers to inspect ladders before use, maintain three points of contact, set ladders on stable surfaces, and avoid overreaching or using damaged ladders.",
+      "afTrainingRequirement": "Provide hands-on ladder safety training at first assignment, including local storage, damaged-tag procedures, and fall prevention expectations.",
+      "trainingBasis": "OSHA 2254 / Walking-Working Surfaces",
+      "afTrainingBasis": "DAFMAN 91-203 / Ladders",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "14.1.3.18",
+      "title": "Laser Safety Training",
+      "reference": "DAFI 48-139",
+      "trainingRequirement": "Provide laser hazard awareness, eyewear, posting, alignment, and beam-control training before personnel work with lasers or enter laser-controlled areas.",
+      "afTrainingRequirement": "Use local laser safety officer guidance and approved operating instructions to cover exposure limits, alignment procedures, and emergency actions.",
+      "trainingBasis": "Local / Laser Safety Guidance",
+      "afTrainingBasis": "DAFI 48-139 / Laser and Optical Radiation Protection",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-2",
+      "title": "Active Shooter Response",
+      "reference": "Installation emergency management guidance / local procedures",
+      "trainingRequirement": "Brief personnel on how to recognize an active shooter event, how to summon help, and how to apply local run-hide-fight guidance based on the facility layout.",
+      "afTrainingRequirement": "Use local emergency response procedures, shelter locations, and mass notification methods applicable to the duty location.",
+      "trainingBasis": "Local / Emergency Management Guidance",
+      "afTrainingBasis": "Installation / Unit Active Shooter Procedures",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-5",
+      "title": "Manual Lifting and Material Handling",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 20",
+      "trainingRequirement": "Train workers on proper lifting techniques, team lifting, load assessment, and use of lifting aids to reduce musculoskeletal injury risk.",
+      "afTrainingRequirement": "Provide verbal and written guidance on manual lifting, lifting devices, and local reporting actions for strain or overexertion symptoms.",
+      "trainingBasis": "OSHA 2254 / Ergonomics and Material Handling Concepts",
+      "afTrainingBasis": "DAFMAN 91-203 / Manual Materials Handling",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-6",
+      "title": "Fire Protection and Prevention",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards; local fire prevention plan",
+      "trainingRequirement": "Train personnel on fire hazards, reporting procedures, extinguisher locations, evacuation routes, pull stations, and local emergency response actions.",
+      "afTrainingRequirement": "Use the JSTO and local fire prevention plan to brief workers on work-center fire hazards, alarm reporting, extinguisher use, and evacuation accountability.",
+      "trainingBasis": "OSHA 2254 / Fire Protection",
+      "afTrainingBasis": "DAFMAN 91-203 / Fire Prevention",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-7",
+      "title": "Jewelry / Loose Articles Restrictions",
+      "reference": "Local procedures / equipment guidance",
+      "trainingRequirement": "Train workers on removing jewelry and securing loose articles when working around machinery, electrical hazards, rotating equipment, or snag hazards.",
+      "afTrainingRequirement": "Use local work-center restrictions and equipment guidance to define prohibited items and exceptions for mission-essential tasks.",
+      "trainingBasis": "Local / Equipment Guidance",
+      "afTrainingBasis": "Shop-specific safety restrictions",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "local-8",
+      "title": "Personal Protective Equipment (PPE)",
+      "reference": "DAFMAN 91-203 - Air Force Occupational Safety, Fire and Health Standards, Chapter 14; 29 CFR Part 1910 - Occupational Safety and Health Standards (General Industry Standards) Subpart I; 29 CFR 1910.132; 29 CFR 1910.133; 29 CFR 1910.135; 29 CFR 1910.136; 29 CFR 1910.138",
+      "trainingRequirement": "Train each affected worker on when PPE is necessary, what PPE is necessary, how to properly don, doff, adjust, and wear PPE, the limitations of assigned PPE, and the proper care, maintenance, useful life, and disposal of PPE. Require workers to demonstrate understanding and proper use before performing work requiring PPE, and retrain when workplace conditions, job assignments, PPE types, or worker knowledge gaps make prior training obsolete.",
+      "afTrainingRequirement": "Use the work-center JHA, BE occupational health assessment, manufacturer instructions, DAFMAN 91-203 Chapter 14, and local safety office guidance to identify PPE requirements. Supervisors must ensure PPE is provided, used, cleaned, inspected, maintained in sanitary and serviceable condition, and documented in JSTO training records. Cover eye and face protection, head protection, foot protection, hand protection, protective clothing, and respiratory or hearing protection when those programs apply.",
+      "trainingBasis": "OSHA 2254 / Personal Protective Equipment",
+      "afTrainingBasis": "DAFMAN 91-203 / Personal Protective Equipment",
+      "notes": "",
+      "link": ""
+    }
+  ],
+  "savedAt": "2026-11-23T17:32:15.366Z",
+  "storageMode": "text-only-browser-draft",
+  "savedLibraryPdf": "JSTO-Library/96-tw-mu.pdf",
+  "libraryMeta": {
+    "uploadedBy": "96TWMU",
+    "uploadedById": "96twmu",
+    "savedLibraryPdf": "JSTO-Library/96-tw-mu.pdf",
+    "savedAt": "2026-11-23T17:32:15.366Z"
+  }
+}
